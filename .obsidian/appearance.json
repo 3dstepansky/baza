@@ -1,6 +1,1 @@
-{
-  "baseTheme": "obsidian",
-  "accentColor": "#7c3aed",
-  "showViewHeader": true,
-  "nativeMenus": false
-}
+{ "baseTheme": "obsidian", "accentColor": "#7c3aed" }

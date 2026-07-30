@@ -1,11 +1,7 @@
 {
-  "vault": {
-    "name": "Baza — LLM Wiki",
-    "description": "Персональная база знаний на основе LLM Wiki"
-  },
+  "vault": { "name": "Baza — LLM Wiki", "description": "Персональная база знаний с Hermes Agent" },
   "newLinkFormat": "shortest",
   "useMarkdownLinks": true,
-  "showUnsupportedFiles": true,
   "alwaysUpdateLinks": true,
   "newFileLocation": "current",
   "attachmentFolderPath": "assets",

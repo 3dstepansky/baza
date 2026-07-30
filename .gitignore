@@ -1,5 +1,11 @@
 .obsidian/workspace
 .obsidian/cache
-.obsidian/plugins/better-word-count/data.json
+.obsidian/plugins
 .DS_Store
 Thumbs.db
+_site/
+scripts/
+serve.py
+vault-graph.html
+__pycache__/
+*.pyc
