@@ -4,7 +4,7 @@ tags: [hub, index]
 
 # Baza — LLM Wiki 🧠
 
-Персональная база знаний, управляемая через [[Hermes Agent]].
+Персональная база знаний, управляемая через [[Hermes-Agent|Hermes Agent]].
 
 ## Темы
 

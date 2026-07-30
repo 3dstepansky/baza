@@ -24,6 +24,9 @@ jobs:
       - name: Install dependencies
         run: |
           python3 -m pip install markdown --quiet
+      - name: Lint vault
+        run: |
+          python3 scripts/lint-vault.py
       - name: Build static site
         run: |
           python3 scripts/build-site.py
