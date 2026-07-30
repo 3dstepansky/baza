@@ -4,7 +4,6 @@
 .DS_Store
 Thumbs.db
 _site/
-scripts/
 serve.py
 vault-graph.html
 __pycache__/
