@@ -21,6 +21,9 @@ jobs:
         run: |
           curl -sL -o /tmp/d3.v7.min.js \
             "https://d3js.org/d3.v7.min.js"
+      - name: Install dependencies
+        run: |
+          python3 -m pip install markdown --quiet
       - name: Build static site
         run: |
           python3 scripts/build-site.py
