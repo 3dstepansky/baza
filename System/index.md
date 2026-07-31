@@ -9,3 +9,9 @@ tags: [index, hub]
 - Docker и контейнеризация
 - Прокси и сеть (SOCKS5, Dante)
 - Серверы и деплой
+
+## Связанные заметки
+
+- [[System/Hermes|Hermes]]
+- [[Concepts/Agentic-Systems|Агентные системы]]
+- [[AI-ML/MCP|MCP]]

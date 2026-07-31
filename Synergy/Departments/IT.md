@@ -26,3 +26,8 @@ type: org-structure
 - `crmbitrix@synergy.ru` — Распределятор 2.0
 - `allocate_tasks@synergy.ru` — Распределение задач
 - `techpolz@synergy.ru` — Задачи Старые
+
+## Связанные заметки
+
+- [[Synergy/index|Синергия]]
+- [[Synergy/Org-Structure|Оргструктура]]

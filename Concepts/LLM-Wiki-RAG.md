@@ -33,3 +33,9 @@ status: current
 - YouGile: задача-трекер (перспектива)
 - Почта: коннектор email как источник данных
 - PostgreSQL: дедупликация, реестр
+
+## Связанные заметки
+
+- [[Concepts/LLM-Wiki|LLM Wiki]]
+- [[Projects/Baza-Wiki|Baza Wiki]]
+- [[AI-ML/Local-LLM|Локальные LLM]]

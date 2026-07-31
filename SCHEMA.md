@@ -48,7 +48,7 @@ baza/
 ```yaml
 ---
 date: YYYY-MM-DD
-tags: [из таксономии]
+tags: [ai, llm]
 confidence: medium        # опционально: high|medium|low
 contested: true           # опционально: есть противоречия
 sources: [ссылка]         # опционально
@@ -59,13 +59,12 @@ sources: [ссылка]         # опционально
 
 Разделённые теги (добавлять новые ТОЛЬКО через этот список):
 
-- **AI/ML**: ai, llm, mcp, free-tier, model, local-llm, omniroute, whisper
-- **Разработка**: dev, python, go, node, docker, n8n
-- **Проекты**: project, kpn-agent, telemost, marketplace, wb, ozon
+- **AI/ML**: ai, llm, mcp, free-tier, model, local-llm, omniroute, whisper, deepseek, ollama, free-ai, neural-networks, halyava, gateway, openrouter, claude, codex, cli, tools, tool, agent
+- **Разработка**: dev, python, go, node, docker, n8n, typescript, clean-architecture, pipeline, api, architecture, webrtc, recorder, markdown, agents
+- **Проекты**: project, kpn-agent, telemost, marketplace, wb, ozon, vip-coder, job-search, scraper, freebies
 - **Инфраструктура**: system, hermes, server, proxy, telegram
 - **Трейдинг**: trading, algo
-- **Знания**: concept, wiki, obsidian, source, monitoring
-- **Холдинг**: synergy, org-structure, meeting
+- **Знания**: concept, wiki, llm-wiki, obsidian, source, monitoring, events, local, sources, vibecoding
 
 ## Page Thresholds
 

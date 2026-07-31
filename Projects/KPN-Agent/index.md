@@ -39,6 +39,8 @@ tags: [index, hub]
 
 ## Связанные заметки
 
+- [[Projects/KPN-Agent/overview|Обзор проекта]]
+- [[Projects/KPN-Agent/requirements|Функциональные требования]]
 - [[Projects/KPN-Agent/Control-Porucheniy|Контроль поручений]]
 - [[Projects/KPN-Agent/LLM-Wiki-Integration|LLM Wiki интеграция]]
 - [[Concepts/LLM-Wiki|LLM Wiki — концепция]]

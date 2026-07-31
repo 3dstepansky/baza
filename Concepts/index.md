@@ -12,6 +12,7 @@ Karpathy-style LLM Wiki. Плоские заметки, сильно перел�
 - [[Concepts/MCP-Protocol|Model Context Protocol]] — стандарт инструментов
 - [[Concepts/Agentic-Systems|Agentic Systems]] — архитектура агентов
 - [[Concepts/Hermes-Agent-Platform|Hermes Agent Platform]] — платформа
+- [[wiki-links|Wiki-ссылки]] — синтаксис линковки
 
 ## Правила
 - Каждая концепция — отдельная заметка

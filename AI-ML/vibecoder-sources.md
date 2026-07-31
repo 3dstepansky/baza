@@ -105,3 +105,9 @@ https://t.me/+invite_link - чат по ссылке
 ```
 
 Обновлять файл при добавлении новых источников. При запросе «узнай в чатах» — сначала смотреть сюда, потом в telegram MCP.
+
+## Связанные заметки
+
+- [[AI-ML/asati-shill|Asati]]
+- [[AI-ML/event-digest|Дайджест]]
+- [[AI-ML/omniroute|OmniRoute]]

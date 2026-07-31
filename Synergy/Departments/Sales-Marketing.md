@@ -30,3 +30,8 @@ type: org-structure
 
 ## MeetPartners (`#7587`)
 Без сотрудников.
+
+## Связанные заметки
+
+- [[Synergy/index|Синергия]]
+- [[Synergy/Org-Structure|Оргструктура]]

@@ -28,6 +28,15 @@
 - Projects/Telemost-Recorder.md: v0.4, автономный бот (без n8n), US-1..16, мультиканал
 - Commit d041dfe
 
+## [2026-07-31] lint | Полная пересборка по методологии llm-wiki
+- 13-пунктовый lint: 54 проблемы → 0
+- Добавлены перекрёстные ссылки в 24 заметки (минимум 2 исходящие)
+- Таксономия тегов расширена в SCHEMA.md (53+ тегов, 3 новых категории)
+- confidence: medium на быстро меняющиеся темы (omniroute, vibecoder-sources, free-ai-methods)
+- Synergy/Org-Structure.md перенесён в raw/org-structure.md (Layer 1, immutable)
+- Frontmatter добавлен во все заметки (0 без frontmatter)
+- Итог: 0 сирот, 0 битых ссылок, 205 ссылок, 51 заметка
+
 ## [2026-07-31] create | Внедрение методологии llm-wiki (скилл v2.1.0)
 - Установлен официальный скилл research/llm-wiki (507 строк)
 - Созданы SCHEMA.md (конвенции, таксономия тегов, пороги) и log.md

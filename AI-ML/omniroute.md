@@ -2,6 +2,7 @@
 date: 2026-07-30
 source: github
 tags: [llm, proxy, gateway, ai, free-tier, omniroute]
+confidence: medium
 ---
 
 # OmniRoute
@@ -53,3 +54,6 @@ Cursor/Codex/Claude Code
 
 - `omniroute-gh-runner` — GitHub Actions deployment
 - `omniroute-hybrid-setup` — hybrid local/cloud
+- [[AI-ML/free-ai-methods|Методы free-доступа]]
+- [[AI-ML/vibecoder-sources|Вайбкодерские источники]]
+- [[System/Hermes|Hermes]]

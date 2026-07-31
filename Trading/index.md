@@ -12,3 +12,9 @@ tags: [index, hub]
 
 ## Заметки
 - [[Trading/Algo|Алгоритмическая торговля]]
+
+## Связанные заметки
+
+- [[Trading/Algo|Алгоритмическая торговля]]
+- [[Dev/Python|Python]]
+- [[Projects/Job-Search|Поиск работы]]

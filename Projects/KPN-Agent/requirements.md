@@ -40,3 +40,9 @@ status: active
 - Порядок сообщений — нужна сортировка
 - Если несколько фамилий — писать секретарю на уточнение
 - Чаты: не всем, только по делу
+
+## Связанные заметки
+
+- [[Projects/KPN-Agent/index|КПН-Агент]]
+- [[Projects/KPN-Agent/overview|Обзор]]
+- [[Projects/KPN-Agent/Control-Porucheniy|Контроль поручений]]

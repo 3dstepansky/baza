@@ -1,6 +1,7 @@
 ---
 date: 2026-07-30
 tags: [free-ai, neural-networks, api, halyava, omniroute]
+confidence: medium
 ---
 
 # Бесплатное использование нейросетей
@@ -157,3 +158,10 @@ GEMINI_API_KEY=...
 **Для кодинга:** free-claude-code + NVIDIA NIM
 
 Экономия: **до 95%** стоимости API при правильной настройке.
+
+## Связанные заметки
+
+- [[AI-ML/omniroute|OmniRoute]]
+- [[AI-ML/AI-Freebies|AI Freebies]]
+- [[Projects/Telemost-Recorder|Telemost (Groq)]]
+- [[AI-ML/index|AI & ML]]

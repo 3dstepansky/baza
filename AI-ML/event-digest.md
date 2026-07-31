@@ -88,3 +88,9 @@ minInterestConfidence: 0.75
 
 Репозиторий: https://github.com/ragnor-rs/event-digest
 Клон на сервере: `/home/ubuntu/event-digest` (мусор, удалить)
+
+## Связанные заметки
+
+- [[AI-ML/vibecoder-sources|Вайбкодерские источники]]
+- [[AI-ML/asati-shill|Asati]]
+- [[Projects/KPN-Agent/index|КПН-Агент]]
