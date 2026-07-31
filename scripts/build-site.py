@@ -149,7 +149,7 @@ def build_site():
     
     files = []
     for root, dirs, fnames in os.walk(VAULT):
-        if '.git' in root or '_site' in root or 'scripts' in root or '.hermes' in root:
+        if '.git' in root or '_site' in root or root.rstrip('/').endswith('/scripts') or '.hermes' in root:
             continue
         for f in fnames:
             if not f.endswith('.md'):
