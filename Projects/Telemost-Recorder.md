@@ -1,117 +1,150 @@
 ---
-tags: [project, telemost, recorder, ai, docker, n8n]
+tags: [project, telemost, recorder, ai, docker, webrtc, telegram]
 ---
 
 # Telemost Recorder — запись Яндекс.Телемост 🎙️
 
 **GitHub:** https://github.com/3dstepansky/stepansky-telemost-recorder-doker
-**Версия:** v1.0.0 (ядро v0.003, стабилизировано)
-**Статус:** stable · License MIT
+**Актуальная ветка:** `v04` (релиз v0.4, коммит `508deeb4`, 02.07.2026) — соответствует спеке `specs/002-standalone-bot-and-fixes`
+**Статус:** в разработке (стабильное ядро) · License MIT
 
-Автономный ИИ-ассистент для записи встреч **Яндекс.Телемост** с **нулевыми операционными затратами** (ZeroPay). Бот заходит в конференцию гостем, перехватывает WebRTC-аудио, транскрибирует через Groq Whisper, генерирует саммари через OpenRouter и выгружает всё на Яндекс.Диск. Управление — через Telegram.
+Автономный ИИ-ассистент записи встреч **Яндекс.Телемост** с нулевыми операционными затратами (ZeroPay). Бот заходит в конференцию гостем, перехватывает WebRTC-аудио, транскрибирует (Groq Whisper / AssemblyAI), генерирует саммари (Groq Llama-3.3-70B) и доставляет результат в Telegram + Яндекс.Диск (WebDAV) + S3.
 
-## Ключевые особенности
+> ⚠️ **Важно про версии:** README в корне репозитория описывает **устаревшую** n8n-архитектуру v1.0.0. Актуальная архитектура (v0.4, spec 002) — **автономный бот без n8n** (см. ниже).
 
-1. **Headless WebRTC Injection** — запись аудио перехватом потоков из `RTCPeerConnection` в изолированном Puppeteer-контейнере
-2. **Whisper-Friendly Chunking** — нарезка FFmpeg на чанки по 20 минут (обход лимита Groq Whisper 25 MB)
-3. **Storage Self-Cleaning** — гарантированное удаление локальных файлов после выгрузки
-4. **Яндекс.Диск (WebDAV)** — автосохранение в `Yandex.Telemost.Records/[Дата]_[Тема_от_ИИ]/`
-5. **Multi-User Isolation** — отдельный Docker-контейнер `telemost_<chat_id>` на пользователя
-6. **n8n Orchestration & FSM** — воркфлоу n8n управляет Telegram-интерфейсом, PostgreSQL и процессами
+## 🏗️ Архитектура (актуальная, v0.4)
 
-## Архитектура
-
-Два слоя: **исполнительный** (Docker-воркер на хосте) + **оркестрирующий** (n8n).
+**Архитектурное решение (июль 2026): отказ от n8n.** Вся логика управления перенесена в автономный Node.js-процесс `bot.js` внутри Docker-контейнера, хранилище — SQLite. n8n-вариант (`001-telemost-recorder-core`) официально устарел.
 
 ```
-Telegram → n8n Orchestrator → SSH Exec → Docker (telemost_<chat_id>)
-                                        │  Puppeteer → Телемост (WebRTC)
-                                        │  FFmpeg: VAD + сегментация
-                                        ↓
-                              Webhook ← контейнер (сигнал «аудио готово»)
-                                        ↓
-           n8n → Groq Whisper (транскрибация) → OpenRouter (саммари)
-                                        ↓
-           Telegram отчёт + Яндекс.Диск (WebDAV) + PostgreSQL
+Telegram (Telegraf bot.js)
+      ↓
+ Docker-контейнер (telemost_${CHAT_ID}_${MEETING_ID})
+      ├─ recorder.js  — Puppeteer → Яндекс.Телемост → WebRTC-аудио
+      ├─ run.js       — жизненный цикл записи (spawn, сигналы, webhook-стадия)
+      ├─ db.js        — SQLite: пользователи, встречи, состояния FSM
+      └─ services/    — ai, ffmpeg, s3, summarize, transcribe, webdav
+      ↓
+ Результаты: Telegram-чат (≤50 МБ) и/или Яндекс.Диск (WebDAV) + S3
 ```
 
-## Файловая структура
+### Что нового в v0.4 (vs старый master)
+
+1. **Мульти-запись и защита от дубликатов** — имена контейнеров `telemost_${CHAT_ID}_${MEETING_ID}`, параллельные сессии; повторный старт той же встречи блокируется
+2. **Персональные имена ботов** — для каждого `chat_id` своё отображаемое имя (поле `bot_display_name` в БД)
+3. **Умный run_stop.sh** — точечная остановка по `MEETING_ID` или групповая по `CHAT_ID`
+4. **Устранение Race Condition** — выгрузка (S3/Диск) гарантированно **до** уведомления оркестратора, чтобы файл не удалился при копировании
+5. **Лимит контекста LLM** — 25 000 символов на текст для суммаризатора (`services/summarize.js`)
+6. **Telegram без Яндекс.Диска** — запись присылается прямо в чат (до 50 МБ ≈ 1.5 ч); текст и саммари приходят всегда
+
+## 📁 Файловая структура (v04)
 
 | Файл | Назначение |
 |------|-----------|
-| `recorder.js` | WebRTC-интерцептор: вход, обход лобби, захват аудио, anti-zombie (try/finally + SIGTERM/SIGINT) |
-| `run.js` | Оркестрация внутри контейнера, webhook-first уведомление n8n по завершении |
-| `transcribe.js` | Транскрибация через Groq Whisper |
-| `upload_audio.js` | Выгрузка на Яндекс.Диск (WebDAV) |
-| `local_bridge.js` | Локальный мост для отладки без n8n |
-| `run_join.sh` / `run_start.sh` / `run_stop.sh` | SSH-команды n8n (2 аргумента: URL + Chat ID) |
-| `run_transcribe.sh` / `run_upload.sh` | Этапы обработки |
+| `bot.js` (15 КБ) | Автономный Telegram-бот на **Telegraf**: меню, FSM, команды `/start /record /ai`, HTML-формат сообщений |
+| `recorder.js` (19 КБ) | WebRTC-интерцептор: вход, обход лобби, захват аудио, anti-zombie (`try/finally` + SIGTERM/SIGINT) |
+| `run.js` (5 КБ) | Жизненный цикл записи в контейнере, spawn-процессы, стадия уведомления |
+| `db.js` (3.5 КБ) | SQLite-слой: `getUser/saveUser/getRecentMeetings`, состояния FSM |
+| `transcribe.js` | Транскрибация (Groq/AssemblyAI) |
+| `upload_audio.js` | Выгрузка исходного аудио |
+| `local_bridge.js` | Локальный мост для отладки без контейнера |
+| `mock_n8n.py` | Мок оркестратора (наследие n8n-эпохи) |
+| `verify_rename_and_summarize_mock.js` | Проверка переименования и саммари |
+| `services/ai.js` | Groq **Whisper-large-v3**: `verbose_json`, сегменты → utterances, `speaker_count=1` (заглушка диаризации) |
+| `services/ffmpeg.js` | Сегментация **без перекодирования** (`-c copy`), чанки 1200 сек, лимит 24.5 МБ |
+| `services/summarize.js` | Бизнес-саммари: ключевые темы, решения, Next Steps; модель `llama-3.3-70b-versatile`, обрезка 25K символов |
+| `services/webdav.js` | Яндекс.Диск: создание папок (405-игнор), Basic auth, `Yandex.Telemost.Records/[Дата]_[Тема]/` |
+| `services/s3.js` | Универсальная S3-выгрузка (MinIO/Яндекс Облако/AWS), пропуск если ключи не заданы |
+| `services/transcribe.js` | Транскрибация-сервис (вынесен в pipeline) |
+| `run_join.sh / run_start.sh / run_stop.sh` | Скрипты запуска/остановки (совместимость с внешними вызовами) |
+| `run_transcribe.sh / run_upload.sh` | Этапы обработки |
 | `set_recorder_display_name.sh` | Имя бота на встрече |
-| `mock_n8n.py` | Мок оркестратора для тестов |
-| `database.sql` | Схема PostgreSQL |
-| `docker_spec.md` | Границы ответственности контейнер/n8n |
-| `services/` | Дополнительные сервисы |
+| `database.sql` | Схема PostgreSQL/Supabase (историческая; актуально — SQLite в `db.js`) |
+| `docker-compose.yml` | Сервис `recorder`, volume `./recordings`, env_file `.env` |
+| `Dockerfile` / `Dockerfile.test` | Боевой образ и тестовый |
+| `test/db.test.js` | Юнит-тесты БД (`node --test`) |
+| `specs/002-standalone-bot-and-fixes/` | **Актуальная спека**: US-1…US-16 |
+| `specs/003-speaker-names-and-ai-summary/` | Спека имён спикеров и AI-саммари |
+| `MULTICHANNEL_HYPOTHESIS_ROADMAP.md` | Доркарта гипотезы US-16 (диаризация по WebRTC-трекам) |
+| `n8n_workflow_v0.4.json` / `n8n_workflow_head.json` | Воркфлоу n8n (исторические) |
+| `.agents/skills/` | Навыки для ИИ-агентов разработки |
+| `.specify/` | Конфиг Specify (ИИ-спецификации): feature.json, integration.json, workflows |
 
-## Стек
+## 🗄️ База данных
 
-- **Node.js v20+**: Puppeteer 24, axios, groq-sdk, @aws-sdk/client-s3
-- **Docker** — изолированные контейнеры записей
-- **FFmpeg** — VAD (удаление тишины), сегментация по 20 мин
-- **Groq** — Whisper-транскрибация (free tier) + Llama-3 базовая суммаризация
-- **OpenRouter** — генерация саммари
-- **n8n** — оркестрация, Telegram FSM, вебхуки
-- **PostgreSQL/Supabase** — метаданные встреч
-- **Яндекс.Диск WebDAV** — хранение (S3 — в планах, Milestone 3)
+**Актуально (SQLite, `db.js`):** пользователи, состояния FSM, настройки (имя бота, Яндекс.Диск), история встреч.
 
-## База данных (database.sql)
+**Историческая схема PostgreSQL (`database.sql`):**
 
-**`meeting_transcripts`** — id, title, file_path, chat_id, transcript, summary, speaker_count, utterance_count, utterances (JSONB с таймингами), transcribed_at, operation_id (unique — защита от дублей)
+- **`telemost_meeting_transcripts`** — id, title, file_path, chat_id, transcript, summary, speaker_count, utterance_count, utterances (JSONB с таймингами), transcribed_at, operation_id (unique — защита от дублей)
+- **`telemost_user_settings`** — chat_id, state, yandex_user, yandex_webdav_password, **bot_display_name** (персональное имя бота)
 
-**`user_settings`** — chat_id, state (FSM: IDLE...), yandex_user, yandex_webdav_password, updated_at
+## 🤖 Telegram-интерфейс (bot.js, Telegraf)
 
-## Telegram UX (FSM)
+Клавиатуры: `MAIN_MENU` (🔴 Запись / 🧠 Аналитика / ⚙️ Настройки / ℹ️ Помощь), `AI_MENU` (📝 Транскрибировать / 💡 Саммари / 📂 Список встреч), `SETTINGS_MENU` (👤 Имя бота / 📦 Яндекс.Диск).
 
-- 🔴 **Запись** — режим ожидания ссылки (Force Reply), авто-подключение
-- 🧠 **Аналитика/ИИ** — ручная транскрибация, саммаризация, список 5 последних встреч (с ИИ-названиями)
-- ⚙️ **Настройки** — Яндекс.Диск (логин + пароль приложения) прямо из Telegram
+- **🔴 Запись** — состояние `wait_for_link`, ждёт ссылку `https://telemost.yandex.ru/j/...`, бот заходит под именем `bot_name`
+- **🧠 Аналитика** — ручная транскрибация, саммари, список встреч (ИИ-названия)
+- **⚙️ Настройки** — имя бота, подключение Яндекс.Диска прямо из Telegram
+- **Fallback без Диска** — аудио в чат до 50 МБ, предупреждение в UI
 
-## Стабилизация (STABILIZATION_REPORT, v0.003)
+## 🧪 Гипотеза US-16: нативная диаризация (MULTICHANNEL_HYPOTHESIS_ROADMAP)
 
-- **Docker gateway `172.19.0.1`** — SSH-нода n8n не видела `/opt/telemost-recorder` через localhost; направлять на шлюз сети `n8n_default`
-- **SSH-ключ `id_rsa_n8n`** — парольная аутентификация падала (PAM/Keyboard-Interactive на Oracle Ubuntu 24.04 + fail2ban)
-- **`usermod -aG docker ubuntu`** — n8n могла управлять контейнерами без sudo
-- **Anti-Zombie** — `try...finally` + `browser.close()` в 100% случаев; было найдено 85 зомби-процессов Chrome
-- **Webhook-First** — транскрибация стартует только после вебхука от контейнера (иначе 0-байтовые тексты)
-- Скрипты принимают строго 2 аргумента (URL, Chat ID)
+Цель: Яндекс.Телемост отдаёт **отдельные WebRTC-аудиотреки по участникам** — можно писать их раздельно и строить карту диаризации без потери авторства.
 
-## Майлстоуны (ROADMAP)
+- Субагент-наблюдатель: **`multichannel-hypothesis-tracker`** (фиксирует изменения, проверки, статусы)
+- Текущее состояние кода: `recorder.js` сводит все треки в один mix через `MediaStreamDestination` (строки 121-143)
+- Статус шагов: [x] тестовый контейнер (02.07.2026), [~] track-level запись (нужна привязка имён), [x] ранняя выгрузка исходного аудио в папку встречи, [ ] мастер-формат, [ ] diarization_map.json, [ ] сопоставление с AssemblyAI, [ ] перенос в основной pipeline
+- **US-16 в спеке 002 — статус «✅ Реализовано (Dual-Output Архитектура)»**
 
-| Майлстоун | Статус |
-|-----------|--------|
-| 1. Локальное ядро (запись + Groq-расшифровка + базовая суммаризация) | ✅ Ready (12.04.2026) |
-| 2. Докеризация рекордера (Dockerfile, headless, volume `/recordings`) | 🔄 в работе |
-| 3. Интеграция хранилища (S3, автозагрузка, очистка) | ⏳ |
-| 4. Оркестрация через n8n (webhook, SSH/Docker, callback) | 🔄 |
-| 5. Промышленная стабильность (auto-exit при тишине, логирование, длинные встречи) | ⏳ |
+## 📋 Статус требований (spec 002, 02.07.2026)
 
-## Roadmap v2
+| ID | Требование | Статус |
+|----|-----------|--------|
+| US-1 | Запись WebRTC-аудио (вход в комнату) | ✅ |
+| US-2 | Автозавершение и Anti-Zombie | ✅ |
+| US-3 | Автономный Telegram-бот (замена n8n) | ✅ |
+| US-4 | Автовыход при завершении встречи организатором | ✅ |
+| US-5 | Информационный стиль Ильяхова | ✅ |
+| US-6 | Транскрибация с диаризацией (AssemblyAI + Groq fallback) | ⚠️ пайплайн есть, диаризация не протестирована |
+| US-7 | Выгрузка на Яндекс.Диск + S3 | ⚠️ требует проверки |
+| US-8 | ИИ-саммари и рассылка в Telegram | ✅ |
+| US-9 | Быстрый старт по ссылке с inline-кнопкой | ✅ |
+| US-10 | Персональное имя бота | ✅ (SQLite) |
+| US-11 | ИИ-переименование папок на Диске | ⚠️ частично |
+| US-12 | Интеграция с Яндекс.Календарём | ❌ |
+| US-13 | Просмотр архива встреч в Telegram | ⚠️ базовый список |
+| US-14 | Чат-ассистент по встрече (RAG) | ❌ |
+| US-15 | Живой ИИ-агент в комнате (Real-Time STT/TTS) | ❌ |
+| US-16 | Нативная диаризация через WebRTC-треки | ✅ (Dual-Output) |
 
-- 🔴 **Diarization** — разделение реплик по спикерам
+## 🛠️ Стабилизация (STABILIZATION_REPORT, v0.003 → v0.4)
+
+- **Docker gateway `172.19.0.1`** — SSH из контейнера n8n наружу (исторически)
+- **SSH-ключ `id_rsa_n8n`** — обход PAM/fail2ban на Oracle Ubuntu 24.04 (исторически)
+- **Anti-Zombie** — `--init` флаг + `try/finally` + `browser.close()` в 100% случаев (найдено 85 зомби-процессов Chrome)
+- **Base image `node:20-slim`** — фикс сборки ARM64
+- **Webhook-First / Order-First** — транскрибация/выгрузка строго после готовности файла
+
+## 🧰 Стек
+
+Node.js v20+ · Puppeteer 24 · Telegraf 4.16 · FFmpeg · Groq SDK (Whisper-large-v3, Llama-3.3-70B) · AssemblyAI · @aws-sdk/client-s3 · SQLite · Docker · WebDAV (Яндекс.Диск) · n8n (исторически) · Specify (.specify/)
+
+## 🎯 Roadmap v2
+
+- 🔴 **Diarization** — разделение реплик по спикерам (гипотеза US-16)
 - 🔴 **Real-Time AI Chat** — вопросы боту по контексту во время записи
-- 🔴 **Archival Q&A** — чат по историческим встречам с Яндекс.Диска
+- 🔴 **Archival Q&A** — чат по историческим встречам с Диска (RAG)
 
-## Конфигурация (.env)
+## 🔗 Перекрёстные ссылки
 
-```ini
-BOT_DISPLAY_NAME="Бот-Ассистент"
-GROQ_API_KEY=gsk_...
-HEADLESS=true            # true для Docker/сервера
-S3_ENDPOINT/S3_REGION/S3_BUCKET/S3_ACCESS_KEY/S3_SECRET_KEY  # Milestone 3
-```
-
-## Связанное
-
-- [[Projects/KPN-Agent/index|КПН-Агент]] — похожий пайплайн: стенограммы → саммари → реестр
-- [[Synergy/Meetings/index|Расшифровки встреч]] — транскрипты совещаний
-- [[Projects/index|Проекты]]
-- [[AI-ML/free-ai-methods|Free-доступ: Groq, OpenRouter]]
+- [[Projects/index|Проекты]] — хаб
+- [[Projects/KPN-Agent/index|КПН-Агент]] — схожий пайплайн: стенограммы → саммари → реестр поручений
+- [[Synergy/Meetings/index|Расшифровки встреч]] — транскрипты совещаний холдинга
+- [[AI-ML/free-ai-methods|Методы бесплатного доступа]] — Groq, OpenRouter, free-tier
+- [[AI-ML/omniroute|OmniRoute]] — AI-прокси (OpenRouter-подобный слой)
+- [[Concepts/Agentic-Systems|Агентные системы]] — субагент-наблюдатель мультиканальной гипотезы
+- [[Concepts/LLM-Wiki|LLM Wiki]] — доркарта ведётся субагентом, как эта база знаний
+- [[System/Hermes|Hermes Agent]] — агентная разработка (.agents/skills)
+- [[Dev/Python|Python]] — наследие mock_n8n.py, инструменты разработки
+- [[AI-ML/MCP|MCP]] — интеграции с ботами/платформами
