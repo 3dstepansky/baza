@@ -36,6 +36,6 @@ tags: [project, kpn-agent, porucheniya]
 
 ## Ссылки
 
-- [[Projects/KPN-Agent/index|КПН-Агент]]
+- [[Projects/KPN-Agent/KPN-Agent|КПН-Агент]]
 - [[Projects/KPN-Agent/requirements|Функциональные требования]]
 - [[Projects/KPN-Agent/overview|Обзор проекта]]

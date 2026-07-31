@@ -34,7 +34,7 @@ hermes serve                # dashboard на :9119
 
 ## Связанное
 
-- [[System/index|Система]]
+- [[System/System|Система]]
 - [[Concepts/Agentic-Systems|Агентные системы]]
 - [[Hermes-Agent|Hermes Agent — платформа]]
-- [[Projects/KPN-Agent/index|КПН-Агент на базе Hermes]]
+- [[Projects/KPN-Agent/KPN-Agent|КПН-Агент на базе Hermes]]

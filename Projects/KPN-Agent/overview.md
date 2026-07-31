@@ -52,6 +52,6 @@ priority: high
 
 ## Связанные заметки
 
-- [[Projects/KPN-Agent/index|КПН-Агент]]
+- [[Projects/KPN-Agent/KPN-Agent|КПН-Агент]]
 - [[Projects/KPN-Agent/requirements|Требования]]
-- [[Synergy/index|Синергия]]
+- [[Synergy/Synergy|Синергия]]

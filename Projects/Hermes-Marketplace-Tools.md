@@ -39,4 +39,4 @@ MCP-сервер для поиска и сравнения товаров на W
 
 - [[Dev/Python|Python]]
 - [[AI-ML/MCP|MCP]]
-- [[Projects/index|Проекты]]
+- [[Projects/Projects|Проекты]]

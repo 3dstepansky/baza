@@ -164,4 +164,4 @@ GEMINI_API_KEY=...
 - [[AI-ML/omniroute|OmniRoute]]
 - [[AI-ML/AI-Freebies|AI Freebies]]
 - [[Projects/Telemost-Recorder|Telemost (Groq)]]
-- [[AI-ML/index|AI & ML]]
+- [[AI-ML/AI-ML|AI & ML]]

@@ -25,7 +25,7 @@ tags: [vip-coder, telegram, ai, neural-networks, llm, deepseek]
 - Телефон доверия: @ichto_02
 - [[AI-ML/vibecoder-sources|Вайбкодерские источники]]
 - [[AI-ML/event-digest|Дайджест]]
-- [[AI-ML/index|AI & ML]]
+- [[AI-ML/AI-ML|AI & ML]]
 
 ## Статус
 

@@ -29,5 +29,5 @@ type: org-structure
 
 ## Связанные заметки
 
-- [[Synergy/index|Синергия]]
+- [[Synergy/Synergy|Синергия]]
 - [[Synergy/Org-Structure|Оргструктура]]

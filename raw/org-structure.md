@@ -8207,6 +8207,6 @@ confidence: high
 
 ## Связанные заметки
 
-- [[Synergy/index|Синергия]]
+- [[Synergy/Synergy|Синергия]]
 - [[Synergy/Departments/GR-Departments|GR-департаменты]]
-- [[Synergy/Meetings/index|Встречи]]
+- [[Synergy/Meetings/Meetings|Встречи]]

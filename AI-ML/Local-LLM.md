@@ -30,6 +30,6 @@ tags: [ai, llm, local, ollama]
 
 ## Связанное
 
-- [[AI-ML/index|AI & ML]]
+- [[AI-ML/AI-ML|AI & ML]]
 - [[AI-ML/free-ai-methods|Методы бесплатного доступа]]
 - [[Concepts/LLM-Wiki|LLM Wiki]]

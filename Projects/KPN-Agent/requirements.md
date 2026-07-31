@@ -43,6 +43,6 @@ status: active
 
 ## Связанные заметки
 
-- [[Projects/KPN-Agent/index|КПН-Агент]]
+- [[Projects/KPN-Agent/KPN-Agent|КПН-Агент]]
 - [[Projects/KPN-Agent/overview|Обзор]]
 - [[Projects/KPN-Agent/Control-Porucheniy|Контроль поручений]]

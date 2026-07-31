@@ -17,7 +17,7 @@ tags: [trading, algo, python]
 
 - Python ([[Dev/Python|Python]]) — pandas, backtesting
 - API брокеров — исполнение ордеров
-- ML/AI — предсказание движения ([[AI-ML/index|AI & ML]])
+- ML/AI — предсказание движения ([[AI-ML/AI-ML|AI & ML]])
 
 ## Практика
 
@@ -27,5 +27,5 @@ tags: [trading, algo, python]
 
 ## Связанное
 
-- [[Trading/index|Трейдинг]]
+- [[Trading/Trading|Трейдинг]]
 - [[Projects/Job-Search|Поиск работы]]

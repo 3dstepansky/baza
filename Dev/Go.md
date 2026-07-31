@@ -22,5 +22,5 @@ tags: [dev, go, language]
 
 ## Связанное
 
-- [[Dev/index|Разработка]]
+- [[Dev/Dev|Разработка]]
 - [[System/Hermes|Hermes Agent]] — платформа на Go-подобных принципах (один бинарник)

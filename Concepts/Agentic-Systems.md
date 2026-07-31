@@ -26,7 +26,7 @@ tags: [concept, agents, ai, architecture]
 ## Реализации
 
 - [[System/Hermes|Hermes Agent]] — платформа с delegate_task, cron, kanban
-- [[Projects/KPN-Agent/index|КПН-Агент]] — ~15 специализированных агентов
+- [[Projects/KPN-Agent/KPN-Agent|КПН-Агент]] — ~15 специализированных агентов
 - [[Concepts/LLM-Wiki|LLM Wiki]] — агент ведёт базу знаний
 
 ## Питфоллы

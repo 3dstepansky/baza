@@ -31,7 +31,7 @@ Telegram/Web
 
 - [[Projects/Baza-Wiki|Ведение базы знаний]] (этот vault)
 - [[Projects/Hermes-Marketplace-Tools|Мониторинг маркетплейсов]]
-- [[Projects/KPN-Agent/index|КПН-Агент]] — контроль поручений
+- [[Projects/KPN-Agent/KPN-Agent|КПН-Агент]] — контроль поручений
 - Мониторинг [[AI-ML/vibecoder-sources|вайбкодерских каналов]]
 
 ## Связанное

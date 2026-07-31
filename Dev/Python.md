@@ -30,5 +30,5 @@ tags: [dev, python, language]
 
 ## Ссылки
 
-- [[Dev/index|Разработка]]
+- [[Dev/Dev|Разработка]]
 - [[Concepts/Agentic-Systems|Агентные системы]]

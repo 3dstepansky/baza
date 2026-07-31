@@ -20,10 +20,10 @@ tags: [index, hub]
 
 ## Ключевые проекты
 
-- [[Projects/KPN-Agent/index|КПН-Агент]] — система контроля поручений на базе AI
+- [[Projects/KPN-Agent/KPN-Agent|КПН-Агент]] — система контроля поручений на базе AI
 - [[Projects/KPN-Agent/Control-Porucheniy|Контроль поручений]] — реестр и мониторинг
 - [[Projects/KPN-Agent/LLM-Wiki-Integration|LLM Wiki интеграция]]
 
 ## Встречи и совещания
 
-- [[Synergy/Meetings/index|Все расшифровки]]
+- [[Synergy/Meetings/Meetings|Все расшифровки]]

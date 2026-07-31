@@ -45,5 +45,5 @@ date: 2026-07-30
 ## Связанные заметки
 
 - [[Trading/Algo|Алготрейдинг]]
-- [[Projects/index|Проекты]]
+- [[Projects/Projects|Проекты]]
 - [[Dev/Python|Python]]

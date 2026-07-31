@@ -93,4 +93,4 @@ minInterestConfidence: 0.75
 
 - [[AI-ML/vibecoder-sources|Вайбкодерские источники]]
 - [[AI-ML/asati-shill|Asati]]
-- [[Projects/KPN-Agent/index|КПН-Агент]]
+- [[Projects/KPN-Agent/KPN-Agent|КПН-Агент]]

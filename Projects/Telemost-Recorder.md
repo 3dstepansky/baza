@@ -138,9 +138,9 @@ Node.js v20+ · Puppeteer 24 · Telegraf 4.16 · FFmpeg · Groq SDK (Whisper-lar
 
 ## 🔗 Перекрёстные ссылки
 
-- [[Projects/index|Проекты]] — хаб
-- [[Projects/KPN-Agent/index|КПН-Агент]] — схожий пайплайн: стенограммы → саммари → реестр поручений
-- [[Synergy/Meetings/index|Расшифровки встреч]] — транскрипты совещаний холдинга
+- [[Projects/Projects|Проекты]] — хаб
+- [[Projects/KPN-Agent/KPN-Agent|КПН-Агент]] — схожий пайплайн: стенограммы → саммари → реестр поручений
+- [[Synergy/Meetings/Meetings|Расшифровки встреч]] — транскрипты совещаний холдинга
 - [[AI-ML/free-ai-methods|Методы бесплатного доступа]] — Groq, OpenRouter, free-tier
 - [[AI-ML/omniroute|OmniRoute]] — AI-прокси (OpenRouter-подобный слой)
 - [[Concepts/Agentic-Systems|Агентные системы]] — субагент-наблюдатель мультиканальной гипотезы

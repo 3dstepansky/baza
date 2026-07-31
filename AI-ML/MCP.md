@@ -34,7 +34,7 @@ tags: [ai, mcp, protocol]
 
 ## Ссылки
 
-- [[AI-ML/index|AI & ML]]
+- [[AI-ML/AI-ML|AI & ML]]
 - [[Concepts/MCP-Protocol|MCP Protocol — детали]]
 - [[Concepts/Agentic-Systems|Агентные системы]]
 - [[Projects/Hermes-Marketplace-Tools|Marketplace MCP Server]]

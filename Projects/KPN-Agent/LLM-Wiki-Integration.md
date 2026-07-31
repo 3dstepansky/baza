@@ -28,6 +28,6 @@ tags: [project, kpn-agent, llm-wiki]
 
 ## Ссылки
 
-- [[Projects/KPN-Agent/index|КПН-Агент]]
+- [[Projects/KPN-Agent/KPN-Agent|КПН-Агент]]
 - [[Concepts/LLM-Wiki|LLM Wiki — концепция]]
 - [[Projects/Baza-Wiki|Baza Wiki]]
