@@ -159,7 +159,7 @@ ng.on("mouseenter",(e,d)=>{{
     c.add(d.id); ng.style("opacity",n=>c.has(n.id)?1:0.15); link.style("opacity",e=>e.source.id===d.id||e.target.id===d.id?0.8:0.05);
 }}).on("mouseleave",()=>{{ng.style("opacity",1);link.style("opacity",0.4);}});
 
-ng.on("click",(e,d)=>{{window.open("/"+d.file,"_blank");}});
+ng.on("click",(e,d)=>{{const href="/"+(d.file||"").replace(/\.md$/, ".html");window.open(href,"_blank");}});
 
 // handle resize
 window.addEventListener("resize",()=>{{
