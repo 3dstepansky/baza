@@ -11,7 +11,12 @@ tags: [index, hub]
 
 ## Ключевые подразделения
 
-Здесь будет оргструктура и описание ключевых направлений холдинга.
+- [[Synergy/Departments/GR-Departments|GR-департаменты]]
+- [[Synergy/Departments/HR|HR]]
+- [[Synergy/Departments/IT|IT]]
+- [[Synergy/Departments/Sales-Marketing|Sales & Marketing]]
+- [[Synergy/Departments/Scrum-Center|Scrum-центр]]
+- Полная структура: [[Synergy/Org-Structure|Оргструктура]]
 
 ## Ключевые проекты
 
