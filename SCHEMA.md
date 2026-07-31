@@ -1,86 +1,89 @@
-# Wiki Schema — Baza (LLM Wiki)
+# Wiki Schema
 
-> Управляющий документ базы знаний. Читать ПЕРЕД любой операцией в новой сессии
-> (вместе с `index.md` и `log.md`). Методология: Karpathy's LLM Wiki (скилл `llm-wiki` v2.1.0).
+> Управляющий документ. Читать ПЕРВЫМ в новой сессии вместе с index.md и log.md.
+> Методология: Karpathy's LLM Wiki (скилл llm-wiki v2.1.0). WIKI_PATH=/home/ubuntu/baza
 
 ## Domain
 
-Персональная база знаний Павла: AI/ML, вайбкодинг, разработка, алготрейдинг,
-инфраструктура Hermes, проекты (КПН-Агент, Telemost Recorder, Marketplace),
+Персональная база знаний: AI/ML и вайбкодинг, free-tier провайдеры, разработка,
+алготрейдинг, инфраструктура Hermes, проекты (КПН-Агент, Telemost Recorder),
 холдинг «Синергия».
 
-## Расположение
-
-- Vault: `/home/ubuntu/baza` (Obsidian, MCP-сервер `baza`)
-- Публикация: `_site/` (build-site.py) + `vault-graph.html` (generate-graph.py)
-- Git: https://github.com/3dstepansky/baza
-
-## Структура
+## Структура (три слоя)
 
 ```
 baza/
-├── SCHEMA.md            # этот файл (конвенции, таксономия)
-├── index.md             # КАТАЛОГ всех страниц (единственный index.md в vault!)
-├── log.md               # журнал действий (append-only, ротация на 500 записей)
-├── Dev/                 # разработка, языки
-├── AI-ML/               # модели, MCP, free-tier, источники
-├── Trading/             # алготрейдинг
-├── System/              # серверы, Hermes
-├── Concepts/            # концепции (Karpathy-style)
-├── Projects/            # активные проекты
-├── Synergy/             # холдинг «Синергия»
-└── raw/                 # Layer 1: неизменяемые источники
-```
-
+├── SCHEMA.md            # этот файл
+├── index.md             # КАТАЛОГ всех страниц (единственный index.md!)
+├── log.md               # журнал действий (append-only)
+├── raw/                 # Layer 1: ИММУТАБЕЛЬНЫЕ источники (не редактировать!)
+│   ├── articles/        #   статьи, отчёты
+│   ├── papers/          #   PDF, arxiv
+│   ├── transcripts/     #   расшифровки встреч
+│   └── assets/          #   изображения
+├── entities/            # Layer 2: сущности (люди, орг., продукты, модели)
+├── concepts/            # Layer 2: концепции/темы
+├── comparisons/         # Layer 2: сравнения
+├── queries/             # Layer 2: сохранённые ценные ответы
+└── _archive/            # замещённые/хабы
 ```
 
 ## Conventions
 
-- Имена файлов: `Kebab-Case.md` / `Title-Case.md`, без пробелов
-- Каждая заметка начинается с YAML frontmatter: `date`, `tags`
-- `[[wikilinks]]` между страницами: **минимум 2 исходящие ссылки** на страницу
-- При обновлении страницы — обновлять `date`
-- Каждая новая страница добавляется в `index.md` (каталог) в нужную секцию
-- **ВАЖНО: в vault только ОДИН `index.md` — корневой каталог.** Хабы разделов называются `<Раздел>.md` (например `Dev/Dev.md`, `AI-ML/AI-ML.md`) — иначе `[[index]]` перестаёт резолвиться в Obsidian
-- Ссылки на хабы — с путём: `[[AI-ML/AI-ML|AI & ML]]`
+- Имена файлов: lowercase, hyphens, без пробелов (например `telemost-recorder.md`)
+- Каждая страница начинается с YAML frontmatter (см. ниже)
+- `wikilinks` — минимум 2 исходящие ссылки на страницу
+- При обновлении страницы — бампить `updated`
+- Каждая новая страница добавляется в `index.md` в нужную секцию
 - Каждое действие записывается в `log.md`
-- **Provenance:** на страницах, синтезирующих 3+ источника, помечать абзацы `^[source]`
-- **Confidence:** `confidence: high|medium|low` для спорных/быстро меняющихся тем
+- **Provenance:** на страницах, синтезирующих 3+ источника, помечать абзацы `^[raw/articles/file.md]`
+- **ВАЖНО: в vault только ОДИН index.md — корневой каталог.** Хабы не нужны — навигация через index.md
+- **raw/ никогда не редактировать** — исправления только в wiki-страницах
 
 ## Frontmatter
 
 ```yaml
 ---
-date: YYYY-MM-DD
-tags: [ai, llm]
-confidence: medium        # опционально: high|medium|low
-contested: true           # опционально: есть противоречия
-sources: [ссылка]         # опционально
+title: Page Title
+created: YYYY-MM-DD
+updated: YYYY-MM-DD
+type: entity | concept | comparison | query | summary
+tags: [из таксономии]
+sources: [raw/articles/source.md]
+confidence: high | medium | low   # опционально
+contested: true                   # опционально
 ---
 ```
 
 ## Tag Taxonomy
 
-Разделённые теги (добавлять новые ТОЛЬКО через этот список):
+Правило: тег должен быть в таксономии; новые теги — сначала сюда.
 
-- **AI/ML**: ai, llm, mcp, free-tier, model, local-llm, omniroute, whisper, deepseek, ollama, free-ai, neural-networks, halyava, gateway, openrouter, claude, codex, cli, tools, tool, agent
-- **Разработка**: dev, python, go, node, docker, n8n, typescript, clean-architecture, pipeline, api, architecture, webrtc, recorder, markdown, agents
-- **Проекты**: project, kpn-agent, telemost, marketplace, wb, ozon, vip-coder, job-search, scraper, freebies
-- **Инфраструктура**: system, hermes, server, proxy, telegram
-- **Трейдинг**: trading, algo
-- **Знания**: concept, wiki, llm-wiki, obsidian, source, monitoring, events, local, sources, vibecoding
+- **Типы страниц**: entity, concept, comparison, query
+- **AI/ML**: llm, mcp, model, free-tier, local-llm, whisper, omniroute, openrouter, groq
+- **Продукты/Организации**: product, project, org, tool, bot, channel
+- **Техники**: agent, protocol, rag, trading, automation, scraping
+- **Стек**: python, go, node, docker, telegram, obsidian
+- **Данные/Мета**: meeting, transcript, monitoring, wiki, halyava
 
 ## Page Thresholds
 
 - **Создавать страницу**: сущность/концепция в 2+ источниках ИЛИ центральная для одного
 - **Дополнять существующую**: источник упоминает уже покрытое
 - **НЕ создавать**: проходные упоминания, мелочи, вне домена
-- **Сплит страницы**: >200 строк — разбить с перекрёстными ссылками
+- **Сплит**: страница >200 строк — разбить с перекрёстными ссылками
 - **Архив**: контент полностью замещён → `_archive/`, убрать из index
+
+## Типы страниц
+
+- **Entity** — одна страница на сущность: обзор, ключевые факты, связи (wikilinks), источники
+- **Concept** — определение, текущее состояние, открытые вопросы, связанные концепции
+- **Comparison** — что сравнивается и зачем, измерения (таблица), вердикт, источники
+- **Query** — сохранённый ответ, который больно пере-выводить
 
 ## Update Policy
 
 1. Свежие источники обычно заменяют старые (проверять даты)
 2. При противоречии — фиксировать обе позиции с датами и источниками
 3. Помечать `contested: true` / `contradictions: [page]`
-4. Выносить на ревью пользователя в lint-отчёте
+4. Выносить на ревью в lint-отчёте
