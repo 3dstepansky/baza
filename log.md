@@ -14,3 +14,9 @@
 - comparisons/free-tier-providers.md создана
 - WIKI_PATH=/home/ubuntu/baza установлен
 - 35 файлов перелинкованы под новую структуру
+
+## [2026-08-02] create | Каркас исследования многоагентной разработки automation-проектов
+- Созданы raw-источники: 11 файлов (GitHub, Web/arXiv, Telegram MCP-срез)
+- Созданы wiki-страницы: 5 файлов
+- Обновлены SCHEMA.md (таксономия), index.md (каталог)
+- Тема стартует как долгий исследовательский проект: raw → wiki → synthesis → NotebookLM podcast
