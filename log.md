@@ -37,3 +37,9 @@
 - Создана wiki-страница entities/green-broker.md
 - Обновлены concepts/spec-driven-agent-development.md, concepts/multi-agent-development-methodology.md, index.md
 - Зафиксировано: Green Broker — собственный проект Павла, оформленный через Constitution → Spec → Plan; MVP фокусируется на B2B-заявках ландшафтников, виртуальной корзине и PDF КП
+
+## [2026-08-02] ingest | Green Broker — коммерческие предложения PDF
+- Извлечён текст из PDF и сохранены raw-страницы: raw/articles/green-broker-kp-pitomniki-2026-08-02.md, raw/articles/green-broker-kp-telegram-bot-2026-08-02.md
+- Оригинальные PDF сохранены как raw/assets/green-broker/KP-pitomniki.pdf и raw/assets/green-broker/KP-telegram-bot.pdf
+- Обновлена entities/green-broker.md: добавлен go-to-market слой, pricing, модель подписки питомников и этапы из КП
+- Обновлён index.md

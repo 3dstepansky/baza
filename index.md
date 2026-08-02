@@ -6,7 +6,7 @@ tags: [index, hub]
 
 > Content catalog. Every wiki page listed with a one-line summary.
 > Read this first for any query.
-> Last updated: 2026-08-02 | Total pages: 70
+> Last updated: 2026-08-02 | Total pages: 72
 
 ## Entities
 
@@ -77,6 +77,8 @@ tags: [index, hub]
 - [[raw/articles/green-broker-constitution-2026-08-02|Green Broker — constitution.md]]
 - [[raw/articles/green-broker-spec-2026-08-02|Green Broker — spec.md]]
 - [[raw/articles/green-broker-plan-2026-08-02|Green Broker — plan.md]]
+- [[raw/articles/green-broker-kp-telegram-bot-2026-08-02|Green Broker — КП Telegram-бот]]
+- [[raw/articles/green-broker-kp-pitomniki-2026-08-02|Green Broker — КП для питомников]]
 
 ## Служебные
 
