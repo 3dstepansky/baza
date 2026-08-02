@@ -6,7 +6,7 @@ tags: [index, hub]
 
 > Content catalog. Every wiki page listed with a one-line summary.
 > Read this first for any query.
-> Last updated: 2026-08-02 | Total pages: 39
+> Last updated: 2026-08-02 | Total pages: 40
 
 ## Entities
 
@@ -28,6 +28,7 @@ tags: [index, hub]
 - [[entities/scrum-center|Scrum центр]]
 - [[entities/telemost-recorder|Telemost Recorder — запись Яндекс.Телемост 🎙️]]
 - [[entities/vibecoder-sources|📖 LLM Wiki Baza — Вайбкодерские источники для мониторинга]]
+- [[entities/apply-pilot|Apply Pilot — проект поиска работы]]
 
 ## Concepts
 
@@ -71,6 +72,7 @@ tags: [index, hub]
 - [[raw/papers/agentic-coding-evaluation-2026|Agentic coding evaluation — paper snapshot]]
 - [[raw/papers/agentic-software-benchmarks-2026|Agentic software benchmarks — paper snapshot]]
 - [[raw/transcripts/telegram-multi-agent-development-2026-08-02|Telegram: multi-agent / Claude Code / vibe-coding snippets]]
+- [[raw/transcripts/apply-pilot-context-2026-08-02|Apply Pilot — контекст от Павла]]
 
 ## Служебные
 

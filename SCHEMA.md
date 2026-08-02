@@ -61,7 +61,7 @@ contested: true                   # опционально
 
 - **Типы страниц**: entity, concept, comparison, query
 - **AI/ML**: llm, mcp, model, free-tier, local-llm, whisper, omniroute, openrouter, groq
-- **Продукты/Организации**: product, project, org, tool, bot, channel
+- **Продукты/Организации**: product, project, org, tool, bot, channel, job-search
 - **Техники**: agent, protocol, rag, trading, automation, scraping, multi-agent, orchestration, methodology, benchmark, quality-gate, spec-driven, security
 - **Стек**: python, go, node, docker, telegram, obsidian, github, claude-code, codex
 - **Данные/Мета**: meeting, transcript, monitoring, wiki, halyava

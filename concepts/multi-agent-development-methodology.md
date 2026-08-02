@@ -16,7 +16,9 @@ confidence: medium
 
 ## Базовый цикл
 
-1. **Intent capture** — человек формулирует бизнес-цель и ограничения.
+> Для Павла базовый язык процесса — GitHub Spec Kit: **project → spec → plan → tasks → implement**. Ниже этот цикл расширен под многоагентную разработку automation-проектов.
+
+1. **Intent capture / Project** — человек формулирует бизнес-цель, проектный контекст и ограничения.
 2. **Spec pass** — planner превращает намерение в спецификацию: scope, non-goals, risks, acceptance criteria.
 3. **Task slicing** — architect/planner режет работу на независимые packages.
 4. **Parallel execution** — implementer/researcher agents работают в изолированных контекстах.
@@ -57,6 +59,10 @@ confidence: medium
 - **Replayable tests**: сценарий можно повторить без ручного клика.
 - **Rollback**: как откатить файлы, cron, config, внешние записи.
 - **Evidence log**: агент показывает реальные tool outputs, а не «готово».
+
+## Живые кейсы
+
+- [[entities/apply-pilot|Apply Pilot]] — совместный проект поиска работы; потенциальный пример фактической агентной/spec-driven разработки с Opus/MR, где Павел участвует ресурсами, но не является владельцем методологии или продукта.
 
 ## Связанные заметки
 
