@@ -6,7 +6,7 @@ tags: [index, hub]
 
 > Content catalog. Every wiki page listed with a one-line summary.
 > Read this first for any query.
-> Last updated: 2026-08-02 | Total pages: 40
+> Last updated: 2026-08-02 | Total pages: 70
 
 ## Entities
 
@@ -14,6 +14,7 @@ tags: [index, hub]
 - [[entities/baza-wiki|Baza Wiki — проект базы знаний 🧠]]
 - [[entities/event-digest|Event Digest CLI]]
 - [[entities/go|Go 🦫]]
+- [[entities/green-broker|Green Broker — Telegram-бот для продажи растений]]
 - [[entities/gr-departments|GR Департаменты]]
 - [[entities/hermes-agent|Hermes Agent — Платформа агентов 🧬]]
 - [[entities/hermes-marketplace-tools|Marketplace MCP Server 🛒]]
@@ -73,6 +74,9 @@ tags: [index, hub]
 - [[raw/papers/agentic-software-benchmarks-2026|Agentic software benchmarks — paper snapshot]]
 - [[raw/transcripts/telegram-multi-agent-development-2026-08-02|Telegram: multi-agent / Claude Code / vibe-coding snippets]]
 - [[raw/transcripts/apply-pilot-context-2026-08-02|Apply Pilot — контекст от Павла]]
+- [[raw/articles/green-broker-constitution-2026-08-02|Green Broker — constitution.md]]
+- [[raw/articles/green-broker-spec-2026-08-02|Green Broker — spec.md]]
+- [[raw/articles/green-broker-plan-2026-08-02|Green Broker — plan.md]]
 
 ## Служебные
 

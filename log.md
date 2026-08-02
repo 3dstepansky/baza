@@ -31,3 +31,9 @@
 - Создана entities/apply-pilot.md
 - Обновлены concepts/multi-agent-development-methodology.md, SCHEMA.md, index.md
 - Зафиксировано ограничение: Павел участвует ресурсами, но не является инициатором/методологическим владельцем/продуктовым владельцем проекта
+
+## [2026-08-02] ingest | Green Broker — реальный проект Telegram-бота для продажи растений
+- Сохранены raw-источники: raw/articles/green-broker-constitution-2026-08-02.md, raw/articles/green-broker-spec-2026-08-02.md, raw/articles/green-broker-plan-2026-08-02.md
+- Создана wiki-страница entities/green-broker.md
+- Обновлены concepts/spec-driven-agent-development.md, concepts/multi-agent-development-methodology.md, index.md
+- Зафиксировано: Green Broker — собственный проект Павла, оформленный через Constitution → Spec → Plan; MVP фокусируется на B2B-заявках ландшафтников, виртуальной корзине и PDF КП

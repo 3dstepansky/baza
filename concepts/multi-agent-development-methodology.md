@@ -64,6 +64,12 @@ confidence: medium
 
 - [[entities/apply-pilot|Apply Pilot]] — совместный проект поиска работы; потенциальный пример фактической агентной/spec-driven разработки с Opus/MR, где Павел участвует ресурсами, но не является владельцем методологии или продукта.
 
+
+## Green Broker как второй живой кейс
+
+[[entities/green-broker|Green Broker]] важен для методологии как проект, где Spec Kit уже применён напрямую: есть Конституция, `spec.md` и `plan.md`. В отличие от [[entities/apply-pilot|Apply Pilot]], где Павел не является владельцем процесса, Green Broker — собственный проект Павла и может стать полноценным полигоном для схемы: spec-driven вход → декомпозиция в `tasks.md` → роли агентов → quality gates → реализация.
+
+
 ## Связанные заметки
 
 - [[concepts/agent-roles-for-automation|Роли агентов для automation]]
