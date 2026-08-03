@@ -164,7 +164,9 @@ def build_site():
         shutil.rmtree(OUTPUT)
     os.makedirs(OUTPUT)
     for root, dirs, fnames in os.walk(VAULT):
-        if any(x in root for x in ['.git', '_site', 'scripts', '.hermes', '_archive']):
+        rel_root = os.path.relpath(root, VAULT)
+        rel_parts = set(() if rel_root == '.' else rel_root.split(os.sep))
+        if rel_parts & {'.git', '_site', 'scripts', '.hermes', '_archive'}:
             continue
         for f in fnames:
             if f.endswith('.md'):

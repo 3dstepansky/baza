@@ -12,8 +12,15 @@ with open(d3_path) as f:
 nodes, edges = [], []
 seen_files, seen_edges = set(), set()
 
+EXCLUDE_DIRS = {'.git', '_site', 'scripts', '.hermes', '_archive'}
+
+def should_skip(root):
+    rel = os.path.relpath(root, vault_root)
+    parts = set(() if rel == '.' else rel.split(os.sep))
+    return bool(parts & EXCLUDE_DIRS)
+
 for root, dirs, fnames in os.walk(vault_root):
-    if '.git' in root:
+    if should_skip(root):
         continue
     for f in fnames:
         if not f.endswith('.md'):
@@ -32,7 +39,7 @@ for root, dirs, fnames in os.walk(vault_root):
         nodes.append({"id": rel, "label": label, "group": group, "file": rel})
 
 for root, dirs, fnames in os.walk(vault_root):
-    if '.git' in root:
+    if should_skip(root):
         continue
     for f in fnames:
         if not f.endswith('.md'):
