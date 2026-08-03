@@ -1,7 +1,7 @@
 ---
 source_url: telegram://dm/pavel/apply-pilot-context-2026-08-02
 ingested: 2026-08-02
-sha256: 48c229b4e9edff3d8e777678a687def79b1dc3f9a940c62c4b33a323e86edc36
+sha256: 0cf884993a70dba4b66df98b5034ed55c6e993835fae5caba89cfce7030d9091
 ---
 
 # Apply Pilot — контекст от Павла

@@ -50,3 +50,8 @@
 - Полностью обновлена entities/telemost-recorder.md: архитектура v04, компоненты, UX, SQLite, US-16, roadmap, риски
 - Проверка: `npm install && npm test` в `/tmp/telemost-repo` → 3 теста прошли; npm audit сообщает 16 vulnerabilities
 - Обновлён index.md
+## [2026-08-03] ingest+lint | Academic Difference Assistant и LLM Wiki lint
+- Добавлены raw-источники: raw/transcripts/academic-difference-assistant-meeting-2026-08-03-transcript.md, raw/transcripts/academic-difference-assistant-meeting-2026-08-03-summary.md
+- Создана wiki-страница entities/academic-difference-assistant.md
+- Расширена SCHEMA.md tag taxonomy для полного llm-wiki lint
+- Обновлён index.md и queries/README.md

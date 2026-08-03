@@ -3,16 +3,19 @@ title: Wiki Index — Baza
 
 tags: [index, hub]
 type: query
+created: 2026-08-03
+updated: 2026-08-03
 ---
 
 # Wiki Index — Baza 🧠
 
 > Content catalog. Every wiki page listed with a one-line summary.
 > Read this first for any query.
-> Last updated: 2026-08-03 | Total pages: 74
+> Last updated: 2026-08-03 | Total pages: 77
 
 ## Entities
 
+- [[entities/academic-difference-assistant|Academic Difference Assistant — ассистент расчёта академической разницы]]
 - [[entities/asati-shill|ASATI Shill]]
 - [[entities/baza-wiki|Baza Wiki — проект базы знаний 🧠]]
 - [[entities/event-digest|Event Digest CLI]]
@@ -60,10 +63,20 @@ type: query
 - [[comparisons/agent-orchestration-tools|Сравнение подходов к orchestration coding agents]]
 
 ## Queries
+- [[queries/README|Queries README]] — описание слоя сохранённых запросов
 - [[queries/multi-agent-automation-research-plan|Исследовательский проект: методология многоагентной разработки automation-проектов]]
 
 ## Raw (immutable)
 
+- [[raw/articles/omniroute-technical-documentation|OmniRoute — technical documentation]]
+- [[raw/articles/omniroute-free-tier-providers-report|OmniRoute — free-tier providers report]]
+- [[raw/transcripts/2026-07-13-golos|Расшифровка встречи 2026-07-13 — голос]]
+- [[raw/transcripts/2026-07-10-golos|Расшифровка встречи 2026-07-10 — голос]]
+- [[raw/transcripts/2026-07-15-golos|Расшифровка встречи 2026-07-15 — голос]]
+- [[raw/transcripts/2026-07-14-lichnoe|Расшифровка встречи 2026-07-14 — личное]]
+- [[raw/transcripts/2026-07-lichny|Расшифровка встречи 2026-07 — личная]]
+- [[raw/transcripts/academic-difference-assistant-meeting-2026-08-03-summary|Academic Difference Assistant — meeting summary]]
+- [[raw/transcripts/academic-difference-assistant-meeting-2026-08-03-transcript|Academic Difference Assistant — meeting transcript]]
 - [[raw/org-structure|Оргструктура «Синергия»]]
 - [[raw/articles/anthropic-agent-teams-2026|Claude Code Agent Teams — source snapshot]]
 - [[raw/articles/github-spec-kit-2026|GitHub Spec Kit — source snapshot]]

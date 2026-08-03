@@ -1,7 +1,7 @@
 ---
 source_url: telegram-document:KP-telegram-bot.pdf
 ingested: 2026-08-02
-sha256: 16d4e1f710e62cc1f73f24b9bdc7936d26a9c91a2cfc2cd01204e42b0c15d2fb
+sha256: 1eabd5eef1a98ba061a0e94a8efb40d95791b4be75bc9b48e2ff5a4bf4862744
 title: Green Broker — КП Telegram-бот для продаж посадочного материала
 asset: raw/assets/green-broker/KP-telegram-bot.pdf
 ---

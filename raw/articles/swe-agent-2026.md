@@ -1,7 +1,7 @@
 ---
 source_url: https://github.com/swe-agent/swe-agent
 ingested: 2026-08-02
-sha256: ef0730be1616659bf59b771e0a5ec1f726f5f219e9524dd15eb94f2203c56b76
+sha256: c398e13b606d84144c20911c07ab809abe55d2f57ff01370fd3a4cc9cf7aa2be
 ---
 
 # SWE-agent — source snapshot

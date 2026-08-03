@@ -1,7 +1,7 @@
 ---
 source_url: https://arxiv.org/html/2508.00083v1
 ingested: 2026-08-02
-sha256: 0c9ab01b65bb9c9a9c47aaf0e0372342608d04c43b83c9ac00ad6d7281c806e8
+sha256: 9f1bc880559905065ee98720dfea01dc248005eff5f3bcfe4afb674ceb527c02
 ---
 
 # Agentic software benchmarks — paper snapshot

@@ -1,7 +1,7 @@
 ---
 source_url: telegram-document:KP-pitomniki.pdf
 ingested: 2026-08-02
-sha256: b17ba0491814780aff1fd23ff5dae14ef136bf4f7348f70e658c54b57e55c21b
+sha256: 57e6c457ab22d00b05bde7defb8226ec43bc7da31c94db0a5b3ba3a69969b849
 title: Green Broker — КП для питомников и садовых центров
 asset: raw/assets/green-broker/KP-pitomniki.pdf
 ---

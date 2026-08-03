@@ -7,7 +7,7 @@
 
 Персональная база знаний: AI/ML и вайбкодинг, free-tier провайдеры, разработка,
 алготрейдинг, инфраструктура Hermes, проекты (КПН-Агент, Telemost Recorder),
-холдинг «Синергия».
+холдинг «Синергия», образовательные automation-проекты.
 
 ## Структура (три слоя)
 
@@ -60,10 +60,10 @@ contested: true                   # опционально
 Правило: тег должен быть в таксономии; новые теги — сначала сюда.
 
 - **Типы страниц**: entity, concept, comparison, query
-- **AI/ML**: llm, mcp, model, free-tier, local-llm, whisper, omniroute, openrouter, groq
-- **Продукты/Организации**: product, project, org, tool, bot, channel, job-search
-- **Техники**: agent, protocol, rag, trading, automation, scraping, multi-agent, orchestration, methodology, benchmark, quality-gate, spec-driven, security
-- **Стек**: python, go, node, docker, telegram, obsidian, github, claude-code, codex
+- **AI/ML**: llm, mcp, model, free-tier, local-llm, whisper, omniroute, openrouter, groq, ai, claude, deepseek, ollama, neural-networks, llm-wiki, free-ai
+- **Продукты/Организации**: product, project, org, tool, bot, channel, job-search, marketplace, wb, ozon, vip-coder, sources, events, education
+- **Техники**: agent, protocol, rag, trading, automation, scraping, scraper, multi-agent, orchestration, methodology, benchmark, quality-gate, spec-driven, security, pipeline, clean-architecture, architecture, agents, api, proxy, gateway, markdown, knowledge, local, privacy, ocr, excel
+- **Стек**: python, go, node, docker, telegram, obsidian, github, claude-code, codex, typescript, cli, dev, language, system, hermes, infra, json-rpc, kpn-agent, porucheniya, algo, tools, freebies, vibecoding, lint
 - **Данные/Мета**: meeting, transcript, monitoring, wiki, halyava
 
 ## Page Thresholds

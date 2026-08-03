@@ -17,3 +17,9 @@ Filed query results — ценные ответы, которые больно �
 
 - [[dashboard|LLM Wiki Baza Dashboard]]
 - [[index|Wiki Index]]
+
+## Сохранённые запросы
+
+- [[queries/multi-agent-automation-research-plan|Методология многоагентной разработки]]
+- [[dashboard|LLM Wiki Baza Dashboard]]
+- [[index|Wiki Index]]

@@ -3,6 +3,7 @@ date: 2026-07-30
 tags: [synergy, org-structure]
 type: summary
 confidence: high
+sha256: 20f81eecd73cdcda682b3e646defcfc4288adef4d8f02775d510bb77adfba21c
 ---
 
 # Оргструктура «Синергия»

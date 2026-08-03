@@ -1,7 +1,7 @@
 ---
 source_url: https://github.com/ChristopherKahler/paul
 ingested: 2026-08-02
-sha256: 39914a3dde628f88ea2810586729d36d9824029f7defc836eb55e84b785f3d48
+sha256: d9067a3becfa6f041a886afd74599cc98b0e5c0a3fc022927585e237c04289c2
 ---
 
 # PAUL / agent workflow patterns — source snapshot

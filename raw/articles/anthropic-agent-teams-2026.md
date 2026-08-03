@@ -1,7 +1,7 @@
 ---
 source_url: https://code.claude.com/docs/en/agent-teams
 ingested: 2026-08-02
-sha256: fe7071951a81894d6abf307594f9daaec2431375df5d349a3dc5350704ec0a48
+sha256: 93e514a69afbaa158c9de83a7106a77f4473b3a510ca778a92165410935e2851
 ---
 
 # Claude Code Agent Teams — source snapshot

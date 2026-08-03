@@ -1,7 +1,7 @@
 ---
 source_url: https://code.visualstudio.com/blogs/2026/02/05/multi-agent-development
 ingested: 2026-08-02
-sha256: 1179b0436ab613f8749bfaa98772b9285d2af269ead0ee8cc2c31ec5bae95b1b
+sha256: 1d9e7635e84f6f615121f268e5bf05a45aa68ae7c2d3adbc6b09f84c86a88e33
 ---
 
 # VS Code multi-agent development — source snapshot

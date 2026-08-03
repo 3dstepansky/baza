@@ -1,7 +1,7 @@
 ---
 source_url: https://arxiv.org/html/2505.02133v1
 ingested: 2026-08-02
-sha256: 6d8bd2a177f4fee02ea7eb888b47bc579c0443650cf7db3c45222cef13cb51ad
+sha256: 89d444781f6cf0d13937097fc822a7d17ad1ec4371f4da4f7ede4053edeff88c
 ---
 
 # Agentic coding evaluation — paper snapshot

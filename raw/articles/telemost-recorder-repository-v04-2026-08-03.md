@@ -1,7 +1,7 @@
 ---
 source_url: https://github.com/3dstepansky/stepansky-telemost-recorder-doker
 ingested: 2026-08-03
-sha256: c92e635b7b877efe21d4233fae607699877ef8086e679dbaa7ef1b3f2e5f9f66
+sha256: 66e38b47f7340df0b4de7c68eb2993377fe58063a24f47d639fd3feb07bede86
 title: Telemost Recorder repository snapshot v04
 commit: 508deeb
 branch: v04

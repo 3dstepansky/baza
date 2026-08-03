@@ -1,7 +1,7 @@
 ---
 source_url: https://github.github.com/spec-kit
 ingested: 2026-08-02
-sha256: 9a0cc3635813a5c173a699e063d91b7a3bd3bb14c43a81c335baeb501c2d2ab5
+sha256: f37aa8ecec32cb3e6a680a8f216babee8e4afce4ac53d2e675a5e1dccf80259c
 ---
 
 # GitHub Spec Kit — source snapshot

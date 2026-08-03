@@ -1,7 +1,7 @@
 ---
 source_url: https://arxiv.org/abs/2507.19902
 ingested: 2026-08-02
-sha256: c1ec8bb8cd0b84fc663fd375239fdead9ada9d6c8a51cd74497d4caf38f87d69
+sha256: 7b32b7633e7ceec629682eeeab39ea0d3ec9ae2c503c2ffead5b20234968526d
 ---
 
 # Multi-agent software engineering — paper snapshot
