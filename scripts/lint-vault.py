@@ -1,98 +1,152 @@
 #!/usr/bin/env python3
-"""Lint vault: check wiki-links, encoding, frontmatter, orphans."""
-import os, re, sys
+"""Lint Baza vault using the llm-wiki/Obsidian conventions.
 
-vault = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+Checks are intentionally scoped to the editable wiki layer. raw/ and _archive/
+are kept for provenance and history, so old links there do not fail the public
+site build. Code spans/blocks are ignored before parsing wikilinks.
+"""
+import os
+import re
+import sys
+from pathlib import Path
+
+vault = Path(__file__).resolve().parents[1]
 errors = []
+warnings = []
 
-def md_files():
-    for root, dirs, fnames in os.walk(vault):
-        if '.git' in root or '.obsidian' in root or '_site' in root:
-            continue
-        for f in fnames:
-            if f.endswith('.md'):
-                yield os.path.join(root, f)
+WIKI_DIRS = {"entities", "concepts", "comparisons", "queries"}
+SERVICE_FILES = {"index.md", "SCHEMA.md", "log.md", "dashboard.md"}
+ORPHAN_EXEMPT = {"index.md", "SCHEMA.md", "log.md"}
+LOW_OUTBOUND_EXEMPT = {"index.md", "SCHEMA.md", "log.md"}
+
+
+def is_excluded(path: Path) -> bool:
+    parts = set(path.relative_to(vault).parts)
+    return bool(parts & {".git", ".obsidian", "_site", "_archive", ".hermes"})
+
+
+def all_md_files():
+    for fp in vault.rglob("*.md"):
+        if not is_excluded(fp):
+            yield fp
+
+
+def wiki_files():
+    for fp in all_md_files():
+        rel = fp.relative_to(vault)
+        if rel.parts[0] in WIKI_DIRS or fp.name in SERVICE_FILES:
+            yield fp
+
+
+def strip_code(text: str) -> str:
+    text = re.sub(r"```.*?```", "", text, flags=re.S)
+    text = re.sub(r"`[^`]*`", "", text)
+    return text
+
+
+def wiki_links(text: str):
+    text = strip_code(text)
+    pattern = r"\[\[([^\]|#]+)(?:#[^\]|]+)?(?:\|[^\]]+)?\]\]"
+    for match in re.finditer(pattern, text):
+        yield match.group(1).strip().removesuffix(".md")
+
+
+all_files = list(all_md_files())
+editable_files = list(wiki_files())
 
 # --- 1. Encoding ---
-for fp in md_files():
-    with open(fp, 'rb') as fh:
-        raw = fh.read()
+for fp in all_files:
     try:
-        raw.decode('utf-8')
+        fp.read_bytes().decode("utf-8")
     except UnicodeDecodeError:
-        errors.append(f"🔴 ENCODING: {os.path.relpath(fp, vault)} — not UTF-8")
+        errors.append(f"ENCODING: {fp.relative_to(vault)} — not UTF-8")
 
 # --- 2. Empty notes ---
-for fp in md_files():
-    with open(fp, encoding='utf-8') as fh:
-        text = fh.read().strip()
+for fp in all_files:
+    text = fp.read_text(encoding="utf-8", errors="replace").strip()
     if len(text) < 10:
-        errors.append(f"🟡 EMPTY: {os.path.relpath(fp, vault)} — {len(text)} chars")
+        warnings.append(f"EMPTY: {fp.relative_to(vault)} — {len(text)} chars")
 
-# --- 3. Frontmatter on index files ---
-for fp in md_files():
-    rel = os.path.relpath(fp, vault)
-    if os.path.basename(fp) == 'index.md':
-        with open(fp, encoding='utf-8') as fh:
-            content = fh.read()
-        if not content.startswith('---'):
-            errors.append(f"🔴 FRONTMATTER: {rel} — no frontmatter on index")
-        elif 'tags:' not in content.split('---')[1]:
-            errors.append(f"🟡 FRONTMATTER: {rel} — no 'tags:' in frontmatter")
+# --- 3. Frontmatter for editable wiki layer ---
+for fp in editable_files:
+    rel = str(fp.relative_to(vault))
+    if fp.name in {"SCHEMA.md", "log.md"} or fp.name == "README.md":
+        continue
+    content = fp.read_text(encoding="utf-8", errors="replace")
+    if not content.startswith("---"):
+        errors.append(f"FRONTMATTER: {rel} — missing YAML frontmatter")
+        continue
+    fm = content.split("---", 2)[1] if content.count("---") >= 2 else ""
+    for field in ("title:", "type:", "tags:"):
+        if field not in fm:
+            errors.append(f"FRONTMATTER: {rel} — missing {field}")
 
-# --- 4. Broken wiki-links ---
+# --- 4. Known wikilink targets ---
 known_path = {}
 known_base = {}
-for fp in md_files():
-    rel = os.path.relpath(fp, vault)
-    no_ext = os.path.splitext(rel)[0]  # "Dev/Python"
+for fp in all_files:
+    rel = str(fp.relative_to(vault))
+    no_ext = rel[:-3]
     known_path[no_ext] = rel
-    simple = os.path.basename(no_ext)  # "Python"
-    known_base[simple] = rel
-    # Alias: Dev/index.md -> known_path["Dev"]
-    if simple == 'index':
-        parent = os.path.dirname(no_ext)  # "Dev" or ""
-        if parent:
+    known_base[Path(no_ext).name.lower()] = rel
+    if Path(no_ext).name == "index":
+        parent = str(Path(no_ext).parent)
+        if parent and parent != ".":
             known_path[parent] = rel
         else:
-            known_path['Home'] = rel
+            known_path["Home"] = rel
 
-for fp in md_files():
-    rel = os.path.relpath(fp, vault)
-    with open(fp, encoding='utf-8') as fh:
-        content = fh.read()
-    for m in re.finditer(r'\[\[([^\]|]+)(?:\|[^\]]+)?\]\]', content):
-        link = m.group(1).strip()
-        resolved = known_path.get(link) or known_base.get(link)
+# Allow asset links without extension in raw references.
+for asset in vault.glob("raw/assets/**/*"):
+    if asset.is_file():
+        rel = str(asset.relative_to(vault))
+        known_path[str(Path(rel).with_suffix(""))] = rel
+        known_base[Path(rel).stem.lower()] = rel
+
+# --- 5. Broken wikilinks in editable wiki layer only ---
+for fp in editable_files:
+    rel = str(fp.relative_to(vault))
+    content = fp.read_text(encoding="utf-8", errors="replace")
+    for link in wiki_links(content):
+        resolved = known_path.get(link) or known_base.get(Path(link).name.lower())
         if not resolved:
-            errors.append(f"🟡 BROKEN LINK: {rel} → [[{link}]]")
+            errors.append(f"BROKEN LINK: {rel} → [[{link}]]")
 
-# --- 5. Orphans (no incoming links) ---
-incoming = {fp: 0 for fp in md_files()}
-for fp in md_files():
-    with open(fp, encoding='utf-8') as fh:
-        content = fh.read()
-    for m in re.finditer(r'\[\[([^\]|]+)(?:\|[^\]]+)?\]\]', content):
-        link = m.group(1).strip()
-        resolved = known_path.get(link) or known_base.get(link)
+# --- 6. Orphans and outbound links in editable wiki layer ---
+incoming = {str(fp.relative_to(vault)): 0 for fp in editable_files if fp.name != "README.md"}
+outbound = {}
+for fp in editable_files:
+    rel = str(fp.relative_to(vault))
+    content = fp.read_text(encoding="utf-8", errors="replace")
+    resolved_links = set()
+    for link in wiki_links(content):
+        resolved = known_path.get(link) or known_base.get(Path(link).name.lower())
         if resolved:
-            target_fp = os.path.join(vault, resolved)
-            incoming[target_fp] = incoming.get(target_fp, 0) + 1
+            resolved_links.add(resolved)
+            if resolved in incoming and resolved != rel:
+                incoming[resolved] += 1
+    outbound[rel] = len(resolved_links)
 
-orphan_count = 0
-for fp, cnt in incoming.items():
-    if cnt == 0:
-        rel = os.path.relpath(fp, vault)
-        errors.append(f"🟢 ORPHAN: {rel} — 0 incoming links")
-        orphan_count += 1
+for rel, count in incoming.items():
+    if rel not in ORPHAN_EXEMPT and count == 0:
+        errors.append(f"ORPHAN: {rel} — 0 incoming links")
+
+for rel, count in outbound.items():
+    if rel not in LOW_OUTBOUND_EXEMPT and count < 2:
+        errors.append(f"LOW OUTBOUND: {rel} — {count} links (<2)")
 
 # --- Summary ---
-if not errors:
-    total = len(list(md_files()))
-    print(f"✅ Lint passed — {total} notes, 0 issues")
-    sys.exit(0)
-
-print(f"📋 Lint: {len(errors)} issue(s)")
-for e in errors:
-    print(e)
-sys.exit(1 if any(e.startswith('🔴') for e in errors) else 0)
+print(f"📋 Baza lint — editable wiki: {len(editable_files)} pages; all md: {len(all_files)}")
+if errors:
+    print(f"❌ {len(errors)} error(s)")
+    for e in errors:
+        print("- " + e)
+if warnings:
+    print(f"⚠️ {len(warnings)} warning(s)")
+    for w in warnings:
+        print("- " + w)
+if not errors and not warnings:
+    print("✅ Lint passed — 0 issues")
+elif not errors:
+    print("✅ Lint passed with warnings only")
+sys.exit(1 if errors else 0)

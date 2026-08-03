@@ -36,7 +36,10 @@ th { background:#161b22; color:#f0f6fc; }
 .meta { font-size:0.85em; color:#8b949e; margin:0.5em 0 1em; }
 .tag { display:inline-block; background:#1f6feb33; color:#58a6ff; padding:2px 8px; border-radius:10px; font-size:0.8em; margin:0 3px 3px 0; }
 .backlinks { margin-top:2em; padding-top:1em; border-top:1px solid #30363d; }
-.backlinks h3 { font-size:1em; color:#8b949e; }"""
+.backlinks h3 { font-size:1em; color:#8b949e; }
+.button-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:10px; margin:1em 0; }
+.button { display:block; background:#238636; color:#fff !important; padding:12px 14px; border-radius:8px; text-align:center; font-weight:600; border:1px solid #2ea043; }
+.button:hover { background:#2ea043; text-decoration:none; }"""
 
 def wikilink_to_html(match, prefix):
     text = match.group(1)

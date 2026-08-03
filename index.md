@@ -1,12 +1,15 @@
 ---
+title: Wiki Index — Baza
+
 tags: [index, hub]
+type: query
 ---
 
 # Wiki Index — Baza 🧠
 
 > Content catalog. Every wiki page listed with a one-line summary.
 > Read this first for any query.
-> Last updated: 2026-08-03 | Total pages: 73
+> Last updated: 2026-08-03 | Total pages: 74
 
 ## Entities
 
@@ -84,5 +87,6 @@ tags: [index, hub]
 
 ## Служебные
 
+- [[dashboard|LLM Wiki Baza Dashboard]] — панель состояния, кнопки, граф и lint
 - [[SCHEMA|SCHEMA]] — конвенции, таксономия, thresholds (читать ПЕРВЫМ)
 - [[log|log]] — журнал действий

@@ -1,9 +1,9 @@
----title: "Baza Wiki — проект базы знаний 🧠"
+---
+title: "Baza Wiki — проект базы знаний 🧠"
 type: entity
-
 tags: [project, wiki, obsidian]
 created: 2026-07-30
-updated: 2026-07-31
+updated: 2026-08-03
 ---
 
 
@@ -19,6 +19,7 @@ updated: 2026-07-31
 
 ## Статус
 
+- [[dashboard|Панель состояния]] — кнопки, граф, lint и журнал ведения
 - ✅ Vault инициализирован, хабы созданы
 - ✅ MCP-интеграция (baza/mcpvault)
 - ✅ Статическая публикация + граф связей

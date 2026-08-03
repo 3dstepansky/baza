@@ -4,6 +4,7 @@ type: architecture
 platform: Hermes Agent
 created: 2026-07-30
 updated: 2026-07-31
+tags: [concept, agent, automation]
 ---
 
 # Hermes Agent — Платформа для КПН

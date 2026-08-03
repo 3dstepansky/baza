@@ -4,6 +4,7 @@ type: architecture
 status: current
 created: 2026-07-30
 updated: 2026-07-31
+tags: [concept, wiki, rag]
 ---
 
 # Архитектура: LLM Wiki + RAG

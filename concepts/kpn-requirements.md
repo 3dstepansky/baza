@@ -5,6 +5,7 @@ project: KPN-Agent
 status: active
 created: 2026-07-30
 updated: 2026-07-31
+tags: [concept, project, automation]
 ---
 
 # Контроль поручений — Функциональные требования
