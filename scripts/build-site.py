@@ -8,7 +8,7 @@
 import os, re, shutil, markdown
 from datetime import datetime
 
-VAULT = "/home/ubuntu/baza"
+VAULT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 OUTPUT = os.path.join(VAULT, "_site")
 
 CSS = """* { margin:0; padding:0; box-sizing:border-box; }
