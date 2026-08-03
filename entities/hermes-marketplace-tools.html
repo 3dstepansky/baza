@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Marketplace MCP Server 🛒 — Vault</title>
+<style>* { margin:0; padding:0; box-sizing:border-box; }
+body { background:#0d1117; color:#c9d1d9; font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif; line-height:1.7; font-size:16px; }
+.container { max-width:820px; margin:0 auto; padding:16px; }
+h1 { font-size:1.6em; color:#f0f6fc; margin:0.6em 0 0.4em; border-bottom:1px solid #30363d; padding-bottom:0.3em; }
+h2 { font-size:1.25em; color:#f0f6fc; margin:0.8em 0 0.3em; }
+h3 { font-size:1.1em; color:#f0f6fc; margin:0.6em 0 0.2em; }
+p { margin:0.5em 0; }
+a { color:#58a6ff; text-decoration:none; }
+a:hover { text-decoration:underline; }
+ul, ol { margin:0.5em 0; padding-left:1.5em; }
+li { margin:0.3em 0; }
+code { background:#161b22; padding:2px 6px; border-radius:3px; font-size:0.9em; color:#f0c674; }
+pre { background:#161b22; padding:12px; border-radius:6px; overflow-x:auto; margin:0.8em 0; }
+pre code { background:none; padding:0; }
+blockquote { border-left:3px solid #30363d; padding-left:1em; margin:0.8em 0; color:#8b949e; }
+hr { border:none; border-top:1px solid #30363d; margin:1.2em 0; }
+table { width:100%; border-collapse:collapse; margin:0.8em 0; }
+th, td { border:1px solid #30363d; padding:8px 12px; text-align:left; }
+th { background:#161b22; color:#f0f6fc; }
+.dataview { background:#161b22; border:1px solid #30363d; border-radius:6px; padding:12px; margin:0.8em 0; font-family:monospace; font-size:0.85em; color:#8b949e; }
+.nav { background:#161b22; border-bottom:1px solid #30363d; padding:8px 16px; font-size:14px; position:sticky; top:0; z-index:10; }
+.nav a { color:#58a6ff; }
+.meta { font-size:0.85em; color:#8b949e; margin:0.5em 0 1em; }
+.tag { display:inline-block; background:#1f6feb33; color:#58a6ff; padding:2px 8px; border-radius:10px; font-size:0.8em; margin:0 3px 3px 0; }
+.backlinks { margin-top:2em; padding-top:1em; border-top:1px solid #30363d; }
+.backlinks h3 { font-size:1em; color:#8b949e; }
+.button-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:10px; margin:1em 0; }
+.button { display:block; background:#238636; color:#fff !important; padding:12px 14px; border-radius:8px; text-align:center; font-weight:600; border:1px solid #2ea043; }
+.button:hover { background:#2ea043; text-decoration:none; }</style>
+</head>
+<body>
+<nav class="nav"><span class="crumbs"><a href="/">🏠</a> / <span>entities</span></span></nav>
+<div class="container">
+<h1>Marketplace MCP Server 🛒</h1>
+<div class="meta"><span class="tag">project</span> <span class="tag">mcp</span> <span class="tag">marketplace</span> <span class="tag">wb</span> <span class="tag">ozon</span> last modified: 2026-07-31 07:18</div>
+<h1>Marketplace MCP Server 🛒</h1>
+<p>MCP-сервер для поиска и сравнения товаров на Wildberries и Ozon.</p>
+<p><strong>Расположение:</strong> <code>/home/ubuntu/hermes-marketplace-tools</code></p>
+<h2>Возможности</h2>
+<table>
+<thead>
+<tr>
+<th>Инструмент</th>
+<th>Назначение</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>marketplace_search</code></td>
+<td>Поиск товаров (query, brand, min/max price, лимит)</td>
+</tr>
+<tr>
+<td><code>get_product_card</code></td>
+<td>Полная карточка: характеристики, описание, изображения</td>
+</tr>
+<tr>
+<td><code>get_reviews</code></td>
+<td>Отзывы о товаре (сортировка: useful/recent)</td>
+</tr>
+</tbody>
+</table>
+<h2>Технические детали</h2>
+<ul>
+<li><strong>Язык:</strong> Python (venv: <code>.venv/bin/python -m mcp_server.server</code>)</li>
+<li><strong>Имитация браузера:</strong> HttpClient с <code>impersonate="safari"</code> — <strong>не</strong> "chrome"</li>
+<li><strong>Camoufox:</strong> <code>/home/ubuntu/.cache/camoufox/browsers/official/152.0.4-beta.28-3a105a2f</code></li>
+</ul>
+<h2>Статус площадок</h2>
+<table>
+<thead>
+<tr>
+<th>Площадка</th>
+<th>Статус</th>
+<th>Примечание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Wildberries</strong></td>
+<td>✅ Работает</td>
+<td>card.wb.ru отдаёт 403 на chrome, safari принимает обе точки (search + card)</td>
+</tr>
+<tr>
+<td><strong>Ozon</strong></td>
+<td>⚠️ Блокирован</td>
+<td>Нужен резидентский прокси (SOCKS5 109.248.203.200:1080 жив, но недостаточно)</td>
+</tr>
+</tbody>
+</table>
+<h2>Нюансы</h2>
+<ul>
+<li>Павел купил <strong>WB Клуб</strong> — может влиять на выдачу (цены/скидки клубные)</li>
+<li>Для лучшего покрытия — формировать несколько запросов (с брендом и без)</li>
+<li>Если у маркетплейса поле <code>error</code> — площадка не ответила, пустой <code>items</code> ≠ «товаров нет»</li>
+</ul>
+<h2>Связанное</h2>
+<ul>
+<li><a href="../entities/python.html">Python</a></li>
+<li><a href="../concepts/mcp.html">MCP</a></li>
+<li><a href="../index.html">Проекты</a></li>
+</ul>
+<div class="backlinks"><h3>↩ Обратные ссылки</h3><ul><li><a href="../concepts/mcp.html">concepts/mcp.md</a></li><li><a href="../entities/hermes-agent.html">entities/hermes-agent.md</a></li><li><a href="../entities/python.html">entities/python.md</a></li><li><a href="../index.html">index.md</a></li></ul></div>
+</div>
+</body>
+</html>

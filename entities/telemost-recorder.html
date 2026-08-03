@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Telemost Recorder — запись Яндекс.Телемост — Vault</title>
+<style>* { margin:0; padding:0; box-sizing:border-box; }
+body { background:#0d1117; color:#c9d1d9; font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif; line-height:1.7; font-size:16px; }
+.container { max-width:820px; margin:0 auto; padding:16px; }
+h1 { font-size:1.6em; color:#f0f6fc; margin:0.6em 0 0.4em; border-bottom:1px solid #30363d; padding-bottom:0.3em; }
+h2 { font-size:1.25em; color:#f0f6fc; margin:0.8em 0 0.3em; }
+h3 { font-size:1.1em; color:#f0f6fc; margin:0.6em 0 0.2em; }
+p { margin:0.5em 0; }
+a { color:#58a6ff; text-decoration:none; }
+a:hover { text-decoration:underline; }
+ul, ol { margin:0.5em 0; padding-left:1.5em; }
+li { margin:0.3em 0; }
+code { background:#161b22; padding:2px 6px; border-radius:3px; font-size:0.9em; color:#f0c674; }
+pre { background:#161b22; padding:12px; border-radius:6px; overflow-x:auto; margin:0.8em 0; }
+pre code { background:none; padding:0; }
+blockquote { border-left:3px solid #30363d; padding-left:1em; margin:0.8em 0; color:#8b949e; }
+hr { border:none; border-top:1px solid #30363d; margin:1.2em 0; }
+table { width:100%; border-collapse:collapse; margin:0.8em 0; }
+th, td { border:1px solid #30363d; padding:8px 12px; text-align:left; }
+th { background:#161b22; color:#f0f6fc; }
+.dataview { background:#161b22; border:1px solid #30363d; border-radius:6px; padding:12px; margin:0.8em 0; font-family:monospace; font-size:0.85em; color:#8b949e; }
+.nav { background:#161b22; border-bottom:1px solid #30363d; padding:8px 16px; font-size:14px; position:sticky; top:0; z-index:10; }
+.nav a { color:#58a6ff; }
+.meta { font-size:0.85em; color:#8b949e; margin:0.5em 0 1em; }
+.tag { display:inline-block; background:#1f6feb33; color:#58a6ff; padding:2px 8px; border-radius:10px; font-size:0.8em; margin:0 3px 3px 0; }
+.backlinks { margin-top:2em; padding-top:1em; border-top:1px solid #30363d; }
+.backlinks h3 { font-size:1em; color:#8b949e; }
+.button-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:10px; margin:1em 0; }
+.button { display:block; background:#238636; color:#fff !important; padding:12px 14px; border-radius:8px; text-align:center; font-weight:600; border:1px solid #2ea043; }
+.button:hover { background:#2ea043; text-decoration:none; }</style>
+</head>
+<body>
+<nav class="nav"><span class="crumbs"><a href="/">🏠</a> / <span>entities</span></span></nav>
+<div class="container">
+<h1>Telemost Recorder — запись Яндекс.Телемост</h1>
+<div class="meta"><span class="tag">entity</span> <span class="tag">project</span> <span class="tag">bot</span> <span class="tag">automation</span> <span class="tag">meeting</span> <span class="tag">transcript</span> <span class="tag">node</span> <span class="tag">docker</span> <span class="tag">telegram</span> <span class="tag">whisper</span> last modified: 2026-08-03 08:37</div>
+<h1>Telemost Recorder — запись Яндекс.Телемост 🎙️</h1>
+<p><strong>GitHub:</strong> https://github.com/3dstepansky/stepansky-telemost-recorder-doker<br />
+<strong>Актуальная ветка:</strong> <code>v04</code> — коммит <code>508deeb</code> от 2026-07-03 (<code>feat: direct telegram delivery and ai summary fix</code>).<br />
+<strong>Важно про версии:</strong> <code>master</code> и <code>003v</code> старее (<code>b563afd</code>, 2026-05-31) и README частично продолжает описывать n8n-оркестрацию. Актуальный код и спецификация <code>002-standalone-bot-and-fixes</code> фиксируют переход к автономному Node.js/Telegram-боту без n8n как основного оркестратора. ^[raw/articles/telemost-recorder-repository-v04-2026-08-03.md]</p>
+<h2>Суть проекта</h2>
+<p><strong>Telemost Recorder</strong> — zero-cost бот для записи встреч в <strong>Яндекс.Телемосте</strong>. Он заходит на встречу гостем, перехватывает WebRTC-аудио через Puppeteer/Chromium, сохраняет <code>.webm</code>, транскрибирует встречу через AssemblyAI или Groq Whisper, генерирует саммари через Groq Llama 3.3 70B, а затем отдаёт результаты в Telegram и/или Яндекс.Диск через WebDAV. ^[raw/articles/telemost-recorder-repository-v04-2026-08-03.md]</p>
+<p>Проект важен для базы как живой пример <a href="../concepts/agentic-systems.html">агентной автоматизации</a> вокруг встреч: браузерный агент действует в видеоконференции, извлекает аудио, строит пайплайн STT → summary → delivery и закладывает будущий RAG/архив встреч.</p>
+<h2>Архитектура v04</h2>
+<div class="codehilite"><pre><span></span><code>Telegram bot.js / Telegraf
+  ↓
+run.js — жизненный цикл сессии
+  ↓
+recorder.js — Puppeteer + WebRTC monkey-patch + MediaRecorder
+  ↓
+recordings/&lt;timestamp&gt;/
+  ├── meeting_audio.webm
+  ├── tracks/&lt;trackId&gt;.webm
+  └── meta/track_events.ndjson, tracks_summary.json
+  ↓
+transcribe.js
+  ├── AssemblyAI speaker_labels=true
+  └── Groq Whisper fallback через FFmpeg chunks
+  ↓
+summary.txt / transcript.txt / Telegram / Yandex Disk / S3
+</code></pre></div>
+
+<p>Ключевой архитектурный сдвиг: в старой версии n8n был внешним orchestrator-слоем, а в v04 основной пользовательский контур перенесён в <code>bot.js</code> + SQLite. n8n-файлы (<code>n8n_workflow_v0.4.json</code>, <code>n8n_workflow_head.json</code>) остаются в репозитории как исторические/совместимые артефакты. ^[raw/articles/telemost-recorder-repository-v04-2026-08-03.md]</p>
+<h2>Основные компоненты</h2>
+<table>
+<thead>
+<tr>
+<th>Компонент</th>
+<th>Назначение</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>bot.js</code></td>
+<td>Telegram-бот на Telegraf: меню, FSM, настройки имени бота и Яндекс.Диска, старт/стоп записи</td>
+</tr>
+<tr>
+<td><code>run.js</code></td>
+<td>Запускает <code>recorder.js</code>, после закрытия записи делает раннюю выгрузку аудио и запускает транскрибацию</td>
+</tr>
+<tr>
+<td><code>recorder.js</code></td>
+<td>Headless Chromium/Puppeteer, вход в Телемост, WebRTC monkey-patch, запись mix + per-track файлов</td>
+</tr>
+<tr>
+<td><code>transcribe.js</code></td>
+<td>AssemblyAI → Groq fallback, speaker mapping по <code>track_events.ndjson</code>, выгрузка transcript/summary, отправка в Telegram</td>
+</tr>
+<tr>
+<td><code>db.js</code></td>
+<td>SQLite: <code>users</code>, <code>meetings</code>, state FSM, имя бота, WebDAV-учётки</td>
+</tr>
+<tr>
+<td><code>services/webdav.js</code></td>
+<td>Яндекс.Диск через WebDAV: MKCOL, PUT, MOVE, проверка авторизации</td>
+</tr>
+<tr>
+<td><code>services/summarize.js</code></td>
+<td>Саммари и метаданные папки через Groq <code>llama-3.3-70b-versatile</code></td>
+</tr>
+<tr>
+<td><code>services/transcribe.js</code></td>
+<td>AssemblyAI <code>speaker_labels=true</code>, Groq Whisper <code>verbose_json</code> fallback</td>
+</tr>
+<tr>
+<td><code>services/ffmpeg.js</code></td>
+<td>Конвертация/сегментация аудио для STT</td>
+</tr>
+<tr>
+<td><code>.specify/</code> и <code>.github/prompts/speckit.*</code></td>
+<td>Spec Kit / Specify контур для spec-driven разработки</td>
+</tr>
+</tbody>
+</table>
+<h2>UX Telegram-бота</h2>
+<p>Бот имеет три главных пользовательских раздела:</p>
+<ul>
+<li><strong>🔴 Запись встреч</strong> — ждёт ссылку вида <code>https://telemost.yandex.ru/j/...</code>, заходит в комнату под пользовательским именем, даёт inline-кнопку «Остановить».</li>
+<li><strong>🧠 Аналитика и ИИ</strong> — список встреч, транскрипция, саммари. В текущем <code>bot.js</code> кнопки «Сделать саммари» и «Транскрибировать» ещё выглядят как заглушки, но автоматическая обработка после записи реализована в <code>transcribe.js</code>.</li>
+<li><strong>⚙️ Настройки</strong> — имя бота и подключение Яндекс.Диска через 16-значный WebDAV app password. Если Диск не подключен, бот пытается присылать файлы прямо в Telegram до лимита 50 МБ.</li>
+</ul>
+<h2>База данных</h2>
+<p>Актуальная SQLite-схема в <code>db.js</code>:</p>
+<div class="codehilite"><pre><span></span><code><span class="n">users</span><span class="p">(</span><span class="n">chat_id</span><span class="w"> </span><span class="k">primary</span><span class="w"> </span><span class="k">key</span><span class="p">,</span><span class="w"> </span><span class="n">bot_name</span><span class="p">,</span><span class="w"> </span><span class="n">yandex_user</span><span class="p">,</span><span class="w"> </span><span class="n">yandex_pass</span><span class="p">,</span><span class="w"> </span><span class="k">state</span><span class="p">)</span>
+<span class="n">meetings</span><span class="p">(</span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">chat_id</span><span class="p">,</span><span class="w"> </span><span class="n">meeting_id</span><span class="p">,</span><span class="w"> </span><span class="n">title</span><span class="p">,</span><span class="w"> </span><span class="n">file_path</span><span class="p">,</span><span class="w"> </span><span class="n">transcribed_at</span><span class="p">,</span><span class="w"> </span><span class="n">speaker_count</span><span class="p">,</span><span class="w"> </span><span class="n">utterance_count</span><span class="p">)</span>
+</code></pre></div>
+
+<p>Историческая <code>database.sql</code> описывает PostgreSQL/Supabase-таблицы <code>telemost_meeting_transcripts</code> и <code>telemost_user_settings</code>, но для v04 рабочий runtime — SQLite внутри контейнера. ^[raw/articles/telemost-recorder-repository-v04-2026-08-03.md]</p>
+<h2>Статус требований spec 002</h2>
+<p>Реализовано:</p>
+<ul>
+<li>запись WebRTC-аудио и вход в комнату;</li>
+<li>anti-zombie завершение Chromium через <code>try/finally</code>, <code>dumb-init</code>, SIGINT/SIGTERM;</li>
+<li>автономный Telegram-бот вместо n8n;</li>
+<li>автовыход при завершении встречи/idle/max duration;</li>
+<li>инфостиль сообщений;</li>
+<li>быстрый старт по ссылке;</li>
+<li>персональное имя бота;</li>
+<li>ИИ-саммари и отправка результата в Telegram;</li>
+<li>dual-output WebRTC: общий mix + отдельные per-track <code>.webm</code> + события активности.</li>
+</ul>
+<p>Частично/требует проверки:</p>
+<ul>
+<li>AssemblyAI-диаризация и сопоставление с локальной картой треков;</li>
+<li>выгрузка на Яндекс.Диск/S3 в реальном окружении;</li>
+<li>ИИ-переименование папок WebDAV <code>MOVE</code>;</li>
+<li>архив встреч в Telegram пока базовый.</li>
+</ul>
+<p>Не начато / roadmap:</p>
+<ul>
+<li>Яндекс.Календарь;</li>
+<li>RAG-чат по встрече;</li>
+<li>живой STT/TTS-агент внутри комнаты.</li>
+</ul>
+<h2>US-16: нативная диаризация через WebRTC-треки</h2>
+<p>Самая важная исследовательская линия проекта — гипотеза, что Яндекс.Телемост отдаёт отдельные WebRTC-аудиотреки по участникам. В v04 <code>recorder.js</code> уже реализует dual-output:</p>
+<ol>
+<li><code>meeting_audio.webm</code> — общий микс для STT.</li>
+<li><code>tracks/&lt;trackId&gt;.webm</code> — отдельная запись каждого входящего аудиотрека.</li>
+<li><code>meta/track_events.ndjson</code> — события <code>track-added</code> и <code>speech-segment</code> с <code>trackId</code>, временем и амплитудой.</li>
+<li><code>tracks_summary.json</code> — сводка по трекам.</li>
+</ol>
+<p>Проверка track-probe на реальной встрече 2026-07-02 подтвердила техническую возможность раздельной записи: получены два отдельных <code>.webm</code> трека и события активности. Ограничение: <code>speakerName</code> пока пишется как <code>unknown</code>, нужно улучшить DOM-маппинг имени участника. ^[raw/articles/telemost-recorder-repository-v04-2026-08-03.md]</p>
+<h2>Проверка и качество</h2>
+<p>Я проверила тесты в актуальной ветке <code>v04</code>:</p>
+<div class="codehilite"><pre><span></span><code>npm install
+npm test
+
+# tests 3
+# suites 1
+# pass 3
+# fail 0
+</code></pre></div>
+
+<p>Первый запуск <code>npm test</code> падал из-за отсутствующих зависимостей (<code>sqlite3</code> не установлен). После <code>npm install</code> тесты <code>test/db.test.js</code> прошли: создание дефолтного пользователя, сохранение и обновление пользователя. <code>npm install</code> также показал <code>npm audit</code>: 16 vulnerabilities, включая 1 critical — это отдельный quality-gate перед production. ^[raw/articles/telemost-recorder-repository-v04-2026-08-03.md]</p>
+<h2>Риски и технический долг</h2>
+<ul>
+<li><strong>README drift:</strong> корневой README смешивает старую n8n-архитектуру и v0.4; для ориентации читать ветку <code>v04</code>, <code>specs/002</code>, <code>.specify/memory/constitution.md</code> и код.</li>
+<li><strong>Секреты:</strong> <code>yandex_pass</code> хранится в SQLite; для production нужен отдельный security review и шифрование/секрет-хранилище.</li>
+<li><strong>Speaker names:</strong> WebRTC track-level запись подтверждена, но имена участников пока нестабильны (<code>unknown</code>).</li>
+<li><strong>Telegram file limit:</strong> без Яндекс.Диска аудио &gt;50 МБ не отправится, хотя текст/саммари должны приходить.</li>
+<li><strong>Vulnerabilities:</strong> после <code>npm install</code> зафиксированы 16 audit issues.</li>
+<li><strong>Puppeteer fragility:</strong> вход в Телемост зависит от DOM/селекторов Яндекса.</li>
+<li><strong>RAG privacy:</strong> будущий архивный поиск должен быть жёстко изолирован по <code>chat_id</code>, как прописано в конституции.</li>
+</ul>
+<h2>Roadmap</h2>
+<ol>
+<li>Починить <code>speakerName</code>: сопоставление WebRTC trackId с DOM-именем участника.</li>
+<li>Зафиксировать мастер-формат диаризации: <code>mix + per-track</code> или полноценный <code>diarization_map.json</code>.</li>
+<li>Проверить WebDAV/S3 upload и MOVE-переименование на реальном Яндекс.Диске.</li>
+<li>Довести ручные кнопки «Транскрибировать»/«Сделать саммари» в Telegram UI.</li>
+<li>Закрыть <code>npm audit</code> / обновить уязвимые зависимости.</li>
+<li>Реализовать архивный RAG-Q&amp;A по встречам с изоляцией по <code>chat_id</code>.</li>
+<li>Исследовать real-time STT/TTS агента в комнате с latency &lt;1.5 сек.</li>
+</ol>
+<h2>Связанные заметки</h2>
+<ul>
+<li><a href="../concepts/agentic-systems.html">Агентные системы</a></li>
+<li><a href="../concepts/spec-driven-agent-development.html">Spec-driven агентная разработка</a></li>
+<li><a href="../concepts/multi-agent-development-methodology.html">Методология многоагентной разработки automation-проектов</a></li>
+<li><a href="../concepts/free-ai-methods.html">Бесплатное использование нейросетей</a></li>
+<li><a href="../entities/hermes.html">Hermes Agent — инфраструктура</a></li>
+<li><a href="../entities/green-broker.html">Green Broker</a></li>
+<li><a href="../concepts/mcp.html">MCP — Model Context Protocol</a></li>
+</ul>
+<div class="backlinks"><h3>↩ Обратные ссылки</h3><ul><li><a href="../concepts/free-ai-methods.html">concepts/free-ai-methods.md</a></li><li><a href="../dashboard.html">dashboard.md</a></li><li><a href="../index.html">index.md</a></li></ul></div>
+</div>
+</body>
+</html>

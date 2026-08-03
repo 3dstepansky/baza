@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>omniroute-technical-documentation — Vault</title>
+<style>* { margin:0; padding:0; box-sizing:border-box; }
+body { background:#0d1117; color:#c9d1d9; font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif; line-height:1.7; font-size:16px; }
+.container { max-width:820px; margin:0 auto; padding:16px; }
+h1 { font-size:1.6em; color:#f0f6fc; margin:0.6em 0 0.4em; border-bottom:1px solid #30363d; padding-bottom:0.3em; }
+h2 { font-size:1.25em; color:#f0f6fc; margin:0.8em 0 0.3em; }
+h3 { font-size:1.1em; color:#f0f6fc; margin:0.6em 0 0.2em; }
+p { margin:0.5em 0; }
+a { color:#58a6ff; text-decoration:none; }
+a:hover { text-decoration:underline; }
+ul, ol { margin:0.5em 0; padding-left:1.5em; }
+li { margin:0.3em 0; }
+code { background:#161b22; padding:2px 6px; border-radius:3px; font-size:0.9em; color:#f0c674; }
+pre { background:#161b22; padding:12px; border-radius:6px; overflow-x:auto; margin:0.8em 0; }
+pre code { background:none; padding:0; }
+blockquote { border-left:3px solid #30363d; padding-left:1em; margin:0.8em 0; color:#8b949e; }
+hr { border:none; border-top:1px solid #30363d; margin:1.2em 0; }
+table { width:100%; border-collapse:collapse; margin:0.8em 0; }
+th, td { border:1px solid #30363d; padding:8px 12px; text-align:left; }
+th { background:#161b22; color:#f0f6fc; }
+.dataview { background:#161b22; border:1px solid #30363d; border-radius:6px; padding:12px; margin:0.8em 0; font-family:monospace; font-size:0.85em; color:#8b949e; }
+.nav { background:#161b22; border-bottom:1px solid #30363d; padding:8px 16px; font-size:14px; position:sticky; top:0; z-index:10; }
+.nav a { color:#58a6ff; }
+.meta { font-size:0.85em; color:#8b949e; margin:0.5em 0 1em; }
+.tag { display:inline-block; background:#1f6feb33; color:#58a6ff; padding:2px 8px; border-radius:10px; font-size:0.8em; margin:0 3px 3px 0; }
+.backlinks { margin-top:2em; padding-top:1em; border-top:1px solid #30363d; }
+.backlinks h3 { font-size:1em; color:#8b949e; }
+.button-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:10px; margin:1em 0; }
+.button { display:block; background:#238636; color:#fff !important; padding:12px 14px; border-radius:8px; text-align:center; font-weight:600; border:1px solid #2ea043; }
+.button:hover { background:#2ea043; text-decoration:none; }</style>
+</head>
+<body>
+<nav class="nav"><span class="crumbs"><a href="/">🏠</a> / <span>raw</span> / <span>articles</span></span></nav>
+<div class="container">
+<h1>omniroute-technical-documentation</h1>
+<div class="meta"> last modified: 2026-07-31 07:17</div>
+<h1>OmniRoute &amp; Free Claude Code — Техническая документация</h1>
+<blockquote>
+<p>Исследование GitHub репозиториев: OmniRoute, free-claude-code, omniroute-hybrid-setup</p>
+</blockquote>
+<hr />
+<h2>1. OmniRoute — Основной проект</h2>
+<h3>1.1 Установка</h3>
+<div class="codehilite"><pre><span></span><code><span class="c1"># npm (рекомендуется)</span>
+npm<span class="w"> </span>install<span class="w"> </span>-g<span class="w"> </span>omniroute
+omniroute
+
+<span class="c1"># Docker</span>
+docker<span class="w"> </span>run<span class="w"> </span>-p<span class="w"> </span><span class="m">20128</span>:20128<span class="w"> </span>diegosouzapw/omniroute
+
+<span class="c1"># Из исходников</span>
+git<span class="w"> </span>clone<span class="w"> </span>https://github.com/diegosouzapw/OmniRoute
+<span class="nb">cd</span><span class="w"> </span>OmniRoute
+npm<span class="w"> </span>install
+<span class="nv">PORT</span><span class="o">=</span><span class="m">20128</span><span class="w"> </span><span class="nv">DASHBOARD_PORT</span><span class="o">=</span><span class="m">20129</span><span class="w"> </span><span class="nv">NEXT_PUBLIC_BASE_URL</span><span class="o">=</span>http://localhost:20129<span class="w"> </span>npm<span class="w"> </span>run<span class="w"> </span>dev
+</code></pre></div>
+
+<p><strong>Порты по умолчанию:</strong>
+- API: <code>http://localhost:20128/v1</code>
+- Dashboard: <code>http://localhost:20128/dashboard</code>
+- Split-port mode: API на 20128, Dashboard на 20129</p>
+<h3>1.2 Формат конфигурации провайдеров</h3>
+<p>OmniRoute не использует статический <code>config.yaml</code> для провайдеров. Конфигурация хранится в базе данных SQLite и управляется через:</p>
+<ol>
+<li><strong>Dashboard UI</strong> (<code>/dashboard/providers</code>)</li>
+<li><strong>CLI команды</strong> (<code>omniroute providers</code>)</li>
+<li><strong>Environment переменные</strong> для headless setup</li>
+</ol>
+<h4>Пример конфигурации через CLI</h4>
+<div class="codehilite"><pre><span></span><code><span class="c1"># Список доступных провайдеров</span>
+omniroute<span class="w"> </span>providers<span class="w"> </span>available
+
+<span class="c1"># Фильтрация по категории</span>
+omniroute<span class="w"> </span>providers<span class="w"> </span>available<span class="w"> </span>--category<span class="w"> </span>api-key
+omniroute<span class="w"> </span>providers<span class="w"> </span>available<span class="w"> </span>--category<span class="w"> </span>oauth
+omniroute<span class="w"> </span>providers<span class="w"> </span>available<span class="w"> </span>--category<span class="w"> </span>free
+omniroute<span class="w"> </span>providers<span class="w"> </span>available<span class="w"> </span>--category<span class="w"> </span><span class="nb">local</span>
+
+<span class="c1"># Категории: api-key, oauth, free, local, combo</span>
+
+<span class="c1"># Добавить провайдер</span>
+omniroute<span class="w"> </span>provider<span class="w"> </span>add<span class="w"> </span>--id<span class="w"> </span>nvidia_nim<span class="w"> </span>--api-key<span class="w"> </span>nvapi-xxx
+
+<span class="c1"># Протестировать провайдер</span>
+omniroute<span class="w"> </span>providers<span class="w"> </span><span class="nb">test</span><span class="w"> </span>nvidia_nim
+
+<span class="c1"># Список сконфигурированных провайдеров</span>
+omniroute<span class="w"> </span>providers<span class="w"> </span>list<span class="w"> </span>--json
+</code></pre></div>
+
+<h3>1.3 Переменные окружения</h3>
+<h4>Базовые переменные</h4>
+<div class="codehilite"><pre><span></span><code><span class="c1"># Пароль администратора (headless setup)</span>
+<span class="nv">INITIAL_PASSWORD</span><span class="o">=</span><span class="s2">&quot;your-secure-password&quot;</span>
+<span class="nv">OMNIROUTE_PASSWORD</span><span class="o">=</span><span class="s2">&quot;your-secure-password&quot;</span>
+
+<span class="c1"># Данные провайдеров</span>
+<span class="nv">OMNIROUTE_API_KEY</span><span class="o">=</span><span class="s2">&quot;sk-xxx&quot;</span><span class="w">  </span><span class="c1"># API ключ провайдера</span>
+<span class="nv">OPENAI_API_KEY</span><span class="o">=</span><span class="s2">&quot;sk-xxx&quot;</span>
+<span class="nv">ANTHROPIC_API_KEY</span><span class="o">=</span><span class="s2">&quot;sk-xxx&quot;</span>
+<span class="nv">NVIDIA_NIM_API_KEY</span><span class="o">=</span><span class="s2">&quot;nvapi-xxx&quot;</span>
+
+<span class="c1"># Директория данных</span>
+<span class="nv">DATA_DIR</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">HOME</span><span class="si">}</span><span class="s2">/.local/share/omniroute&quot;</span>
+
+<span class="c1"># Порты</span>
+<span class="nv">PORT</span><span class="o">=</span><span class="m">20128</span>
+<span class="nv">DASHBOARD_PORT</span><span class="o">=</span><span class="m">20129</span>
+</code></pre></div>
+
+<h4>Timeout конфигурация</h4>
+<div class="codehilite"><pre><span></span><code><span class="c1"># Основные таймауты</span>
+<span class="nv">REQUEST_TIMEOUT_MS</span><span class="o">=</span><span class="m">600000</span><span class="w">           </span><span class="c1"># Базовый таймаут (10 минут)</span>
+<span class="nv">STREAM_IDLE_TIMEOUT_MS</span><span class="o">=</span><span class="m">600000</span><span class="w">       </span><span class="c1"># Макс. пауза между чанками в стриме</span>
+
+<span class="c1"># Продвинутые переопределения</span>
+<span class="nv">FETCH_TIMEOUT_MS</span><span class="o">=</span><span class="m">600000</span><span class="w">             </span><span class="c1"># Таймаут до получения заголовков ответа</span>
+<span class="nv">FETCH_HEADERS_TIMEOUT_MS</span><span class="o">=</span><span class="m">60000</span><span class="w">      </span><span class="c1"># Undici timeout для заголовков</span>
+<span class="nv">FETCH_BODY_TIMEOUT_MS</span><span class="o">=</span><span class="m">600000</span><span class="w">        </span><span class="c1"># Undici timeout между чанками тела</span>
+<span class="nv">FETCH_CONNECT_TIMEOUT_MS</span><span class="o">=</span><span class="m">30000</span><span class="w">      </span><span class="c1"># TCP connect timeout</span>
+<span class="nv">FETCH_KEEPALIVE_TIMEOUT_MS</span><span class="o">=</span><span class="m">4000</span><span class="w">     </span><span class="c1"># Keep-alive socket timeout</span>
+</code></pre></div>
+
+<h4>Headless/CI setup</h4>
+<div class="codehilite"><pre><span></span><code>omniroute<span class="w"> </span>setup<span class="w"> </span>--non-interactive<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--password<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$OMNIROUTE_PASSWORD</span><span class="s2">&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--api-key<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$OPENAI_API_KEY</span><span class="s2">&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--provider<span class="w"> </span>openai
+
+omniroute<span class="w"> </span>providers<span class="w"> </span>test-batch
+</code></pre></div>
+
+<h3>1.4 Routing стратегии</h3>
+<p>OmniRoute поддерживает <strong>17+ routing стратегий</strong>:</p>
+<table>
+<thead>
+<tr>
+<th>Стратегия</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>auto</code></td>
+<td>Автоматический выбор на основе 9 факторов</td>
+</tr>
+<tr>
+<td><code>priority</code></td>
+<td>Приоритетный порядок</td>
+</tr>
+<tr>
+<td><code>weighted</code></td>
+<td>Взвешенное распределение</td>
+</tr>
+<tr>
+<td><code>fill-first</code></td>
+<td>Заполнение первого доступного</td>
+</tr>
+<tr>
+<td><code>round-robin</code></td>
+<td>Циклическое распределение</td>
+</tr>
+<tr>
+<td><code>least-used</code></td>
+<td>Наименее используемый</td>
+</tr>
+<tr>
+<td><code>cost-optimized</code></td>
+<td>Оптимизация по стоимости</td>
+</tr>
+<tr>
+<td><code>reset-aware</code></td>
+<td>Учет сброса квот</td>
+</tr>
+<tr>
+<td><code>reset-window</code></td>
+<td>Окно сброса квот</td>
+</tr>
+<tr>
+<td><code>headroom</code></td>
+<td>Запас по квоте</td>
+</tr>
+<tr>
+<td><code>strict-random</code></td>
+<td>Строгий случайный выбор</td>
+</tr>
+<tr>
+<td><code>lkgp</code></td>
+<td>Least Known Good Provider</td>
+</tr>
+<tr>
+<td><code>context-optimized</code></td>
+<td>Оптимизация контекста</td>
+</tr>
+<tr>
+<td><code>context-relay</code></td>
+<td>Relay с учетом контекста</td>
+</tr>
+<tr>
+<td><code>fusion</code></td>
+<td>Fan-out + judge synthesis (v3.8.36+)</td>
+</tr>
+<tr>
+<td><code>pipeline</code></td>
+<td>Последовательная обработка</td>
+</tr>
+</tbody>
+</table>
+<h3>1.5 Combos (Fallback цепочки)</h3>
+<p>Combo — это именованный набор fallback-целей с routing стратегией.</p>
+<h4>Предустановленные combos</h4>
+<div class="codehilite"><pre><span></span><code>auto                  # Автоматический выбор (default combo)
+auto/best-coding      # Лучший для кодинга
+auto/best-fast        # Быстрые модели
+auto/best-vision      # Vision модели
+auto/best-reasoning   # Reasoning модели
+auto/best-chat        # Чат модели
+</code></pre></div>
+
+<h4>4-tier auto-fallback</h4>
+<div class="codehilite"><pre><span></span><code>Tier 1: Subscription (Claude Code, Codex, Copilot)
+    ↓ quota out
+Tier 2: API Key (DeepSeek, Groq, xAI)
+    ↓ budget hit
+Tier 3: Cheap (GLM $0.5, MiniMax $0.2)
+    ↓ budget hit
+Tier 4: Free (Kiro, Qoder, Pollinations)
+</code></pre></div>
+
+<h4>Пример использования combo</h4>
+<div class="codehilite"><pre><span></span><code><span class="c1"># В CLI инструменте</span>
+Base<span class="w"> </span>URL:<span class="w"> </span>http://localhost:20128/v1
+API<span class="w"> </span>Key:<span class="w"> </span>sk-your-omniroute-key
+Model:<span class="w"> </span>auto/best-coding
+</code></pre></div>
+
+<h3>1.6 API Endpoints</h3>
+<table>
+<thead>
+<tr>
+<th>Endpoint</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/v1/chat/completions</code></td>
+<td>Standard chat (все провайдеры)</td>
+</tr>
+<tr>
+<td><code>/v1/responses</code></td>
+<td>Responses API (OpenAI format)</td>
+</tr>
+<tr>
+<td><code>/v1/completions</code></td>
+<td>Legacy text completions</td>
+</tr>
+<tr>
+<td><code>/v1/embeddings</code></td>
+<td>Text embeddings</td>
+</tr>
+<tr>
+<td><code>/v1/images/generations</code></td>
+<td>Image generation</td>
+</tr>
+<tr>
+<td><code>/v1/audio/speech</code></td>
+<td>Text-to-speech</td>
+</tr>
+<tr>
+<td><code>/v1/audio/transcriptions</code></td>
+<td>Speech-to-text</td>
+</tr>
+</tbody>
+</table>
+<h4>Tokenized compatibility URLs</h4>
+<p>Для инструментов, не поддерживающих <code>Authorization</code> header:</p>
+<div class="codehilite"><pre><span></span><code>Models:     http://localhost:20128/api/v1/vscode/YOUR_KEY/models
+Chat:       http://localhost:20128/api/v1/vscode/YOUR_KEY/chat/completions
+Responses:  http://localhost:20128/api/v1/vscode/YOUR_KEY/responses
+Ollama:     http://localhost:20128/api/v1/vscode/YOUR_KEY/api/tags
+Ollama chat: http://localhost:20128/api/v1/vscode/YOUR_KEY/api/chat
+</code></pre></div>
+
+<h3>1.7 CLI команды</h3>
+<div class="codehilite"><pre><span></span><code>omniroute<span class="w">                    </span><span class="c1"># Запуск сервера</span>
+omniroute<span class="w"> </span>setup<span class="w">              </span><span class="c1"># Guided onboarding</span>
+omniroute<span class="w"> </span>doctor<span class="w">             </span><span class="c1"># Диагностика без запуска сервера</span>
+omniroute<span class="w"> </span>providers<span class="w">          </span><span class="c1"># Управление провайдерами</span>
+omniroute<span class="w"> </span>config<span class="w">             </span><span class="c1"># Управление конфигурацией</span>
+omniroute<span class="w"> </span>status<span class="w">             </span><span class="c1"># Offline status dashboard</span>
+omniroute<span class="w"> </span>logs<span class="w">               </span><span class="c1"># Stream usage logs</span>
+omniroute<span class="w"> </span>update<span class="w">             </span><span class="c1"># Проверка обновлений</span>
+omniroute<span class="w"> </span>--port<span class="w"> </span><span class="m">3000</span><span class="w">        </span><span class="c1"># Кастомный порт</span>
+omniroute<span class="w"> </span>--mcp<span class="w">              </span><span class="c1"># MCP server (stdio)</span>
+omniroute<span class="w"> </span>--no-open<span class="w">          </span><span class="c1"># Не открывать браузер</span>
+</code></pre></div>
+
+<h4>Auto-configure для CLI инструментов</h4>
+<div class="codehilite"><pre><span></span><code>omniroute<span class="w"> </span>setup-codex<span class="w">        </span><span class="c1"># ~/.codex/.config.toml</span>
+omniroute<span class="w"> </span>setup-claude<span class="w">       </span><span class="c1"># ~/.claude/profiles/&lt;profile&gt;/settings.json</span>
+omniroute<span class="w"> </span>setup-opencode<span class="w">     </span><span class="c1"># ~/.config/opencode/opencode.json</span>
+omniroute<span class="w"> </span>setup-cline<span class="w">        </span><span class="c1"># VS Code extension settings</span>
+omniroute<span class="w"> </span>setup-kilo<span class="w">         </span><span class="c1"># ~/.continue/config.yaml</span>
+omniroute<span class="w"> </span>setup-cursor<span class="w">       </span><span class="c1"># Cursor settings</span>
+omniroute<span class="w"> </span>setup-aider<span class="w">        </span><span class="c1"># ~/.aider.conf.yml</span>
+omniroute<span class="w"> </span>setup-goose<span class="w">        </span><span class="c1"># ~/.config/goose/config.yaml</span>
+omniroute<span class="w"> </span>setup-qwen<span class="w">         </span><span class="c1"># ~/.qwen/settings.json + ~/.qwen/.env</span>
+</code></pre></div>
+
+<hr />
+<h2>2. Free Claude Code</h2>
+<h3>2.1 Установка</h3>
+<div class="codehilite"><pre><span></span><code><span class="c1"># macOS/Linux</span>
+curl<span class="w"> </span>-fsSL<span class="w"> </span><span class="s2">&quot;https://raw.githubusercontent.com/Alishahryar1/free-claude-code/main/scripts/install.sh&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>bash
+
+<span class="c1"># Windows PowerShell</span>
+<span class="p">&amp;</span><span class="w"> </span><span class="o">([</span>scriptblock<span class="o">]</span>::Create<span class="o">((</span>Invoke-WebRequest<span class="w"> </span>-Uri<span class="w"> </span><span class="s2">&quot;https://raw.githubusercontent.com/Alishahryar1/free-claude-code/main/scripts/install.ps1&quot;</span><span class="o">)</span>.Content<span class="o">))</span>
+</code></pre></div>
+
+<h3>2.2 Запуск</h3>
+<div class="codehilite"><pre><span></span><code><span class="c1"># Linux</span>
+fcc-server
+
+<span class="c1"># Windows/macOS — Desktop launcher &quot;Free Claude Code&quot;</span>
+
+<span class="c1"># Запуск Claude Code через FCC</span>
+fcc-claude
+
+<span class="c1"># Запуск Codex через FCC</span>
+fcc-codex
+
+<span class="c1"># Запуск Pi через FCC</span>
+fcc-pi
+</code></pre></div>
+
+<p><strong>Admin UI:</strong> <code>http://127.0.0.1:8082/admin</code></p>
+<h3>2.3 Настройка NVIDIA NIM</h3>
+<ol>
+<li>Создать API key на <a href="https://build.nvidia.com/settings/api-keys">build.nvidia.com/settings/api-keys</a></li>
+<li>Открыть Admin UI</li>
+<li>Вставить ключ в <code>NVIDIA_NIM_API_KEY</code></li>
+<li>Выбрать модель: <code>nvidia_nim/nvidia/nemotron-3-super-120b-a12b</code></li>
+<li>Нажать <strong>Validate</strong> → <strong>Apply</strong></li>
+</ol>
+<h3>2.4 Переменные окружения</h3>
+<div class="codehilite"><pre><span></span><code><span class="c1"># Основные</span>
+<span class="nv">NVIDIA_NIM_API_KEY</span><span class="o">=</span><span class="s2">&quot;nvapi-xxx&quot;</span><span class="w">     </span><span class="c1"># NVIDIA NIM API ключ</span>
+<span class="nv">HUGGINGFACE_API_KEY</span><span class="o">=</span><span class="s2">&quot;hf_xxx&quot;</span><span class="w">       </span><span class="c1"># Для gated models</span>
+
+<span class="c1"># Voice transcription</span>
+<span class="nv">VOICE_BACKEND</span><span class="o">=</span><span class="s2">&quot;nvidia_nim&quot;</span><span class="w">          </span><span class="c1"># или &quot;cpu&quot;, &quot;cuda&quot;</span>
+<span class="nv">WHISPER_MODEL</span><span class="o">=</span><span class="s2">&quot;whisper-large-v3&quot;</span>
+</code></pre></div>
+
+<h3>2.5 Интеграция с Telegram</h3>
+<p>FCC поддерживает интеграцию с Telegram для voice-note transcription:</p>
+<div class="codehilite"><pre><span></span><code><span class="c1"># Установка с voice backend</span>
+curl<span class="w"> </span>-fsSL<span class="w"> </span><span class="s2">&quot;https://raw.githubusercontent.com/Alishahryar1/free-claude-code/main/scripts/install.sh&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>bash<span class="w"> </span>-s<span class="w"> </span>--<span class="w"> </span>--voice<span class="w"> </span>nvidia_nim
+</code></pre></div>
+
+<p><strong>Voice команды в Telegram:</strong>
+- <code>/stats</code> — Показать состояние сессии
+- <code>/stop</code> — Отменить текущую работу
+- <code>/clear</code> — Сбросить состояние FCC</p>
+<h3>2.6 Провайдеры (31+)</h3>
+<p>FCC поддерживает 31 cloud и local провайдер через Admin UI:</p>
+<ul>
+<li>NVIDIA NIM (FREE developer access — 70+ models)</li>
+<li>OpenAI</li>
+<li>Anthropic</li>
+<li>Google Gemini</li>
+<li>DeepSeek</li>
+<li>Groq</li>
+<li>xAI</li>
+<li>Mistral</li>
+<li>Local models (Ollama, vLLM)</li>
+<li>И другие</li>
+</ul>
+<hr />
+<h2>3. omniroute-hybrid-setup</h2>
+<h3>3.1 Концепция</h3>
+<p>Local OmniRoute (Docker) как proxy перед cloud OmniRoute с fallback на local runtime модели.</p>
+<div class="codehilite"><pre><span></span><code>Any client (OpenCode agent)
+    ↓
+localhost:20128 (Docker: omniroute container)
+    ↓
+best-* combo (priority routing)
+    ↓
+1. Cloud OmniRoute (auto/best-* model)
+2. (fallback) Local runtime (host.docker.internal:11434/v1)
+</code></pre></div>
+
+<h3>3.2 Конфигурация</h3>
+<h4>Environment переменные (.env)</h4>
+<div class="codehilite"><pre><span></span><code><span class="c1"># Local OmniRoute</span>
+<span class="nv">LOCAL_API_KEY</span><span class="o">=</span><span class="s2">&quot;sk-local-xxx&quot;</span>
+<span class="nv">LOCAL_BASE_URL</span><span class="o">=</span><span class="s2">&quot;http://127.0.0.1:20128&quot;</span>
+
+<span class="c1"># Cloud OmniRoute (upstream)</span>
+<span class="nv">CLOUD_API_KEY</span><span class="o">=</span><span class="s2">&quot;sk-cloud-xxx&quot;</span>
+<span class="nv">CLOUD_BASE_URL</span><span class="o">=</span><span class="s2">&quot;https://your-cloud-omniroute.com&quot;</span>
+
+<span class="c1"># Local runtime (Ollama, vLLM)</span>
+<span class="nv">LOCAL_RUNTIME_URL</span><span class="o">=</span><span class="s2">&quot;http://host.docker.internal:11434/v1&quot;</span>
+<span class="nv">LOCAL_CODING</span><span class="o">=</span><span class="s2">&quot;llama3.2:latest&quot;</span>
+<span class="nv">LOCAL_FAST</span><span class="o">=</span><span class="s2">&quot;llama3.2:latest&quot;</span>
+<span class="nv">LOCAL_REASONING</span><span class="o">=</span><span class="s2">&quot;deepseek-r1:8b&quot;</span>
+<span class="nv">LOCAL_VISION</span><span class="o">=</span><span class="s2">&quot;llava:latest&quot;</span>
+</code></pre></div>
+
+<h3>3.3 Combos</h3>
+<p>Скрипт создаёт priority combos с cloud primary + local fallback:</p>
+<table>
+<thead>
+<tr>
+<th>Combo</th>
+<th>Cloud model</th>
+<th>Fallback</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>best-coding</code></td>
+<td><code>auto/best-coding</code></td>
+<td><code>LOCAL_CODING</code></td>
+</tr>
+<tr>
+<td><code>best-coding-fast</code></td>
+<td><code>auto/best-coding-fast</code></td>
+<td><code>LOCAL_CODING</code></td>
+</tr>
+<tr>
+<td><code>best-fast</code></td>
+<td><code>auto/best-fast</code></td>
+<td><code>LOCAL_FAST</code></td>
+</tr>
+<tr>
+<td><code>best-vision</code></td>
+<td><code>auto/best-vision</code></td>
+<td><code>LOCAL_VISION</code></td>
+</tr>
+<tr>
+<td><code>best-reasoning</code></td>
+<td><code>auto/best-reasoning</code></td>
+<td><code>LOCAL_REASONING</code></td>
+</tr>
+<tr>
+<td><code>best-chat</code></td>
+<td><code>auto/best-chat</code></td>
+<td><code>LOCAL_REASONING</code></td>
+</tr>
+</tbody>
+</table>
+<h3>3.4 Интеграция с OpenCode</h3>
+<div class="codehilite"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;$schema&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://opencode.ai/config.json&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;model&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;omniroute/best-coding&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;small_model&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;omniroute/best-fast&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;provider&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;omniroute&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;options&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;baseUrl&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;http://127.0.0.1:20128&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;apiKey&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;${OMNIROUTE_LOCAL_API_KEY}&quot;</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<h3>3.5 Запуск</h3>
+<div class="codehilite"><pre><span></span><code><span class="c1"># Требования</span>
+<span class="c1"># - uv (Python package manager)</span>
+<span class="c1"># - Docker compose v2</span>
+<span class="c1"># - Local runtime (Ollama с моделями)</span>
+
+cp<span class="w"> </span>.env.example<span class="w"> </span>.env
+<span class="c1"># Отредактировать .env</span>
+
+make<span class="w"> </span>up<span class="w">  </span><span class="c1"># или docker compose up -d</span>
+</code></pre></div>
+
+<hr />
+<h2>4. Примеры конфигурации для CLI инструментов</h2>
+<h3>4.1 Claude Code</h3>
+<div class="codehilite"><pre><span></span><code><span class="c1"># ~/.claude/profiles/default/settings.json</span>
+<span class="o">{</span>
+<span class="w">  </span><span class="s2">&quot;apiProvider&quot;</span>:<span class="w"> </span><span class="s2">&quot;openai-compatible&quot;</span>,
+<span class="w">  </span><span class="s2">&quot;openaiCompatible&quot;</span>:<span class="w"> </span><span class="o">{</span>
+<span class="w">    </span><span class="s2">&quot;baseUrl&quot;</span>:<span class="w"> </span><span class="s2">&quot;http://localhost:20128/v1&quot;</span>,
+<span class="w">    </span><span class="s2">&quot;apiKey&quot;</span>:<span class="w"> </span><span class="s2">&quot;sk-your-omniroute-key&quot;</span>
+<span class="w">  </span><span class="o">}</span>
+<span class="o">}</span>
+
+<span class="c1"># Или через launcher</span>
+omniroute<span class="w"> </span>launch
+</code></pre></div>
+
+<h3>4.2 Codex CLI</h3>
+<div class="codehilite"><pre><span></span><code><span class="c1"># ~/.codex/.config.toml</span>
+<span class="o">[</span>profiles.omniroute<span class="o">]</span>
+<span class="nv">api_base</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;http://localhost:20128/v1&quot;</span>
+<span class="nv">api_key</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;sk-your-omniroute-key&quot;</span>
+
+<span class="c1"># Или через launcher</span>
+omniroute<span class="w"> </span>launch-codex
+</code></pre></div>
+
+<h3>4.3 OpenCode</h3>
+<div class="codehilite"><pre><span></span><code><span class="c1">// ~/.config/opencode/opencode.json</span>
+<span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;$schema&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://opencode.ai/config.json&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;provider&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;omniroute&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;npm&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;@ai-sdk/openai-compatible&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;OmniRoute&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;options&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;baseURL&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;http://localhost:20128/v1&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;apiKey&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;sk-your-omniroute-key&quot;</span>
+<span class="w">      </span><span class="p">},</span>
+<span class="w">      </span><span class="nt">&quot;models&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;claude-sonnet-4-5&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;claude-sonnet-4-5&quot;</span><span class="w"> </span><span class="p">},</span>
+<span class="w">        </span><span class="nt">&quot;gemini-3-flash&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;gemini-3-flash&quot;</span><span class="w"> </span><span class="p">}</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<h3>4.4 Continue.dev</h3>
+<div class="codehilite"><pre><span></span><code><span class="c1"># ~/.continue/config.yaml</span>
+<span class="nt">models</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">OmniRoute</span>
+<span class="w">    </span><span class="nt">provider</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">openai</span>
+<span class="w">    </span><span class="nt">model</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">auto</span>
+<span class="w">    </span><span class="nt">apiBase</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">http://localhost:20128/v1</span>
+<span class="w">    </span><span class="nt">apiKey</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">sk-your-omniroute-key</span>
+<span class="w">    </span><span class="nt">default</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+</code></pre></div>
+
+<h3>4.5 Cline / Kilo Code / Roo Code</h3>
+<div class="codehilite"><pre><span></span><code><span class="c1"># VS Code settings.json</span>
+<span class="o">{</span>
+<span class="w">  </span><span class="s2">&quot;kilo-code.openAiBaseUrl&quot;</span>:<span class="w"> </span><span class="s2">&quot;http://localhost:20128/v1&quot;</span>,
+<span class="w">  </span><span class="s2">&quot;kilo-code.apiKey&quot;</span>:<span class="w"> </span><span class="s2">&quot;sk-your-omniroute-key&quot;</span>
+<span class="o">}</span>
+
+<span class="c1"># Или CLI</span>
+kilocode<span class="w"> </span>--api-base<span class="w"> </span>http://localhost:20128/v1<span class="w"> </span>--api-key<span class="w"> </span>sk-your-omniroute-key
+</code></pre></div>
+
+<h3>4.6 Cursor</h3>
+<p>Через dashboard: <code>omniroute setup-cursor</code> — выводит инструкции для in-app настройки.</p>
+<hr />
+<h2>5. MCP (Model Context Protocol)</h2>
+<h3>5.1 Запуск MCP server</h3>
+<div class="codehilite"><pre><span></span><code><span class="c1"># stdio mode</span>
+omniroute<span class="w"> </span>--mcp
+
+<span class="c1"># HTTP MCP endpoint</span>
+http://localhost:20128/api/mcp/stream
+</code></pre></div>
+
+<h3>5.2 Конфигурация MCP клиента</h3>
+<p><strong>Claude Code:</strong></p>
+<div class="codehilite"><pre><span></span><code>claude<span class="w"> </span>mcp<span class="w"> </span>add-server<span class="w"> </span>omniroute<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--type<span class="w"> </span>http<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--url<span class="w"> </span>http://localhost:20128/api/mcp/stream
+</code></pre></div>
+
+<p><strong>Cursor / Cline:</strong></p>
+<div class="codehilite"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;mcpServers&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;omniroute&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;command&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;omniroute&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;args&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;--mcp&quot;</span><span class="p">],</span>
+<span class="w">      </span><span class="nt">&quot;env&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p><strong>MCP tools:</strong> 104 built-in tools для управления gateway, routing, providers, combos, cache, compression, memory.</p>
+<hr />
+<h2>6. A2A (Agent-to-Agent Protocol)</h2>
+<h3>6.1 Agent Card</h3>
+<div class="codehilite"><pre><span></span><code>curl<span class="w"> </span>http://localhost:20128/.well-known/agent.json
+</code></pre></div>
+
+<h3>6.2 Пример запроса</h3>
+<div class="codehilite"><pre><span></span><code>curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span>http://localhost:20128/api/a2a<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s1">&#39;content-type: application/json&#39;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-d<span class="w"> </span><span class="s1">&#39;{</span>
+<span class="s1">    &quot;jsonrpc&quot;: &quot;2.0&quot;,</span>
+<span class="s1">    &quot;id&quot;: &quot;quickstart&quot;,</span>
+<span class="s1">    &quot;method&quot;: &quot;message/send&quot;,</span>
+<span class="s1">    &quot;params&quot;: {</span>
+<span class="s1">      &quot;skill&quot;: &quot;quota-management&quot;,</span>
+<span class="s1">      &quot;messages&quot;: [{&quot;role&quot;: &quot;user&quot;, &quot;content&quot;: &quot;Give me a short quota summary.&quot;}]</span>
+<span class="s1">    }</span>
+<span class="s1">  }&#39;</span>
+</code></pre></div>
+
+<hr />
+<h2>7. Docker Compose пример</h2>
+<div class="codehilite"><pre><span></span><code><span class="c1"># compose.yml</span>
+<span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;3.9&quot;</span>
+
+<span class="nt">services</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">omniroute</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">diegosouzapw/omniroute:latest</span>
+<span class="w">    </span><span class="nt">ports</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;20128:20128&quot;</span>
+<span class="w">    </span><span class="nt">environment</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PORT=20128</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">INITIAL_PASSWORD=${OMNIROUTE_PASSWORD}</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">DATA_DIR=/data</span>
+<span class="w">    </span><span class="nt">volumes</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">omniroute-data:/data</span>
+<span class="w">    </span><span class="nt">restart</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">unless-stopped</span>
+
+<span class="nt">volumes</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">omniroute-data</span><span class="p">:</span>
+</code></pre></div>
+
+<hr />
+<h2>8. Связанные проекты</h2>
+<h3>8.1 VansRouter</h3>
+<ul>
+<li>URL: https://github.com/Vanszs/VansRouter</li>
+<li>Описание: Lightweight Version of 9Route x Omniroute Combined Logic</li>
+<li>Stars: 152</li>
+</ul>
+<h3>8.2 OmniGlyph</h3>
+<ul>
+<li>URL: https://github.com/diegosouzapw/OmniGlyph</li>
+<li>Описание: Cut Claude bill 59–70% by rendering LLM context as PNG pages</li>
+<li>Stars: 55</li>
+</ul>
+<h3>8.3 GH_OmniRout</h3>
+<ul>
+<li>URL: https://github.com/oxo-xux/GH_OmniRout</li>
+<li>Описание: GitHub Actions Runner + Cloudflare Tunnel для OmniRoute</li>
+<li>Stars: 2</li>
+</ul>
+<h3>8.4 self-hosted-OmniRoute</h3>
+<ul>
+<li>URL: https://github.com/Cognivanta-AI/self-hosted-OmniRoute</li>
+<li>Описание: Coolify-ready deployment template with Docker Compose</li>
+</ul>
+<h3>8.5 omniroute-sdk</h3>
+<ul>
+<li>URL: https://github.com/azazelpy/omniroute-sdk</li>
+<li>Описание: Multi-provider LLM gateway SDK (TS/Python/Go)</li>
+</ul>
+<hr />
+<h2>9. Ключевые особенности OmniRoute</h2>
+<ul>
+<li><strong>268 провайдеров</strong> — наибольший каталог среди open-source gateway</li>
+<li><strong>90+ free tiers</strong> — автоматическое использование free квот</li>
+<li><strong>17 routing стратегий</strong> — гибкая маршрутизация</li>
+<li><strong>4-tier auto-fallback</strong> — всегда онлайн</li>
+<li><strong>RTK + Caveman compression</strong> — экономия 15-95% токенов</li>
+<li><strong>104 MCP tools</strong> — управление gateway через MCP</li>
+<li><strong>A2A protocol</strong> — agent-to-agent взаимодействие</li>
+<li><strong>25,000+ tests</strong> — production-ready</li>
+<li><strong>Memory</strong> — FTS5 + Qdrant vector recall</li>
+<li><strong>Circuit breakers</strong> — отказоустойчивость</li>
+<li><strong>TLS stealth</strong> — обход блокировок</li>
+</ul>
+<hr />
+<h2>Ссылки</h2>
+<ul>
+<li><strong>OmniRoute:</strong> https://github.com/diegosouzapw/OmniRoute</li>
+<li><strong>Website:</strong> https://omniroute.online</li>
+<li><strong>npm:</strong> https://npmjs.com/package/omniroute</li>
+<li><strong>Docker Hub:</strong> https://hub.docker.com/r/diegosouzapw/omniroute</li>
+<li><strong>Free Claude Code:</strong> https://github.com/Alishahryar1/free-claude-code</li>
+<li><strong>omniroute-hybrid-setup:</strong> https://github.com/disafronov/omniroute-hybrid-setup</li>
+</ul>
+
+</div>
+</body>
+</html>

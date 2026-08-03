@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Green Broker — constitution.md — Vault</title>
+<style>* { margin:0; padding:0; box-sizing:border-box; }
+body { background:#0d1117; color:#c9d1d9; font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif; line-height:1.7; font-size:16px; }
+.container { max-width:820px; margin:0 auto; padding:16px; }
+h1 { font-size:1.6em; color:#f0f6fc; margin:0.6em 0 0.4em; border-bottom:1px solid #30363d; padding-bottom:0.3em; }
+h2 { font-size:1.25em; color:#f0f6fc; margin:0.8em 0 0.3em; }
+h3 { font-size:1.1em; color:#f0f6fc; margin:0.6em 0 0.2em; }
+p { margin:0.5em 0; }
+a { color:#58a6ff; text-decoration:none; }
+a:hover { text-decoration:underline; }
+ul, ol { margin:0.5em 0; padding-left:1.5em; }
+li { margin:0.3em 0; }
+code { background:#161b22; padding:2px 6px; border-radius:3px; font-size:0.9em; color:#f0c674; }
+pre { background:#161b22; padding:12px; border-radius:6px; overflow-x:auto; margin:0.8em 0; }
+pre code { background:none; padding:0; }
+blockquote { border-left:3px solid #30363d; padding-left:1em; margin:0.8em 0; color:#8b949e; }
+hr { border:none; border-top:1px solid #30363d; margin:1.2em 0; }
+table { width:100%; border-collapse:collapse; margin:0.8em 0; }
+th, td { border:1px solid #30363d; padding:8px 12px; text-align:left; }
+th { background:#161b22; color:#f0f6fc; }
+.dataview { background:#161b22; border:1px solid #30363d; border-radius:6px; padding:12px; margin:0.8em 0; font-family:monospace; font-size:0.85em; color:#8b949e; }
+.nav { background:#161b22; border-bottom:1px solid #30363d; padding:8px 16px; font-size:14px; position:sticky; top:0; z-index:10; }
+.nav a { color:#58a6ff; }
+.meta { font-size:0.85em; color:#8b949e; margin:0.5em 0 1em; }
+.tag { display:inline-block; background:#1f6feb33; color:#58a6ff; padding:2px 8px; border-radius:10px; font-size:0.8em; margin:0 3px 3px 0; }
+.backlinks { margin-top:2em; padding-top:1em; border-top:1px solid #30363d; }
+.backlinks h3 { font-size:1em; color:#8b949e; }
+.button-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:10px; margin:1em 0; }
+.button { display:block; background:#238636; color:#fff !important; padding:12px 14px; border-radius:8px; text-align:center; font-weight:600; border:1px solid #2ea043; }
+.button:hover { background:#2ea043; text-decoration:none; }</style>
+</head>
+<body>
+<nav class="nav"><span class="crumbs"><a href="/">🏠</a> / <span>raw</span> / <span>articles</span></span></nav>
+<div class="container">
+<h1>Green Broker — constitution.md</h1>
+<div class="meta"> last modified: 2026-08-02 16:46</div>
+<h1>Конституция проекта: Telegram-бот для продажи растений (Green Broker)</h1>
+<h2>1. Роли и участники</h2>
+<ul>
+<li><strong>Разработчик (Пользователь):</strong> Единоличный исполнитель, который выполняет весь объем работ по созданию Telegram-бота.</li>
+<li><strong>ИИ-ассистент (Я):</strong> Помощник разработчика. Моя задача — анализировать вводные данные, формировать спецификации и помогать с написанием кода по технологии Spec-Driven Development.</li>
+<li><strong>Заказчик/Стейкхолдеры:</strong> Лица из сферы ландшафтного дизайна, строительных компаний и частные клиенты (покупатели растений), а также менеджеры и владельцы садовых центров/питомников (поставщики растений).</li>
+</ul>
+<h2>2. Основная цель проекта</h2>
+<p>Разработать полнофункциональный Telegram-бот для питомников растений, который автоматизирует рутинный процесс продаж. Бот ДОЛЖЕН предоставлять функцию удобного внесения карточек товара через телефон для продавцов и главное — мгновенно формировать коммерческие предложения (КП) по запросу (текст, фото, файл PDF, Word, Excel) заказчиков через бот с учетом актуальных складских остатков по каждому питомнику/садовому центру. 
+<strong>Глобальная цель:</strong> Развернуть экосистему (маркетплейс в Telegram) из множества ботов (один питомник/садовый центр = один бот) для объединения всего рынка озеленения, сбора аналитики и стандартизации продаж.</p>
+<h2>3. Ключевые принципы разработки (Правила)</h2>
+<ul>
+<li><strong>Стек технологий:</strong> Проект реализуется на Python (современный фреймворк <code>aiogram 3.x</code>). База данных для MVP — <code>SQLite</code> (с таблицами пользователей, каталога, заказов и «виртуальной» корзины), с прицелом на легкую миграцию в <code>PostgreSQL</code> при масштабировании до маркетплейса. Архитектура должна быть упакована в <code>Docker</code>, что позволит разворачивать бота на классическом VPS (виртуальном сервере).</li>
+<li><strong>Поэтапный запуск (MVP):</strong> Разработка ДОЛЖНА четко разделять два пользовательских пути: B2B (профессионалы) и B2C (частники). Для MVP (первая фаза) абсолютным приоритетом ДОЛЖНА быть реализация функционала для ландшафтников — парсинг неструктурированных заявок (текст, Excel, PDF) с помощью ИИ, сборка их в "скрытую/виртуальную" корзину и мгновенная выдача КП. Классический визуальный интернет-магазин с картинками и кнопками "в корзину" (B2C) выносится во вторую фазу проекта.</li>
+<li><strong>Хранение медиа:</strong> Для обеспечения масштабируемости, надежности и программного доступа, фотографии товаров, сгенерированные PDF (КП) и документы ДОЛЖНЫ загружаться в S3-совместимое объектное хранилище (например, Yandex Object Storage, AWS S3, Selectel, MinIO). В базе данных хранятся прямые ссылки на объекты в S3 (поддержка до 2-х фото на товар).</li>
+<li><strong>Бизнес-процессы (КП и Оформление):</strong> Бот ДОЛЖЕН автоматически генерировать детализированное сообщение (чек/КП) с шапкой питомника, геометкой и ссылкой на менеджера сразу после оформления корзины.</li>
+<li><strong>Мини-CRM:</strong> Все данные о заказчике (имя, телефон, ник, сумма, номер заказа) ДОЛЖНЫ сохраняться в отдельную таблицу заказов одной строкой для последующего легкого экспорта во внешние CRM-системы (например, Bitrix).</li>
+<li><strong>Управление остатками:</strong> База остатков ДОЛЖНА управляться менеджерами напрямую через Telegram-интерфейс (команды типа <code>/ostatki</code>). Допускается заказ "в минус", но с обязательным подтверждением и корректировкой менеджером.</li>
+<li><strong>Интеграция платежей:</strong> Для реализации модуля подарочных сертификатов ДОЛЖНА использоваться интеграция с ЮKassa (через BotFather) для приема оплат онлайн и выдачи промокодов.</li>
+<li><strong>Масштабируемость и ИИ (Future Proof):</strong> Архитектура БД и логика бота ДОЛЖНЫ проектироваться с учетом:<ul>
+<li>Будущей интеграции LLM (для консультаций бота 24/7 и автопарсинга списков растений от ландшафтников).</li>
+<li>Синхронизации со складскими учетными системами (Бизнес Пак, 1С).</li>
+</ul>
+</li>
+</ul>
+<h2>4. Ограничения и рамки</h2>
+<ul>
+<li>Вся документация, спецификации, планы и задачи ДОЛЖНЫ вестись исключительно на русском языке.</li>
+<li>Процесс разработки ДОЛЖЕН быть итеративным по методологии Spec-Driven Development: обновление Конституции -&gt; Спецификация (<code>spec.md</code>) -&gt; План реализации (<code>plan.md</code>) -&gt; Разбор на задачи (<code>tasks.md</code>) -&gt; Реализация.</li>
+</ul>
+<div class="backlinks"><h3>↩ Обратные ссылки</h3><ul><li><a href="../../index.html">index.md</a></li></ul></div>
+</div>
+</body>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>log — Vault</title>
+<style>* { margin:0; padding:0; box-sizing:border-box; }
+body { background:#0d1117; color:#c9d1d9; font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif; line-height:1.7; font-size:16px; }
+.container { max-width:820px; margin:0 auto; padding:16px; }
+h1 { font-size:1.6em; color:#f0f6fc; margin:0.6em 0 0.4em; border-bottom:1px solid #30363d; padding-bottom:0.3em; }
+h2 { font-size:1.25em; color:#f0f6fc; margin:0.8em 0 0.3em; }
+h3 { font-size:1.1em; color:#f0f6fc; margin:0.6em 0 0.2em; }
+p { margin:0.5em 0; }
+a { color:#58a6ff; text-decoration:none; }
+a:hover { text-decoration:underline; }
+ul, ol { margin:0.5em 0; padding-left:1.5em; }
+li { margin:0.3em 0; }
+code { background:#161b22; padding:2px 6px; border-radius:3px; font-size:0.9em; color:#f0c674; }
+pre { background:#161b22; padding:12px; border-radius:6px; overflow-x:auto; margin:0.8em 0; }
+pre code { background:none; padding:0; }
+blockquote { border-left:3px solid #30363d; padding-left:1em; margin:0.8em 0; color:#8b949e; }
+hr { border:none; border-top:1px solid #30363d; margin:1.2em 0; }
+table { width:100%; border-collapse:collapse; margin:0.8em 0; }
+th, td { border:1px solid #30363d; padding:8px 12px; text-align:left; }
+th { background:#161b22; color:#f0f6fc; }
+.dataview { background:#161b22; border:1px solid #30363d; border-radius:6px; padding:12px; margin:0.8em 0; font-family:monospace; font-size:0.85em; color:#8b949e; }
+.nav { background:#161b22; border-bottom:1px solid #30363d; padding:8px 16px; font-size:14px; position:sticky; top:0; z-index:10; }
+.nav a { color:#58a6ff; }
+.meta { font-size:0.85em; color:#8b949e; margin:0.5em 0 1em; }
+.tag { display:inline-block; background:#1f6feb33; color:#58a6ff; padding:2px 8px; border-radius:10px; font-size:0.8em; margin:0 3px 3px 0; }
+.backlinks { margin-top:2em; padding-top:1em; border-top:1px solid #30363d; }
+.backlinks h3 { font-size:1em; color:#8b949e; }
+.button-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:10px; margin:1em 0; }
+.button { display:block; background:#238636; color:#fff !important; padding:12px 14px; border-radius:8px; text-align:center; font-weight:600; border:1px solid #2ea043; }
+.button:hover { background:#2ea043; text-decoration:none; }</style>
+</head>
+<body>
+<nav class="nav"><span class="crumbs"><a href="/">🏠</a></span></nav>
+<div class="container">
+<h1>log</h1>
+<div class="meta"> last modified: 2026-08-03 08:37</div>
+<h1>Wiki Log</h1>
+<blockquote>
+<p>Хронологический журнал всех действий с базой. Append-only.
+Формат: <code>## [YYYY-MM-DD] действие | тема</code>
+Действия: ingest, update, query, lint, create, archive, delete
+Ротация: &gt;500 записей → log-YYYY.md</p>
+</blockquote>
+<h2>[2026-07-31] create | Wiki пересобрана с нуля по стандарту llm-wiki v2.1.0</h2>
+<ul>
+<li>Структура: entities/ concepts/ comparisons/ queries/ raw/{articles,papers,transcripts,assets} _archive/</li>
+<li>46 страниц реклассифицированы по типам (entity/concept), хабы архивированы</li>
+<li>raw/: отчёты OmniRoute + 5 расшифровок встреч (sha256, immutable)</li>
+<li>SCHEMA.md: домен, конвенции, frontmatter, таксономия 30 тегов, thresholds</li>
+<li>index.md: каталог всех страниц (секции: Entities/Concepts/Comparisons/Queries/Raw)</li>
+<li>comparisons/free-tier-providers.md создана</li>
+<li>WIKI_PATH=/home/ubuntu/baza установлен</li>
+<li>35 файлов перелинкованы под новую структуру</li>
+</ul>
+<h2>[2026-08-02] create | Каркас исследования многоагентной разработки automation-проектов</h2>
+<ul>
+<li>Созданы raw-источники: 11 файлов (GitHub, Web/arXiv, Telegram MCP-срез)</li>
+<li>Созданы wiki-страницы: 5 файлов</li>
+<li>Обновлены SCHEMA.md (таксономия), index.md (каталог)</li>
+<li>Тема стартует как долгий исследовательский проект: raw → wiki → synthesis → NotebookLM podcast</li>
+</ul>
+<h2>[2026-08-02] update | Spec Kit как коммуникационный каркас</h2>
+<ul>
+<li>Зафиксировано: Павел знаком с GitHub Spec Kit и конструкцией project → spec → plan → tasks → implement</li>
+<li>Обновлены concepts/spec-driven-agent-development.md и concepts/multi-agent-development-methodology.md</li>
+<li>Spec Kit назначен базовым языком коммуникации для многоагентной методологии automation-проектов</li>
+</ul>
+<h2>[2026-08-02] ingest | Apply Pilot как живой кейс multi-agent/spec-driven разработки</h2>
+<ul>
+<li>Создан raw/transcripts/apply-pilot-context-2026-08-02.md с контекстом от Павла</li>
+<li>Создана entities/apply-pilot.md</li>
+<li>Обновлены concepts/multi-agent-development-methodology.md, SCHEMA.md, index.md</li>
+<li>Зафиксировано ограничение: Павел участвует ресурсами, но не является инициатором/методологическим владельцем/продуктовым владельцем проекта</li>
+</ul>
+<h2>[2026-08-02] ingest | Green Broker — реальный проект Telegram-бота для продажи растений</h2>
+<ul>
+<li>Сохранены raw-источники: raw/articles/green-broker-constitution-2026-08-02.md, raw/articles/green-broker-spec-2026-08-02.md, raw/articles/green-broker-plan-2026-08-02.md</li>
+<li>Создана wiki-страница entities/green-broker.md</li>
+<li>Обновлены concepts/spec-driven-agent-development.md, concepts/multi-agent-development-methodology.md, index.md</li>
+<li>Зафиксировано: Green Broker — собственный проект Павла, оформленный через Constitution → Spec → Plan; MVP фокусируется на B2B-заявках ландшафтников, виртуальной корзине и PDF КП</li>
+</ul>
+<h2>[2026-08-02] ingest | Green Broker — коммерческие предложения PDF</h2>
+<ul>
+<li>Извлечён текст из PDF и сохранены raw-страницы: raw/articles/green-broker-kp-pitomniki-2026-08-02.md, raw/articles/green-broker-kp-telegram-bot-2026-08-02.md</li>
+<li>Оригинальные PDF сохранены как raw/assets/green-broker/KP-pitomniki.pdf и raw/assets/green-broker/KP-telegram-bot.pdf</li>
+<li>Обновлена entities/green-broker.md: добавлен go-to-market слой, pricing, модель подписки питомников и этапы из КП</li>
+<li>Обновлён index.md</li>
+</ul>
+<h2>[2026-08-03] update | Telemost Recorder — исследование актуальной ветки v04</h2>
+<ul>
+<li>Исследован репозиторий https://github.com/3dstepansky/stepansky-telemost-recorder-doker: ветки master/003v/test/v04, актуальная ветка v04 (<code>508deeb</code>, 2026-07-03)</li>
+<li>Создан raw snapshot: raw/articles/telemost-recorder-repository-v04-2026-08-03.md</li>
+<li>Полностью обновлена entities/telemost-recorder.md: архитектура v04, компоненты, UX, SQLite, US-16, roadmap, риски</li>
+<li>Проверка: <code>npm install &amp;&amp; npm test</code> в <code>/tmp/telemost-repo</code> → 3 теста прошли; npm audit сообщает 16 vulnerabilities</li>
+<li>Обновлён index.md</li>
+</ul>
+<div class="backlinks"><h3>↩ Обратные ссылки</h3><ul><li><a href="dashboard.html">dashboard.md</a></li><li><a href="index.html">index.md</a></li></ul></div>
+</div>
+</body>
+</html>

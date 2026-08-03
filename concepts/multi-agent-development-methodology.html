@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Методология многоагентной разработки automation-проектов — Vault</title>
+<style>* { margin:0; padding:0; box-sizing:border-box; }
+body { background:#0d1117; color:#c9d1d9; font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif; line-height:1.7; font-size:16px; }
+.container { max-width:820px; margin:0 auto; padding:16px; }
+h1 { font-size:1.6em; color:#f0f6fc; margin:0.6em 0 0.4em; border-bottom:1px solid #30363d; padding-bottom:0.3em; }
+h2 { font-size:1.25em; color:#f0f6fc; margin:0.8em 0 0.3em; }
+h3 { font-size:1.1em; color:#f0f6fc; margin:0.6em 0 0.2em; }
+p { margin:0.5em 0; }
+a { color:#58a6ff; text-decoration:none; }
+a:hover { text-decoration:underline; }
+ul, ol { margin:0.5em 0; padding-left:1.5em; }
+li { margin:0.3em 0; }
+code { background:#161b22; padding:2px 6px; border-radius:3px; font-size:0.9em; color:#f0c674; }
+pre { background:#161b22; padding:12px; border-radius:6px; overflow-x:auto; margin:0.8em 0; }
+pre code { background:none; padding:0; }
+blockquote { border-left:3px solid #30363d; padding-left:1em; margin:0.8em 0; color:#8b949e; }
+hr { border:none; border-top:1px solid #30363d; margin:1.2em 0; }
+table { width:100%; border-collapse:collapse; margin:0.8em 0; }
+th, td { border:1px solid #30363d; padding:8px 12px; text-align:left; }
+th { background:#161b22; color:#f0f6fc; }
+.dataview { background:#161b22; border:1px solid #30363d; border-radius:6px; padding:12px; margin:0.8em 0; font-family:monospace; font-size:0.85em; color:#8b949e; }
+.nav { background:#161b22; border-bottom:1px solid #30363d; padding:8px 16px; font-size:14px; position:sticky; top:0; z-index:10; }
+.nav a { color:#58a6ff; }
+.meta { font-size:0.85em; color:#8b949e; margin:0.5em 0 1em; }
+.tag { display:inline-block; background:#1f6feb33; color:#58a6ff; padding:2px 8px; border-radius:10px; font-size:0.8em; margin:0 3px 3px 0; }
+.backlinks { margin-top:2em; padding-top:1em; border-top:1px solid #30363d; }
+.backlinks h3 { font-size:1em; color:#8b949e; }
+.button-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:10px; margin:1em 0; }
+.button { display:block; background:#238636; color:#fff !important; padding:12px 14px; border-radius:8px; text-align:center; font-weight:600; border:1px solid #2ea043; }
+.button:hover { background:#2ea043; text-decoration:none; }</style>
+</head>
+<body>
+<nav class="nav"><span class="crumbs"><a href="/">🏠</a> / <span>concepts</span></span></nav>
+<div class="container">
+<h1>Методология многоагентной разработки automation-проектов</h1>
+<div class="meta"><span class="tag">concept</span> <span class="tag">multi-agent</span> <span class="tag">automation</span> <span class="tag">methodology</span> <span class="tag">quality-gate</span> <span class="tag">security</span> last modified: 2026-08-02 16:46</div>
+<h1>Методология многоагентной разработки automation-проектов</h1>
+<h2>Коротко</h2>
+<p>Методология многоагентной разработки — это не «запустить толпу агентов», а дисциплина, где каждый агент получает ограниченную роль, входные данные, артефакт на выходе и проверку качества.</p>
+<h2>Базовый цикл</h2>
+<blockquote>
+<p>Для Павла базовый язык процесса — GitHub Spec Kit: <strong>project → spec → plan → tasks → implement</strong>. Ниже этот цикл расширен под многоагентную разработку automation-проектов.</p>
+</blockquote>
+<ol>
+<li><strong>Intent capture / Project</strong> — человек формулирует бизнес-цель, проектный контекст и ограничения.</li>
+<li><strong>Spec pass</strong> — planner превращает намерение в спецификацию: scope, non-goals, risks, acceptance criteria.</li>
+<li><strong>Task slicing</strong> — architect/planner режет работу на независимые packages.</li>
+<li><strong>Parallel execution</strong> — implementer/researcher agents работают в изолированных контекстах.</li>
+<li><strong>Integration</strong> — integrator собирает изменения, разрешает конфликты, обновляет docs.</li>
+<li><strong>Quality gates</strong> — tester/reviewer/evaluator проверяют по рубрике и фактическим инструментам.</li>
+<li><strong>Human review</strong> — человек принимает решения на границах риска: деньги, прод, секреты, внешние аккаунты.</li>
+<li><strong>Knowledge capture</strong> — итог, источники, ошибки и паттерны уходят в <a href="../concepts/llm-wiki.html">LLM Wiki</a>.</li>
+</ol>
+<h2>Что считать артефактом</h2>
+<ul>
+<li>spec.md / requirements.md</li>
+<li>task breakdown</li>
+<li>git branch/worktree или patch</li>
+<li>тесты и логи запуска</li>
+<li>security notes / permission diff</li>
+<li>user-facing changelog</li>
+<li>wiki update</li>
+</ul>
+<h2>Где multi-agent оправдан</h2>
+<ul>
+<li>Независимые research streams: GitHub/Web/Telegram.</li>
+<li>Разные специализации: backend, browser automation, security, docs.</li>
+<li>Проверка результата другим контекстом: reviewer/evaluator.</li>
+<li>Вариантный дизайн: несколько архитектурных предложений с trade-offs.</li>
+</ul>
+<h2>Где multi-agent вреден</h2>
+<ul>
+<li>Маленькая линейная правка.</li>
+<li>Нет тестов или acceptance criteria.</li>
+<li>Все агенты читают один и тот же огромный контекст.</li>
+<li>Нет владельца интеграции.</li>
+<li>Нет бюджета на токены/время.</li>
+</ul>
+<h2>Quality gates для automation</h2>
+<ul>
+<li><strong>Dry run</strong> перед реальными side effects.</li>
+<li><strong>Allowlist сети и файлов</strong> для браузерных/скрейпинговых задач.</li>
+<li><strong>Replayable tests</strong>: сценарий можно повторить без ручного клика.</li>
+<li><strong>Rollback</strong>: как откатить файлы, cron, config, внешние записи.</li>
+<li><strong>Evidence log</strong>: агент показывает реальные tool outputs, а не «готово».</li>
+</ul>
+<h2>Живые кейсы</h2>
+<ul>
+<li><a href="../entities/apply-pilot.html">Apply Pilot</a> — совместный проект поиска работы; потенциальный пример фактической агентной/spec-driven разработки с Opus/MR, где Павел участвует ресурсами, но не является владельцем методологии или продукта.</li>
+</ul>
+<h2>Green Broker как второй живой кейс</h2>
+<p><a href="../entities/green-broker.html">Green Broker</a> важен для методологии как проект, где Spec Kit уже применён напрямую: есть Конституция, <code>spec.md</code> и <code>plan.md</code>. В отличие от <a href="../entities/apply-pilot.html">Apply Pilot</a>, где Павел не является владельцем процесса, Green Broker — собственный проект Павла и может стать полноценным полигоном для схемы: spec-driven вход → декомпозиция в <code>tasks.md</code> → роли агентов → quality gates → реализация.</p>
+<h2>Связанные заметки</h2>
+<ul>
+<li><a href="../concepts/agent-roles-for-automation.html">Роли агентов для automation</a></li>
+<li><a href="../concepts/spec-driven-agent-development.html">Spec-driven агентная разработка</a></li>
+<li><a href="../comparisons/agent-orchestration-tools.html">Сравнение orchestration tools</a></li>
+<li><a href="../queries/multi-agent-automation-research-plan.html">План исследования</a></li>
+</ul>
+<div class="backlinks"><h3>↩ Обратные ссылки</h3><ul><li><a href="../comparisons/agent-orchestration-tools.html">comparisons/agent-orchestration-tools.md</a></li><li><a href="../concepts/agent-roles-for-automation.html">concepts/agent-roles-for-automation.md</a></li><li><a href="../concepts/spec-driven-agent-development.html">concepts/spec-driven-agent-development.md</a></li><li><a href="../dashboard.html">dashboard.md</a></li><li><a href="../entities/apply-pilot.html">entities/apply-pilot.md</a></li><li><a href="../entities/green-broker.html">entities/green-broker.md</a></li><li><a href="../entities/telemost-recorder.html">entities/telemost-recorder.md</a></li><li><a href="../index.html">index.md</a></li><li><a href="../queries/multi-agent-automation-research-plan.html">queries/multi-agent-automation-research-plan.md</a></li></ul></div>
+</div>
+</body>
+</html>

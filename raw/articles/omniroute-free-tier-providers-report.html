@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>omniroute-free-tier-providers-report — Vault</title>
+<style>* { margin:0; padding:0; box-sizing:border-box; }
+body { background:#0d1117; color:#c9d1d9; font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif; line-height:1.7; font-size:16px; }
+.container { max-width:820px; margin:0 auto; padding:16px; }
+h1 { font-size:1.6em; color:#f0f6fc; margin:0.6em 0 0.4em; border-bottom:1px solid #30363d; padding-bottom:0.3em; }
+h2 { font-size:1.25em; color:#f0f6fc; margin:0.8em 0 0.3em; }
+h3 { font-size:1.1em; color:#f0f6fc; margin:0.6em 0 0.2em; }
+p { margin:0.5em 0; }
+a { color:#58a6ff; text-decoration:none; }
+a:hover { text-decoration:underline; }
+ul, ol { margin:0.5em 0; padding-left:1.5em; }
+li { margin:0.3em 0; }
+code { background:#161b22; padding:2px 6px; border-radius:3px; font-size:0.9em; color:#f0c674; }
+pre { background:#161b22; padding:12px; border-radius:6px; overflow-x:auto; margin:0.8em 0; }
+pre code { background:none; padding:0; }
+blockquote { border-left:3px solid #30363d; padding-left:1em; margin:0.8em 0; color:#8b949e; }
+hr { border:none; border-top:1px solid #30363d; margin:1.2em 0; }
+table { width:100%; border-collapse:collapse; margin:0.8em 0; }
+th, td { border:1px solid #30363d; padding:8px 12px; text-align:left; }
+th { background:#161b22; color:#f0f6fc; }
+.dataview { background:#161b22; border:1px solid #30363d; border-radius:6px; padding:12px; margin:0.8em 0; font-family:monospace; font-size:0.85em; color:#8b949e; }
+.nav { background:#161b22; border-bottom:1px solid #30363d; padding:8px 16px; font-size:14px; position:sticky; top:0; z-index:10; }
+.nav a { color:#58a6ff; }
+.meta { font-size:0.85em; color:#8b949e; margin:0.5em 0 1em; }
+.tag { display:inline-block; background:#1f6feb33; color:#58a6ff; padding:2px 8px; border-radius:10px; font-size:0.8em; margin:0 3px 3px 0; }
+.backlinks { margin-top:2em; padding-top:1em; border-top:1px solid #30363d; }
+.backlinks h3 { font-size:1em; color:#8b949e; }
+.button-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:10px; margin:1em 0; }
+.button { display:block; background:#238636; color:#fff !important; padding:12px 14px; border-radius:8px; text-align:center; font-weight:600; border:1px solid #2ea043; }
+.button:hover { background:#2ea043; text-decoration:none; }</style>
+</head>
+<body>
+<nav class="nav"><span class="crumbs"><a href="/">🏠</a> / <span>raw</span> / <span>articles</span></span></nav>
+<div class="container">
+<h1>omniroute-free-tier-providers-report</h1>
+<div class="meta"> last modified: 2026-07-31 07:17</div>
+<h1>OmniRoute: Исследование и Free-Tier Провайдеры 2026</h1>
+<p><strong>Дата исследования:</strong> 30 июля 2026<br />
+<strong>Версия OmniRoute:</strong> 3.8.49+<br />
+<strong>Endpoint:</strong> http://127.0.0.1:20128/v1</p>
+<hr />
+<h2>1. Как добавить провайдера в OmniRoute</h2>
+<h3>Методы добавления провайдера</h3>
+<p>OmniRoute поддерживает три способа подключения провайдеров:</p>
+<h4>1.1 Через Dashboard (Web UI)</h4>
+<div class="codehilite"><pre><span></span><code><span class="nv">Dashboard</span><span class="w"> </span>→<span class="w"> </span><span class="nv">Providers</span><span class="w"> </span>→<span class="w"> </span><span class="k">Connect</span><span class="w"> </span><span class="nv">Provider</span>
+</code></pre></div>
+
+<p><strong>Типы аутентификации:</strong>
+- <strong>OAuth</strong> — автоматический вход через провайдера (Claude Code, Gemini CLI, GitHub Copilot, etc.)
+- <strong>API Key</strong> — ввод API ключа вручную
+- <strong>Web Cookie</strong> — вставка cookie из браузера для веб-версий</p>
+<h4>1.2 Через CLI</h4>
+<div class="codehilite"><pre><span></span><code><span class="c1"># Интерактивное добавление</span>
+omniroute<span class="w"> </span>provider<span class="w"> </span>add
+
+<span class="c1"># Тестирование подключения провайдера</span>
+omniroute<span class="w"> </span>provider<span class="w"> </span><span class="nb">test</span><span class="w"> </span>&lt;provider-id&gt;
+
+<span class="c1"># Пакетное тестирование всех провайдеров</span>
+omniroute<span class="w"> </span>providers<span class="w"> </span>test-batch
+
+<span class="c1"># Список подключённых провайдеров</span>
+omniroute<span class="w"> </span>provider<span class="w"> </span>list
+</code></pre></div>
+
+<h4>1.3 Через Environment Variables (Headless/CI)</h4>
+<div class="codehilite"><pre><span></span><code><span class="c1"># Пример для Docker/Kubernetes</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">INITIAL_PASSWORD</span><span class="o">=</span><span class="s2">&quot;your-secure-password&quot;</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">OPENAI_API_KEY</span><span class="o">=</span><span class="s2">&quot;sk-...&quot;</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">GEMINI_API_KEY</span><span class="o">=</span><span class="s2">&quot;AIza...&quot;</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">GROQ_API_KEY</span><span class="o">=</span><span class="s2">&quot;gsk_...&quot;</span>
+
+omniroute<span class="w"> </span>setup<span class="w"> </span>--non-interactive
+</code></pre></div>
+
+<h3>Формат конфигурации провайдера</h3>
+<p>Провайдеры определяются в <code>src/shared/constants/providers.ts</code> и хранятся в локальной SQLite базе.</p>
+<p><strong>Структура провайдера:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Поле</th>
+<th>Описание</th>
+<th>Пример</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>id</code></td>
+<td>Уникальный идентификатор</td>
+<td><code>nvidia</code>, <code>gemini</code>, <code>groq</code></td>
+</tr>
+<tr>
+<td><code>alias</code></td>
+<td>Короткий псевдоним для моделей</td>
+<td><code>nv</code>, <code>gemini</code>, <code>groq</code></td>
+</tr>
+<tr>
+<td><code>name</code></td>
+<td>Отображаемое имя</td>
+<td><code>NVIDIA NIM</code>, <code>Gemini (Google AI Studio)</code></td>
+</tr>
+<tr>
+<td><code>tags</code></td>
+<td>Категории</td>
+<td><code>API key</code>, <code>OAuth</code>, <code>free</code>, <code>aggregator</code></td>
+</tr>
+<tr>
+<td><code>website</code></td>
+<td>Ссылка на сайт</td>
+<td><code>https://build.nvidia.com</code></td>
+</tr>
+<tr>
+<td><code>notes</code></td>
+<td>Заметки о free tier</td>
+<td><code>"Free dev access: ~40 RPM, 70+ models"</code></td>
+</tr>
+</tbody>
+</table>
+<h3>Примеры добавления провайдеров</h3>
+<h4>NVIDIA NIM (API Key)</h4>
+<div class="codehilite"><pre><span></span><code>Dashboard → Providers → Add Provider → NVIDIA NIM
+- Provider ID: nvidia
+- API Key: nvapi-xxxxx (получить на build.nvidia.com)
+- Base URL: https://integrate.api.nvidia.com/v1 (автоматически)
+</code></pre></div>
+
+<p><strong>Модели:</strong> <code>nvidia/glm-5.2</code>, <code>nvidia/deepseek-v4-flash</code>, <code>nvidia/qwen-2.5-72b-instruct</code></p>
+<h4>Google Gemini (API Key)</h4>
+<div class="codehilite"><pre><span></span><code>Dashboard → Providers → Add Provider → Gemini
+- Provider ID: gemini
+- API Key: AIza... (получить на aistudio.google.com)
+- Base URL: https://generativelanguage.googleapis.com/v1beta/openai (автоматически)
+</code></pre></div>
+
+<p><strong>Модели:</strong> <code>gemini/gemini-2.5-flash</code>, <code>gemini/gemini-3.1-flash-lite</code></p>
+<h4>Groq (API Key)</h4>
+<div class="codehilite"><pre><span></span><code>Dashboard → Providers → Add Provider → Groq
+<span class="k">-</span> Provider ID: groq
+<span class="k">-</span> API Key: gsk_... (получить на console.groq.com)
+<span class="k">-</span> Base URL: https://api.groq.com/openai/v1 (автоматически)
+</code></pre></div>
+
+<p><strong>Модели:</strong> <code>groq/llama-3.1-8b-instant</code>, <code>groq/llama-3.3-70b-versatile</code>, <code>groq/qwen3-32b</code></p>
+<hr />
+<h2>2. Актуальные Free-Tier Провайдеры 2026</h2>
+<h3>Сводная таблица</h3>
+<table>
+<thead>
+<tr>
+<th>Провайдер</th>
+<th>Free Tier</th>
+<th>Кредиты/Лимиты</th>
+<th>Карта</th>
+<th>Регистрация</th>
+<th>Модели</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>NVIDIA NIM</strong></td>
+<td>✅ Да</td>
+<td>~40 RPM, 70+ моделей</td>
+<td>❌ Нет</td>
+<td>build.nvidia.com</td>
+<td>GLM-5.2, DeepSeek V4, Kimi K2.6, Qwen</td>
+</tr>
+<tr>
+<td><strong>Google AI Studio</strong></td>
+<td>✅ Да</td>
+<td>1,500 RPD (Flash), 50 RPD (2.5 Pro)</td>
+<td>❌ Нет</td>
+<td>aistudio.google.com</td>
+<td>Gemini 2.5 Flash, 3 Flash, 3.1 Flash-Lite</td>
+</tr>
+<tr>
+<td><strong>Groq</strong></td>
+<td>✅ Да</td>
+<td>30 RPM, 14,400 RPD, 30K TPM</td>
+<td>❌ Нет</td>
+<td>console.groq.com</td>
+<td>Llama 3.1/3.3/4, Qwen3, DeepSeek R1 Distill</td>
+</tr>
+<tr>
+<td><strong>DeepSeek</strong></td>
+<td>✅ Да</td>
+<td>5M токенов на регистрацию</td>
+<td>❌ Нет</td>
+<td>platform.deepseek.com</td>
+<td>DeepSeek V4 Flash/Pro, R1</td>
+</tr>
+<tr>
+<td><strong>OpenRouter</strong></td>
+<td>✅ Да</td>
+<td>20 RPM, 200 RPD на free модели</td>
+<td>❌ Нет</td>
+<td>openrouter.ai</td>
+<td>15+ free моделей (Nemotron, Laguna, Ling)</td>
+</tr>
+<tr>
+<td><strong>Cohere</strong></td>
+<td>✅ Да</td>
+<td>1,000 API calls/month</td>
+<td>❌ Нет</td>
+<td>cohere.com</td>
+<td>Command A+, Command R+, Rerank 3.5</td>
+</tr>
+<tr>
+<td><strong>Mistral</strong></td>
+<td>✅ Да</td>
+<td>~1B tokens/month, rate-limited</td>
+<td>❌ Нет</td>
+<td>mistral.ai</td>
+<td>Mistral Small/Medium/Large, Codestral</td>
+</tr>
+<tr>
+<td><strong>Together AI</strong></td>
+<td>❌ Нет</td>
+<td>$5 min purchase (было $25 credit)</td>
+<td>✅ Да</td>
+<td>together.ai</td>
+<td>Llama, Qwen, DeepSeek (paid only)</td>
+</tr>
+<tr>
+<td><strong>Hugging Face</strong></td>
+<td>✅ Да</td>
+<td>Free Inference API, rate-limited</td>
+<td>❌ Нет</td>
+<td>huggingface.co</td>
+<td>45,000+ моделей (Whisper, SDXL, etc.)</td>
+</tr>
+<tr>
+<td><strong>Cloudflare Workers AI</strong></td>
+<td>✅ Да</td>
+<td>10,000 Neurons/day</td>
+<td>❌ Нет</td>
+<td>dash.cloudflare.com</td>
+<td>Llama, Qwen, Mistral, Phi-2</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>3. Детальная информация по провайдерам</h2>
+<h3>3.1 NVIDIA NIM (free-claude-code)</h3>
+<p><strong>Статус:</strong> ✅ Free tier доступен</p>
+<p><strong>Регистрация:</strong>
+1. Перейти на https://build.nvidia.com
+2. Нажать "Get API Key"
+3. Авторизоваться через NVIDIA аккаунт или Google/GitHub
+4. API ключ генерируется автоматически</p>
+<p><strong>Free Tier лимиты:</strong>
+- ~40 requests per minute (RPM)
+- 70+ моделей бесплатно
+- Нет expiry date для free tier
+- Без кредитной карты</p>
+<p><strong>Лучшие модели для кодинга:</strong>
+| Модель | Контекст | Назначение |
+|--------|----------|------------|
+| <code>glm-5.2</code> | 128K | Общий кодинг |
+| <code>deepseek-v4-flash</code> | 1M | Быстрое программирование |
+| <code>kimi-k2.6</code> | 256K | Сложные задачи |
+| <code>qwen-2.5-72b-instruct</code> | 128K | Мультиязычный код |</p>
+<p><strong>OmniRoute конфигурация:</strong></p>
+<div class="codehilite"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;provider&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;nvidia&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;apiKey&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;nvapi-xxxxx&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;models&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;nvidia/glm-5.2&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;nvidia/deepseek-v4-flash&quot;</span><span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<hr />
+<h3>3.2 Google AI Studio (Gemini)</h3>
+<p><strong>Статус:</strong> ✅ Free tier доступен (Flash модели)</p>
+<p><strong>Регистрация:</strong>
+1. Перейти на https://aistudio.google.com
+2. Войти через Google аккаунт
+3. Нажать "Get API Key"
+4. Создать новый API ключ</p>
+<p><strong>Free Tier лимиты (апрель 2026):</strong>
+- <strong>Gemini 2.5 Flash:</strong> 1,500 RPD (requests per day)
+- <strong>Gemini 3 Flash:</strong> 1,500 RPD
+- <strong>Gemini 3.1 Flash-Lite:</strong> 1,500 RPD
+- <strong>Gemini 2.5 Pro:</strong> 50 RPD (ограничено)
+- <strong>Pro модели:</strong> Платные с 1 апреля 2026</p>
+<p><strong>Требования:</strong>
+- ❌ Без кредитной карты
+- ✅ Google аккаунт
+- ⚠️ Данные используются для обучения (free tier)</p>
+<p><strong>OmniRoute конфигурация:</strong></p>
+<div class="codehilite"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;provider&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;gemini&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;apiKey&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;AIza...&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;models&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;gemini/gemini-2.5-flash&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;gemini/gemini-3-flash&quot;</span><span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<hr />
+<h3>3.3 Groq</h3>
+<p><strong>Статус:</strong> ✅ Free tier доступен</p>
+<p><strong>Регистрация:</strong>
+1. Перейти на https://console.groq.com
+2. Sign up через Google/GitHub/email
+3. API ключ создаётся сразу после регистрации</p>
+<p><strong>Free Tier лимиты:</strong>
+| Метрика | Лимит |
+|---------|-------|
+| Requests per Minute (RPM) | 30 |
+| Requests per Day (RPD) | 14,400 |
+| Tokens per Minute (TPM) | 30,000 (зависит от модели) |
+| Tokens per Day (TPD) | 500,000 |</p>
+<p><strong>Лучшие модели:</strong>
+| Модель | TPM | TPS | Назначение |
+|--------|-----|-----|------------|
+| <code>llama-3.1-8b-instant</code> | 6K | 840 | Быстрые ответы |
+| <code>llama-3.3-70b-versatile</code> | 12K | 394 | Сложные задачи |
+| <code>llama-4-scout-17b</code> | 30K | 600 | Баланс |
+| <code>qwen3-32b</code> | 6K | 500 | Мультиязычность |
+| <code>deepseek-r1-distill-llama-70b</code> | — | — | Reasoning |</p>
+<p><strong>Developer Tier (с картой):</strong>
+- 10x лимиты
+- 25% скидка на токены
+- Нет минимального платежа</p>
+<p><strong>OmniRoute конфигурация:</strong></p>
+<div class="codehilite"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;provider&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;groq&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;apiKey&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;gsk_...&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;models&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;groq/llama-3.3-70b-versatile&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;groq/qwen3-32b&quot;</span><span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<hr />
+<h3>3.4 DeepSeek</h3>
+<p><strong>Статус:</strong> ✅ Free tier доступен</p>
+<p><strong>Регистрация:</strong>
+1. Перейти на https://platform.deepseek.com
+2. Sign up через email/Google/GitHub
+3. Верификация email
+4. API ключ в Dashboard</p>
+<p><strong>Free Tier:</strong>
+- <strong>5,000,000 токенов</strong> на регистрацию
+- Без кредитной карты
+- Валидность: ~30 дней
+- После: pay-as-you-go</p>
+<p><strong>Цены (после free tier):</strong>
+| Модель | Input ($/1M) | Output ($/1M) | Cache Hit |
+|--------|--------------|---------------|-----------|
+| DeepSeek V4 Flash | $0.14 | $0.28 | $0.0028 |
+| DeepSeek V4 Pro | $0.435 | $0.87 | $0.0036 |</p>
+<p><strong>Контекст:</strong> 1M tokens, 384K max output</p>
+<p><strong>OmniRoute конфигурация:</strong></p>
+<div class="codehilite"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;provider&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;deepseek&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;apiKey&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;sk-...&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;models&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;deepseek/deepseek-chat&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;deepseek/deepseek-reasoner&quot;</span><span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<hr />
+<h3>3.5 OpenRouter</h3>
+<p><strong>Статус:</strong> ✅ Free models доступны</p>
+<p><strong>Регистрация:</strong>
+1. Перейти на https://openrouter.ai
+2. Sign up через Google/GitHub/email
+3. API ключ генерируется автоматически</p>
+<p><strong>Free Tier:</strong>
+- 20 RPM, 200 RPD на модели с суффиксом <code>:free</code>
+- Без кредитной карты
+- Каталог постоянно меняется</p>
+<p><strong>Free модели (июль 2026):</strong>
+| Модель | Контекст | Назначение |
+|--------|----------|------------|
+| <code>nvidia/nemotron-3-ultra-550b:free</code> | 262K → 128K | Reasoning |
+| <code>poolside/laguna-xs-2.1:free</code> | 256K | Coding agent |
+| <code>inclusionai/ling-3.0-flash:free</code> | — | Multilingual |
+| <code>qwen/qwen3-235b-a22b:free</code> | — | Large model |
+| <code>deepseek/deepseek-r1:free</code> | — | Reasoning |</p>
+<p><strong>⚠️ Важно:</strong> Free модели могут быть удалены без предупреждения. За 9 дней до 27 июля 2026 удалено 7 free моделей (Llama, Qwen, Hermes).</p>
+<p><strong>OmniRoute конфигурация:</strong></p>
+<div class="codehilite"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;provider&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;openrouter&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;apiKey&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;sk-or-...&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;models&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="s2">&quot;openrouter/nvidia/nemotron-3-ultra-550b:free&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;openrouter/poolside/laguna-xs-2.1:free&quot;</span>
+<span class="w">  </span><span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<hr />
+<h3>3.6 Cohere</h3>
+<p><strong>Статус:</strong> ✅ Free Trial API доступен</p>
+<p><strong>Регистрация:</strong>
+1. Перейти на https://cohere.com
+2. Sign up
+3. Создать Trial API key</p>
+<p><strong>Free Tier (Trial API Key):</strong>
+| Метрика | Лимит |
+|---------|-------|
+| API calls per month | 1,000 |
+| Chat RPM | 20 |
+| Embed RPM | 5 |</p>
+<p><strong>Модели:</strong>
+- Command A+ (218B) — текст
+- Command R+, Command R, Command R7B — RAG
+- Rerank 3.5 — поиск
+- Embed 4 — эмбеддинги
+- Aya Expanse — мультиязычность</p>
+<p><strong>Ограничения:</strong>
+- ❌ Только для тестирования/прототипов
+- ❌ Не для коммерческого использования
+- ✅ Без кредитной карты</p>
+<p><strong>OmniRoute конфигурация:</strong></p>
+<div class="codehilite"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;provider&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;cohere&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;apiKey&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;...&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;models&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;cohere/command-a-plus-05-2026&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;cohere/command-r-plus&quot;</span><span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<hr />
+<h3>3.7 Mistral AI</h3>
+<p><strong>Статус:</strong> ✅ Free Experiment tier доступен</p>
+<p><strong>Регистрация:</strong>
+1. Перейти на https://mistral.ai
+2. Sign up на La Plateforme
+3. SMS верификация (иногда)
+4. API ключ создаётся автоматически</p>
+<p><strong>Free Tier (Experiment):</strong>
+| Метрика | Лимит |
+|---------|-------|
+| Tokens per month | ~1,000,000,000 (1B) |
+| Global rate limit | 1 req/sec per API key |
+| Телефон | ✅ SMS верификация |
+| Карта | ❌ Не требуется |</p>
+<p><strong>Модели (все доступны):</strong>
+- Mistral Small
+- Mistral Medium
+- Mistral Large
+- Codestral (кодинг)
+- Mistral Embed</p>
+<p><strong>Quota pools:</strong>
+| Модель | Tokens/min | Req/min | Tokens/month |
+|--------|------------|---------|--------------|
+| codestral-latest | 20,000 | 10 | 1,000,000,000 |
+| mistral-large-latest | 20,000 | 10 | 1,000,000,000 |
+| devstral-2512 | 1,000,000 | 50 | 10,000,000 |</p>
+<p><strong>OmniRoute конфигурация:</strong></p>
+<div class="codehilite"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;provider&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;mistral&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;apiKey&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;...&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;models&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;mistral/mistral-large-latest&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;mistral/codestral-latest&quot;</span><span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<hr />
+<h3>3.8 Together AI</h3>
+<p><strong>Статус:</strong> ❌ Free tier отменён (июль 2025)</p>
+<p><strong>Изменения:</strong>
+- Free trial credits <strong>отменены</strong> в июле 2025
+- Минимальный депозит: <strong>$5</strong>
+- Требуется кредитная карта</p>
+<p><strong>Альтернативы:</strong>
+- Groq (бесплатно для Llama/Qwen)
+- OpenRouter (free модели)
+- NVIDIA NIM (бесплатно)</p>
+<p><strong>Цены (paid):</strong>
+| Модель | Input ($/1M) | Output ($/1M) |
+|--------|--------------|---------------|
+| Llama 3.3 70B | $1.04 | $1.04 |
+| DeepSeek V4 Pro | $2.10 | $4.40 |
+| GLM-5.2 | $1.40 | $4.40 |</p>
+<hr />
+<h3>3.9 Hugging Face</h3>
+<p><strong>Статус:</strong> ✅ Free Inference API доступен</p>
+<p><strong>Регистрация:</strong>
+1. Перейти на https://huggingface.co
+2. Sign up
+3. Access Token в Settings → Access Tokens</p>
+<p><strong>Free Tier:</strong>
+- Free Inference API для 45,000+ моделей
+- Rate-limited (очереди)
+- Без кредитной карты
+- PRO аккаунт: $9/месяц (ускоренные очереди)</p>
+<p><strong>Модели:</strong>
+- Whisper (speech-to-text)
+- VITS (TTS)
+- SDXL (images)
+- Mistral, Llama, Qwen (text)
+- Embedding модели</p>
+<p><strong>OmniRoute конфигурация:</strong></p>
+<div class="codehilite"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;provider&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;huggingface&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;apiKey&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;hf_...&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;models&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;huggingface/mistral-7b-instruct&quot;</span><span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<hr />
+<h3>3.10 Cloudflare Workers AI</h3>
+<p><strong>Статус:</strong> ✅ Free tier доступен</p>
+<p><strong>Регистрация:</strong>
+1. Перейти на https://dash.cloudflare.com
+2. Создать аккаунт
+3. Workers AI → Get Started</p>
+<p><strong>Free Tier (Workers Free):</strong>
+| Метрика | Лимит |
+|---------|-------|
+| Neurons per day | 10,000 |
+| Reset | 00:00 UTC daily |
+| После free tier | $0.011 per 1,000 Neurons |</p>
+<p><strong>Rate Limits:</strong>
+| Task | RPM |
+|------|-----|
+| Text Generation | 300 |
+| Text Embeddings | 3,000 |
+| Image Classification | 3,000 |
+| Speech Recognition | 720 |</p>
+<p><strong>Модели:</strong>
+- <code>@cf/meta/llama-3.1-8b-instruct</code>
+- <code>@cf/qwen/qwen1.5-14b-chat-awq</code>
+- <code>@cf/mistral/mistral-7b-instruct-v0.1</code>
+- <code>@cf/microsoft/phi-2</code></p>
+<p><strong>Требования:</strong>
+- Account ID (из dashboard)
+- API Token (с правами Workers AI)</p>
+<p><strong>OmniRoute конфигурация:</strong></p>
+<div class="codehilite"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;provider&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;cloudflare-ai&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;apiKey&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;...&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;accountId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;...&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;models&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;cf/@cf/meta/llama-3.1-8b-instruct&quot;</span><span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<hr />
+<h2>4. Routing стратегии в OmniRoute</h2>
+<h3>4.1 Типы стратегий</h3>
+<p>OmniRoute поддерживает <strong>18 routing стратегий</strong>:</p>
+<table>
+<thead>
+<tr>
+<th>Стратегия</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Priority</strong></td>
+<td>Всегда первый в списке, fallback при ошибке</td>
+</tr>
+<tr>
+<td><strong>Round-Robin</strong></td>
+<td>Последовательная ротация</td>
+</tr>
+<tr>
+<td><strong>Random</strong></td>
+<td>Случайный выбор</td>
+</tr>
+<tr>
+<td><strong>Weighted</strong></td>
+<td>Пропорциональное распределение по весам</td>
+</tr>
+<tr>
+<td><strong>Least-Used</strong></td>
+<td>Минимальное количество запросов</td>
+</tr>
+<tr>
+<td><strong>Cost-Optimized</strong></td>
+<td>Самый дешёвый доступный</td>
+</tr>
+<tr>
+<td><strong>Fusion</strong></td>
+<td>Параллельные запросы к нескольким моделям</td>
+</tr>
+<tr>
+<td><strong>Pipeline</strong></td>
+<td>Последовательная обработка</td>
+</tr>
+</tbody>
+</table>
+<h3>4.2 Auto-Routing</h3>
+<p>Самый простой способ — использовать модель <code>auto</code>:</p>
+<div class="codehilite"><pre><span></span><code><span class="c1"># Автоматический выбор модели</span>
+curl<span class="w"> </span>http://localhost:20128/v1/chat/completions<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Authorization: Bearer YOUR_KEY&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-d<span class="w"> </span><span class="s1">&#39;{&quot;model&quot;: &quot;auto&quot;, &quot;messages&quot;: [...]}&#39;</span>
+</code></pre></div>
+
+<p><strong>Варианты auto:</strong>
+- <code>auto</code> — умный выбор
+- <code>auto/coding</code> — оптимизация для кода
+- <code>auto/fast</code> — минимальная latency
+- <code>auto/cheap</code> — минимальная стоимость
+- <code>auto/offline</code> — максимальный quota headroom</p>
+<h3>4.3 Combos (Fallback Chains)</h3>
+<p>Создание combo в Dashboard:</p>
+<p><strong>Пример: Maximize Subscription + Free Backup</strong></p>
+<div class="codehilite"><pre><span></span><code>Name: premium-with-free-fallback
+
+Models:
+1. cc/claude-opus-4-7 (Claude Pro subscription)
+2. nvidia/glm-5.2 (NVIDIA free tier)
+3. groq/llama-3.3-70b-versatile (Groq free tier)
+4. gemini/gemini-2.5-flash (Google free tier)
+
+Strategy: Priority
+</code></pre></div>
+
+<p><strong>Пример: Zero-Cost Combo</strong></p>
+<div class="codehilite"><pre><span></span><code>Name: free-forever
+
+Models:
+1. gemini/gemini-2.5-flash (1,500 RPD free)
+2. groq/llama-3.3-70b-versatile (14,400 RPD free)
+3. openrouter/poolside/laguna-xs-2.1:free (200 RPD free)
+4. nvidia/deepseek-v4-flash (40 RPM free)
+
+Strategy: Round-Robin
+</code></pre></div>
+
+<h3>4.4 CLI интеграция</h3>
+<p><strong>Claude Code:</strong></p>
+<div class="codehilite"><pre><span></span><code><span class="c1"># Автонастройка</span>
+omniroute<span class="w"> </span>setup-claude-code
+
+<span class="c1"># Ручная настройка ~/.claude/config.json</span>
+<span class="o">{</span>
+<span class="w">  </span><span class="s2">&quot;anthropic_api_base&quot;</span>:<span class="w"> </span><span class="s2">&quot;http://localhost:20128/v1&quot;</span>,
+<span class="w">  </span><span class="s2">&quot;anthropic_api_key&quot;</span>:<span class="w"> </span><span class="s2">&quot;omniroute-api-key&quot;</span>
+<span class="o">}</span>
+</code></pre></div>
+
+<p><strong>Cursor:</strong></p>
+<div class="codehilite"><pre><span></span><code><span class="c1">// ~/.cursor/config.json</span>
+<span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;aiProvider&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;baseUrl&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;http://localhost:20128/v1&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;apiKey&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;omniroute-api-key&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;model&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;auto/coding&quot;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p><strong>Codex CLI:</strong></p>
+<div class="codehilite"><pre><span></span><code><span class="nb">export</span><span class="w"> </span><span class="nv">OPENAI_API_BASE</span><span class="o">=</span><span class="s2">&quot;http://localhost:20128&quot;</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">OPENAI_API_KEY</span><span class="o">=</span><span class="s2">&quot;omniroute-api-key&quot;</span>
+</code></pre></div>
+
+<hr />
+<h2>5. Рекомендации по настройке</h2>
+<h3>5.1 Для максимальной бесплатной работы</h3>
+<p><strong>Combo: Ultimate Free Stack</strong></p>
+<div class="codehilite"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ultimate-free&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;models&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span><span class="nt">&quot;model&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;gemini/gemini-2.5-flash&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;priority&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="nt">&quot;model&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;groq/llama-3.3-70b-versatile&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;priority&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="nt">&quot;model&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;nvidia/glm-5.2&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;priority&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="nt">&quot;model&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;mistral/codestral-latest&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;priority&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="nt">&quot;model&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;openrouter/poolside/laguna-xs-2.1:free&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;priority&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">}</span>
+<span class="w">  </span><span class="p">],</span>
+<span class="w">  </span><span class="nt">&quot;strategy&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;priority&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p><strong>Ожидаемый ежедневный лимит:</strong>
+- Gemini: 1,500 запросов
+- Groq: 14,400 запросов
+- NVIDIA: ~57,600 запросов (40 RPM × 1440 min)
+- Mistral: ~86,400 запросов (1 req/sec)
+- OpenRouter: 200 запросов</p>
+<p><strong>Итого: ~160,000+ запросов в день бесплатно</strong></p>
+<h3>5.2 Для кодинга</h3>
+<p><strong>Combo: Code Assistant</strong></p>
+<div class="codehilite"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;code-assistant&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;models&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span><span class="nt">&quot;model&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;nvidia/glm-5.2&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;priority&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="nt">&quot;model&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;groq/llama-3.3-70b-versatile&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;priority&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="nt">&quot;model&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;deepseek/deepseek-chat&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;priority&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">}</span>
+<span class="w">  </span><span class="p">],</span>
+<span class="w">  </span><span class="nt">&quot;strategy&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;auto/coding&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<h3>5.3 Для быстрого прототипирования</h3>
+<p><strong>Combo: Speed Demon</strong></p>
+<div class="codehilite"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;speed-demon&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;models&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span><span class="nt">&quot;model&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;groq/llama-3.1-8b-instant&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;priority&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="nt">&quot;model&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;groq/llama-4-scout-17b&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;priority&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="nt">&quot;model&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;gemini/gemini-3-flash&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;priority&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">}</span>
+<span class="w">  </span><span class="p">],</span>
+<span class="w">  </span><span class="nt">&quot;strategy&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;auto/fast&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<hr />
+<h2>6. Проверка работы OmniRoute</h2>
+<h3>6.1 Health Check</h3>
+<div class="codehilite"><pre><span></span><code><span class="c1"># Проверка статуса</span>
+omniroute<span class="w"> </span>status
+
+<span class="c1"># Диагностика</span>
+omniroute<span class="w"> </span>doctor
+
+<span class="c1"># Список провайдеров</span>
+omniroute<span class="w"> </span>provider<span class="w"> </span>list
+</code></pre></div>
+
+<h3>6.2 API Test</h3>
+<div class="codehilite"><pre><span></span><code><span class="c1"># Тест модели через OmniRoute</span>
+curl<span class="w"> </span>http://localhost:20128/v1/chat/completions<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Authorization: Bearer YOUR_API_KEY&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Content-Type: application/json&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-d<span class="w"> </span><span class="s1">&#39;{</span>
+<span class="s1">    &quot;model&quot;: &quot;auto&quot;,</span>
+<span class="s1">    &quot;messages&quot;: [{&quot;role&quot;: &quot;user&quot;, &quot;content&quot;: &quot;Hello, world!&quot;}]</span>
+<span class="s1">  }&#39;</span>
+</code></pre></div>
+
+<h3>6.3 Dashboard</h3>
+<p>Открыть http://localhost:20128 в браузере для:
+- Управления провайдерами
+- Создания combos
+- Мониторинга usage
+- Настройки routing</p>
+<hr />
+<h2>7. Итоговая таблица регистрации</h2>
+<table>
+<thead>
+<tr>
+<th>Провайдер</th>
+<th>URL регистрации</th>
+<th>Где взять ключ</th>
+<th>Карта</th>
+<th>Free лимиты</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>NVIDIA NIM</strong></td>
+<td>build.nvidia.com</td>
+<td>Get API Key → Copy</td>
+<td>❌</td>
+<td>40 RPM, 70+ models</td>
+</tr>
+<tr>
+<td><strong>Google AI Studio</strong></td>
+<td>aistudio.google.com</td>
+<td>Get API Key</td>
+<td>❌</td>
+<td>1,500 RPD (Flash)</td>
+</tr>
+<tr>
+<td><strong>Groq</strong></td>
+<td>console.groq.com</td>
+<td>API Keys → Create</td>
+<td>❌</td>
+<td>30 RPM, 14.4K RPD</td>
+</tr>
+<tr>
+<td><strong>DeepSeek</strong></td>
+<td>platform.deepseek.com</td>
+<td>API Keys</td>
+<td>❌</td>
+<td>5M tokens</td>
+</tr>
+<tr>
+<td><strong>OpenRouter</strong></td>
+<td>openrouter.ai</td>
+<td>Settings → Keys</td>
+<td>❌</td>
+<td>20 RPM (free models)</td>
+</tr>
+<tr>
+<td><strong>Cohere</strong></td>
+<td>cohere.com</td>
+<td>Trial API Key</td>
+<td>❌</td>
+<td>1,000 calls/month</td>
+</tr>
+<tr>
+<td><strong>Mistral</strong></td>
+<td>console.mistral.ai</td>
+<td>API Keys</td>
+<td>❌</td>
+<td>1B tokens/month</td>
+</tr>
+<tr>
+<td><strong>Hugging Face</strong></td>
+<td>huggingface.co</td>
+<td>Settings → Access Tokens</td>
+<td>❌</td>
+<td>Rate-limited</td>
+</tr>
+<tr>
+<td><strong>Cloudflare</strong></td>
+<td>dash.cloudflare.com</td>
+<td>Workers AI → API Tokens</td>
+<td>❌</td>
+<td>10K Neurons/day</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><strong>Источник данных:</strong> 
+- OmniRoute Wiki (github.com/diegosouzapw/OmniRoute/wiki)
+- Официальные сайты провайдеров
+- PricePerToken.com
+- Web search результаты (июль 2026)</p>
+<p><strong>Подготовлено:</strong> Hermes Agent Subagent<br />
+<strong>Дата:</strong> 30 июля 2026</p>
+
+</div>
+</body>
+</html>

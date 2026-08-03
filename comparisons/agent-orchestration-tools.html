@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Сравнение подходов к orchestration coding agents — Vault</title>
+<style>* { margin:0; padding:0; box-sizing:border-box; }
+body { background:#0d1117; color:#c9d1d9; font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif; line-height:1.7; font-size:16px; }
+.container { max-width:820px; margin:0 auto; padding:16px; }
+h1 { font-size:1.6em; color:#f0f6fc; margin:0.6em 0 0.4em; border-bottom:1px solid #30363d; padding-bottom:0.3em; }
+h2 { font-size:1.25em; color:#f0f6fc; margin:0.8em 0 0.3em; }
+h3 { font-size:1.1em; color:#f0f6fc; margin:0.6em 0 0.2em; }
+p { margin:0.5em 0; }
+a { color:#58a6ff; text-decoration:none; }
+a:hover { text-decoration:underline; }
+ul, ol { margin:0.5em 0; padding-left:1.5em; }
+li { margin:0.3em 0; }
+code { background:#161b22; padding:2px 6px; border-radius:3px; font-size:0.9em; color:#f0c674; }
+pre { background:#161b22; padding:12px; border-radius:6px; overflow-x:auto; margin:0.8em 0; }
+pre code { background:none; padding:0; }
+blockquote { border-left:3px solid #30363d; padding-left:1em; margin:0.8em 0; color:#8b949e; }
+hr { border:none; border-top:1px solid #30363d; margin:1.2em 0; }
+table { width:100%; border-collapse:collapse; margin:0.8em 0; }
+th, td { border:1px solid #30363d; padding:8px 12px; text-align:left; }
+th { background:#161b22; color:#f0f6fc; }
+.dataview { background:#161b22; border:1px solid #30363d; border-radius:6px; padding:12px; margin:0.8em 0; font-family:monospace; font-size:0.85em; color:#8b949e; }
+.nav { background:#161b22; border-bottom:1px solid #30363d; padding:8px 16px; font-size:14px; position:sticky; top:0; z-index:10; }
+.nav a { color:#58a6ff; }
+.meta { font-size:0.85em; color:#8b949e; margin:0.5em 0 1em; }
+.tag { display:inline-block; background:#1f6feb33; color:#58a6ff; padding:2px 8px; border-radius:10px; font-size:0.8em; margin:0 3px 3px 0; }
+.backlinks { margin-top:2em; padding-top:1em; border-top:1px solid #30363d; }
+.backlinks h3 { font-size:1em; color:#8b949e; }
+.button-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:10px; margin:1em 0; }
+.button { display:block; background:#238636; color:#fff !important; padding:12px 14px; border-radius:8px; text-align:center; font-weight:600; border:1px solid #2ea043; }
+.button:hover { background:#2ea043; text-decoration:none; }</style>
+</head>
+<body>
+<nav class="nav"><span class="crumbs"><a href="/">🏠</a> / <span>comparisons</span></span></nav>
+<div class="container">
+<h1>Сравнение подходов к orchestration coding agents</h1>
+<div class="meta"><span class="tag">comparison</span> <span class="tag">multi-agent</span> <span class="tag">orchestration</span> <span class="tag">claude-code</span> <span class="tag">codex</span> <span class="tag">github</span> <span class="tag">benchmark</span> last modified: 2026-08-02 15:14</div>
+<h1>Сравнение подходов к orchestration coding agents</h1>
+<h2>Что сравниваем</h2>
+<p>Подходы к организации нескольких AI-агентов в разработке: Claude Code subagents/agent teams, GitHub/Copilot fleet-like запуск, SWE-agent harness, LangChain evaluator/rubric loop, Agent Mesh / orchestration frameworks, custom CLI orchestrators.</p>
+<h2>Быстрое сравнение</h2>
+<table>
+<thead>
+<tr>
+<th>Подход</th>
+<th>Сильная сторона</th>
+<th>Главный риск</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Claude Code subagents</td>
+<td>Изолированные контексты, роли, tools/permissions</td>
+<td>Стоимость/effort дочерних агентов и ручная дисциплина</td>
+</tr>
+<tr>
+<td>Spec Kit / Spec Kitty</td>
+<td>Контракт до кода, понятные tasks</td>
+<td>Можно бюрократизировать маленькие задачи</td>
+</tr>
+<tr>
+<td>SWE-agent style harness</td>
+<td>Issue → patch → tests, воспроизводимость</td>
+<td>Требует test harness и окружения</td>
+</tr>
+<tr>
+<td>Rubric/evaluator loop</td>
+<td>Проверка по критериям до финала</td>
+<td>Evaluator тоже может ошибаться без factual tools</td>
+</tr>
+<tr>
+<td>Agent Mesh / frameworks</td>
+<td>События, интеграции, production orchestration</td>
+<td>Overengineering для локального вайбкодинга</td>
+</tr>
+<tr>
+<td>Custom CLI orchestrator</td>
+<td>Можно смешивать Claude/Codex/Copilot/Gemini</td>
+<td>Хрупкость, секреты, разные форматы контекста</td>
+</tr>
+</tbody>
+</table>
+<h2>Предварительный вывод</h2>
+<p>Для Павла и automation-проектов оптимальна гибридная схема:</p>
+<ul>
+<li><strong>Spec-driven вход</strong> — чтобы не хаотить.</li>
+<li><strong>Claude/Hermes-style orchestrator</strong> — держит todo, tools, память и wiki.</li>
+<li><strong>2–4 специализированных агента</strong> на независимых work packages.</li>
+<li><strong>Evaluator/reviewer</strong> по рубрике.</li>
+<li><strong>Git/worktree discipline</strong> для параллельных правок.</li>
+<li><strong>LLM Wiki capture</strong> после каждого нетривиального проекта.</li>
+</ul>
+<h2>Связанные заметки</h2>
+<ul>
+<li><a href="../concepts/multi-agent-development-methodology.html">Методология многоагентной разработки</a></li>
+<li><a href="../concepts/agent-roles-for-automation.html">Роли агентов для automation</a></li>
+<li><a href="../concepts/spec-driven-agent-development.html">Spec-driven агентная разработка</a></li>
+<li><a href="../concepts/agentic-systems.html">Агентные системы</a></li>
+</ul>
+<div class="backlinks"><h3>↩ Обратные ссылки</h3><ul><li><a href="../concepts/multi-agent-development-methodology.html">concepts/multi-agent-development-methodology.md</a></li><li><a href="../concepts/spec-driven-agent-development.html">concepts/spec-driven-agent-development.md</a></li><li><a href="../entities/green-broker.html">entities/green-broker.md</a></li><li><a href="../index.html">index.md</a></li><li><a href="../queries/multi-agent-automation-research-plan.html">queries/multi-agent-automation-research-plan.md</a></li></ul></div>
+</div>
+</body>
+</html>

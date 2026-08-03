@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SCHEMA — Vault</title>
+<style>* { margin:0; padding:0; box-sizing:border-box; }
+body { background:#0d1117; color:#c9d1d9; font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif; line-height:1.7; font-size:16px; }
+.container { max-width:820px; margin:0 auto; padding:16px; }
+h1 { font-size:1.6em; color:#f0f6fc; margin:0.6em 0 0.4em; border-bottom:1px solid #30363d; padding-bottom:0.3em; }
+h2 { font-size:1.25em; color:#f0f6fc; margin:0.8em 0 0.3em; }
+h3 { font-size:1.1em; color:#f0f6fc; margin:0.6em 0 0.2em; }
+p { margin:0.5em 0; }
+a { color:#58a6ff; text-decoration:none; }
+a:hover { text-decoration:underline; }
+ul, ol { margin:0.5em 0; padding-left:1.5em; }
+li { margin:0.3em 0; }
+code { background:#161b22; padding:2px 6px; border-radius:3px; font-size:0.9em; color:#f0c674; }
+pre { background:#161b22; padding:12px; border-radius:6px; overflow-x:auto; margin:0.8em 0; }
+pre code { background:none; padding:0; }
+blockquote { border-left:3px solid #30363d; padding-left:1em; margin:0.8em 0; color:#8b949e; }
+hr { border:none; border-top:1px solid #30363d; margin:1.2em 0; }
+table { width:100%; border-collapse:collapse; margin:0.8em 0; }
+th, td { border:1px solid #30363d; padding:8px 12px; text-align:left; }
+th { background:#161b22; color:#f0f6fc; }
+.dataview { background:#161b22; border:1px solid #30363d; border-radius:6px; padding:12px; margin:0.8em 0; font-family:monospace; font-size:0.85em; color:#8b949e; }
+.nav { background:#161b22; border-bottom:1px solid #30363d; padding:8px 16px; font-size:14px; position:sticky; top:0; z-index:10; }
+.nav a { color:#58a6ff; }
+.meta { font-size:0.85em; color:#8b949e; margin:0.5em 0 1em; }
+.tag { display:inline-block; background:#1f6feb33; color:#58a6ff; padding:2px 8px; border-radius:10px; font-size:0.8em; margin:0 3px 3px 0; }
+.backlinks { margin-top:2em; padding-top:1em; border-top:1px solid #30363d; }
+.backlinks h3 { font-size:1em; color:#8b949e; }
+.button-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:10px; margin:1em 0; }
+.button { display:block; background:#238636; color:#fff !important; padding:12px 14px; border-radius:8px; text-align:center; font-weight:600; border:1px solid #2ea043; }
+.button:hover { background:#2ea043; text-decoration:none; }</style>
+</head>
+<body>
+<nav class="nav"><span class="crumbs"><a href="/">🏠</a></span></nav>
+<div class="container">
+<h1>SCHEMA</h1>
+<div class="meta"> last modified: 2026-08-02 15:25</div>
+<h1>Wiki Schema</h1>
+<blockquote>
+<p>Управляющий документ. Читать ПЕРВЫМ в новой сессии вместе с index.md и log.md.
+Методология: Karpathy's LLM Wiki (скилл llm-wiki v2.1.0). WIKI_PATH=/home/ubuntu/baza</p>
+</blockquote>
+<h2>Domain</h2>
+<p>Персональная база знаний: AI/ML и вайбкодинг, free-tier провайдеры, разработка,
+алготрейдинг, инфраструктура Hermes, проекты (КПН-Агент, Telemost Recorder),
+холдинг «Синергия».</p>
+<h2>Структура (три слоя)</h2>
+<div class="codehilite"><pre><span></span><code>baza/
+├── SCHEMA.md            # этот файл
+├── index.md             # КАТАЛОГ всех страниц (единственный index.md!)
+├── log.md               # журнал действий (append-only)
+├── raw/                 # Layer 1: ИММУТАБЕЛЬНЫЕ источники (не редактировать!)
+│   ├── articles/        #   статьи, отчёты
+│   ├── papers/          #   PDF, arxiv
+│   ├── transcripts/     #   расшифровки встреч
+│   └── assets/          #   изображения
+├── entities/            # Layer 2: сущности (люди, орг., продукты, модели)
+├── concepts/            # Layer 2: концепции/темы
+├── comparisons/         # Layer 2: сравнения
+├── queries/             # Layer 2: сохранённые ценные ответы
+└── _archive/            # замещённые/хабы
+</code></pre></div>
+
+<h2>Conventions</h2>
+<ul>
+<li>Имена файлов: lowercase, hyphens, без пробелов (например <code>telemost-recorder.md</code>)</li>
+<li>Каждая страница начинается с YAML frontmatter (см. ниже)</li>
+<li><code>wikilinks</code> — минимум 2 исходящие ссылки на страницу</li>
+<li>При обновлении страницы — бампить <code>updated</code></li>
+<li>Каждая новая страница добавляется в <code>index.md</code> в нужную секцию</li>
+<li>Каждое действие записывается в <code>log.md</code></li>
+<li><strong>Provenance:</strong> на страницах, синтезирующих 3+ источника, помечать абзацы <code>^[raw/articles/file.md]</code></li>
+<li><strong>ВАЖНО: в vault только ОДИН index.md — корневой каталог.</strong> Хабы не нужны — навигация через index.md</li>
+<li><strong>raw/ никогда не редактировать</strong> — исправления только в wiki-страницах</li>
+</ul>
+<h2>Frontmatter</h2>
+<div class="codehilite"><pre><span></span><code><span class="nn">---</span>
+<span class="nt">title</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Page Title</span>
+<span class="nt">created</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">YYYY-MM-DD</span>
+<span class="nt">updated</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">YYYY-MM-DD</span>
+<span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">entity | concept | comparison | query | summary</span>
+<span class="nt">tags</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">из таксономии</span><span class="p p-Indicator">]</span>
+<span class="nt">sources</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">raw/articles/source.md</span><span class="p p-Indicator">]</span>
+<span class="nt">confidence</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">high | medium | low</span><span class="w">   </span><span class="c1"># опционально</span>
+<span class="nt">contested</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w">                   </span><span class="c1"># опционально</span>
+<span class="nn">---</span>
+</code></pre></div>
+
+<h2>Tag Taxonomy</h2>
+<p>Правило: тег должен быть в таксономии; новые теги — сначала сюда.</p>
+<ul>
+<li><strong>Типы страниц</strong>: entity, concept, comparison, query</li>
+<li><strong>AI/ML</strong>: llm, mcp, model, free-tier, local-llm, whisper, omniroute, openrouter, groq</li>
+<li><strong>Продукты/Организации</strong>: product, project, org, tool, bot, channel, job-search</li>
+<li><strong>Техники</strong>: agent, protocol, rag, trading, automation, scraping, multi-agent, orchestration, methodology, benchmark, quality-gate, spec-driven, security</li>
+<li><strong>Стек</strong>: python, go, node, docker, telegram, obsidian, github, claude-code, codex</li>
+<li><strong>Данные/Мета</strong>: meeting, transcript, monitoring, wiki, halyava</li>
+</ul>
+<h2>Page Thresholds</h2>
+<ul>
+<li><strong>Создавать страницу</strong>: сущность/концепция в 2+ источниках ИЛИ центральная для одного</li>
+<li><strong>Дополнять существующую</strong>: источник упоминает уже покрытое</li>
+<li><strong>НЕ создавать</strong>: проходные упоминания, мелочи, вне домена</li>
+<li><strong>Сплит</strong>: страница &gt;200 строк — разбить с перекрёстными ссылками</li>
+<li><strong>Архив</strong>: контент полностью замещён → <code>_archive/</code>, убрать из index</li>
+</ul>
+<h2>Типы страниц</h2>
+<ul>
+<li><strong>Entity</strong> — одна страница на сущность: обзор, ключевые факты, связи (wikilinks), источники</li>
+<li><strong>Concept</strong> — определение, текущее состояние, открытые вопросы, связанные концепции</li>
+<li><strong>Comparison</strong> — что сравнивается и зачем, измерения (таблица), вердикт, источники</li>
+<li><strong>Query</strong> — сохранённый ответ, который больно пере-выводить</li>
+</ul>
+<h2>Update Policy</h2>
+<ol>
+<li>Свежие источники обычно заменяют старые (проверять даты)</li>
+<li>При противоречии — фиксировать обе позиции с датами и источниками</li>
+<li>Помечать <code>contested: true</code> / <code>contradictions: [page]</code></li>
+<li>Выносить на ревью в lint-отчёте</li>
+</ol>
+<div class="backlinks"><h3>↩ Обратные ссылки</h3><ul><li><a href="dashboard.html">dashboard.md</a></li><li><a href="index.html">index.md</a></li></ul></div>
+</div>
+</body>
+</html>

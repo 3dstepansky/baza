@@ -3,13 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Vault — LLM Wiki</title>
-<style>
-* { margin:0; padding:0; box-sizing:border-box; }
-body {
-  background:#0d1117; color:#c9d1d9; font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
-  line-height:1.7; font-size:16px; padding:0;
-}
+<title>Wiki Index — Baza — Vault</title>
+<style>* { margin:0; padding:0; box-sizing:border-box; }
+body { background:#0d1117; color:#c9d1d9; font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif; line-height:1.7; font-size:16px; }
 .container { max-width:820px; margin:0 auto; padding:16px; }
 h1 { font-size:1.6em; color:#f0f6fc; margin:0.6em 0 0.4em; border-bottom:1px solid #30363d; padding-bottom:0.3em; }
 h2 { font-size:1.25em; color:#f0f6fc; margin:0.8em 0 0.3em; }
@@ -28,42 +24,112 @@ table { width:100%; border-collapse:collapse; margin:0.8em 0; }
 th, td { border:1px solid #30363d; padding:8px 12px; text-align:left; }
 th { background:#161b22; color:#f0f6fc; }
 .dataview { background:#161b22; border:1px solid #30363d; border-radius:6px; padding:12px; margin:0.8em 0; font-family:monospace; font-size:0.85em; color:#8b949e; }
-.nav { background:#161b22; border-bottom:1px solid #30363d; padding:8px 16px; display:flex; gap:12px; flex-wrap:wrap; align-items:center; font-size:14px; position:sticky; top:0; z-index:10; }
+.nav { background:#161b22; border-bottom:1px solid #30363d; padding:8px 16px; font-size:14px; position:sticky; top:0; z-index:10; }
 .nav a { color:#58a6ff; }
-.nav .crumbs { color:#8b949e; }
-.nav .crumbs a { color:#8b949e; }
-.nav .crumbs a:hover { color:#58a6ff; }
 .meta { font-size:0.85em; color:#8b949e; margin:0.5em 0 1em; }
 .tag { display:inline-block; background:#1f6feb33; color:#58a6ff; padding:2px 8px; border-radius:10px; font-size:0.8em; margin:0 3px 3px 0; }
 .backlinks { margin-top:2em; padding-top:1em; border-top:1px solid #30363d; }
 .backlinks h3 { font-size:1em; color:#8b949e; }
-
-.hero { text-align:center; padding:2em 0 1em; }
-.hero h1 { font-size:2em; border:none; }
-.hero p { color:#8b949e; }
-.columns { display:flex; flex-wrap:wrap; gap:24px; }
-.column { flex:1; min-width:280px; }
-</style>
+.button-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:10px; margin:1em 0; }
+.button { display:block; background:#238636; color:#fff !important; padding:12px 14px; border-radius:8px; text-align:center; font-weight:600; border:1px solid #2ea043; }
+.button:hover { background:#2ea043; text-decoration:none; }</style>
 </head>
 <body>
+<nav class="nav"><span class="crumbs"><a href="/">🏠</a></span></nav>
 <div class="container">
-<div class="hero">
-<h1>🗂️ Vault</h1>
-<p>LLM Wiki · 26 notes</p>
-</div>
-<div class="columns">
-<div class="column">
-<h2>📂 Структура</h2>
-<ul><li>📁 <a href="AI-ML/">AI-ML</a></li><li>📁 <a href="Concepts/">Concepts</a></li><li>📁 <a href="Dev/">Dev</a></li><li>📁 <a href="Projects/">Projects</a></li><li>📄 <a href="README.html">README</a></li><li>📁 <a href="Synergy/">Synergy</a></li><li>📁 <a href="System/">System</a></li><li>📁 <a href="Trading/">Trading</a></li><li>📄 <a href="index.html">index</a></li></ul>
-</div>
-<div class="column">
-<h2>🕐 Последние</h2>
-<ol><li><a href="Concepts/Hermes-Agent-Platform.html">Concepts/Hermes-Agent-Platform.md</a> <small>2026-07-30 09:12</small></li><li><a href="Concepts/LLM-Wiki-RAG.html">Concepts/LLM-Wiki-RAG.md</a> <small>2026-07-30 09:12</small></li><li><a href="Projects/KPN-Agent/requirements.html">Projects/KPN-Agent/requirements.md</a> <small>2026-07-30 09:12</small></li><li><a href="Projects/KPN-Agent/overview.html">Projects/KPN-Agent/overview.md</a> <small>2026-07-30 09:12</small></li><li><a href="Synergy/Departments/Scrum-Center.html">Synergy/Departments/Scrum-Center.md</a> <small>2026-07-30 09:12</small></li><li><a href="Synergy/Departments/Sales-Marketing.html">Synergy/Departments/Sales-Marketing.md</a> <small>2026-07-30 09:12</small></li><li><a href="Synergy/Departments/IT.html">Synergy/Departments/IT.md</a> <small>2026-07-30 09:12</small></li><li><a href="Synergy/Departments/HR.html">Synergy/Departments/HR.md</a> <small>2026-07-30 09:12</small></li><li><a href="Synergy/Departments/GR-Departments.html">Synergy/Departments/GR-Departments.md</a> <small>2026-07-30 09:12</small></li><li><a href="Synergy/Org-Structure.html">Synergy/Org-Structure.md</a> <small>2026-07-30 09:11</small></li></ol>
-</div>
-</div>
-<p style="margin-top:2em;text-align:center;color:#8b949e;font-size:0.85em">
-📊 <a href="/vault-graph.html">Граф связей</a>
-</p>
+<h1>Wiki Index — Baza</h1>
+<div class="meta"><span class="tag">index</span> <span class="tag">hub</span> last modified: 2026-08-03 09:03</div>
+<h1>Wiki Index — Baza 🧠</h1>
+<blockquote>
+<p>Content catalog. Every wiki page listed with a one-line summary.
+Read this first for any query.
+Last updated: 2026-08-03 | Total pages: 74</p>
+</blockquote>
+<h2>Entities</h2>
+<ul>
+<li><a href="entities/asati-shill.html">ASATI Shill</a></li>
+<li><a href="entities/baza-wiki.html">Baza Wiki — проект базы знаний 🧠</a></li>
+<li><a href="entities/event-digest.html">Event Digest CLI</a></li>
+<li><a href="entities/go.html">Go 🦫</a></li>
+<li><a href="entities/green-broker.html">Green Broker — Telegram-бот для продажи растений</a></li>
+<li><a href="entities/gr-departments.html">GR Департаменты</a></li>
+<li><a href="entities/hermes-agent.html">Hermes Agent — Платформа агентов 🧬</a></li>
+<li><a href="entities/hermes-marketplace-tools.html">Marketplace MCP Server 🛒</a></li>
+<li><a href="entities/hermes.html">Hermes Agent — инфраструктура 🛠️</a></li>
+<li><a href="entities/hr.html">HR Департамент</a></li>
+<li><a href="entities/it.html">IT-департамент</a></li>
+<li><a href="entities/job-search.html">job_search 🎯</a></li>
+<li><a href="entities/kpn-agent.html">Проект КПН — Контроль поручений</a></li>
+<li><a href="entities/omniroute.html">OmniRoute</a></li>
+<li><a href="entities/python.html">Python 🐍</a></li>
+<li><a href="entities/sales-marketing.html">Продажи и Маркетинг</a></li>
+<li><a href="entities/scrum-center.html">Scrum центр</a></li>
+<li><a href="entities/telemost-recorder.html">Telemost Recorder — запись Яндекс.Телемост 🎙️</a></li>
+<li><a href="entities/vibecoder-sources.html">📖 LLM Wiki Baza — Вайбкодерские источники для мониторинга</a></li>
+<li><a href="entities/apply-pilot.html">Apply Pilot — проект поиска работы</a></li>
+</ul>
+<h2>Concepts</h2>
+<ul>
+<li><a href="concepts/agentic-systems.html">Агентные системы — архитектура 🤖</a></li>
+<li><a href="concepts/ai-freebies.html">AI Freebies 🧻</a></li>
+<li><a href="concepts/algo-trading.html">Алгоритмическая торговля 📈</a></li>
+<li><a href="concepts/free-ai-methods.html">Бесплатное использование нейросетей</a></li>
+<li><a href="concepts/hermes-agent-platform.html">Hermes Agent — Платформа для КПН</a></li>
+<li><a href="concepts/kpn-control.html">Контроль поручений 📋</a></li>
+<li><a href="concepts/kpn-llm-wiki.html">LLM Wiki — интеграция в КПН-Агент 🔄</a></li>
+<li><a href="concepts/kpn-requirements.html">Контроль поручений — Функциональные требования</a></li>
+<li><a href="concepts/llm-wiki-rag.html">Архитектура: LLM Wiki + RAG</a></li>
+<li><a href="concepts/llm-wiki.html">LLM Wiki — концепция и архитектура 🧠</a></li>
+<li><a href="concepts/local-llm.html">Локальные LLM 🏠</a></li>
+<li><a href="concepts/mcp-protocol.html">MCP Protocol — базовый протокол 📡</a></li>
+<li><a href="concepts/mcp.html">MCP — Model Context Protocol 🔌</a></li>
+<li><a href="concepts/wiki-links.html">Wiki-ссылки в Obsidian 🔗</a></li>
+<li><a href="concepts/agent-roles-for-automation.html">Роли агентов для automation-проектов</a></li>
+<li><a href="concepts/multi-agent-development-methodology.html">Методология многоагентной разработки automation-проектов</a></li>
+<li><a href="concepts/spec-driven-agent-development.html">Spec-driven агентная разработка</a></li>
+</ul>
+<h2>Comparisons</h2>
+<ul>
+<li><a href="comparisons/free-tier-providers.html">Free-tier LLM провайдеры — сравнение</a></li>
+<li><a href="comparisons/agent-orchestration-tools.html">Сравнение подходов к orchestration coding agents</a></li>
+</ul>
+<h2>Queries</h2>
+<ul>
+<li><a href="queries/multi-agent-automation-research-plan.html">Исследовательский проект: методология многоагентной разработки automation-проектов</a></li>
+</ul>
+<h2>Raw (immutable)</h2>
+<ul>
+<li><a href="raw/org-structure.html">Оргструктура «Синергия»</a></li>
+<li><a href="raw/articles/anthropic-agent-teams-2026.html">Claude Code Agent Teams — source snapshot</a></li>
+<li><a href="raw/articles/github-spec-kit-2026.html">GitHub Spec Kit — source snapshot</a></li>
+<li><a href="raw/articles/spec-kitty-2026.html">Spec Kitty — source snapshot</a></li>
+<li><a href="raw/articles/swe-agent-2026.html">SWE-agent — source snapshot</a></li>
+<li><a href="raw/articles/paul-agent-workflows-2026.html">PAUL / agent workflow patterns — source snapshot</a></li>
+<li><a href="raw/articles/swebench-2026.html">SWE-bench — source snapshot</a></li>
+<li><a href="raw/articles/vscode-multi-agent-development-2026.html">VS Code multi-agent development — source snapshot</a></li>
+<li><a href="raw/papers/multi-agent-software-engineering-2026.html">Multi-agent software engineering — paper snapshot</a></li>
+<li><a href="raw/papers/agentic-coding-evaluation-2026.html">Agentic coding evaluation — paper snapshot</a></li>
+<li><a href="raw/papers/agentic-software-benchmarks-2026.html">Agentic software benchmarks — paper snapshot</a></li>
+<li><a href="raw/transcripts/telegram-multi-agent-development-2026-08-02.html">Telegram: multi-agent / Claude Code / vibe-coding snippets</a></li>
+<li><a href="raw/transcripts/apply-pilot-context-2026-08-02.html">Apply Pilot — контекст от Павла</a></li>
+<li><a href="raw/articles/green-broker-constitution-2026-08-02.html">Green Broker — constitution.md</a></li>
+<li><a href="raw/articles/green-broker-spec-2026-08-02.html">Green Broker — spec.md</a></li>
+<li><a href="raw/articles/green-broker-plan-2026-08-02.html">Green Broker — plan.md</a></li>
+<li><a href="raw/articles/green-broker-kp-telegram-bot-2026-08-02.html">Green Broker — КП Telegram-бот</a></li>
+<li>
+<p><a href="raw/articles/green-broker-kp-pitomniki-2026-08-02.html">Green Broker — КП для питомников</a></p>
+</li>
+<li>
+<p><a href="raw/articles/telemost-recorder-repository-v04-2026-08-03.html">Telemost Recorder — repository snapshot v04</a></p>
+</li>
+</ul>
+<h2>Служебные</h2>
+<ul>
+<li><a href="dashboard.html">LLM Wiki Baza Dashboard</a> — панель состояния, кнопки, граф и lint</li>
+<li><a href="SCHEMA.html">SCHEMA</a> — конвенции, таксономия, thresholds (читать ПЕРВЫМ)</li>
+<li><a href="log.html">log</a> — журнал действий</li>
+</ul>
+<div class="backlinks"><h3>↩ Обратные ссылки</h3><ul><li><a href="concepts/agentic-systems.html">concepts/agentic-systems.md</a></li><li><a href="concepts/algo-trading.html">concepts/algo-trading.md</a></li><li><a href="concepts/free-ai-methods.html">concepts/free-ai-methods.md</a></li><li><a href="concepts/kpn-llm-wiki.html">concepts/kpn-llm-wiki.md</a></li><li><a href="concepts/local-llm.html">concepts/local-llm.md</a></li><li><a href="concepts/mcp.html">concepts/mcp.md</a></li><li><a href="dashboard.html">dashboard.md</a></li><li><a href="entities/asati-shill.html">entities/asati-shill.md</a></li><li><a href="entities/baza-wiki.html">entities/baza-wiki.md</a></li><li><a href="entities/event-digest.html">entities/event-digest.md</a></li></ul></div>
 </div>
 </body>
 </html>

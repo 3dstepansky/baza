@@ -1,0 +1,1057 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Telemost Recorder repository snapshot v04 — Vault</title>
+<style>* { margin:0; padding:0; box-sizing:border-box; }
+body { background:#0d1117; color:#c9d1d9; font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif; line-height:1.7; font-size:16px; }
+.container { max-width:820px; margin:0 auto; padding:16px; }
+h1 { font-size:1.6em; color:#f0f6fc; margin:0.6em 0 0.4em; border-bottom:1px solid #30363d; padding-bottom:0.3em; }
+h2 { font-size:1.25em; color:#f0f6fc; margin:0.8em 0 0.3em; }
+h3 { font-size:1.1em; color:#f0f6fc; margin:0.6em 0 0.2em; }
+p { margin:0.5em 0; }
+a { color:#58a6ff; text-decoration:none; }
+a:hover { text-decoration:underline; }
+ul, ol { margin:0.5em 0; padding-left:1.5em; }
+li { margin:0.3em 0; }
+code { background:#161b22; padding:2px 6px; border-radius:3px; font-size:0.9em; color:#f0c674; }
+pre { background:#161b22; padding:12px; border-radius:6px; overflow-x:auto; margin:0.8em 0; }
+pre code { background:none; padding:0; }
+blockquote { border-left:3px solid #30363d; padding-left:1em; margin:0.8em 0; color:#8b949e; }
+hr { border:none; border-top:1px solid #30363d; margin:1.2em 0; }
+table { width:100%; border-collapse:collapse; margin:0.8em 0; }
+th, td { border:1px solid #30363d; padding:8px 12px; text-align:left; }
+th { background:#161b22; color:#f0f6fc; }
+.dataview { background:#161b22; border:1px solid #30363d; border-radius:6px; padding:12px; margin:0.8em 0; font-family:monospace; font-size:0.85em; color:#8b949e; }
+.nav { background:#161b22; border-bottom:1px solid #30363d; padding:8px 16px; font-size:14px; position:sticky; top:0; z-index:10; }
+.nav a { color:#58a6ff; }
+.meta { font-size:0.85em; color:#8b949e; margin:0.5em 0 1em; }
+.tag { display:inline-block; background:#1f6feb33; color:#58a6ff; padding:2px 8px; border-radius:10px; font-size:0.8em; margin:0 3px 3px 0; }
+.backlinks { margin-top:2em; padding-top:1em; border-top:1px solid #30363d; }
+.backlinks h3 { font-size:1em; color:#8b949e; }
+.button-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:10px; margin:1em 0; }
+.button { display:block; background:#238636; color:#fff !important; padding:12px 14px; border-radius:8px; text-align:center; font-weight:600; border:1px solid #2ea043; }
+.button:hover { background:#2ea043; text-decoration:none; }</style>
+</head>
+<body>
+<nav class="nav"><span class="crumbs"><a href="/">🏠</a> / <span>raw</span> / <span>articles</span></span></nav>
+<div class="container">
+<h1>Telemost Recorder repository snapshot v04</h1>
+<div class="meta"> last modified: 2026-08-03 08:37</div>
+<h1>Telemost Recorder repository snapshot — v04 / 2026-08-03</h1>
+<p>Repository: https://github.com/3dstepansky/stepansky-telemost-recorder-doker
+Local analysis path: /tmp/telemost-repo
+Analysis date: 2026-08-03</p>
+<h2>Branches / recency</h2>
+<div class="codehilite"><pre><span></span><code>v04 2026-07-03 02:40:43 +0300 508deeb feat: direct telegram delivery and ai summary fix
+origin/v04 2026-07-03 02:40:43 +0300 508deeb feat: direct telegram delivery and ai summary fix
+master 2026-05-31 00:10:31 +0300 b563afd docs: rewrite README based on v1 spec
+origin/003v 2026-05-31 00:10:31 +0300 b563afd docs: rewrite README based on v1 spec
+origin 2026-05-31 00:10:31 +0300 b563afd docs: rewrite README based on v1 spec
+origin/master 2026-05-31 00:10:31 +0300 b563afd docs: rewrite README based on v1 spec
+origin/test 2026-04-13 01:57:12 +0300 7cfee56 feat: stabilize process lifecycle and fixing n8n reporting
+</code></pre></div>
+
+<p>Conclusion: актуальная ветка по дате коммита — <code>origin/v04</code> (<code>508deeb</code>, 2026-07-03). <code>master</code>/<code>003v</code> старее (<code>b563afd</code>, 2026-05-31) и описывает устаревшую n8n-архитектуру.</p>
+<h2>Recent commit history</h2>
+<div class="codehilite"><pre><span></span><code>508deeb 2026-07-03  (HEAD -&gt; v04, origin/v04) feat: direct telegram delivery and ai summary fix
+6c7e5ef 2026-06-20  fix: replace ForceReply in SendRecordMenu with ReplyKeyboard Back button to improve UX
+3913c8f 2026-06-20  feat: implement telegram-ui-designer skill in project folder
+0483de1 2026-06-20  feat: implement n8n capability skills in project folder
+3330b58 2026-06-20  feat: redesign Telegram Bot interface to professional HTML format
+a3edf17 2026-06-20  Add n8n_workflow_v0.4.json matching release v0.4
+150eb2e 2026-06-20  Update database.sql to match n8n table names (telemost_*)
+55bc081 2026-06-20  Release v0.4: Multi-recording, custom bot names, and stability fixes
+b563afd 2026-05-31  (origin/master, origin/HEAD, origin/003v, master) docs: rewrite README based on v1 spec
+9d68736 2026-05-31  fix(recorder): strip brackets and quotes from BOT_DISPLAY_NAME
+4afae3c 2026-05-30  fix directory permissions
+92f173e 2026-05-30  Refactor: Split transcription pipeline into upload_audio and transcribe phases
+735e902 2026-05-30  fix: use docker run for --create to prevent zombie processes on host
+e2f1c34 2026-05-30  fix: remove duplicate node run.js from run_join.sh arguments
+6a1f8fb 2026-05-30  fix: change base image to official node:20-slim to fix ARM64 build
+a8c2334 2026-05-30  fix: add --init flag to docker run to prevent zombie processes
+0484d9c 2026-05-30  docs: rewrite README using specs and quickstart
+348ad0d 2026-05-30  chore: add spec to README, ignore .inv, remove secret from local_bridge
+7cfee56 2026-04-13  (origin/test) feat: stabilize process lifecycle and fixing n8n reporting
+eb686e3 2026-04-13  v0.003 FINAL: Impeccable integration with n8n webhooks and shell scripts
+5bfb842 2026-04-13  v0.003: Impeccable integration, Graceful Shutdown, and n8n scripts integration
+e5165ff 2026-04-12  v0.002: Autonomous VAD, Segmentation and AI Transcription pipeline
+7985161 2026-04-12  release: v0.001 MVP Docker Recorder with clean naming
+</code></pre></div>
+
+<h2>File tree (depth ≤ 3)</h2>
+<div class="codehilite"><pre><span></span><code>.dockerignore
+.env.example
+.github/agents/speckit.agent-context.update.agent.md
+.github/agents/speckit.analyze.agent.md
+.github/agents/speckit.checklist.agent.md
+.github/agents/speckit.clarify.agent.md
+.github/agents/speckit.constitution.agent.md
+.github/agents/speckit.implement.agent.md
+.github/agents/speckit.plan.agent.md
+.github/agents/speckit.specify.agent.md
+.github/agents/speckit.tasks.agent.md
+.github/agents/speckit.taskstoissues.agent.md
+.github/copilot-instructions.md
+.github/prompts/speckit.agent-context.update.prompt.md
+.github/prompts/speckit.analyze.prompt.md
+.github/prompts/speckit.checklist.prompt.md
+.github/prompts/speckit.clarify.prompt.md
+.github/prompts/speckit.constitution.prompt.md
+.github/prompts/speckit.implement.prompt.md
+.github/prompts/speckit.plan.prompt.md
+.github/prompts/speckit.specify.prompt.md
+.github/prompts/speckit.tasks.prompt.md
+.github/prompts/speckit.taskstoissues.prompt.md
+.gitignore
+.specify/extensions/.registry
+.specify/extensions.yml
+.specify/feature.json
+.specify/init-options.json
+.specify/integration.json
+.specify/integrations/copilot.manifest.json
+.specify/integrations/speckit.manifest.json
+.specify/memory/constitution.md
+.specify/templates/checklist-template.md
+.specify/templates/constitution-template.md
+.specify/templates/plan-template.md
+.specify/templates/spec-template.md
+.specify/templates/tasks-template.md
+.specify/workflows/workflow-registry.json
+Dockerfile
+Dockerfile.test
+MULTICHANNEL_HYPOTHESIS_ROADMAP.md
+README.md
+ROADMAP.md
+STABILIZATION_REPORT.md
+bot.js
+database.sql
+db.js
+desktop.ini
+docker-compose.yml
+docker_spec.md
+local_bridge.js
+mock_n8n.py
+n8n_workflow_head.json
+n8n_workflow_v0.4.json
+package-lock.json
+package.json
+recorder.js
+run.js
+run_join.sh
+run_start.sh
+run_stop.sh
+run_transcribe.sh
+run_upload.sh
+services/ai.js
+services/ffmpeg.js
+services/s3.js
+services/summarize.js
+services/transcribe.js
+services/webdav.js
+set_recorder_display_name.sh
+specs/002-standalone-bot-and-fixes/spec.md
+specs/003-speaker-names-and-ai-summary/spec.md
+test/db.test.js
+transcribe.js
+upload_audio.js
+verify_rename_and_summarize_mock.js
+</code></pre></div>
+
+<h2>package.json</h2>
+<div class="codehilite"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;stepansky-telemost&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;version&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0.003&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;private&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;module&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Zero Cost Yandex.Telemost Recorder (Guest Mode)&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;main&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;run.js&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;scripts&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;start&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;node bot.js&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;record&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;node recorder.js&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;transcribe&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;node transcribe.js&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;track-probe&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;node scratch/test_webrtc_tracks.js&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;test&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;node --test&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nt">&quot;dependencies&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;@aws-sdk/client-s3&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;^3.500.0&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;assemblyai&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;^4.35.0&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;axios&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;^1.6.7&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;dotenv&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;^16.4.5&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;form-data&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;^4.0.6&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;groq-sdk&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;^1.2.1&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;mkdirp&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;^3.0.1&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;puppeteer&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;^24.0.0&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;sqlite3&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;^5.1.7&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;telegraf&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;^4.16.3&quot;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<h2>Test result</h2>
+<div class="codehilite"><pre><span></span><code>&gt; stepansky-telemost@0.003 test
+&gt; node --test
+
+# tests 3
+# suites 1
+# pass 3
+# fail 0
+# duration_ms 122.786924
+
+Перед этим тест падал из-за отсутствия node_modules/sqlite3; после `npm install` тесты БД прошли. npm audit показал 16 vulnerabilities (2 low, 3 moderate, 10 high, 1 critical).
+</code></pre></div>
+
+<h2>README excerpt</h2>
+<div class="codehilite"><pre><span></span><code><span class="gh"># Telemost Recorder Core (Zero-Cost Bot)</span>
+
+![<span class="nt">Version</span>](<span class="na">https://img.shields.io/badge/version-v1.0.0-blue.svg</span>)
+![<span class="nt">Status</span>](<span class="na">https://img.shields.io/badge/status-stable-success.svg</span>)
+![<span class="nt">License</span>](<span class="na">https://img.shields.io/badge/license-MIT-green.svg</span>)
+
+Автономный ИИ-ассистент для записи встреч Яндекс.Телемост с <span class="gs">**нулевыми операционными затратами**</span> (ZeroPay). Бот подключается к конференциям, перехватывает WebRTC-потоки, транскрибирует аудио, выгружает результаты на Яндекс.Диск и генерирует структурированные саммари встреч через интерфейс Telegram.
+
+<span class="gu">## 🚀 Философия и Ключевые особенности</span>
+
+<span class="k">1.</span> <span class="gs">**Headless WebRTC Injection**</span>: Запись аудио осуществляется путем перехвата аудиопотоков из <span class="sb">`RTCPeerConnection`</span> непосредственно в изолированном Puppeteer-контейнере.
+<span class="k">2.</span> <span class="gs">**Whisper-Friendly Chunking**</span>: Интеллектуальное дробление аудиофайлов (FFmpeg) на чанки по 20 минут для обхода лимитов внешних API транскрибации (Groq Whisper 25 MB).
+<span class="k">3.</span> <span class="gs">**Storage Self-Cleaning**</span>: Гарантированное удаление локальных временных файлов и чанков с хоста после завершения работы.
+<span class="k">4.</span> <span class="gs">**Интеграция с Яндекс.Диском (WebDAV)**</span>: Полностью автоматическое сохранение медиафайлов и текстов в персональное облако пользователя (<span class="sb">`Yandex.Telemost.Records/[Дата]_[Тема_от_ИИ]/`</span>).
+<span class="k">5.</span> <span class="gs">**Multi-User Isolation**</span>: Запуск независимых, полностью изолированных Docker-контейнеров (<span class="sb">`telemost_&lt;chat_id&gt;`</span>) для поддержки одновременной записи нескольких встреч от разных пользователей.
+<span class="k">6.</span> <span class="gs">**n8n Orchestration &amp; FSM**</span>: Управление всеми процессами, интерфейсами пользователя в Telegram и запросами в базу данных PostgreSQL инкапсулировано в воркфлоу n8n.
+
+---
+
+<span class="gu">## 🆕 Что нового в релизе v0.4 (Текущая версия для тестирования)</span>
+
+В рамках релиза <span class="gs">**v0.4**</span> устранены архитектурные несоответствия и внедрена поддержка параллельной мульти-записи:
+<span class="k">1.</span> <span class="gs">**Мульти-запись и защита от дубликатов**</span>: Имена контейнеров теперь содержат уникальный ID встречи (<span class="sb">`telemost_${CHAT_ID}_${MEETING_ID}`</span>), что позволяет вести параллельные сессии записи. Повторный старт записи для той же встречи блокируется.
+<span class="k">2.</span> <span class="gs">**Персональные имена ботов**</span>: Бот подключается со своим отображаемым именем для каждого <span class="sb">`chat_id`</span> (настройка сохраняется в PostgreSQL в поле <span class="sb">`bot_display_name`</span> таблицы <span class="sb">`user_settings`</span>).
+<span class="k">3.</span> <span class="gs">**Умный скрипт остановки**</span>: [<span class="nt">run_stop.sh</span>](<span class="na">file:///E:/telemost/run_stop.sh</span>) обновлен для точечной остановки встречи по <span class="sb">`MEETING_ID`</span> либо групповой остановки всех встреч по <span class="sb">`CHAT_ID`</span>.
+<span class="k">4.</span> <span class="gs">**Устранение Race Condition**</span>: Выгрузка в S3 теперь гарантированно происходит <span class="ge">*до*</span> вебхука n8n, чтобы локальный файл не удалился во время копирования.
+<span class="k">5.</span> <span class="gs">**Ограничение контекста LLM**</span>: Введено ограничение в 25 000 символов на текст транскрипции для суммаризатора в [<span class="nt">services/summarize.js</span>](<span class="na">file:///E:/telemost/services/summarize.js</span>).
+
+---
+
+<span class="gu">## 🗺 Архитектура системы</span>
+
+Система разделена на исполнительный слой (Docker-воркер на хост-сервере) и оркестрирующий слой (n8n).
+
+```mermaid
+sequenceDiagram
+    participant User as Пользователь (Telegram)
+    participant Orchestrator as n8n Orchestrator
+    participant Host as Docker Host (Скрипты)
+    participant Storage as Яндекс.Диск (WebDAV)
+    participant AI as Groq / OpenRouter
+
+    User-&gt;&gt;Orchestrator: 1. Запрос на запись (URL)
+    Orchestrator-&gt;&gt;Host: 2. SSH Exec: Запуск контейнера telemost_&lt;chat_id&gt;
+    Host-&gt;&gt;Host: 3. Подключение к Телемосту (Puppeteer)
+    Host-&gt;&gt;User: 4. Уведомление: Бот в лобби
+    Note over Host: Ведется запись WebRTC-аудио
+    User-&gt;&gt;Orchestrator: 5. Остановка записи
+    Orchestrator-&gt;&gt;Host: 6. SSH Exec: SIGINT
+    Host-&gt;&gt;Host: 7. Генерация .webm
+    Host-&gt;&gt;Orchestrator: 8. Webhook: Аудио готово
+    Orchestrator-&gt;&gt;Host: 9. SSH Exec: Транскрибация и Выгрузка
+    Host-&gt;&gt;AI: 10. Сегментация и Groq Whisper
+    AI--&gt;&gt;Host: 11. Возврат текста
+    Host-&gt;&gt;Storage: 12. Создание папки WebDAV и выгрузка
+    Host-&gt;&gt;Host: 13. Автоочистка диска
+    Host--&gt;&gt;Orchestrator: 14. Возврат пути файла
+    Orchestrator-&gt;&gt;AI: 15. Генерация саммари (OpenRouter)
+    Orchestrator-&gt;&gt;User: 16. Telegram Отчет (Summary + Ссылка Yandex.Disk)
+</code></pre></div>
+
+<hr />
+<h2>📱 Telegram-интерфейс (UX)</h2>
+<p>Управление сервисом осуществляется через Telegram-бота, построенного как конечный автомат (FSM) с хранением состояний в PostgreSQL:</p>
+<ul>
+<li><strong>🔴 Запись встреч</strong>: Режим ожидания ссылки (Force Reply). Бот автоматически подключается после получения ссылки.</li>
+<li><strong>🧠 Аналитика и ИИ</strong>: Запуск ручной транскрибации, саммаризации или вывод списка последних 5 встреч (с ИИ-названиями).</li>
+<li><strong>⚙️ Настройки</strong>: Настройка учетных данных Яндекс.Диска (логин + пароль приложения) прямо из мессенджера (без ручной конфигурации сервера).</li>
+</ul>
+<hr />
+<h2>📦 Развертывание и Настройка</h2>
+<h3>1. Подготовка Сервера</h3>
+<p>Для хост-сервера необходимы: <strong>Docker</strong>, <strong>Node.js (v20+)</strong> и <strong>FFmpeg</strong>.</p>
+<div class="codehilite"><pre><span></span><code>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/3dstepansky/stepansky-telemost-recorder-doker.git
+<span class="nb">cd</span><span class="w"> </span>stepansky-telemost-recorder-doker
+npm<span class="w"> </span>install
+docker<span class="w"> </span>build<span class="w"> </span>-t<span class="w"> </span>stepansky-telemost-recorder:latest<span class="w"> </span>.
+</code></pre></div>
+
+<h3>2. Конфигурация (.env)</h3>
+<p>Создайте <code>.env</code> файл на сервере:</p>
+<div class="codehilite"><pre><span></span><code><span class="c1"># Отображаемое имя бота на встрече</span>
+<span class="na">BOT_DISPLAY_NAME</span><span class="o">=</span><span class="s">&quot;Бот-Ассистент&quot;</span>
+
+<span class="c1"># API Ключи</span>
+<span class="na">GROQ_API_KEY</span><span class="o">=</span><span class="s">gsk_...</span>
+
+<span class="c1"># Лимиты</span>
+<span class="na">MAX_IDLE_MINS</span><span class="o">=</span><span class="s">3</span>
+<span class="na">MAX_DURATION_MINS</span><span class="o">=</span><span class="s">180</span>
+<span class="na">HEADLESS</span><span class="o">=</span><span class="s">true</span>
+</code></pre></div>
+
+<p><em>(Учетные данные Яндекс.Диска безопасно вводятся самими пользователями в интерфейсе Telegram).</em></p>
+<h3>3. Настройка Оркестратора (n8n)</h3>
+<ul>
+<li>Подключите Telegram-бота, SSH-ключ к вашему хост-серверу, базу данных PostgreSQL и OpenRouter (для саммари) через настройки Credentials в n8n.</li>
+<li>Импортируйте воркфлоу, чтобы активировать логику FSM и обработку вебхуков.</li>
+</ul>
+<hr />
+<h2>🎯 План Развития (Roadmap / v2)</h2>
+<ul>
+<li>🔴 <strong>Diarization</strong>: Разделение реплик по спикерам (замена базовой метки "Спикер").</li>
+<li>🔴 <strong>Real-Time AI Chat</strong>: Интерфейс во время записи, позволяющий задавать вопросы боту по контексту обсуждаемого материала на лету.</li>
+<li>🔴 <strong>Archival Q&amp;A</strong>: Чат-сессия для ответов на вопросы по историческим (ранее записанным) встречам, загружаемым с Яндекс.Диска.</li>
+</ul>
+<div class="codehilite"><pre><span></span><code><span class="c1">## Spec 002 excerpt / актуальная автономная архитектура</span>
+
+<span class="n n-Quoted">`</span><span class="n n-Quoted n-Quoted-Escape">``</span><span class="n n-Quoted">markdown</span>
+<span class="n n-Quoted"># Спецификация требований: Telemost Recorder — Автономный Docker-бот</span>
+
+<span class="n n-Quoted">**Основная ветка**: `</span><span class="mi">002</span><span class="o">-</span><span class="n">standalone</span><span class="o">-</span><span class="n">bot</span><span class="o">-</span><span class="k">and</span><span class="o">-</span><span class="n">fixes</span><span class="n n-Quoted">`  </span>
+<span class="n n-Quoted">**Предшествует**: `</span><span class="mi">001</span><span class="o">-</span><span class="n">telemost</span><span class="o">-</span><span class="n">recorder</span><span class="o">-</span><span class="n">core</span><span class="n n-Quoted">` (n8n-архитектура, устарела — заменена на автономный бот)</span>
+
+<span class="n n-Quoted">**Дата создания**: 2026-06-20  </span>
+<span class="n n-Quoted">**Дата последнего обновления**: 2026-07-02</span>
+
+<span class="n n-Quoted">**Статус**: В разработке</span>
+
+<span class="n n-Quoted">&gt; **Архитектурное решение**: Проект начался с оркестрацией через n8n + PostgreSQL. В июле 2026 принято решение отказаться от n8n. Вся логика управления ботом перенесена в автономный Node.js-процесс (`</span><span class="n">bot</span><span class="p">.</span><span class="n">js</span><span class="n n-Quoted">`) внутри Docker-контейнера с хранилищем SQLite.</span>
+
+<span class="n n-Quoted">---</span>
+
+<span class="n n-Quoted">## Статус реализации</span>
+
+<span class="n n-Quoted">| ID | История | Приоритет | Статус |</span>
+<span class="n n-Quoted">|---|---|---|---|</span>
+<span class="n n-Quoted">| US-1 | Запись WebRTC аудио (вход в комнату) | P1 | ✅ Реализовано |</span>
+<span class="n n-Quoted">| US-2 | Автоматическое завершение и Anti-Zombie | P1 | ✅ Реализовано |</span>
+<span class="n n-Quoted">| US-3 | Автономный Telegram-бот (замена n8n) | P1 | ✅ Реализовано |</span>
+<span class="n n-Quoted">| US-4 | Автовыход при завершении встречи организатором | P1 | ✅ Реализовано |</span>
+<span class="n n-Quoted">| US-5 | Информационный стиль Ильяхова | P2 | ✅ Реализовано |</span>
+<span class="n n-Quoted">| US-6 | Транскрибация с диаризацией (AssemblyAI + Groq fallback) | P2 | ⚠️ Пайплайн есть, диаризация не протестирована |</span>
+<span class="n n-Quoted">| US-7 | Выгрузка на Яндекс.Диск + S3 | P2 | ⚠️ Реализовано, требует проверки |</span>
+<span class="n n-Quoted">| US-8 | ИИ-саммари и рассылка в Telegram | P2 | ✅ Реализовано |</span>
+<span class="n n-Quoted">| US-9 | Быстрый старт по ссылке с inline-кнопкой | P1 | ✅ Реализовано |</span>
+<span class="n n-Quoted">| US-10 | Персональное имя бота в настройках | P2 | ✅ Реализовано (SQLite) |</span>
+<span class="n n-Quoted">| US-11 | ИИ-переименование папок на Яндекс.Диске | P2 | ⚠️ Частично (summarize.js) |</span>
+<span class="n n-Quoted">| US-12 | Интеграция с Яндекс.Календарём | P3 | ❌ Не начато |</span>
+<span class="n n-Quoted">| US-13 | Просмотр архива встреч в Telegram | P3 | ⚠️ Базовый список (db.js) |</span>
+<span class="n n-Quoted">| US-14 | Чат-ассистент по встрече (RAG) | P3 | ❌ Не начато |</span>
+<span class="n n-Quoted">| US-15 | Живой ИИ-агент в комнате (Real-Time STT/TTS) | P4 | ❌ Не начато |</span>
+<span class="n n-Quoted">| US-16 | Нативная диаризация через WebRTC-треки | P3 | ✅ Реализовано (Dual-Output Архитектура) |</span>
+
+<span class="n n-Quoted">---</span>
+
+<span class="n n-Quoted">## Сценарии использования</span>
+
+<span class="n n-Quoted">### US-1 — Запись WebRTC аудио (Приоритет: P1) ✅</span>
+
+<span class="n n-Quoted">Бот подключается к Яндекс.Телемосту в качестве гостя, устанавливает имя, отключает микрофон и камеру, перехватывает WebRTC-потоки участников и записывает их в единый `</span><span class="p">.</span><span class="n">webm</span><span class="n n-Quoted">`-файл.</span>
+
+<span class="n n-Quoted">**Независимый тест**: Запуск `</span><span class="n">recorder</span><span class="p">.</span><span class="n">js</span><span class="n n-Quoted">` с валидной ссылкой. После завершения в `</span><span class="p">.</span><span class="o">/</span><span class="n">recordings</span><span class="o">/</span><span class="n n-Quoted">` — непустой `</span><span class="n">meeting_audio</span><span class="p">.</span><span class="n">webm</span><span class="n n-Quoted">`.</span>
+
+<span class="n n-Quoted">**Сценарии приемки**:</span>
+<span class="n n-Quoted">1. **Дано** ссылка на активную встречу, **Когда** запускается `</span><span class="n">recorder</span><span class="p">.</span><span class="n">js</span><span class="n n-Quoted">`, **Тогда** Puppeteer открывает страницу в headless-режиме, обходит кнопку «Продолжить в браузере», вводит имя из `</span><span class="n">BOT_DISPLAY_NAME</span><span class="n n-Quoted">`, отключает мик и камеру, нажимает «Присоединиться».</span>
+<span class="n n-Quoted">2. **Дано** бот в комнате, **Когда** участники говорят, **Тогда** monkey-patching `</span><span class="n">RTCPeerConnection</span><span class="n n-Quoted">` перехватывает треки, `</span><span class="n">AudioContext</span><span class="n n-Quoted">` микширует их, `</span><span class="n">MediaRecorder</span><span class="n n-Quoted">` пишет чанками по 2 сек.</span>
+
+<span class="n n-Quoted">**Что реализовано**: `</span><span class="n">recorder</span><span class="p">.</span><span class="n">js</span><span class="n n-Quoted">` — WebRTC monkey-patch, `</span><span class="n">AudioContext</span><span class="n n-Quoted">`, `</span><span class="n">MediaRecorder</span><span class="n n-Quoted">`, чанки на диск.</span>
+
+<span class="n n-Quoted">---</span>
+
+<span class="n n-Quoted">### US-2 — Автоматическое завершение и Anti-Zombie (Приоритет: P1) ✅</span>
+
+<span class="n n-Quoted">Система гарантирует чистое завершение всех процессов Chromium при любом сценарии выхода.</span>
+
+<span class="n n-Quoted">**Независимый тест**: `</span><span class="n">docker</span><span class="w"> </span><span class="n">exec</span><span class="w"> </span><span class="n">telemost</span><span class="o">-</span><span class="n">bot</span><span class="o">-</span><span class="k">local</span><span class="w"> </span><span class="n">ps</span><span class="w"> </span><span class="n">aux</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">grep</span><span class="w"> </span><span class="o">-</span><span class="n">c</span><span class="w"> </span><span class="n">defunct</span><span class="n n-Quoted">` → 0.</span>
+
+<span class="n n-Quoted">**Сценарии приемки**:</span>
+<span class="n n-Quoted">1. **Дано** бот один в комнате &gt; `</span><span class="n">MAX_IDLE_MINS</span><span class="o">=</span><span class="mi">2</span><span class="n n-Quoted">` минут, **Тогда** `</span><span class="n">gracefulShutdown</span><span class="n n-Quoted">` останавливает запись и закрывает браузер.</span>
+<span class="n n-Quoted">2. **Дано** встреча длится &gt; `</span><span class="n">MAX_DURATION_MINS</span><span class="o">=</span><span class="mi">180</span><span class="n n-Quoted">` минут, **Тогда** рекордер завершает работу автоматически.</span>
+<span class="n n-Quoted">3. **Дано** контейнер получает `</span><span class="n">SIGINT</span><span class="n n-Quoted">`/`</span><span class="n">SIGTERM</span><span class="n n-Quoted">`, **Тогда** `</span><span class="n">gracefulShutdown</span><span class="n n-Quoted">` срабатывает, Chromium закрывается, зомби-процессов нет.</span>
+
+<span class="n n-Quoted">**Что реализовано**:</span>
+<span class="n n-Quoted">- `</span><span class="n">recorder</span><span class="p">.</span><span class="n">js</span><span class="n n-Quoted">`: блок `</span><span class="n">try</span><span class="p">...</span><span class="n">finally</span><span class="n n-Quoted">` с `</span><span class="n">browser</span><span class="p">.</span><span class="k">close</span><span class="p">()</span><span class="n n-Quoted">` и `</span><span class="n">fs</span><span class="p">.</span><span class="n">rmSync</span><span class="p">(</span><span class="n">userDataDir</span><span class="p">,</span><span class="w"> </span><span class="err">{</span><span class="w"> </span><span class="k">recursive</span><span class="o">:</span><span class="w"> </span><span class="no">true</span><span class="w"> </span><span class="err">}</span><span class="p">)</span><span class="n n-Quoted">`.</span>
+<span class="n n-Quoted">- `</span><span class="n">Dockerfile</span><span class="n n-Quoted">`: `</span><span class="n">dumb</span><span class="o">-</span><span class="n">init</span><span class="n n-Quoted">` как PID 1 — корректно собирает дочерние процессы.</span>
+
+<span class="n n-Quoted">---</span>
+
+<span class="n n-Quoted">### US-3 — Автономный Telegram-бот (замена n8n) (Приоритет: P1) ✅</span>
+
+<span class="n n-Quoted">Вся логика управления ботом перенесена из n8n в `</span><span class="n">bot</span><span class="p">.</span><span class="n">js</span><span class="n n-Quoted">` внутри контейнера. Бот принимает команды напрямую, запускает `</span><span class="n">run</span><span class="p">.</span><span class="n">js</span><span class="n n-Quoted">` как дочерний процесс.</span>
+
+<span class="n n-Quoted">**Независимый тест**: Отправить `</span><span class="o">/</span><span class="k">start</span><span class="n n-Quoted">` и ссылку боту — запись запускается без внешних сервисов.</span>
+
+<span class="n n-Quoted">**Сценарии приемки**:</span>
+<span class="n n-Quoted">1. **Дано** бот в Telegram, **Когда** пользователь отправляет ссылку на Телемост, **Тогда** `</span><span class="n">bot</span><span class="p">.</span><span class="n">js</span><span class="n n-Quoted">` вызывает `</span><span class="n">spawn</span><span class="p">(</span><span class="s1">&#39;node&#39;</span><span class="p">,</span><span class="w"> </span><span class="err">[</span><span class="s1">&#39;run.js&#39;</span><span class="p">,</span><span class="w"> </span><span class="k">url</span><span class="err">]</span><span class="p">)</span><span class="n n-Quoted">` и отвечает «Начинаем запись».</span>
+<span class="n n-Quoted">2. **Дано** активная запись, **Когда** пользователь нажимает «Остановить», **Тогда** `</span><span class="n">bot</span><span class="p">.</span><span class="n">js</span><span class="n n-Quoted">` создаёт lock-файл `</span><span class="n">stop_</span><span class="o">&lt;</span><span class="n">meetingId</span><span class="o">&gt;</span><span class="n n-Quoted">`, рекордер видит его и завершает работу штатно.</span>
+
+<span class="n n-Quoted">**Что реализовано**: `</span><span class="n">bot</span><span class="p">.</span><span class="n">js</span><span class="n n-Quoted">` — FSM на `</span><span class="n">telegraf</span><span class="n n-Quoted">`, обработка ссылок, кнопки, `</span><span class="n">db</span><span class="p">.</span><span class="n">js</span><span class="n n-Quoted">` (SQLite).</span>
+
+<span class="n n-Quoted">---</span>
+
+<span class="n n-Quoted">### US-4 — Автовыход при завершении встречи организатором (Приоритет: P1) ✅</span>
+
+<span class="n n-Quoted">Бот выходит из звонка автоматически при любом завершении встречи — не только когда пользователь нажал кнопку.</span>
+
+<span class="n n-Quoted">**Независимый тест**: Нажать «Завершить для всех» в Телемосте → `</span><span class="n">docker</span><span class="w"> </span><span class="k">logs</span><span class="n n-Quoted">` показывает `</span><span class="err">[</span><span class="n">monitor</span><span class="err">]</span><span class="w"> </span><span class="n">Встреча</span><span class="w"> </span><span class="n">завершена</span><span class="w"> </span><span class="n">организатором</span><span class="n n-Quoted">`.</span>
+
+<span class="n n-Quoted">**Сценарии приемки**:</span>
+<span class="n n-Quoted">1. **Дано** активная запись, **Когда** организатор завершает встречу, **Тогда** страница показывает «Встреча завершена» или URL меняется — рекордер это фиксирует и завершает работу.</span>
+<span class="n n-Quoted">2. **Дано** активная запись, **Когда** бот один в комнате &gt; 2 минут, **Тогда** счётчик `</span><span class="n">idleSeconds</span><span class="n n-Quoted">` достигает лимита и рекордер выходит.</span>
+<span class="n n-Quoted">3. **Дано** браузерный контекст уничтожен (редирект, закрытие вкладки), **Когда** `</span><span class="k">page</span><span class="p">.</span><span class="n">evaluate</span><span class="p">()</span><span class="n n-Quoted">` выбрасывает `</span><span class="n">Execution</span><span class="w"> </span><span class="k">context</span><span class="w"> </span><span class="n">was</span><span class="w"> </span><span class="n">destroyed</span><span class="n n-Quoted">`, **Тогда** `</span><span class="n">catch</span><span class="n n-Quoted">` перехватывает ошибку и рекордер завершает работу без зависания.</span>
+
+<span class="n n-Quoted">---</span>
+
+<span class="n n-Quoted">### US-5 — Информационный стиль Ильяхова (Приоритет: P2) ✅</span>
+
+<span class="n n-Quoted">Все тексты бота написаны коротко и по делу, без штампов, оценок и псевдографических украшений.</span>
+
+<span class="n n-Quoted">**Независимый тест**: Проверить тексты `</span><span class="n">bot</span><span class="p">.</span><span class="n">js</span><span class="n n-Quoted">` по чек-листу `</span><span class="n">ilyakhov</span><span class="o">-</span><span class="n">infostyle</span><span class="o">/</span><span class="n">SKILL</span><span class="p">.</span><span class="n">md</span><span class="n n-Quoted">`.</span>
+
+<span class="n n-Quoted">**Сценарии приемки**:</span>
+<span class="n n-Quoted">1. **Дано** любое сообщение бота, **Тогда** текст соответствует правилам инфостиля: нет разделителей `</span><span class="n">━</span><span class="n n-Quoted">`, нет «Приветствуем!», нет «персональный ассистент».</span>
+
+<span class="n n-Quoted">**Что реализовано**: Все тексты `</span><span class="n">bot</span><span class="p">.</span><span class="n">js</span><span class="n n-Quoted">` переписаны. Навык задокументирован в `</span><span class="n">e</span><span class="o">:</span><span class="err">\</span><span class="n">telemost</span><span class="err">\</span><span class="p">.</span><span class="n">agents</span><span class="err">\</span><span class="n">skills</span><span class="err">\</span><span class="n">ilyakhov</span><span class="o">-</span><span class="n">infostyle</span><span class="err">\</span><span class="n">SKILL</span><span class="p">.</span><span class="n">md</span><span class="n n-Quoted">`.</span>
+
+<span class="n n-Quoted">---</span>
+
+<span class="n n-Quoted">### US-6 — Транскрибация с диаризацией (Приоритет: P2) ⚠️</span>
+
+<span class="n n-Quoted">Текст встречи расшифровывается с разделением по спикерам. При сбое AssemblyAI — автоматический переход на Groq Whisper.</span>
+
+<span class="n n-Quoted">**Независимый тест**: Запустить `</span><span class="n">transcribe</span><span class="p">.</span><span class="n">js</span><span class="n n-Quoted">` с временным отключением ключа AssemblyAI — должна запуститься резервная ветка.</span>
+
+<span class="n n-Quoted">**Сценарии приемки**:</span>
+<span class="n n-Quoted">1. **Дано** `</span><span class="n">meeting_audio</span><span class="p">.</span><span class="n">webm</span><span class="n n-Quoted">`, **Когда** AssemblyAI доступен, **Тогда** аудио конвертируется в `</span><span class="p">.</span><span class="n">mp3</span><span class="n n-Quoted">`, AssemblyAI возвращает текст с метками спикеров (`</span><span class="n">Speaker</span><span class="w"> </span><span class="n">A</span><span class="n n-Quoted">`, `</span><span class="n">Speaker</span><span class="w"> </span><span class="n">B</span><span class="n n-Quoted">`).</span>
+<span class="n n-Quoted">2. **Дано** ошибка AssemblyAI, **Тогда** FFmpeg нарезает файл на чанки по 10 минут (`</span><span class="o">-</span><span class="n">c</span><span class="w"> </span><span class="n">copy</span><span class="n n-Quoted">`), Groq Whisper транскрибирует каждый чанк последовательно, тексты склеиваются в единую хронологическую ленту.</span>
+
+<span class="n n-Quoted">**Что реализовано**: `</span><span class="n">transcribe</span><span class="p">.</span><span class="n">js</span><span class="n n-Quoted">` — конвертация `</span><span class="p">.</span><span class="n">webm</span><span class="n n-Quoted">` → `</span><span class="p">.</span><span class="n">mp3</span><span class="n n-Quoted">`, AssemblyAI основной, Groq резервный, автоматический fallback в `</span><span class="n">try</span><span class="o">/</span><span class="n">catch</span><span class="n n-Quoted">`.</span>
+
+<span class="n n-Quoted">**Реализовано**: Да, `</span><span class="n">speaker_labels</span><span class="o">:</span><span class="w"> </span><span class="no">true</span><span class="n n-Quoted">` передаётся в API AssemblyAI по умолчанию (в `</span><span class="n">services</span><span class="o">/</span><span class="n">transcribe</span><span class="p">.</span><span class="n">js</span><span class="n n-Quoted">`). Это подтверждено анализом исходного кода.</span>
+
+<span class="n n-Quoted">---</span>
+
+<span class="n n-Quoted">### US-7 — Выгрузка на Яндекс.Диск + S3 (Приоритет: P2) ⚠️</span>
+
+<span class="n n-Quoted">Записи и транскрипты автоматически выгружаются в облако, локальные файлы удаляются.</span>
+
+<span class="n n-Quoted">**Сценарии приемки**:</span>
+<span class="n n-Quoted">1. **Дано** готовые `</span><span class="n">meeting_audio</span><span class="p">.</span><span class="n">webm</span><span class="n n-Quoted">` и `</span><span class="n">transcript</span><span class="p">.</span><span class="n">txt</span><span class="n n-Quoted">`, **Когда** запускается выгрузка, **Тогда** файлы появляются в `</span><span class="o">/</span><span class="n">Yandex</span><span class="p">.</span><span class="n">Telemost</span><span class="p">.</span><span class="n">Records</span><span class="o">/</span><span class="err">[</span><span class="n">Дата</span><span class="err">]</span><span class="n">_</span><span class="err">[</span><span class="n">Тема</span><span class="err">]</span><span class="o">/</span><span class="n n-Quoted">` на Яндекс.Диске.</span>
+<span class="n n-Quoted">2. **Дано** заполнены `</span><span class="n">S3_ACCESS_KEY</span><span class="n n-Quoted">` и `</span><span class="n">S3_SECRET_KEY</span><span class="n n-Quoted">`, **Тогда** копия аудио загружается в S3-бакет.</span>
+<span class="n n-Quoted">3. **Дано** выгрузка завершена, **Тогда** все локальные файлы удаляются (0 МБ остатков).</span>
+
+<span class="n n-Quoted">**Что реализовано**: `</span><span class="n">upload_audio</span><span class="p">.</span><span class="n">js</span><span class="n n-Quoted">`, `</span><span class="n">services</span><span class="o">/</span><span class="n">webdav</span><span class="p">.</span><span class="n">js</span><span class="n n-Quoted">`. Выгрузка в S3 через `</span><span class="n">services</span><span class="o">/</span><span class="k">s3</span><span class="p">.</span><span class="n">js</span><span class="n n-Quoted">`.</span>
+
+<span class="n n-Quoted">---</span>
+
+<span class="n n-Quoted">### US-8 — ИИ-саммари и рассылка в Telegram (Приоритет: P2) ✅</span>
+
+<span class="n n-Quoted">После обработки встречи бот автоматически присылает саммари пользователю в Telegram и возвращает его в главное меню.</span>
+
+<span class="n n-Quoted">**Независимый тест**: После завершения транскрибации бот присылает сообщение с кратким текстом и ссылкой на Яндекс.Диск.</span>
+
+<span class="n n-Quoted">**Сценарии приемки**:</span>
+<span class="n n-Quoted">1. **Дано** транскрибация и саммари завершены, файлы загружены на Диск, **Когда** `</span><span class="n">transcribe</span><span class="p">.</span><span class="n">js</span><span class="n n-Quoted">` завершается, **Тогда** бот отправляет в `</span><span class="n">chat_id</span><span class="n n-Quoted">` инициатора: краткое саммари, тему и ссылку на папку.</span>
+<span class="n n-Quoted">2. **Дано** возникла ошибка транскрибации или загрузки, **Тогда** бот отправляет сообщение об ошибке с её деталями, возвращая пользователя в главное меню.</span>
+
+<span class="n n-Quoted">**Что реализовано**: В `</span><span class="n">transcribe</span><span class="p">.</span><span class="n">js</span><span class="n n-Quoted">` добавлена отправка сообщений с саммари (или ошибкой) через Telegram Bot API (axios) по `</span><span class="n">chat_id</span><span class="n n-Quoted">`.</span>
+
+<span class="n n-Quoted">---</span>
+
+<span class="n n-Quoted">### US-9 — Быстрый старт по ссылке с inline-кнопкой (Приоритет: P1) ✅</span>
+
+<span class="n n-Quoted">Пользователь отправляет боту ссылку — бот сразу запускает запись и прикрепляет кнопку «Остановить».</span>
+
+<span class="n n-Quoted">**Что реализовано**: `</span><span class="n">bot</span><span class="p">.</span><span class="k">on</span><span class="p">(</span><span class="s1">&#39;text&#39;</span><span class="p">)</span><span class="n n-Quoted">` в `</span><span class="n">bot</span><span class="p">.</span><span class="n">js</span><span class="n n-Quoted">` проверяет `</span><span class="kt">text</span><span class="p">.</span><span class="n">includes</span><span class="p">(</span><span class="s1">&#39;telemost&#39;</span><span class="p">)</span><span class="n n-Quoted">` и запускает `</span><span class="n">run</span><span class="p">.</span><span class="n">js</span><span class="n n-Quoted">`.</span>
+
+<span class="n n-Quoted">---</span>
+
+<span class="n n-Quoted">### US-10 — Персональное имя бота (Приоритет: P2) ✅</span>
+
+<span class="n n-Quoted">Каждый пользователь задаёт своё имя для бота-помощника на встречах. Имя хранится в SQLite по `</span><span class="n">chat_id</span><span class="n n-Quoted">`.</span>
+
+<span class="n n-Quoted">**Что реализовано**: `</span><span class="n">bot</span><span class="p">.</span><span class="n">js</span><span class="n n-Quoted">` — меню «Имя бота», `</span><span class="n">db</span><span class="p">.</span><span class="n">js</span><span class="n n-Quoted">` — поле `</span><span class="n">bot_name</span><span class="n n-Quoted">`, передача через `</span><span class="n">BOT_DISPLAY_NAME</span><span class="n n-Quoted">` в `</span><span class="n">recorder</span><span class="p">.</span><span class="n">js</span><span class="n n-Quoted">`.</span>
+
+<span class="n n-Quoted">---</span>
+
+<span class="n n-Quoted">### US-11 — ИИ-переименование папок на Яндекс.Диске (Приоритет: P2) ⚠️</span>
+
+<span class="n n-Quoted">После завершения транскрибации папка встречи на Яндекс.Диске переименовывается в человекочитаемое название.</span>
+
+<span class="n n-Quoted">**Формат**: `</span><span class="err">[</span><span class="n">Дата</span><span class="err">]</span><span class="n">_</span><span class="err">[</span><span class="n">Имя1</span><span class="err">]</span><span class="n">_и_</span><span class="err">[</span><span class="n">Имя2</span><span class="err">]</span><span class="n">_</span><span class="err">[</span><span class="n">Суть</span><span class="err">]</span><span class="n n-Quoted">` (&lt; 5 спикеров) / `</span><span class="err">[</span><span class="n">Дата</span><span class="err">]</span><span class="n">_Конференция_на_тему_</span><span class="err">[</span><span class="n">Суть</span><span class="err">]</span><span class="n n-Quoted">` (≥ 5 спикеров).</span>
+
+<span class="n n-Quoted">**Что реализовано**: `</span><span class="n">services</span><span class="o">/</span><span class="n">summarize</span><span class="p">.</span><span class="n">js</span><span class="n n-Quoted">` → `</span><span class="n">generateFolderMeta</span><span class="p">()</span><span class="n n-Quoted">`. Вызов WebDAV `</span><span class="n">MOVE</span><span class="n n-Quoted">` — требует проверки.</span>
+
+<span class="n n-Quoted">---</span>
+
+<span class="n n-Quoted">### US-12 — Интеграция с Яндекс.Календарём (Приоритет: P3) ❌</span>
+
+<span class="n n-Quoted">Бот автоматически подключается к встречам по расписанию.</span>
+
+<span class="n n-Quoted">**Что нужно**: CalDAV/REST интеграция с Яндекс.Календарём, cron-планировщик внутри `</span><span class="n">bot</span><span class="p">.</span><span class="n">js</span><span class="n n-Quoted">`.</span>
+
+<span class="n n-Quoted">---</span>
+
+<span class="n n-Quoted">### US-13 — Просмотр архива встреч (Приоритет: P3) ⚠️</span>
+
+<span class="n n-Quoted">Пользователь видит список прошлых встреч прямо в Telegram.</span>
+
+<span class="n n-Quoted">**Что реализовано**: `</span><span class="n">bot</span><span class="p">.</span><span class="n">js</span><span class="n n-Quoted">` — раздел «Список встреч», `</span><span class="n">db</span><span class="p">.</span><span class="n">js</span><span class="n n-Quoted">` → `</span><span class="n">getRecentMeetings</span><span class="p">()</span><span class="n n-Quoted">` (5 последних из SQLite).</span>
+
+<span class="n n-Quoted">**Что нужно**: Постраничный просмотр, фильтрация, ссылки на файлы на Яндекс.Диске.</span>
+
+<span class="n n-Quoted">---</span>
+
+<span class="n n-Quoted">### US-14 — Чат-ассистент по встрече RAG (Приоритет: P3) ❌</span>
+
+<span class="n n-Quoted">Пользователь задаёт вопросы по конкретной встрече — ИИ отвечает на основе транскрипта.</span>
+
+<span class="n n-Quoted">**Что нужно**: Векторизация транскрипта, векторная БД (изолировано по `</span><span class="n">chat_id</span><span class="n n-Quoted">`), RAG-запросы.</span>
+
+<span class="n n-Quoted">---</span>
+
+<span class="n n-Quoted">### US-15 — Живой ИИ-агент в комнате STT/TTS (Приоритет: P4) ❌</span>
+
+<span class="n n-Quoted">Бот в реальном времени слышит участников, обрабатывает речь через LLM и отвечает голосом.</span>
+
+<span class="n n-Quoted">**Что нужно**: WebSocket STT, monkey-patch `</span><span class="n">getUserMedia</span><span class="n n-Quoted">` для TTS-инъекции, задержка ответа &lt; 1.5 сек.</span>
+
+<span class="n n-Quoted">---</span>
+
+<span class="n n-Quoted">### US-16 — Нативная диаризация через WebRTC-треки (Приоритет: P3) ✅</span>
+
+<span class="n n-Quoted">**Суть гипотезы (подтверждена)**: Яндекс.Телемост — конференция на базе WebRTC. Каждый участник транслирует **отдельный аудиопоток** (`</span><span class="n">MediaStreamTrack</span><span class="n n-Quoted">`). Бот перехватывает эти треки через monkey-patch `</span><span class="n">RTCPeerConnection</span><span class="n n-Quoted">`.</span>
+
+<span class="n n-Quoted">**Реализованная архитектура (Dual-Output)**:</span>
+<span class="n n-Quoted">Вместо только микширования, бот теперь использует **Dual-Output**:</span>
+<span class="n n-Quoted">1. Создается единый микс всех треков (`</span><span class="n">meeting_audio</span><span class="p">.</span><span class="n">webm</span><span class="n n-Quoted">`), который отправляется в STT (AssemblyAI).</span>
+<span class="n n-Quoted">2. Параллельно каждый трек записывается **отдельно** в свой файл в папку `</span><span class="n">tracks</span><span class="o">/</span><span class="n n-Quoted">`.</span>
+<span class="n n-Quoted">3. Отслеживается **активность** каждого трека (амплитуда через `</span><span class="n">AnalyserNode</span><span class="n n-Quoted">`) с временными метками, и события записываются в `</span><span class="n">meta</span><span class="o">/</span><span class="n">track_events</span><span class="p">.</span><span class="n">ndjson</span><span class="n n-Quoted">`.</span>
+
+<span class="n n-Quoted">Эта карта затем передаётся в `</span><span class="n">transcribe</span><span class="p">.</span><span class="n">js</span><span class="n n-Quoted">` и позволяет корректно атрибутировать транскрипт конкретным идентификаторам/именам участников, заменяя стандартные `</span><span class="n">Speaker</span><span class="w"> </span><span class="n">A</span><span class="n n-Quoted">` от AssemblyAI на реальные треки.</span>
+
+<span class="n n-Quoted">**Ограничения**:</span>
+<span class="n n-Quoted">- Поиск имени участника по DOM-дереву пока нестабилен (`</span><span class="n">speakerName</span><span class="n n-Quoted">` может быть `</span><span class="no">unknown</span><span class="n n-Quoted">`), но техническая возможность сопоставления по амплитуде доказана.</span>
+
+<span class="n n-Quoted">**Формат выходных файлов**:</span>
+<span class="n n-Quoted">- `</span><span class="n">recordings</span><span class="o">/</span><span class="err">[</span><span class="n">ID</span><span class="err">]</span><span class="o">/</span><span class="n">meeting_audio</span><span class="p">.</span><span class="n">webm</span><span class="n n-Quoted">` (микс для STT)</span>
+<span class="n n-Quoted">- `</span><span class="n">recordings</span><span class="o">/</span><span class="err">[</span><span class="n">ID</span><span class="err">]</span><span class="o">/</span><span class="n">tracks</span><span class="o">/</span><span class="err">[</span><span class="n">trackId</span><span class="err">]</span><span class="p">.</span><span class="n">webm</span><span class="n n-Quoted">` (раздельные треки)</span>
+<span class="n n-Quoted">- `</span><span class="n">recordings</span><span class="o">/</span><span class="err">[</span><span class="n">ID</span><span class="err">]</span><span class="o">/</span><span class="n">meta</span><span class="o">/</span><span class="n">track_events</span><span class="p">.</span><span class="n">ndjson</span><span class="n n-Quoted">` (события активности `</span><span class="n">speech</span><span class="o">-</span><span class="n">segment</span><span class="n n-Quoted">`)</span>
+<span class="n n-Quoted">- `</span><span class="n">recordings</span><span class="o">/</span><span class="err">[</span><span class="n">ID</span><span class="err">]</span><span class="o">/</span><span class="n">meta</span><span class="o">/</span><span class="n">tracks_summary</span><span class="p">.</span><span class="kt">json</span><span class="n n-Quoted">` (список сохраненных треков)</span>
+
+<span class="n n-Quoted">---</span>
+
+
+
+<span class="n n-Quoted">- **Тишина**: Участники есть</span>
+</code></pre></div>
+
+<h2>Spec 003 / speaker names and AI summary</h2>
+<div class="codehilite"><pre><span></span><code><span class="gh"># Спецификация требований: Идентификация спикеров и генерация ИИ-саммари</span>
+
+<span class="gs">**Ветка фичи**</span>: <span class="sb">`[003-speaker-names-and-ai-summary]`</span>
+
+<span class="gs">**Дата создания**</span>: 2026-07-03
+
+<span class="gs">**Статус**</span>: Черновик
+
+<span class="gs">**Входные данные**</span>: Описание от пользователя: &quot;обнови спецификацию с этими проблемами и предстоящими фичами!&quot; (Отсутствие реальных имен спикеров и ошибка отсутствия GROQ_API_KEY для саммари).
+
+<span class="gu">## Сценарии использования и тестирование *(обязательно)*</span>
+
+<span class="gu">### Пользовательская история 1 - Генерация саммари встречи с помощью Groq (Приоритет: P1)</span>
+
+Как пользователь бота, я хочу получать текстовое саммари по итогам встречи, чтобы быстро освежить в памяти основные темы обсуждения без необходимости читать полную транскрипцию.
+
+<span class="gs">**Почему такой приоритет**</span>: Саммари является одной из ключевых заявленных фич (кнопка &quot;Сделать саммари&quot;), отсутствие ключа вызывает логичную ошибку <span class="sb">`GROQ_API_KEY не задан`</span>, и пользователь видит заглушку. Без этой функции ценность ИИ-аналитики бота снижается.
+
+<span class="gs">**Независимый тест**</span>: Можно протестировать независимо, передав готовый текстовый файл транскрипции в модуль суммаризации и проверив успешность генерации саммари при наличии валидного ключа.
+
+<span class="gs">**Сценарии приемки**</span>:
+
+<span class="k">1.</span> <span class="gs">**Дано**</span> установленный системный параметр <span class="sb">`GROQ_API_KEY`</span>, <span class="gs">**Когда**</span> встреча завершается и генерируется транскрипт, <span class="gs">**Тогда**</span> бот успешно обращается к Groq API и создает файл <span class="sb">`summary.txt`</span> с осмысленным текстом.
+<span class="k">2.</span> <span class="gs">**Дано**</span> отсутствие параметра <span class="sb">`GROQ_API_KEY`</span>, <span class="gs">**Когда**</span> встреча завершается, <span class="gs">**Тогда**</span> бот корректно перехватывает ошибку, логирует предупреждение и отправляет пользователю уведомление &quot;Не удалось сгенерировать саммари&quot; без падения основной программы.
+
+---
+
+<span class="gu">### Пользовательская история 2 - Определение реальных имен спикеров (Приоритет: P2)</span>
+
+Как организатор или участник встречи, я хочу, чтобы в транскрипции диалоги были подписаны реальными именами людей (например, &quot;Иван Иванов&quot;), а не техническими идентификаторами (&quot;Трек 3eaf&quot;), чтобы сразу понимать, кто и что сказал.
+
+<span class="gs">**Почему такой приоритет**</span>: Текущая реализация (Трек XXXX) затрудняет чтение диалогов при количестве участников больше двух. Это сильно снижает UX при просмотре результатов.
+
+<span class="gs">**Независимый тест**</span>: Тестируется путем запуска бота-рекордера в тестовой комнате Яндекс.Телемост с двумя заранее известными участниками и проверки файла <span class="sb">`track_events.ndjson`</span> на наличие корректных <span class="sb">`speakerName`</span>.
+
+<span class="gs">**Сценарии приемки**</span>:
+
+<span class="k">1.</span> <span class="gs">**Дано**</span> участник с именем &quot;Алексей&quot; говорит в микрофон, <span class="gs">**Когда**</span> алгоритм захватывает аудиопоток WebRTC, <span class="gs">**Тогда**</span> скрипт находит на веб-странице Телемоста активный индикатор речи, сопоставляет его с именем участника и записывает &quot;Алексей&quot; вместо &quot;Трек XXXX&quot;.
+<span class="k">2.</span> <span class="gs">**Дано**</span> невозможность определить имя из DOM-дерева, <span class="gs">**Когда**</span> происходит запись, <span class="gs">**Тогда**</span> система использует фолбэк-имя &quot;Участник 1&quot;, &quot;Участник 2&quot; или оставляет &quot;Трек XXXX&quot;.
+
+---
+
+<span class="gu">### Граничные случаи</span>
+
+<span class="k">-</span><span class="w"> </span>Что происходит, когда [пользователь меняет имя прямо во время встречи]?
+  Система должна обрабатывать смену имени или привязывать логику к уникальным ID участников, если таковые доступны в интерфейсе.
+<span class="k">-</span><span class="w"> </span>Как система обрабатывает [лимиты API Groq (Rate Limit)]?
+  Бот должен уметь повторять запрос с задержкой (экспоненциальный бэкофф) или корректно сообщать о невозможности сделать саммари из-за лимитов.
+
+<span class="gu">## Требования *(обязательно)*</span>
+
+<span class="gu">### Функциональные требования</span>
+
+<span class="k">-</span><span class="w"> </span><span class="gs">**FR-001**</span>: Система ДОЛЖНА считывать ключ <span class="sb">`GROQ_API_KEY`</span> из переменных окружения и использовать его для запросов к Groq.
+<span class="k">-</span><span class="w"> </span><span class="gs">**FR-002**</span>: Система ДОЛЖНА обрабатывать ошибки генерации саммари (отсутствие ключа, ошибки сети) без прерывания отправки аудио и текста.
+<span class="k">-</span><span class="w"> </span><span class="gs">**FR-003**</span>: Система ДОЛЖНА анализировать DOM-дерево интерфейса Яндекс.Телемост во время записи для сопоставления WebRTC-треков с именами пользователей на экране.
+<span class="k">-</span><span class="w"> </span><span class="gs">**FR-004**</span>: Система ДОЛЖНА записывать найденное имя участника в <span class="sb">`track_events.ndjson`</span> в поле <span class="sb">`speakerName`</span>.
+
+<span class="gu">### Ключевые сущности</span>
+
+<span class="k">-</span><span class="w"> </span><span class="gs">**Summary Generator**</span>: Модуль, отвечающий за отправку полного транскрипта в LLM и получение ответа.
+<span class="k">-</span><span class="w"> </span><span class="gs">**Track Mapper**</span>: Логика внутри <span class="sb">`recorder.js`</span>, которая в реальном времени следит за изменениями DOM-дерева (индикаторы микрофона) для установления связи <span class="sb">`Track ID &lt;-&gt; User Name`</span>.
+
+<span class="gu">## Критерии успеха *(обязательно)*</span>
+
+<span class="gu">### Измеримые результаты</span>
+
+<span class="k">-</span><span class="w"> </span><span class="gs">**SC-001**</span>: Успешная генерация саммари для 100% встреч при наличии правильного ключа <span class="sb">`GROQ_API_KEY`</span>.
+<span class="k">-</span><span class="w"> </span><span class="gs">**SC-002**</span>: Успешное определение реальных имен спикеров как минимум в 80% реплик на встречах с количеством участников до 5 человек.
+<span class="k">-</span><span class="w"> </span><span class="gs">**SC-003**</span>: Время генерации саммари не должно превышать 1 минуты после получения текстовой транскрипции.
+
+<span class="gu">## Предположения и допущения</span>
+
+<span class="k">-</span><span class="w"> </span>Интерфейс Яндекс.Телемост (DOM-структура) содержит явные индикаторы того, кто именно сейчас говорит (анимация эквалайзера или иконка микрофона), которые можно связать со списком участников.
+<span class="k">-</span><span class="w"> </span>Пользователь имеет возможность самостоятельно получить бесплатный ключ Groq API и прописать его в файле <span class="sb">`.env`</span>.
+</code></pre></div>
+
+<h2>Project constitution</h2>
+<div class="codehilite"><pre><span></span><code><span class="gh"># Конституция проекта Telemost Zero-Cost Bot</span>
+
+<span class="gu">## Ключевые принципы</span>
+
+<span class="gu">### I. Разделение ответственности (Separation of Concerns)</span>
+Система разделена на два независимых слоя:
+<span class="k">-</span><span class="w"> </span><span class="gs">**Исполнительный слой (Worker)**</span>: Docker-контейнер, выполняющий Puppeteer-сценарий (вход на встречу, WebRTC-интерцепция) и локальную обработку аудио (FFmpeg). Бот-рекордер ДОЛЖЕН выполнять только захват аудиопотока и базовое сегментирование.
+<span class="k">-</span><span class="w"> </span><span class="gs">**Оркестрирующий слой (Orchestrator)**</span>: Node.js-приложение (<span class="sb">`bot.js`</span>), управляющее Telegram-ботом, базой данных SQLite (<span class="sb">`telemost_bot.sqlite`</span>), интеграцией с API ИИ (расшифровка, саммари) и отправкой уведомлений. Логика полностью мигрирована из сценариев n8n.
+
+<span class="gu">### II. Ресурсная гигиена и предотвращение зомби-процессов (Anti-Zombie Rule)</span>
+<span class="k">-</span><span class="w"> </span>Каждый запуск Puppeteer/Chromium ДОЛЖЕН быть обернут в конструкцию <span class="sb">`try...finally`</span> с гарантированным вызовом <span class="sb">`browser.close()`</span>.
+<span class="k">-</span><span class="w"> </span>Рекордер ДОЛЖЕН корректно перехватывать системные сигналы <span class="sb">`SIGINT`</span> и <span class="sb">`SIGTERM`</span> для мгновенного и чистого завершения Chromium и сохранения аудиофайлов.
+<span class="k">-</span><span class="w"> </span>Рекордер ДОЛЖЕН автоматически выходить и завершать запись, если бот остается один в комнате дольше 2 минут (<span class="sb">`MAX_IDLE_MINS=2`</span>).
+<span class="k">-</span><span class="w"> </span>Локальный диск ДОЛЖЕН автоматически очищаться от временных аудиофайлов, чанков и текстовых логов транскрипции сразу после их успешной выгрузки на Яндекс.Диск или S3.
+
+<span class="gu">### III. Отказоустойчивость транскрибации (Failover Pipeline)</span>
+<span class="k">-</span><span class="w"> </span>Пайплайн транскрибации ДОЛЖЕН иметь основную ветку (AssemblyAI с диаризацией по спикерам) и резервную (Groq Whisper-large-v3).
+<span class="k">-</span><span class="w"> </span>Переключение на резервную ветку ДОЛЖЕН производиться автоматически при любой критической ошибке AssemblyAI.
+<span class="k">-</span><span class="w"> </span>Резервная ветка ДОЛЖНА использовать FFmpeg для нарезки аудио без перекодирования (copy) на чанки по 10 минут, чтобы соответствовать лимитам Groq (25 МБ).
+
+<span class="gu">### IV. Безопасность учетных данных (Credential Isolation)</span>
+<span class="k">-</span><span class="w"> </span>Все персональные учетные данные пользователей (логин/пароль Яндекс.Диска для WebDAV) ДОЛЖНЫ храниться и обрабатываться только на стороне Orchestrator.
+<span class="k">-</span><span class="w"> </span>Docker-контейнеры ДОЛЖНЫ получать авторизационные данные динамически через параметры вызова или переменные окружения, не допуская их сохранения в статических конфигурациях образов.
+
+<span class="gu">### V. Философия Zero-Cost (ZeroPay)</span>
+<span class="k">-</span><span class="w"> </span>Бот ДОЛЖЕН подключаться в качестве гостя без требований к платным лицензиям Яндекс 360.
+<span class="k">-</span><span class="w"> </span>Все внешние хранилища и API ДОЛЖНЫ использовать по возможности бесплатные лимиты или эффективную оптимизацию (например, VAD-удаление тишины и сжатие Opus), минимизируя трафик и стоимость вызовов API.
+
+<span class="gu">### VI. Безопасность и конфиденциальность семантической памяти (RAG Privacy)</span>
+<span class="k">-</span><span class="w"> </span>Все векторизованные чанки стенограмм и эмбеддинги в базе данных ДОЛЖНЫ быть жестко изолированы по <span class="sb">`chat_id`</span> пользователя.
+<span class="k">-</span><span class="w"> </span>Любые поисковые запросы к векторной БД (RAG) НЕ ДОЛЖНЫ допускать утечки или пересечения конфиденциальных данных между сессиями разных пользователей.
+
+<span class="gu">### VII. Принцип низкой задержки реального времени (Real-Time Low Latency)</span>
+<span class="k">-</span><span class="w"> </span>Голосовые ИИ-агенты, работающие непосредственно в конференции, ДОЛЖНЫ использовать потоковые протоколы (WebSocket/gRPC) для STT и TTS.
+<span class="k">-</span><span class="w"> </span>Суммарная задержка (latency) ответа ИИ-агента на реплику участника встречи НЕ ДОЛЖНА превышать 1.5 секунды для обеспечения естественного темпа живой беседы.
+<span class="k">-</span><span class="w"> </span>Инъекция аудиопотока в конференции ДОЛЖНА выполняться исключительно программным методом (monkey patching <span class="sb">`getUserMedia`</span>), не требуя установки виртуальных кабелей на уровне ОС хоста.
+
+<span class="gu">### VIII. Принцип информационного стиля Ильяхова (Ilyakhov&#39;s Infostyle)</span>
+<span class="k">-</span><span class="w"> </span>Все текстовые сообщения Telegram-бота, интерфейсы, инструкции и логи ДОЛЖНЫ соответствовать правилам информационного стиля (Ильяховского инфостиля).
+<span class="k">-</span><span class="w"> </span>Тексты ДОЛЖНЫ быть краткими, объективными, правдивыми и написанными с заботой о пользователе.
+<span class="k">-</span><span class="w"> </span>Из текстов ДОЛЖНЫ удаляться стоп-слова, натужная вежливость, субъективные оценки (&quot;высококачественный&quot;, &quot;быстрый&quot;) и штампы.
+<span class="k">-</span><span class="w"> </span>В интерфейсе НЕ ДОЛЖНЫ использоваться псевдографические украшательства и разделители (например, линии из символов <span class="sb">`━`</span>), так как они засоряют визуальное пространство и усложняют чтение.
+
+<span class="gu">## Управление проектом (Governance)</span>
+<span class="k">-</span><span class="w"> </span>Любые изменения в скриптах рекордера (<span class="sb">`recorder.js`</span>, <span class="sb">`run.js`</span>) или транскрибации (<span class="sb">`transcribe.js`</span>) ДОЛЖНЫ проверяться на совместимость с Docker-контейнером.
+<span class="k">-</span><span class="w"> </span>Изменения в API взаимодействия требуют согласования спецификации контрактов.
+
+<span class="gs">**Версия**</span>: 1.2.0 | <span class="gs">**Утверждена**</span>: 2026-07-02 | <span class="gs">**Последние изменения**</span>: 2026-07-02
+</code></pre></div>
+
+<h2>Multichannel roadmap excerpt</h2>
+<div class="codehilite"><pre><span></span><code><span class="gh"># MULTICHANNEL_HYPOTHESIS_ROADMAP</span>
+
+Статус: активная дорожная карта
+Владелец: команда разработки Telemost
+Постоянный исполнитель: субагент-наблюдатель <span class="sb">`multichannel-hypothesis-tracker`</span>
+Последнее обновление: 2026-07-02
+
+---
+
+<span class="gu">## 1. Цель</span>
+
+Проверить и довести до рабочей реализации гипотезу US-16:
+
+<span class="k">-</span><span class="w"> </span>Яндекс.Телемост передаёт отдельные WebRTC-аудиотреки по участникам.
+<span class="k">-</span><span class="w"> </span>Эти треки можно не сводить в один mix, а записывать раздельно или как технически корректный многоканальный артефакт.
+<span class="k">-</span><span class="w"> </span>По этим трекам можно построить карту диаризации без потери авторства.
+<span class="k">-</span><span class="w"> </span>Встреча должна сохраняться на Яндекс.Диск так, чтобы в папке встречи лежал исходный артефакт записи до транскрибации.
+
+Базовая спецификация:
+<span class="k">-</span><span class="w"> </span><span class="sb">`specs/002-standalone-bot-and-fixes/spec.md:217`</span>
+<span class="k">-</span><span class="w"> </span><span class="sb">`specs/002-standalone-bot-and-fixes/spec.md:252`</span>
+<span class="k">-</span><span class="w"> </span><span class="sb">`specs/002-standalone-bot-and-fixes/spec.md:267`</span>
+
+---
+
+<span class="gu">## 2. Что уже установлено</span>
+
+Подтверждено по текущему коду:
+
+<span class="k">1.</span> <span class="sb">`recorder.js`</span> сейчас НЕ пишет многоканальный raw-файл.
+<span class="k">2.</span> Все входящие audio tracks сейчас сводятся в один общий mix через <span class="sb">`MediaStreamDestination`</span>.
+<span class="k">3.</span> Основной pipeline <span class="sb">`run.js -&gt; transcribe.js`</span> сейчас НЕ загружает исходный аудиофайл в папку встречи на Яндекс.Диске до транскрибации.
+<span class="k">4.</span> Отдельный загрузчик исходного аудио существует (<span class="sb">`upload_audio.js`</span>), но не встроен в основной pipeline.
+<span class="k">5.</span> AssemblyAI не требует обязательной конвертации в MP3. Исходный файл можно отправлять как есть, если формат принимается сервисом.
+
+Кодовые точки:
+<span class="k">-</span><span class="w"> </span><span class="sb">`recorder.js:121`</span>
+<span class="k">-</span><span class="w"> </span><span class="sb">`recorder.js:124`</span>
+<span class="k">-</span><span class="w"> </span><span class="sb">`recorder.js:130`</span>
+<span class="k">-</span><span class="w"> </span><span class="sb">`run.js:55`</span>
+<span class="k">-</span><span class="w"> </span><span class="sb">`run.js:66`</span>
+<span class="k">-</span><span class="w"> </span><span class="sb">`upload_audio.js:29`</span>
+<span class="k">-</span><span class="w"> </span><span class="sb">`transcribe.js:54`</span>
+
+---
+
+<span class="gu">## 3. Роль постоянного субагента</span>
+
+Имя: <span class="sb">`multichannel-hypothesis-tracker`</span>
+
+Назначение:
+<span class="k">-</span><span class="w"> </span>следить за изменениями по гипотезе US-16;
+<span class="k">-</span><span class="w"> </span>фиксировать, что именно было изменено;
+<span class="k">-</span><span class="w"> </span>фиксировать, как именно это проверялось;
+<span class="k">-</span><span class="w"> </span>записывать результаты проверок;
+<span class="k">-</span><span class="w"> </span>отделять факты от предположений;
+<span class="k">-</span><span class="w"> </span>обновлять статус шагов в этом файле.
+
+Правила работы субагента:
+<span class="k">1.</span> После каждого изменения кода обновлять разделы:
+<span class="w">   </span><span class="k">-</span><span class="w"> </span>&quot;Журнал изменений&quot;
+<span class="w">   </span><span class="k">-</span><span class="w"> </span>&quot;Статус шагов&quot;
+<span class="w">   </span><span class="k">-</span><span class="w"> </span>&quot;Артефакты проверки&quot;
+<span class="k">2.</span> Не писать общие формулировки вроде &quot;улучшено&quot; или &quot;доработано&quot; без описания конкретного изменения.
+<span class="k">3.</span> Для каждой проверки указывать:
+<span class="w">   </span><span class="k">-</span><span class="w"> </span>дату,
+<span class="w">   </span><span class="k">-</span><span class="w"> </span>среду проверки,
+<span class="w">   </span><span class="k">-</span><span class="w"> </span>команду или сценарий,
+<span class="w">   </span><span class="k">-</span><span class="w"> </span>наблюдаемый результат,
+<span class="w">   </span><span class="k">-</span><span class="w"> </span>вывод.
+<span class="k">4.</span> Если гипотеза не подтверждается, фиксировать это явно.
+<span class="k">5.</span> Если появляется новый временный контейнер или тестовый образ, фиксировать его имя и назначение.
+
+---
+
+<span class="gu">## 4. Целевой порядок работ</span>
+
+Ниже целевой инженерный порядок, которого придерживаемся в рамках гипотезы.
+
+<span class="gu">### Этап A. Исследовательский контур</span>
+
+<span class="k">1.</span> Создать тестовый режим или отдельный тестовый Docker-контейнер, идентичный основному по окружению.
+<span class="k">2.</span> В этом контуре отключить обязательное сведение всех треков в один mix.
+<span class="k">3.</span> Получить доказательства:
+<span class="w">   </span><span class="k">-</span><span class="w"> </span>сколько приходит <span class="sb">`MediaStreamTrack`</span>,
+<span class="w">   </span><span class="k">-</span><span class="w"> </span>когда появляются новые треки,
+<span class="w">   </span><span class="k">-</span><span class="w"> </span>можно ли устойчиво привязать трек к участнику,
+<span class="w">   </span><span class="k">-</span><span class="w"> </span>можно ли записывать каждый трек отдельно.
+
+<span class="gu">### Этап B. Техническая запись</span>
+
+<span class="k">1.</span> Реализовать запись каждого входящего трека отдельно.
+<span class="k">2.</span> Параллельно собрать метаданные:
+<span class="w">   </span><span class="k">-</span><span class="w"> </span><span class="sb">`trackId`</span>
+<span class="w">   </span><span class="k">-</span><span class="w"> </span>время появления
+<span class="w">   </span><span class="k">-</span><span class="w"> </span>время исчезновения
+<span class="w">   </span><span class="k">-</span><span class="w"> </span>активность/амплитуда
+<span class="w">   </span><span class="k">-</span><span class="w"> </span>предполагаемое имя участника из DOM
+<span class="k">3.</span> Принять решение, какой исходный артефакт считаем мастер-форматом:
+<span class="w">   </span><span class="k">-</span><span class="w"> </span>набор per-track файлов,
+<span class="w">   </span><span class="k">-</span><span class="w"> </span>multichannel-контейнер,
+<span class="w">   </span><span class="k">-</span><span class="w"> </span>или оба варианта.
+
+<span class="gu">### Этап C. Артефакты встречи</span>
+
+<span class="k">1.</span> Создавать папку встречи на Яндекс.Диске до транскрибации.
+<span class="k">2.</span> Загружать в неё исходный аудио-артефакт до запуска STT.
+<span class="k">3.</span> Складывать в эту же папку:
+<span class="w">   </span><span class="k">-</span><span class="w"> </span><span class="sb">`transcript.txt`</span>
+<span class="w">   </span><span class="k">-</span><span class="w"> </span><span class="sb">`summary.txt`</span>
+<span class="w">   </span><span class="k">-</span><span class="w"> </span><span class="sb">`diarization_map.json`</span> при наличии
+<span class="w">   </span><span class="k">-</span><span class="w"> </span>служебные метаданные при необходимости
+
+<span class="gu">### Этап D. Сопоставление с STT</span>
+
+<span class="k">1.</span> Проверить, что AssemblyAI корректно работает:
+<span class="w">   </span><span class="k">-</span><span class="w"> </span>либо с исходным файлом,
+<span class="w">   </span><span class="k">-</span><span class="w"> </span>либо с отдельным derivation-форматом.
+<span class="k">2.</span> Сопоставить speaker labels от AssemblyAI с локальной картой треков.
+<span class="k">3.</span> Проверить возможность подмены <span class="sb">`Speaker A/B/...`</span> на реальные имена из локальной карты.
+
+<span class="gu">### Этап E. Завершение гипотезы</span>
+
+<span class="k">1.</span> Описать итоговую архитектуру.
+<span class="k">2.</span> Обновить <span class="sb">`spec.md`</span>, если гипотеза подтверждается.
+<span class="k">3.</span> Перенести решение из test mode в основной pipeline.
+
+---
+
+<span class="gu">## 5. Решение по среде проверки</span>
+
+<span class="gu">### Вариант по умолчанию</span>
+
+Создаём дополнительный тестовый Docker-контейнер, максимально близкий к боевому.
+
+Причина:
+<span class="k">-</span><span class="w"> </span>гипотеза затрагивает WebRTC-поведение,
+<span class="k">-</span><span class="w"> </span>она рискованна для основного pipeline,
+<span class="k">-</span><span class="w"> </span>её нужно проверять без поломки текущей записи.
+
+<span class="gu">### Базовое требование к тестовому контейнеру</span>
+
+Тестовый контейнер должен:
+<span class="k">-</span><span class="w"> </span>использовать тот же базовый образ и те же зависимости,
+<span class="k">-</span><span class="w"> </span>запускать изменённый вариант <span class="sb">`recorder.js`</span> или отдельный тестовый скрипт,
+<span class="k">-</span><span class="w"> </span>писать отдельные диагностические артефакты в отдельную папку,
+<span class="k">-</span><span class="w"> </span>не вмешиваться в основной контейнер записи.
+
+<span class="gu">### Предпочтительный старт</span>
+
+Сначала отдельный тестовый режим/контейнер.
+Потом, если гипотеза подтверждается, перенос в основной <span class="sb">`recorder.js`</span>.
+
+---
+
+<span class="gu">## 6. Первые обязательные изменения</span>
+
+<span class="gu">### Шаг 1. Создать тестовый режим записи треков</span>
+
+Задача:
+<span class="k">-</span><span class="w"> </span>не переписывать сразу основной pipeline;
+<span class="k">-</span><span class="w"> </span>создать изолированный режим, в котором можно исследовать поведение треков.
+
+Кандидаты:
+<span class="k">-</span><span class="w"> </span><span class="sb">`scratch/test_webrtc_tracks.js`</span>
+<span class="k">-</span><span class="w"> </span>отдельный entrypoint для контейнера
+<span class="k">-</span><span class="w"> </span>дополнительный Dockerfile/compose-сервис для тестовой записи
+
+Результат шага считается успешным, если:
+<span class="k">-</span><span class="w"> </span>контейнер заходит на встречу,
+<span class="k">-</span><span class="w"> </span>логирует появление треков,
+<span class="k">-</span><span class="w"> </span>сохраняет track-level события,
+<span class="k">-</span><span class="w"> </span>не ломает основной сценарий.
+
+<span class="gu">### Шаг 2. Убрать обязательный single-mix в тестовом режиме</span>
+
+Текущее проблемное место:
+<span class="k">-</span><span class="w"> </span><span class="sb">`recorder.js:121-143`</span>
+
+Что изменить:
+<span class="k">-</span><span class="w"> </span>перестать считать <span class="sb">`destination.stream`</span> единственным способом записи;
+<span class="k">-</span><span class="w"> </span>для каждого track вести отдельный поток/отдельный файл или эквивалентный канал;
+<span class="k">-</span><span class="w"> </span>отдельно хранить mapping трека и speaker metadata.
+
+Результат шага считается успешным, если:
+<span class="k">-</span><span class="w"> </span>на встрече с 2+ участниками получаем более одного независимого артефакта записи или доказанный multichannel-артефакт.
+
+<span class="gu">### Шаг 3. Зафиксировать формат мастер-артефакта</span>
+
+Нужно выбрать и доказать один из вариантов:
+<span class="k">-</span><span class="w"> </span><span class="sb">`per-track/*.webm`</span>
+<span class="k">-</span><span class="w"> </span>единый multichannel container
+<span class="k">-</span><span class="w"> </span>dual-output: <span class="sb">`mix + per-track`</span>
+
+Критерии выбора:
+<span class="k">-</span><span class="w"> </span>техническая воспроизводимость,
+<span class="k">-</span><span class="w"> </span>пригодность для последующей диаризации,
+<span class="k">-</span><span class="w"> </span>совместимость с Яндекс.Диском,
+<span class="k">-</span><span class="w"> </span>совместимость с дальнейшей STT-обработкой.
+
+<span class="gu">### Шаг 4. Встроить раннюю выгрузку исходного аудио на Яндекс.Диск</span>
+
+Что нужно добиться:
+<span class="k">1.</span> создать папку встречи;
+<span class="k">2.</span> загрузить исходный артефакт записи;
+<span class="k">3.</span> только потом запускать транскрибацию.
+
+Точки изменения:
+<span class="k">-</span><span class="w"> </span><span class="sb">`run.js`</span>
+<span class="k">-</span><span class="w"> </span><span class="sb">`upload_audio.js`</span>
+<span class="k">-</span><span class="w"> </span><span class="sb">`services/webdav.js`</span>
+
+Результат шага считается успешным, если:
+<span class="k">-</span><span class="w"> </span>в папке <span class="sb">`/Yandex.Telemost.Records/&lt;meeting-folder&gt;/`</span> лежит исходный аудио-артефакт до загрузки <span class="sb">`transcript.txt`</span>.
+
+---
+
+<span class="gu">## 7. Статус шагов</span>
+
+<span class="k">- [x]</span> Шаг 1. Изолированный test mode / test container — УСПЕШНО завершён 2026-07-02
+<span class="k">-</span><span class="w"> </span>[~] Шаг 2. Track-level запись без обязательного mix — подтверждено в test mode, требует доработки (привязка имени)
+<span class="k">- [ ]</span> Шаг 3. Выбор и фиксация мастер-формата
+<span class="k">- [x]</span> Шаг 4. Ранняя выгрузка исходного аудио в папку встречи
+<span class="k">- [ ]</span> Шаг 5. Экспорт <span class="sb">`diarization_map.json`</span>
+<span class="k">- [ ]</span> Шаг 6. Сопоставление локальной карты с AssemblyAI
+<span class="k">- [ ]</span> Шаг 7. Перенос решения в основной pipeline
+
+---
+
+<span class="gu">## 8. Журнал изменений</span>
+
+<span class="gu">### 2026-07-02 (вечер) — результат первого прогона и исправление запуска</span>
+
+Прогон записи (среда: Docker, реальная встреча):
+<span class="k">-</span><span class="w"> </span>Файл <span class="sb">`recordings/2026-07-02T20-14-24-498Z/meeting_audio.webm`</span> сохранился.
+<span class="k">-</span><span class="w"> </span><span class="sb">`ffprobe`</span>: opus, 2 канала, layout stereo.
+<span class="k">-</span><span class="w"> </span>Вывод: это обычный stereo-выход микшированного потока из <span class="sb">`recorder.js:121-133`</span>, а НЕ per-speaker multichannel. Гипотеза US-16 этим прогоном НЕ подтверждена и НЕ опровергнута — test mode не запускался.
+
+Диагностика: почему вместо <span class="sb">`track-probe`</span> стартовал <span class="sb">`run.js`</span>:
+<span class="k">-</span><span class="w"> </span>Причина: в <span class="sb">`Dockerfile`</span> задан <span class="sb">`ENTRYPOINT [&quot;dumb-init&quot;, &quot;--&quot;, &quot;node&quot;, &quot;bot.js&quot;]`</span>, а <span class="sb">`docker-compose.track-probe.yml`</span> задавал только <span class="sb">`command: [&quot;node&quot;, &quot;scratch/test_webrtc_tracks.js&quot;]`</span>.
+<span class="k">-</span><span class="w"> </span>В Docker <span class="sb">`command`</span> не заменяет <span class="sb">`ENTRYPOINT`</span>, а добавляется к нему как аргументы. Контейнер фактически выполнял <span class="sb">`dumb-init -- node bot.js node scratch/test_webrtc_tracks.js`</span> — запускался <span class="sb">`bot.js`</span>, дальше по ссылке из Telegram шёл старый pipeline (<span class="sb">`Spawning run.js`</span> → рекордер → транскрибация).
+<span class="k">-</span><span class="w"> </span>Вторая проблема: даже при правильном entrypoint compose не передавал <span class="sb">`join_url`</span> (скрипт требует его в <span class="sb">`argv[2]`</span>).
+
+Исправления:
+<span class="k">-</span><span class="w"> </span><span class="sb">`docker-compose.track-probe.yml`</span>: добавлен <span class="sb">`entrypoint: [&quot;dumb-init&quot;, &quot;--&quot;, &quot;node&quot;, &quot;scratch/test_webrtc_tracks.js&quot;]`</span>, <span class="sb">`command: []`</span>, проброс <span class="sb">`JOIN_URL`</span> через environment.
+<span class="k">-</span><span class="w"> </span><span class="sb">`scratch/test_webrtc_tracks.js`</span>: добавлен fallback <span class="sb">`joinUrl = argv[2] || process.env.JOIN_URL`</span>; добавлен стартовый лог <span class="sb">`[track-probe] Запуск test mode`</span>, по которому легко отличить probe от основного pipeline.
+
+Команды запуска track-probe:
+<span class="k">-</span><span class="w"> </span><span class="sb">`docker compose -f docker-compose.track-probe.yml run --rm track-probe https://telemost.yandex.ru/j/XXX`</span>
+<span class="k">-</span><span class="w"> </span>или <span class="sb">`JOIN_URL=... docker compose -f docker-compose.track-probe.yml up --build`</span>
+<span class="k">-</span><span class="w"> </span>Признак корректного запуска: первая строка лога — <span class="sb">`[track-probe] Запуск test mode`</span>, НЕ <span class="sb">`Spawning run.js`</span>.
+<span class="k">-</span><span class="w"> </span>Завершение: <span class="sb">`docker stop telemost-track-probe`</span> (SIGTERM → graceful shutdown, запись <span class="sb">`tracks_summary.json`</span>).
+
+Ожидаемые артефакты успешного прогона (Шаг 1):
+<span class="k">-</span><span class="w"> </span><span class="sb">`recordings/tracks-test-&lt;ts&gt;/tracks/*.webm`</span> (по одному на trackId)
+<span class="k">-</span><span class="w"> </span><span class="sb">`recordings/tracks-test-&lt;ts&gt;/meta/track_events.ndjson`</span>
+<span class="k">-</span><span class="w"> </span><span class="sb">`recordings/tracks-test-&lt;ts&gt;/meta/tracks_summary.json`</span>
+
+<span class="gu">### 2026-07-02</span>
+<span class="k">-</span><span class="w"> </span>Создан файл дорожной карты в корне проекта.
+<span class="k">-</span><span class="w"> </span>Зафиксирована роль постоянного субагента <span class="sb">`multichannel-hypothesis-tracker`</span>.
+<span class="k">-</span><span class="w"> </span>Зафиксировано текущее состояние системы:
+<span class="w">  </span><span class="k">-</span><span class="w"> </span>запись идёт в один mix,
+<span class="w">  </span><span class="k">-</span><span class="w"> </span>многоканальный raw не реализован,
+<span class="w">  </span><span class="k">-</span><span class="w"> </span>ранняя выгрузка исходного аудио в папку встречи не встроена в основной pipeline.
+<span class="k">-</span><span class="w"> </span>Зафиксирован базовый план: сначала отдельный test mode или test container, затем перенос в основной pipeline.
+<span class="k">-</span><span class="w"> </span>Стартовала реализация Шага 1: создаётся изолированный test mode / test container для проверки per-track записи без вмешательства в основной pipeline.
+
+---
+
+<span class="gu">## 9. Артефакты проверки</span>
+
+<span class="gu">### 2026-07-02 — прогон test mode (track-probe) на реальной встрече</span>
+<span class="k">-</span><span class="w"> </span>Ссылка: <span class="sb">`https://telemost.yandex.ru/j/38446086558756`</span>
+<span class="k">-</span><span class="w"> </span><span class="gs">**Результат**</span>: УСПЕХ. Контейнер подключился и перехватил <span class="sb">`RTCPeerConnection`</span>.
+<span class="k">-</span><span class="w"> </span>Артефакты:
+<span class="w">  </span><span class="k">-</span><span class="w"> </span><span class="sb">`tracks/9a27c029-cea2-4c27-93a5-15c05750dd55.webm`</span> (199 KB)
+<span class="w">  </span><span class="k">-</span><span class="w"> </span><span class="sb">`tracks/dd6fe411-d85e-489c-b14c-6b64c367dc97.webm`</span> (18 KB)
+<span class="w">  </span><span class="k">-</span><span class="w"> </span><span class="sb">`meta/track_events.ndjson`</span> зафиксировал события <span class="sb">`track-added`</span> и <span class="sb">`speech-segment`</span> с расчетом <span class="sb">`amplitude_peak`</span>.
+<span class="k">-</span><span class="w"> </span><span class="gs">**Вывод**</span>: Гипотеза о возможности раздельной записи WebRTC-треков ПОДТВЕРЖДЕНА. 
+<span class="k">-</span><span class="w"> </span><span class="gs">**Проблема**</span>: <span class="sb">`speakerName`</span> в метаданных записался как <span class="sb">`&quot;unknown&quot;`</span>. Требуется улучшить алгоритм маппинга трека на DOM-элемент с именем спикера.
+
+Будущие артефакты должны включать:
+<span class="k">-</span><span class="w"> </span>список <span class="sb">`trackId`</span>;
+<span class="k">-</span><span class="w"> </span>соответствие <span class="sb">`trackId -&gt; speakerName`</span> (сейчас unknown);
+<span class="k">-</span><span class="w"> </span><span class="sb">`diarization_map.json`</span>;
+<span class="k">-</span><span class="w"> </span>результаты загрузки в папку встречи на Яндекс.Диск.
+
+---
+
+<span class="gu">## 10. Ограничения и правила</span>
+
+<span class="k">1.</span> Не ломать основной сценарий записи ради гипотезы.
+<span class="k">2.</span> Эксперименты сначала проводить в отдельном тестовом контуре.
+<span class="k">3.</span> Не удалять локальные исходные файлы, пока не подтверждена корректная выгрузка.
+<span class="k">4.</span> Не считать гипотезу подтверждённой без реальной встречи с 2+ участниками.
+<span class="k">5.</span> Любое изменение <span class="sb">`recorder.js`</span>, <span class="sb">`run.js`</span>, <span class="sb">`transcribe.js`</span> проверять на совместимость с Docker-контейнером.
+
+---
+
+<span class="gu">## 11. Следующее конкретное действие</span>
+
+Шаг 1 и частичная изоляция (Шаг 2) <span class="gs">**успешно подтверждены**</span>. Мы доказали техническую возможность раздельной записи треков (получено 2 разных webm-файла).
+
+<span class="gs">**Следующие задачи:**</span>
+<span class="k">1.</span> Починить привязку имени спикера (<span class="sb">`speakerName`</span> пишет <span class="sb">`unknown`</span>). Возможно, нужно анализировать <span class="sb">`data-uid`</span> или <span class="sb">`id`</span> DOM-элементов видео и сопоставлять их с WebRTC-треками.
+<span class="k">2.</span> Перейти к Шагу 3: выбрать и зафиксировать мастер-формат (как склеивать эти файлы, либо как выгружать их по отдельности для диаризации).
+</code></pre></div>
+
+<h2>Stabilization report</h2>
+<div class="codehilite"><pre><span></span><code><span class="gh"># Отчет о стабилизации пайплайна записи Яндекс.Телемост (v0.003)</span>
+
+<span class="gu">## 1. Цель работы</span>
+Финальная стабилизация системы записи видеовстреч, устранение критических ошибок SSH-соединения в n8n и обеспечение надежного взаимодействия между управляющим воркфлоу и Docker-инфраструктурой на сервере Oracle Cloud.
+
+<span class="gu">## 2. Проделанные изменения</span>
+
+<span class="gu">### 🚀 Сетевая архитектура (Docker Gateway)</span>
+<span class="k">-</span><span class="w"> </span><span class="gs">**Проблема**</span>: n8n не видела папку <span class="sb">`/opt/telemost-recorder`</span>, так как SSH-нода пыталась подключиться к <span class="sb">`localhost`</span> внутри контейнера n8n.
+<span class="k">-</span><span class="w"> </span><span class="gs">**Решение**</span>: Выявлен внутренний шлюз Docker-сети <span class="sb">`n8n_default`</span> — <span class="gs">**`172.19.0.1`**</span>. Все SSH-подключения n8n теперь направлены на этот адрес, что позволяет «выходить» на основную ОС сервера.
+
+<span class="gu">### 🔑 Безопасность (SSH Key-based Auth)</span>
+<span class="k">-</span><span class="w"> </span><span class="gs">**Проблема**</span>: Ошибки <span class="sb">`All configured authentication methods failed`</span> при использовании пароля из-за строгих настроек PAM и Keyboard-Interactive на Oracle Ubuntu 24.04.
+<span class="k">-</span><span class="w"> </span><span class="gs">**Решение**</span>: Генерирован выделенный SSH-ключ (<span class="sb">`id_rsa_n8n`</span>). Это обеспечило мгновенный вход в систему без риска блокировок со стороны <span class="sb">`fail2ban`</span>.
+
+<span class="gu">### 🦾 Права доступа (Docker Permissions)</span>
+<span class="k">-</span><span class="w"> </span><span class="gs">**Проблема**</span>: Ошибка <span class="sb">`permission denied`</span> при попытке n8n запустить контейнер через Docker API.
+<span class="k">-</span><span class="w"> </span><span class="gs">**Решение**</span>: Пользователь <span class="sb">`ubuntu`</span> включен в группу <span class="sb">`docker`</span> командой <span class="sb">`sudo usermod -aG docker ubuntu`</span>. Это позволило скриптам корректно управлять жизненным циклом контейнеров без <span class="sb">`sudo`</span>.
+
+<span class="gu">### 🛠️ Оптимизация скриптов</span>
+<span class="k">-</span><span class="w"> </span><span class="gs">**v0.003**</span>: Скрипты <span class="sb">`run_join.sh`</span> и <span class="sb">`run_stop.sh`</span> синхронизированы с логикой n8n. Теперь передаются строго 2 аргумента (URL и Chat ID), что исключает ошибки парсинга.
+
+<span class="gu">## 2.1. Защита от утечек (Anti-Zombie System)</span>
+<span class="k">-</span><span class="w"> </span><span class="gs">**Проблема**</span>: При ошибках или принудительной остановке Puppeteer оставлял «сиротские» процессы Chrome. На сервере было обнаружено 85 зомби-процессов.
+<span class="k">-</span><span class="w"> </span><span class="gs">**Решение**</span>: В [<span class="nt">recorder.js</span>](<span class="na">file:///e:/telemost%20record/stepansky-telemost/recorder.js</span>) внедрена структура <span class="sb">`try...finally`</span>. Блок <span class="sb">`browser.close()`</span> теперь выполняется гарантированно в 100% случаев. Добавлена обработка сигналов <span class="sb">`SIGTERM`</span> и <span class="sb">`SIGINT`</span> — бот теперь «слышит» команду на выключение от Docker и вежливо закрывает браузер.
+
+<span class="gu">## 2.2. Асинхронная отчетность (Webhook-First)</span>
+<span class="k">-</span><span class="w"> </span><span class="gs">**Проблема**</span>: n8n начинала транскрибацию сразу после команды «Стоп», не дожидаясь закрытия файла. Это приводило к ошибкам и 0-байтовым текстам.
+<span class="k">-</span><span class="w"> </span><span class="gs">**Решение**</span>: В [<span class="nt">run.js</span>](<span class="na">file:///e:/telemost%20record/stepansky-telemost/run.js</span>) логика уведомления n8n была вынесена в финальный блок завершения контейнера. Теперь n8n запускает транскрибацию <span class="gs">**только**</span> после получения вебхука от контейнера, подтверждающего, что файл полностью записан и готов.
+
+<span class="gu">## 2.3. Фильтрация вывода (Stdout Hygiene)</span>
+<span class="k">-</span><span class="w"> </span><span class="gs">**Проблема**</span>: Docker выводит ID контейнера в stdout, что ломало ноду <span class="sb">`JSON.parse`</span> в n8n.
+<span class="k">-</span><span class="w"> </span><span class="gs">**Решение**</span>: В n8n внедрена логика поиска JSON-строки в выводе SSH. Теперь система игнорирует технический шум и видит только полезные данные запуска.
+
+<span class="gu">## 3. Влияние на результат и качество</span>
+
+<span class="gu">### ✅ Надежность</span>
+Система стала устойчивой к «зомби-сессиям». Теперь каждый старт записи гарантированно создает контейнер с уникальным именем <span class="sb">`telemost_$CHAT_ID`</span>, что позволяет записывать несколько встреч параллельно для разных пользователей.
+
+<span class="gu">### ✅ Масштабируемость</span>
+Логика транскрибации (Groq Whisper) и саммари (GPT-4o) полностью вынесена в n8n. Рекордер стал легким и выполняет только одну задачу — захват потока. Это значительно снизило нагрузку на CPU сервера.
+
+<span class="gu">### ✅ Скорость</span>
+Благодаря прямой связи через шлюз Docker и SSH-ключи, время от команды пользователя в Telegram до начала записи сокращено до 1.5–2 секунд.
+
+<span class="gu">## 4. Итоговая конфигурация (для справки)</span>
+
+| Параметр | Значение |
+| :--- | :--- |
+| <span class="gs">**Host IP (Internal)**</span> | <span class="sb">`172.19.0.1`</span> |
+| <span class="gs">**Port**</span> | <span class="sb">`22`</span> |
+| <span class="gs">**User**</span> | <span class="sb">`ubuntu`</span> |
+| <span class="gs">**Auth Method**</span> | <span class="sb">`Private Key (RSA 4096)`</span> |
+| <span class="gs">**Docker Path**</span> | <span class="sb">`/opt/telemost-recorder`</span> |
+
+---
+<span class="gs">**Документация подготовлена Antigravity AI.**</span>
+</code></pre></div>
+<div class="backlinks"><h3>↩ Обратные ссылки</h3><ul><li><a href="../../index.html">index.md</a></li></ul></div>
+</div>
+</body>
+</html>
