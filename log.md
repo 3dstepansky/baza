@@ -43,3 +43,10 @@
 - Оригинальные PDF сохранены как raw/assets/green-broker/KP-pitomniki.pdf и raw/assets/green-broker/KP-telegram-bot.pdf
 - Обновлена entities/green-broker.md: добавлен go-to-market слой, pricing, модель подписки питомников и этапы из КП
 - Обновлён index.md
+
+## [2026-08-03] update | Telemost Recorder — исследование актуальной ветки v04
+- Исследован репозиторий https://github.com/3dstepansky/stepansky-telemost-recorder-doker: ветки master/003v/test/v04, актуальная ветка v04 (`508deeb`, 2026-07-03)
+- Создан raw snapshot: raw/articles/telemost-recorder-repository-v04-2026-08-03.md
+- Полностью обновлена entities/telemost-recorder.md: архитектура v04, компоненты, UX, SQLite, US-16, roadmap, риски
+- Проверка: `npm install && npm test` в `/tmp/telemost-repo` → 3 теста прошли; npm audit сообщает 16 vulnerabilities
+- Обновлён index.md
