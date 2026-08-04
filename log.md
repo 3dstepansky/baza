@@ -63,3 +63,7 @@
 - Подписка через Telegram MCP: @startup_14day / «Автоматизируй и властвуй», chat_id=-1002382736969
 - Обновлена entities/vibecoder-sources.md: добавлен канал как источник по AI automation/no-code/business workflows
 - Проверены последние сообщения через MCP: telegram-mcp, Kimi K3/BIM, Qwen 3.6, AI code-review routing
+## [2026-08-04] update | Telegram source @myttsinfo
+- Подписка через Telegram MCP: @myttsinfo / MyTTS, chat_id=-1001548578320
+- Обновлена entities/vibecoder-sources.md: добавлен TTS/voice источник для мониторинга SAPI/Silero/Google TTS и русских голосов
+- Проверены последние сообщения через MCP: NaturalVoiceSAPIAdapter, SAPI 5 Svetlana, Balabolka, сравнение ru_roman/ru_alexandr/Silero
