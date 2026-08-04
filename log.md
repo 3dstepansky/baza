@@ -55,3 +55,7 @@
 - Создана wiki-страница entities/academic-difference-assistant.md
 - Расширена SCHEMA.md tag taxonomy для полного llm-wiki lint
 - Обновлён index.md и queries/README.md
+## [2026-08-04] update | Telegram source @cryptoperchikk
+- Подписка через Telegram MCP: @cryptoperchikk / cryptoperchik, chat_id=-1003135147918
+- Обновлена entities/vibecoder-sources.md: добавлен канал как источник AI/API/вайбкодинг/low-price моделей
+- Проверены последние сообщения через MCP: Agent Router, Opus 5, GPT 5.6 sol, MCP tunnel для ChatGPT

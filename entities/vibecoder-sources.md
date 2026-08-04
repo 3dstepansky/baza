@@ -1,4 +1,5 @@
----title: "📖 LLM Wiki Baza — Вайбкодерские источники для мониторинга"
+---
+title: "📖 LLM Wiki Baza — Вайбкодерские источники для мониторинга"
 type: entity
 
 date: 2026-07-30
@@ -11,7 +12,7 @@ tags:
   - omniroute
   - openrouter
 created: 2026-07-30
-updated: 2026-07-31
+updated: 2026-08-04
 ---
 
 
@@ -32,6 +33,7 @@ updated: 2026-07-31
 | **Vibe Coders United** | Канал | 46 подписчиков. Daily feed для AI tools |
 | **🧑💻 Vibe-coding \| AI практика** | Канал | 5,140 подписчиков. Мажористые нейронки и вайб-разработка |
 | **@VibeCodingRUS** | Канал | Русскоязычный канал Vibe Coding HUB |
+| **@cryptoperchikk** | Канал | cryptoperchik — AI/API/вайбкодинг/low-price модели; 4,357 подписчиков; найдено: Agent Router, Opus 5, GPT 5.6 sol, MCP tunnel для ChatGPT |
 
 ## AI/ML источники
 
@@ -58,6 +60,8 @@ updated: 2026-07-31
 | **@ichto_02** | Канал | Телефон доверия для вайбкодеров |
 
 ## OmniRoute/OpenRouter инсайды
+
+- `@cryptoperchikk`: Agent Router, GPT/Claude-like модели, MCP tunnel, low-price API, IDE/free-trial находки.
 
 **Источник:** GitHub topics/omniroute, сообщества вайбкодеров
 
