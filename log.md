@@ -71,3 +71,12 @@
 - Подписка через Telegram MCP: @aikirichenko / AI Kirichenko, chat_id=-1002300353962
 - Обновлена entities/vibecoder-sources.md: добавлен канал как источник по AI education, Claude Code/n8n automation, GitHub-подборкам
 - Проверены последние сообщения через MCP: system-design-primer, last30days-skill, coding-interview-university, awesome-python, Opus 5/Claude Code
+## [2026-08-04] update | Telegram invite source ИИмерсивный
+- Вступление через Telegram MCP по invite link `https://t.me/+eH-qNIDmud8zNDZi`, chat_id=-1003695481859
+- Обновлена entities/vibecoder-sources.md: добавлен источник по AI startup diary, Claude/Fable/Sol workflows и agent skills
+- Проверены последние сообщения через MCP: /grill-me, Anki word clipper, Gemini 2.5 Flash, Fable/Sol comparisons
+
+## [2026-08-04] update | Telegram source @aiforbusinesswolf
+- Подписка через Telegram MCP: @aiforbusinesswolf / «AI для бизнеса | Эндрю Вольф», chat_id=-1002942426023
+- Обновлена entities/vibecoder-sources.md: добавлен источник по AI transformation/business automation
+- Проверены последние сообщения через MCP: Plaud, Genspark, Perplexity, Julius для предпринимателей

@@ -37,6 +37,8 @@ updated: 2026-08-04
 | **@startup_14day** | Канал | Автоматизируй и властвуй — ИИ, автоматизация, no-code, бизнес/жизнь на автопилоте; 4,355 подписчиков; найдено: telegram-mcp, Kimi K3/BIM, Qwen 3.6, AI code review routing |
 | **@myttsinfo** | Чат/форум | MyTTS — русскоязычное сообщество по TTS/озвучке/SAPI/Silero/Google TTS; 331 участник; найдено: SAPI 5 Svetlana, NaturalVoiceSAPIAdapter, сравнение ru_roman/ru_alexandr/Silero |
 | **@aikirichenko** | Канал | AI Kirichenko / Юрий Кириченко — обучение ИИ, соцсети, клиенты, Claude Code/n8n/templates, GitHub-подборки; 5,925 подписчиков; найдено: system-design-primer, last30days-skill, coding-interview-university, awesome-python |
+| **ИИмерсивный** | Канал/закрытый invite | Дневник AI-стартапа без идеи и кода с Claude; 741 участник; найдено: /grill-me skill, agent workflow, Anki word clipper, Gemini 2.5 Flash, Fable/Sol comparisons |
+| **@aiforbusinesswolf** | Канал | AI для бизнеса / Эндрю Вольф — ИИ-трансформация бизнеса, инструменты, кейсы, результаты; 177 подписчиков; найдено: Plaud, Genspark, Perplexity, Julius для предпринимателей |
 
 ## AI/ML источники
 
@@ -71,6 +73,8 @@ updated: 2026-08-04
 
 ## OmniRoute/OpenRouter инсайды
 
+- `@aiforbusinesswolf`: applied AI for business, meeting→tasks→presentations workflows, Plaud/Genspark/Perplexity/Julius.
+- `ИИмерсивный`: AI startup diary, Claude/Fable/Sol workflows, /grill-me skill, methodology for agentic problem solving.
 - `@aikirichenko`: AI education, Claude Code/n8n automation, GitHub learning/tool repos, social/client acquisition content.
 - `@myttsinfo`: TTS/озвучка, SAPI 5, NaturalVoiceSAPIAdapter, Balabolka, Silero/Google TTS, русские голоса.
 - `@startup_14day`: automation/no-code/AI for business, telegram-mcp, agent routing, compact model economics, applied AI cases.
