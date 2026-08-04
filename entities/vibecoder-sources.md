@@ -34,6 +34,7 @@ updated: 2026-08-04
 | **🧑💻 Vibe-coding \| AI практика** | Канал | 5,140 подписчиков. Мажористые нейронки и вайб-разработка |
 | **@VibeCodingRUS** | Канал | Русскоязычный канал Vibe Coding HUB |
 | **@cryptoperchikk** | Канал | cryptoperchik — AI/API/вайбкодинг/low-price модели; 4,357 подписчиков; найдено: Agent Router, Opus 5, GPT 5.6 sol, MCP tunnel для ChatGPT |
+| **@startup_14day** | Канал | Автоматизируй и властвуй — ИИ, автоматизация, no-code, бизнес/жизнь на автопилоте; 4,355 подписчиков; найдено: telegram-mcp, Kimi K3/BIM, Qwen 3.6, AI code review routing |
 
 ## AI/ML источники
 
@@ -61,6 +62,7 @@ updated: 2026-08-04
 
 ## OmniRoute/OpenRouter инсайды
 
+- `@startup_14day`: automation/no-code/AI for business, telegram-mcp, agent routing, compact model economics, applied AI cases.
 - `@cryptoperchikk`: Agent Router, GPT/Claude-like модели, MCP tunnel, low-price API, IDE/free-trial находки.
 
 **Источник:** GitHub topics/omniroute, сообщества вайбкодеров

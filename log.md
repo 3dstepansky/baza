@@ -59,3 +59,7 @@
 - Подписка через Telegram MCP: @cryptoperchikk / cryptoperchik, chat_id=-1003135147918
 - Обновлена entities/vibecoder-sources.md: добавлен канал как источник AI/API/вайбкодинг/low-price моделей
 - Проверены последние сообщения через MCP: Agent Router, Opus 5, GPT 5.6 sol, MCP tunnel для ChatGPT
+## [2026-08-04] update | Telegram source @startup_14day
+- Подписка через Telegram MCP: @startup_14day / «Автоматизируй и властвуй», chat_id=-1002382736969
+- Обновлена entities/vibecoder-sources.md: добавлен канал как источник по AI automation/no-code/business workflows
+- Проверены последние сообщения через MCP: telegram-mcp, Kimi K3/BIM, Qwen 3.6, AI code-review routing
