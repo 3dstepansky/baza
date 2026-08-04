@@ -36,6 +36,7 @@ updated: 2026-08-04
 | **@cryptoperchikk** | Канал | cryptoperchik — AI/API/вайбкодинг/low-price модели; 4,357 подписчиков; найдено: Agent Router, Opus 5, GPT 5.6 sol, MCP tunnel для ChatGPT |
 | **@startup_14day** | Канал | Автоматизируй и властвуй — ИИ, автоматизация, no-code, бизнес/жизнь на автопилоте; 4,355 подписчиков; найдено: telegram-mcp, Kimi K3/BIM, Qwen 3.6, AI code review routing |
 | **@myttsinfo** | Чат/форум | MyTTS — русскоязычное сообщество по TTS/озвучке/SAPI/Silero/Google TTS; 331 участник; найдено: SAPI 5 Svetlana, NaturalVoiceSAPIAdapter, сравнение ru_roman/ru_alexandr/Silero |
+| **@aikirichenko** | Канал | AI Kirichenko / Юрий Кириченко — обучение ИИ, соцсети, клиенты, Claude Code/n8n/templates, GitHub-подборки; 5,925 подписчиков; найдено: system-design-primer, last30days-skill, coding-interview-university, awesome-python |
 
 ## AI/ML источники
 
@@ -70,6 +71,7 @@ updated: 2026-08-04
 
 ## OmniRoute/OpenRouter инсайды
 
+- `@aikirichenko`: AI education, Claude Code/n8n automation, GitHub learning/tool repos, social/client acquisition content.
 - `@myttsinfo`: TTS/озвучка, SAPI 5, NaturalVoiceSAPIAdapter, Balabolka, Silero/Google TTS, русские голоса.
 - `@startup_14day`: automation/no-code/AI for business, telegram-mcp, agent routing, compact model economics, applied AI cases.
 - `@cryptoperchikk`: Agent Router, GPT/Claude-like модели, MCP tunnel, low-price API, IDE/free-trial находки.

@@ -67,3 +67,7 @@
 - Подписка через Telegram MCP: @myttsinfo / MyTTS, chat_id=-1001548578320
 - Обновлена entities/vibecoder-sources.md: добавлен TTS/voice источник для мониторинга SAPI/Silero/Google TTS и русских голосов
 - Проверены последние сообщения через MCP: NaturalVoiceSAPIAdapter, SAPI 5 Svetlana, Balabolka, сравнение ru_roman/ru_alexandr/Silero
+## [2026-08-04] update | Telegram source @aikirichenko
+- Подписка через Telegram MCP: @aikirichenko / AI Kirichenko, chat_id=-1002300353962
+- Обновлена entities/vibecoder-sources.md: добавлен канал как источник по AI education, Claude Code/n8n automation, GitHub-подборкам
+- Проверены последние сообщения через MCP: system-design-primer, last30days-skill, coding-interview-university, awesome-python, Opus 5/Claude Code
