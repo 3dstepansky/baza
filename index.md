@@ -11,13 +11,14 @@ updated: 2026-08-03
 
 > Content catalog. Every wiki page listed with a one-line summary.
 > Read this first for any query.
-> Last updated: 2026-08-03 | Total pages: 77
+> Last updated: 2026-08-09 | Total pages: 79
 
 ## Entities
 
 - [[entities/academic-difference-assistant|Academic Difference Assistant — ассистент расчёта академической разницы]]
 - [[entities/asati-shill|ASATI Shill]]
 - [[entities/baza-wiki|Baza Wiki — проект базы знаний 🧠]]
+- [[entities/construction-maps-mcp|Construction Maps MCP Server — кадастр и полигоны]]
 - [[entities/event-digest|Event Digest CLI]]
 - [[entities/go|Go 🦫]]
 - [[entities/green-broker|Green Broker — Telegram-бот для продажи растений]]
@@ -97,6 +98,8 @@ updated: 2026-08-03
 - [[raw/articles/green-broker-kp-pitomniki-2026-08-02|Green Broker — КП для питомников]]
 
 - [[raw/articles/telemost-recorder-repository-v04-2026-08-03|Telemost Recorder — repository snapshot v04]]
+
+- [[raw/articles/construction-maps-mcp-repository-2026-08-09|Construction Maps MCP Server — repository snapshot]]
 
 ## Служебные
 

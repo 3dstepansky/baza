@@ -80,3 +80,8 @@
 - Подписка через Telegram MCP: @aiforbusinesswolf / «AI для бизнеса | Эндрю Вольф», chat_id=-1002942426023
 - Обновлена entities/vibecoder-sources.md: добавлен источник по AI transformation/business automation
 - Проверены последние сообщения через MCP: Plaud, Genspark, Perplexity, Julius для предпринимателей
+## [2026-08-09] ingest | Construction Maps MCP Server — кадастр и полигоны
+- Создан raw snapshot: raw/articles/construction-maps-mcp-repository-2026-08-09.md
+- Создана wiki-страница: entities/construction-maps-mcp.md
+- Зафиксировано: сервер отвечает за кадастровые границы, полигоны/геометрию, Rosreestr/НСПД + Yandex Maps; выбран под будущую автоматизацию
+- Обновлены index.md и concepts/mcp.md

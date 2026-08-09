@@ -3,7 +3,7 @@ type: concept
 
 tags: [ai, mcp, protocol]
 created: 2026-07-30
-updated: 2026-07-31
+updated: 2026-08-09
 ---
 
 
@@ -30,6 +30,7 @@ updated: 2026-07-31
 | **marketplace** | Парсинг Wildberries/Ozon |
 | **github** | Репозитории, issues, PR |
 | **hermes-admin** | Управление самим Hermes |
+| [[entities/construction-maps-mcp|construction-maps-mcp]] | Кадастр, полигоны, Росреестр/НСПД + Yandex Maps |
 
 ## Технические детали
 
