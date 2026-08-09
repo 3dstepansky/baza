@@ -4,7 +4,7 @@ title: Wiki Index — Baza
 tags: [index, hub]
 type: query
 created: 2026-08-03
-updated: 2026-08-03
+updated: 2026-08-09
 ---
 
 # Wiki Index — Baza 🧠
@@ -12,6 +12,12 @@ updated: 2026-08-03
 > Content catalog. Every wiki page listed with a one-line summary.
 > Read this first for any query.
 > Last updated: 2026-08-09 | Total pages: 79
+
+## Быстрый вход
+
+- [[entities/construction-maps-mcp|Construction Maps MCP Server — кадастр, полигоны, Росреестр/НСПД]]
+- [[entities/green-broker|Green Broker — проект по питомникам, садам и растениям]]
+- [[concepts/mcp|MCP — Model Context Protocol]]
 
 ## Entities
 
@@ -37,6 +43,12 @@ updated: 2026-08-03
 - [[entities/telemost-recorder|Telemost Recorder — запись Яндекс.Телемост 🎙️]]
 - [[entities/vibecoder-sources|📖 LLM Wiki Baza — Вайбкодерские источники для мониторинга]]
 - [[entities/apply-pilot|Apply Pilot — проект поиска работы]]
+
+## Automation / MCP
+
+- [[entities/construction-maps-mcp|Construction Maps MCP Server — кадастр, полигоны, Rosreestr/НСПД + Yandex Maps]] — потенциально полезен для земельных участков, садовых/питомниковых объектов, логистики и картографического слоя.
+- [[entities/green-broker|Green Broker]] — проект по питомникам, садам, посадочному материалу и Telegram-автоматизации продаж.
+- [[concepts/mcp|MCP — Model Context Protocol]] — общий слой подключения инструментов к агенту.
 
 ## Concepts
 

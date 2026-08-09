@@ -85,3 +85,8 @@
 - Создана wiki-страница: entities/construction-maps-mcp.md
 - Зафиксировано: сервер отвечает за кадастровые границы, полигоны/геометрию, Rosreestr/НСПД + Yandex Maps; выбран под будущую автоматизацию
 - Обновлены index.md и concepts/mcp.md
+## [2026-08-09] update+lint | Construction Maps MCP — навигация и связь с Green Broker
+- Главная index.md дополнена быстрым входом и секцией Automation / MCP, чтобы страницу было видно с главной
+- construction-maps-mcp.md связан с Green Broker и рабочим контекстом Романа/садового проекта
+- green-broker.md получил обратную ссылку на Construction Maps MCP как потенциальный картографический слой
+- После правок запущен lint vault

@@ -1,7 +1,7 @@
 ---
 title: Green Broker — Telegram-бот для продажи растений
 created: 2026-08-02
-updated: 2026-08-02
+updated: 2026-08-09
 type: entity
 tags: [entity, project, bot, telegram, python, automation, spec-driven, quality-gate]
 sources: [raw/articles/green-broker-constitution-2026-08-02.md, raw/articles/green-broker-spec-2026-08-02.md, raw/articles/green-broker-plan-2026-08-02.md, raw/articles/green-broker-kp-pitomniki-2026-08-02.md, raw/articles/green-broker-kp-telegram-bot-2026-08-02.md]
@@ -118,6 +118,12 @@ confidence: high
 
 Эти КП важны как слой **позиционирования и продаж**, который дополняет `constitution.md`, `spec.md` и `plan.md`: теперь в базе есть не только инженерный контур, но и ценность для двух сторон рынка — заказчика/ландшафтников и питомников.
 
+## Картографический слой: Construction Maps MCP
+
+[[entities/construction-maps-mcp|Construction Maps MCP Server]] полезен как возможный геослой для Green Broker: питомники и садовые центры можно связывать с участками, границами территорий, зонами обслуживания, спутниковыми снимками и расчётом расстояний.
+
+Отдельно зафиксирована рабочая связь: **Роман**, ассоциированный с проектом «с садами», может быть контекстом, где этот MCP-сервер пригодится для будущей автоматизации. Детали по Роману не расширялись, потому что отдельного источника/страницы по нему в базе пока нет.
+
 ## Риски и quality gates
 
 - **Telegram limits:** массовые рассылки и отправка медиа требуют троттлинга.
@@ -139,6 +145,7 @@ confidence: high
 
 ## Связанные заметки
 
+- [[entities/construction-maps-mcp|Construction Maps MCP Server]]
 - [[concepts/spec-driven-agent-development|Spec-driven агентная разработка]]
 - [[concepts/multi-agent-development-methodology|Методология многоагентной разработки automation-проектов]]
 - [[concepts/agent-roles-for-automation|Роли агентов для automation-проектов]]
