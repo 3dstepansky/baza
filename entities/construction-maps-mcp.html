@@ -38,7 +38,7 @@ th { background:#161b22; color:#f0f6fc; }
 <nav class="nav"><span class="crumbs"><a href="/">🏠</a> / <span>entities</span></span></nav>
 <div class="container">
 <h1>Construction Maps MCP Server — кадастр и полигоны</h1>
-<div class="meta"><span class="tag">entity</span> <span class="tag">mcp</span> <span class="tag">api</span> <span class="tag">python</span> <span class="tag">automation</span> <span class="tag">tool</span> last modified: 2026-08-09 21:25</div>
+<div class="meta"><span class="tag">entity</span> <span class="tag">mcp</span> <span class="tag">api</span> <span class="tag">python</span> <span class="tag">automation</span> <span class="tag">tool</span> last modified: 2026-08-09 21:41</div>
 <h1>Construction Maps MCP Server — кадастр и полигоны</h1>
 <p><strong>Construction Maps MCP Server</strong> — Python MCP-сервер для предпроектного анализа земельных участков: кадастровые границы/полигоны через Росреестр/НСПД и картографический слой через Yandex Maps.^[raw/articles/construction-maps-mcp-repository-2026-08-09.md]</p>
 <h2>Почему сохранён</h2>
@@ -139,6 +139,18 @@ th { background:#161b22; color:#f0f6fc; }
 </code></pre>
 
 <p>На практике лучше ставить репозиторий в отдельный venv/uv-окружение и запускать через абсолютный путь к python этого окружения.</p>
+<h2>Контекст для Green Broker и Романа</h2>
+<p>Этот MCP-сервер связан как <strong>потенциально полезный картографический слой</strong> для <a href="../entities/green-broker.html">Green Broker</a> и садово-питомникового направления: участки, питомники, садовые центры, зоны доставки, геометрия объектов, визуализация на карте и логистика.</p>
+<p>По уточнению Павла, сервер нужно держать в контексте как потенциально полезный для <strong>Романа</strong>, ассоциированного с проектом «с садами». Пока в базе нет отдельной страницы/исходника по Роману, поэтому связь зафиксирована как рабочая заметка без расширения персональных данных.</p>
+<p>Практические сценарии для садового проекта:</p>
+<ul>
+<li>показать участок/питомник/садовый центр на карте;</li>
+<li>хранить границы территории в GeoJSON;</li>
+<li>считать площадь и пересечения полигонов;</li>
+<li>строить радиусы доставки и зоны обслуживания;</li>
+<li>добавлять спутниковые снимки и статические карты в КП/отчёты;</li>
+<li>связывать заявки Green Broker с географией поставщиков и покупателей.</li>
+</ul>
 <h2>Ограничения и риски</h2>
 <ul>
 <li>Росреестр/НСПД используется через неофициальную библиотеку <code>rosreestr2coord</code>; API может меняться.</li>
@@ -148,12 +160,13 @@ th { background:#161b22; color:#f0f6fc; }
 </ul>
 <h2>Связанные заметки</h2>
 <ul>
+<li><a href="../entities/green-broker.html">Green Broker</a></li>
 <li><a href="../concepts/mcp.html">MCP — Model Context Protocol</a></li>
 <li><a href="../entities/hermes-agent.html">Hermes Agent</a></li>
 <li><a href="../entities/hermes.html">Hermes — инфраструктура</a></li>
 <li><a href="../entities/hermes-marketplace-tools.html">Marketplace MCP Server</a></li>
 </ul>
-<div class="backlinks"><h3>↩ Обратные ссылки</h3><ul><li><a href="../concepts/mcp.html">concepts/mcp.md</a></li><li><a href="../index.html">index.md</a></li></ul></div>
+<div class="backlinks"><h3>↩ Обратные ссылки</h3><ul><li><a href="../concepts/mcp.html">concepts/mcp.md</a></li><li><a href="../entities/green-broker.html">entities/green-broker.md</a></li><li><a href="../index.html">index.md</a></li></ul></div>
 </div>
 </body>
 </html>

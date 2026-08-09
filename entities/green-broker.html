@@ -38,7 +38,7 @@ th { background:#161b22; color:#f0f6fc; }
 <nav class="nav"><span class="crumbs"><a href="/">🏠</a> / <span>entities</span></span></nav>
 <div class="container">
 <h1>Green Broker — Telegram-бот для продажи растений</h1>
-<div class="meta"><span class="tag">entity</span> <span class="tag">project</span> <span class="tag">bot</span> <span class="tag">telegram</span> <span class="tag">python</span> <span class="tag">automation</span> <span class="tag">spec-driven</span> <span class="tag">quality-gate</span> last modified: 2026-08-02 16:54</div>
+<div class="meta"><span class="tag">entity</span> <span class="tag">project</span> <span class="tag">bot</span> <span class="tag">telegram</span> <span class="tag">python</span> <span class="tag">automation</span> <span class="tag">spec-driven</span> <span class="tag">quality-gate</span> last modified: 2026-08-09 21:41</div>
 <h1>Green Broker — Telegram-бот для продажи растений</h1>
 <h2>Суть</h2>
 <p><strong>Green Broker</strong> — реальный проект Павла: Telegram-бот для питомников растений и садовых центров, который автоматизирует продажи, ведение остатков и формирование коммерческих предложений. MVP сфокусирован на B2B-сценарии для ландшафтных дизайнеров и оптовиков: пользователь присылает неструктурированную заявку в виде текста, фото, PDF, Word или Excel, а бот сопоставляет позиции с актуальными остатками и формирует КП в PDF. ^[raw/articles/green-broker-constitution-2026-08-02.md] ^[raw/articles/green-broker-spec-2026-08-02.md]</p>
@@ -132,6 +132,9 @@ th { background:#161b22; color:#f0f6fc; }
 <li><strong>Неделя 5:</strong> запуск подписки для первых 3–5 питомников-партнёров.</li>
 </ol>
 <p>Эти КП важны как слой <strong>позиционирования и продаж</strong>, который дополняет <code>constitution.md</code>, <code>spec.md</code> и <code>plan.md</code>: теперь в базе есть не только инженерный контур, но и ценность для двух сторон рынка — заказчика/ландшафтников и питомников.</p>
+<h2>Картографический слой: Construction Maps MCP</h2>
+<p><a href="../entities/construction-maps-mcp.html">Construction Maps MCP Server</a> полезен как возможный геослой для Green Broker: питомники и садовые центры можно связывать с участками, границами территорий, зонами обслуживания, спутниковыми снимками и расчётом расстояний.</p>
+<p>Отдельно зафиксирована рабочая связь: <strong>Роман</strong>, ассоциированный с проектом «с садами», может быть контекстом, где этот MCP-сервер пригодится для будущей автоматизации. Детали по Роману не расширялись, потому что отдельного источника/страницы по нему в базе пока нет.</p>
 <h2>Риски и quality gates</h2>
 <ul>
 <li><strong>Telegram limits:</strong> массовые рассылки и отправка медиа требуют троттлинга.</li>
@@ -153,12 +156,13 @@ th { background:#161b22; color:#f0f6fc; }
 </ul>
 <h2>Связанные заметки</h2>
 <ul>
+<li><a href="../entities/construction-maps-mcp.html">Construction Maps MCP Server</a></li>
 <li><a href="../concepts/spec-driven-agent-development.html">Spec-driven агентная разработка</a></li>
 <li><a href="../concepts/multi-agent-development-methodology.html">Методология многоагентной разработки automation-проектов</a></li>
 <li><a href="../concepts/agent-roles-for-automation.html">Роли агентов для automation-проектов</a></li>
 <li><a href="../comparisons/agent-orchestration-tools.html">Сравнение подходов к orchestration coding agents</a></li>
 </ul>
-<div class="backlinks"><h3>↩ Обратные ссылки</h3><ul><li><a href="../concepts/multi-agent-development-methodology.html">concepts/multi-agent-development-methodology.md</a></li><li><a href="../concepts/spec-driven-agent-development.html">concepts/spec-driven-agent-development.md</a></li><li><a href="../dashboard.html">dashboard.md</a></li><li><a href="../entities/academic-difference-assistant.html">entities/academic-difference-assistant.md</a></li><li><a href="../entities/telemost-recorder.html">entities/telemost-recorder.md</a></li><li><a href="../index.html">index.md</a></li></ul></div>
+<div class="backlinks"><h3>↩ Обратные ссылки</h3><ul><li><a href="../concepts/multi-agent-development-methodology.html">concepts/multi-agent-development-methodology.md</a></li><li><a href="../concepts/spec-driven-agent-development.html">concepts/spec-driven-agent-development.md</a></li><li><a href="../dashboard.html">dashboard.md</a></li><li><a href="../entities/academic-difference-assistant.html">entities/academic-difference-assistant.md</a></li><li><a href="../entities/construction-maps-mcp.html">entities/construction-maps-mcp.md</a></li><li><a href="../entities/telemost-recorder.html">entities/telemost-recorder.md</a></li><li><a href="../index.html">index.md</a></li></ul></div>
 </div>
 </body>
 </html>
