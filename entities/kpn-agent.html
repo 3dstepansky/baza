@@ -64,14 +64,14 @@ th { background:#161b22; color:#f0f6fc; }
 <h3>5. YouGile интеграция (перспектива)</h3>
 <p>Выгрузка поручений из реестра в YouGile как задачи.</p>
 <h2>Архитектура (Kanban-оркестратор)</h2>
-<div class="codehilite"><pre><span></span><code><span class="mf">1.</span><span class="w"> </span><span class="n">Gateway</span><span class="w"> </span><span class="err">—</span><span class="w"> </span><span class="n">слушает</span><span class="w"> </span><span class="n">Telegram</span><span class="w"> </span><span class="err">→</span><span class="w"> </span><span class="n">кладёт</span><span class="w"> </span><span class="n">события</span><span class="w"> </span><span class="n">в</span><span class="w"> </span><span class="n">Kanban</span>
-<span class="mf">2.</span><span class="w"> </span><span class="n">Оркестратор</span><span class="w"> </span><span class="err">—</span><span class="w"> </span><span class="n">роутит</span><span class="w"> </span><span class="n">по</span><span class="w"> </span><span class="n">типу</span><span class="w"> </span><span class="p">(</span><span class="n">протокол</span><span class="p">,</span><span class="w"> </span><span class="n">таблица</span><span class="p">,</span><span class="w"> </span><span class="n">вопрос</span><span class="p">)</span>
-<span class="mf">3.</span><span class="w"> </span><span class="n">Специализированные</span><span class="w"> </span><span class="n">агенты</span><span class="w"> </span><span class="p">(</span><span class="err">~</span><span class="mf">15</span><span class="w"> </span><span class="n">шт</span><span class="p">):</span>
-<span class="w">   </span><span class="o">-</span><span class="w"> </span><span class="n">Агент</span><span class="w"> </span><span class="n">регламентов</span><span class="w"> </span><span class="n">КПН</span>
-<span class="w">   </span><span class="o">-</span><span class="w"> </span><span class="n">Агент</span><span class="w"> </span><span class="n">терминологии</span>
-<span class="w">   </span><span class="o">-</span><span class="w"> </span><span class="n">Агент</span><span class="w"> </span><span class="n">базы</span><span class="w"> </span><span class="n">знаний</span><span class="w"> </span><span class="p">(</span><span class="n">Wiki</span><span class="p">)</span>
-<span class="w">   </span><span class="o">-</span><span class="w"> </span><span class="n">Агент</span><span class="w"> </span><span class="n">контроля</span><span class="w"> </span><span class="n">поручений</span>
-</code></pre></div>
+<pre class="codehilite"><code>1. Gateway — слушает Telegram → кладёт события в Kanban
+2. Оркестратор — роутит по типу (протокол, таблица, вопрос)
+3. Специализированные агенты (~15 шт):
+   - Агент регламентов КПН
+   - Агент терминологии
+   - Агент базы знаний (Wiki)
+   - Агент контроля поручений
+</code></pre>
 
 <h2>Статус (июль 2026)</h2>
 <ul>

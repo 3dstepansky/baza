@@ -49,7 +49,7 @@ th { background:#161b22; color:#f0f6fc; }
 алготрейдинг, инфраструктура Hermes, проекты (КПН-Агент, Telemost Recorder),
 холдинг «Синергия», образовательные automation-проекты.</p>
 <h2>Структура (три слоя)</h2>
-<div class="codehilite"><pre><span></span><code>baza/
+<pre class="codehilite"><code>baza/
 ├── SCHEMA.md            # этот файл
 ├── index.md             # КАТАЛОГ всех страниц (единственный index.md!)
 ├── log.md               # журнал действий (append-only)
@@ -63,7 +63,7 @@ th { background:#161b22; color:#f0f6fc; }
 ├── comparisons/         # Layer 2: сравнения
 ├── queries/             # Layer 2: сохранённые ценные ответы
 └── _archive/            # замещённые/хабы
-</code></pre></div>
+</code></pre>
 
 <h2>Conventions</h2>
 <ul>
@@ -78,17 +78,17 @@ th { background:#161b22; color:#f0f6fc; }
 <li><strong>raw/ никогда не редактировать</strong> — исправления только в wiki-страницах</li>
 </ul>
 <h2>Frontmatter</h2>
-<div class="codehilite"><pre><span></span><code><span class="nn">---</span>
-<span class="nt">title</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Page Title</span>
-<span class="nt">created</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">YYYY-MM-DD</span>
-<span class="nt">updated</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">YYYY-MM-DD</span>
-<span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">entity | concept | comparison | query | summary</span>
-<span class="nt">tags</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">из таксономии</span><span class="p p-Indicator">]</span>
-<span class="nt">sources</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">raw/articles/source.md</span><span class="p p-Indicator">]</span>
-<span class="nt">confidence</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">high | medium | low</span><span class="w">   </span><span class="c1"># опционально</span>
-<span class="nt">contested</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w">                   </span><span class="c1"># опционально</span>
-<span class="nn">---</span>
-</code></pre></div>
+<pre class="codehilite"><code class="language-yaml">---
+title: Page Title
+created: YYYY-MM-DD
+updated: YYYY-MM-DD
+type: entity | concept | comparison | query | summary
+tags: [из таксономии]
+sources: [raw/articles/source.md]
+confidence: high | medium | low   # опционально
+contested: true                   # опционально
+---
+</code></pre>
 
 <h2>Tag Taxonomy</h2>
 <p>Правило: тег должен быть в таксономии; новые теги — сначала сюда.</p>

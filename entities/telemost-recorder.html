@@ -47,7 +47,7 @@ th { background:#161b22; color:#f0f6fc; }
 <p><strong>Telemost Recorder</strong> — zero-cost бот для записи встреч в <strong>Яндекс.Телемосте</strong>. Он заходит на встречу гостем, перехватывает WebRTC-аудио через Puppeteer/Chromium, сохраняет <code>.webm</code>, транскрибирует встречу через AssemblyAI или Groq Whisper, генерирует саммари через Groq Llama 3.3 70B, а затем отдаёт результаты в Telegram и/или Яндекс.Диск через WebDAV. ^[raw/articles/telemost-recorder-repository-v04-2026-08-03.md]</p>
 <p>Проект важен для базы как живой пример <a href="../concepts/agentic-systems.html">агентной автоматизации</a> вокруг встреч: браузерный агент действует в видеоконференции, извлекает аудио, строит пайплайн STT → summary → delivery и закладывает будущий RAG/архив встреч.</p>
 <h2>Архитектура v04</h2>
-<div class="codehilite"><pre><span></span><code>Telegram bot.js / Telegraf
+<pre class="codehilite"><code class="language-text">Telegram bot.js / Telegraf
   ↓
 run.js — жизненный цикл сессии
   ↓
@@ -63,7 +63,7 @@ transcribe.js
   └── Groq Whisper fallback через FFmpeg chunks
   ↓
 summary.txt / transcript.txt / Telegram / Yandex Disk / S3
-</code></pre></div>
+</code></pre>
 
 <p>Ключевой архитектурный сдвиг: в старой версии n8n был внешним orchestrator-слоем, а в v04 основной пользовательский контур перенесён в <code>bot.js</code> + SQLite. n8n-файлы (<code>n8n_workflow_v0.4.json</code>, <code>n8n_workflow_head.json</code>) остаются в репозитории как исторические/совместимые артефакты. ^[raw/articles/telemost-recorder-repository-v04-2026-08-03.md]</p>
 <h2>Основные компоненты</h2>
@@ -126,9 +126,9 @@ summary.txt / transcript.txt / Telegram / Yandex Disk / S3
 </ul>
 <h2>База данных</h2>
 <p>Актуальная SQLite-схема в <code>db.js</code>:</p>
-<div class="codehilite"><pre><span></span><code><span class="n">users</span><span class="p">(</span><span class="n">chat_id</span><span class="w"> </span><span class="k">primary</span><span class="w"> </span><span class="k">key</span><span class="p">,</span><span class="w"> </span><span class="n">bot_name</span><span class="p">,</span><span class="w"> </span><span class="n">yandex_user</span><span class="p">,</span><span class="w"> </span><span class="n">yandex_pass</span><span class="p">,</span><span class="w"> </span><span class="k">state</span><span class="p">)</span>
-<span class="n">meetings</span><span class="p">(</span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">chat_id</span><span class="p">,</span><span class="w"> </span><span class="n">meeting_id</span><span class="p">,</span><span class="w"> </span><span class="n">title</span><span class="p">,</span><span class="w"> </span><span class="n">file_path</span><span class="p">,</span><span class="w"> </span><span class="n">transcribed_at</span><span class="p">,</span><span class="w"> </span><span class="n">speaker_count</span><span class="p">,</span><span class="w"> </span><span class="n">utterance_count</span><span class="p">)</span>
-</code></pre></div>
+<pre class="codehilite"><code class="language-sql">users(chat_id primary key, bot_name, yandex_user, yandex_pass, state)
+meetings(id, chat_id, meeting_id, title, file_path, transcribed_at, speaker_count, utterance_count)
+</code></pre>
 
 <p>Историческая <code>database.sql</code> описывает PostgreSQL/Supabase-таблицы <code>telemost_meeting_transcripts</code> и <code>telemost_user_settings</code>, но для v04 рабочий runtime — SQLite внутри контейнера. ^[raw/articles/telemost-recorder-repository-v04-2026-08-03.md]</p>
 <h2>Статус требований spec 002</h2>
@@ -168,14 +168,14 @@ summary.txt / transcript.txt / Telegram / Yandex Disk / S3
 <p>Проверка track-probe на реальной встрече 2026-07-02 подтвердила техническую возможность раздельной записи: получены два отдельных <code>.webm</code> трека и события активности. Ограничение: <code>speakerName</code> пока пишется как <code>unknown</code>, нужно улучшить DOM-маппинг имени участника. ^[raw/articles/telemost-recorder-repository-v04-2026-08-03.md]</p>
 <h2>Проверка и качество</h2>
 <p>Я проверила тесты в актуальной ветке <code>v04</code>:</p>
-<div class="codehilite"><pre><span></span><code>npm install
+<pre class="codehilite"><code class="language-text">npm install
 npm test
 
 # tests 3
 # suites 1
 # pass 3
 # fail 0
-</code></pre></div>
+</code></pre>
 
 <p>Первый запуск <code>npm test</code> падал из-за отсутствующих зависимостей (<code>sqlite3</code> не установлен). После <code>npm install</code> тесты <code>test/db.test.js</code> прошли: создание дефолтного пользователя, сохранение и обновление пользователя. <code>npm install</code> также показал <code>npm audit</code>: 16 vulnerabilities, включая 1 critical — это отдельный quality-gate перед production. ^[raw/articles/telemost-recorder-repository-v04-2026-08-03.md]</p>
 <h2>Риски и технический долг</h2>

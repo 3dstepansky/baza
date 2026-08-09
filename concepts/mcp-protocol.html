@@ -42,9 +42,9 @@ th { background:#161b22; color:#f0f6fc; }
 <h1>MCP Protocol — базовый протокол 📡</h1>
 <p>Model Context Protocol — открытый стандарт коммуникации LLM-агентов с инструментами (Anthropic, ноябрь 2024).</p>
 <h2>Архитектура</h2>
-<div class="codehilite"><pre><span></span><code><span class="n">Host</span><span class="w"> </span><span class="p">(</span><span class="n">Hermes</span><span class="o">/</span><span class="n">Claude</span><span class="w"> </span><span class="n">Desktop</span><span class="p">)</span>
-<span class="w">  </span><span class="err">└─</span><span class="w"> </span><span class="n">Client</span><span class="w"> </span><span class="err">──</span><span class="w"> </span><span class="n">MCP</span><span class="w"> </span><span class="err">──</span><span class="w"> </span><span class="n">Server</span><span class="w"> </span><span class="p">(</span><span class="n">tools</span><span class="o">/</span><span class="n">resources</span><span class="o">/</span><span class="n">prompts</span><span class="p">)</span>
-</code></pre></div>
+<pre class="codehilite"><code>Host (Hermes/Claude Desktop)
+  └─ Client ── MCP ── Server (tools/resources/prompts)
+</code></pre>
 
 <h2>Жизненный цикл</h2>
 <ol>

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Construction Maps MCP Server — кадастр и полигоны — Vault</title>
+<style>* { margin:0; padding:0; box-sizing:border-box; }
+body { background:#0d1117; color:#c9d1d9; font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif; line-height:1.7; font-size:16px; }
+.container { max-width:820px; margin:0 auto; padding:16px; }
+h1 { font-size:1.6em; color:#f0f6fc; margin:0.6em 0 0.4em; border-bottom:1px solid #30363d; padding-bottom:0.3em; }
+h2 { font-size:1.25em; color:#f0f6fc; margin:0.8em 0 0.3em; }
+h3 { font-size:1.1em; color:#f0f6fc; margin:0.6em 0 0.2em; }
+p { margin:0.5em 0; }
+a { color:#58a6ff; text-decoration:none; }
+a:hover { text-decoration:underline; }
+ul, ol { margin:0.5em 0; padding-left:1.5em; }
+li { margin:0.3em 0; }
+code { background:#161b22; padding:2px 6px; border-radius:3px; font-size:0.9em; color:#f0c674; }
+pre { background:#161b22; padding:12px; border-radius:6px; overflow-x:auto; margin:0.8em 0; }
+pre code { background:none; padding:0; }
+blockquote { border-left:3px solid #30363d; padding-left:1em; margin:0.8em 0; color:#8b949e; }
+hr { border:none; border-top:1px solid #30363d; margin:1.2em 0; }
+table { width:100%; border-collapse:collapse; margin:0.8em 0; }
+th, td { border:1px solid #30363d; padding:8px 12px; text-align:left; }
+th { background:#161b22; color:#f0f6fc; }
+.dataview { background:#161b22; border:1px solid #30363d; border-radius:6px; padding:12px; margin:0.8em 0; font-family:monospace; font-size:0.85em; color:#8b949e; }
+.nav { background:#161b22; border-bottom:1px solid #30363d; padding:8px 16px; font-size:14px; position:sticky; top:0; z-index:10; }
+.nav a { color:#58a6ff; }
+.meta { font-size:0.85em; color:#8b949e; margin:0.5em 0 1em; }
+.tag { display:inline-block; background:#1f6feb33; color:#58a6ff; padding:2px 8px; border-radius:10px; font-size:0.8em; margin:0 3px 3px 0; }
+.backlinks { margin-top:2em; padding-top:1em; border-top:1px solid #30363d; }
+.backlinks h3 { font-size:1em; color:#8b949e; }
+.button-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:10px; margin:1em 0; }
+.button { display:block; background:#238636; color:#fff !important; padding:12px 14px; border-radius:8px; text-align:center; font-weight:600; border:1px solid #2ea043; }
+.button:hover { background:#2ea043; text-decoration:none; }</style>
+</head>
+<body>
+<nav class="nav"><span class="crumbs"><a href="/">🏠</a> / <span>entities</span></span></nav>
+<div class="container">
+<h1>Construction Maps MCP Server — кадастр и полигоны</h1>
+<div class="meta"><span class="tag">entity</span> <span class="tag">mcp</span> <span class="tag">api</span> <span class="tag">python</span> <span class="tag">automation</span> <span class="tag">tool</span> last modified: 2026-08-09 21:25</div>
+<h1>Construction Maps MCP Server — кадастр и полигоны</h1>
+<p><strong>Construction Maps MCP Server</strong> — Python MCP-сервер для предпроектного анализа земельных участков: кадастровые границы/полигоны через Росреестр/НСПД и картографический слой через Yandex Maps.^[raw/articles/construction-maps-mcp-repository-2026-08-09.md]</p>
+<h2>Почему сохранён</h2>
+<p>Павел отметил его после подкаста как отдельный сервер под будущую автоматизацию: <strong>кадастровые карты, границы участков и полигоны</strong>. Это не основной универсальный Yandex Maps MCP, а специализированный строительный/земельный слой.</p>
+<h2>Репозиторий и статус</h2>
+<table>
+<thead>
+<tr>
+<th>Поле</th>
+<th>Значение</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Репозиторий</td>
+<td>https://github.com/alexgrebeshok-coder/construction-maps-mcp</td>
+</tr>
+<tr>
+<td>Назначение</td>
+<td>Анализ земельных участков в строительстве</td>
+</tr>
+<tr>
+<td>Интеграции</td>
+<td>Росреестр/НСПД + Yandex Maps</td>
+</tr>
+<tr>
+<td>Язык</td>
+<td>Python</td>
+</tr>
+<tr>
+<td>Версия из README/pyproject</td>
+<td>1.0.0</td>
+</tr>
+<tr>
+<td>Последний observed commit main</td>
+<td><code>3b1b258ddcceaeb090460e739a882d4f7422b330</code>, 2026-07-05</td>
+</tr>
+<tr>
+<td>Latest pushed_at по GitHub API</td>
+<td>2026-07-19T05:26:04Z</td>
+</tr>
+<tr>
+<td>License</td>
+<td>README/pyproject: MIT; GitHub API license field: null</td>
+</tr>
+<tr>
+<td>Confidence</td>
+<td>medium: источник один репозиторий, код ещё нужно тестировать перед production</td>
+</tr>
+</tbody>
+</table>
+<h2>Ключевые возможности</h2>
+<h3>Кадастр</h3>
+<ul>
+<li><code>cadastre_get_boundaries</code> — получить границы участка по кадастровому номеру в GeoJSON.</li>
+<li><code>cadastre_get_info</code> — получить площадь, адрес и категорию участка.</li>
+<li><code>cadastre_search_by_address</code> — найти участки по адресу.</li>
+</ul>
+<h3>Полигоны и геометрия</h3>
+<ul>
+<li><code>geometry_calculate_area</code> — рассчитать площадь полигона.</li>
+<li><code>geometry_check_intersection</code> — проверить пересечение участков/полигонов.</li>
+<li><code>geometry_measure_distance</code> — измерить расстояние между точками.</li>
+<li><code>geometry_buffer</code> — построить буфер вокруг геометрии.</li>
+</ul>
+<h3>Карты и инфраструктура</h3>
+<ul>
+<li><code>geocode_address_to_coords</code> / <code>geocode_coords_to_address</code> — связка адресов и координат.</li>
+<li><code>infrastructure_find_nearby</code> — школы, больницы, АЗС и другие объекты рядом с участком.</li>
+<li><code>infrastructure_calculate_distances</code> — расстояния до поставщиков/объектов.</li>
+<li><code>infrastructure_get_satellite_image</code> — спутниковый снимок участка.</li>
+<li><code>visualization_generate_static_map</code>, <code>visualization_export_geojson</code>, <code>export_to_json</code> — карта, GeoJSON и JSON-выгрузка.</li>
+</ul>
+<h2>Архитектура</h2>
+<ul>
+<li>MCP SDK для подключения к агентам.</li>
+<li><code>rosreestr2coord</code> для кадастровых данных/НСПД.</li>
+<li>Yandex Maps API для геокодирования, карт и снимков.</li>
+<li><code>shapely</code>/<code>geomet</code> для геометрических операций.</li>
+<li>Двухуровневый кеш: in-memory + SQLite.</li>
+<li>Rate limiting и backoff для Yandex/Rosreestr API.</li>
+</ul>
+<h2>Требования для будущей автоматизации</h2>
+<ul>
+<li>Python 3.10+.</li>
+<li>Yandex Maps API key в окружении <code>YANDEX_MAPS_API_KEY</code>.</li>
+<li>Не хранить ключ в заметках или публичных конфигурациях.</li>
+<li>Перед подключением к Hermes протестировать реальные calls на 1–2 кадастровых номерах и проверить, что <code>rosreestr2coord</code> ещё работает с текущим НСПД.</li>
+</ul>
+<h2>Черновая схема подключения в Hermes</h2>
+<pre class="codehilite"><code class="language-yaml">mcp_servers:
+  construction-maps:
+    command: python
+    args: [&quot;-m&quot;, &quot;construction_maps_mcp&quot;]
+    env:
+      YANDEX_MAPS_API_KEY: &quot;${YANDEX_MAPS_API_KEY}&quot;
+    enabled: true
+</code></pre>
+
+<p>На практике лучше ставить репозиторий в отдельный venv/uv-окружение и запускать через абсолютный путь к python этого окружения.</p>
+<h2>Ограничения и риски</h2>
+<ul>
+<li>Росреестр/НСПД используется через неофициальную библиотеку <code>rosreestr2coord</code>; API может меняться.</li>
+<li>GitHub API на момент записи показывает <code>license: null</code>, хотя README/pyproject декларируют MIT.</li>
+<li>Репозиторий малозвёздный; перед production нужна проверка install/test и реальных запросов.</li>
+<li>Для части функций нужен работающий Yandex Maps API key и включённые API в кабинете Яндекса.</li>
+</ul>
+<h2>Связанные заметки</h2>
+<ul>
+<li><a href="../concepts/mcp.html">MCP — Model Context Protocol</a></li>
+<li><a href="../entities/hermes-agent.html">Hermes Agent</a></li>
+<li><a href="../entities/hermes.html">Hermes — инфраструктура</a></li>
+<li><a href="../entities/hermes-marketplace-tools.html">Marketplace MCP Server</a></li>
+</ul>
+<div class="backlinks"><h3>↩ Обратные ссылки</h3><ul><li><a href="../concepts/mcp.html">concepts/mcp.md</a></li><li><a href="../index.html">index.md</a></li></ul></div>
+</div>
+</body>
+</html>

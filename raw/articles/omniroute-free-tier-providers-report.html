@@ -48,36 +48,36 @@ th { background:#161b22; color:#f0f6fc; }
 <h3>Методы добавления провайдера</h3>
 <p>OmniRoute поддерживает три способа подключения провайдеров:</p>
 <h4>1.1 Через Dashboard (Web UI)</h4>
-<div class="codehilite"><pre><span></span><code><span class="nv">Dashboard</span><span class="w"> </span>→<span class="w"> </span><span class="nv">Providers</span><span class="w"> </span>→<span class="w"> </span><span class="k">Connect</span><span class="w"> </span><span class="nv">Provider</span>
-</code></pre></div>
+<pre class="codehilite"><code>Dashboard → Providers → Connect Provider
+</code></pre>
 
 <p><strong>Типы аутентификации:</strong>
 - <strong>OAuth</strong> — автоматический вход через провайдера (Claude Code, Gemini CLI, GitHub Copilot, etc.)
 - <strong>API Key</strong> — ввод API ключа вручную
 - <strong>Web Cookie</strong> — вставка cookie из браузера для веб-версий</p>
 <h4>1.2 Через CLI</h4>
-<div class="codehilite"><pre><span></span><code><span class="c1"># Интерактивное добавление</span>
-omniroute<span class="w"> </span>provider<span class="w"> </span>add
+<pre class="codehilite"><code class="language-bash"># Интерактивное добавление
+omniroute provider add
 
-<span class="c1"># Тестирование подключения провайдера</span>
-omniroute<span class="w"> </span>provider<span class="w"> </span><span class="nb">test</span><span class="w"> </span>&lt;provider-id&gt;
+# Тестирование подключения провайдера
+omniroute provider test &lt;provider-id&gt;
 
-<span class="c1"># Пакетное тестирование всех провайдеров</span>
-omniroute<span class="w"> </span>providers<span class="w"> </span>test-batch
+# Пакетное тестирование всех провайдеров
+omniroute providers test-batch
 
-<span class="c1"># Список подключённых провайдеров</span>
-omniroute<span class="w"> </span>provider<span class="w"> </span>list
-</code></pre></div>
+# Список подключённых провайдеров
+omniroute provider list
+</code></pre>
 
 <h4>1.3 Через Environment Variables (Headless/CI)</h4>
-<div class="codehilite"><pre><span></span><code><span class="c1"># Пример для Docker/Kubernetes</span>
-<span class="nb">export</span><span class="w"> </span><span class="nv">INITIAL_PASSWORD</span><span class="o">=</span><span class="s2">&quot;your-secure-password&quot;</span>
-<span class="nb">export</span><span class="w"> </span><span class="nv">OPENAI_API_KEY</span><span class="o">=</span><span class="s2">&quot;sk-...&quot;</span>
-<span class="nb">export</span><span class="w"> </span><span class="nv">GEMINI_API_KEY</span><span class="o">=</span><span class="s2">&quot;AIza...&quot;</span>
-<span class="nb">export</span><span class="w"> </span><span class="nv">GROQ_API_KEY</span><span class="o">=</span><span class="s2">&quot;gsk_...&quot;</span>
+<pre class="codehilite"><code class="language-bash"># Пример для Docker/Kubernetes
+export INITIAL_PASSWORD=&quot;your-secure-password&quot;
+export OPENAI_API_KEY=&quot;sk-...&quot;
+export GEMINI_API_KEY=&quot;AIza...&quot;
+export GROQ_API_KEY=&quot;gsk_...&quot;
 
-omniroute<span class="w"> </span>setup<span class="w"> </span>--non-interactive
-</code></pre></div>
+omniroute setup --non-interactive
+</code></pre>
 
 <h3>Формат конфигурации провайдера</h3>
 <p>Провайдеры определяются в <code>src/shared/constants/providers.ts</code> и хранятся в локальной SQLite базе.</p>
@@ -125,27 +125,27 @@ omniroute<span class="w"> </span>setup<span class="w"> </span>--non-interactive
 </table>
 <h3>Примеры добавления провайдеров</h3>
 <h4>NVIDIA NIM (API Key)</h4>
-<div class="codehilite"><pre><span></span><code>Dashboard → Providers → Add Provider → NVIDIA NIM
+<pre class="codehilite"><code>Dashboard → Providers → Add Provider → NVIDIA NIM
 - Provider ID: nvidia
 - API Key: nvapi-xxxxx (получить на build.nvidia.com)
 - Base URL: https://integrate.api.nvidia.com/v1 (автоматически)
-</code></pre></div>
+</code></pre>
 
 <p><strong>Модели:</strong> <code>nvidia/glm-5.2</code>, <code>nvidia/deepseek-v4-flash</code>, <code>nvidia/qwen-2.5-72b-instruct</code></p>
 <h4>Google Gemini (API Key)</h4>
-<div class="codehilite"><pre><span></span><code>Dashboard → Providers → Add Provider → Gemini
+<pre class="codehilite"><code>Dashboard → Providers → Add Provider → Gemini
 - Provider ID: gemini
 - API Key: AIza... (получить на aistudio.google.com)
 - Base URL: https://generativelanguage.googleapis.com/v1beta/openai (автоматически)
-</code></pre></div>
+</code></pre>
 
 <p><strong>Модели:</strong> <code>gemini/gemini-2.5-flash</code>, <code>gemini/gemini-3.1-flash-lite</code></p>
 <h4>Groq (API Key)</h4>
-<div class="codehilite"><pre><span></span><code>Dashboard → Providers → Add Provider → Groq
-<span class="k">-</span> Provider ID: groq
-<span class="k">-</span> API Key: gsk_... (получить на console.groq.com)
-<span class="k">-</span> Base URL: https://api.groq.com/openai/v1 (автоматически)
-</code></pre></div>
+<pre class="codehilite"><code>Dashboard → Providers → Add Provider → Groq
+- Provider ID: groq
+- API Key: gsk_... (получить на console.groq.com)
+- Base URL: https://api.groq.com/openai/v1 (автоматически)
+</code></pre>
 
 <p><strong>Модели:</strong> <code>groq/llama-3.1-8b-instant</code>, <code>groq/llama-3.3-70b-versatile</code>, <code>groq/qwen3-32b</code></p>
 <hr />
@@ -267,12 +267,12 @@ omniroute<span class="w"> </span>setup<span class="w"> </span>--non-interactive
 | <code>kimi-k2.6</code> | 256K | Сложные задачи |
 | <code>qwen-2.5-72b-instruct</code> | 128K | Мультиязычный код |</p>
 <p><strong>OmniRoute конфигурация:</strong></p>
-<div class="codehilite"><pre><span></span><code><span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;provider&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;nvidia&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;apiKey&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;nvapi-xxxxx&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;models&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;nvidia/glm-5.2&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;nvidia/deepseek-v4-flash&quot;</span><span class="p">]</span>
-<span class="p">}</span>
-</code></pre></div>
+<pre class="codehilite"><code class="language-json">{
+  &quot;provider&quot;: &quot;nvidia&quot;,
+  &quot;apiKey&quot;: &quot;nvapi-xxxxx&quot;,
+  &quot;models&quot;: [&quot;nvidia/glm-5.2&quot;, &quot;nvidia/deepseek-v4-flash&quot;]
+}
+</code></pre>
 
 <hr />
 <h3>3.2 Google AI Studio (Gemini)</h3>
@@ -293,12 +293,12 @@ omniroute<span class="w"> </span>setup<span class="w"> </span>--non-interactive
 - ✅ Google аккаунт
 - ⚠️ Данные используются для обучения (free tier)</p>
 <p><strong>OmniRoute конфигурация:</strong></p>
-<div class="codehilite"><pre><span></span><code><span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;provider&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;gemini&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;apiKey&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;AIza...&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;models&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;gemini/gemini-2.5-flash&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;gemini/gemini-3-flash&quot;</span><span class="p">]</span>
-<span class="p">}</span>
-</code></pre></div>
+<pre class="codehilite"><code class="language-json">{
+  &quot;provider&quot;: &quot;gemini&quot;,
+  &quot;apiKey&quot;: &quot;AIza...&quot;,
+  &quot;models&quot;: [&quot;gemini/gemini-2.5-flash&quot;, &quot;gemini/gemini-3-flash&quot;]
+}
+</code></pre>
 
 <hr />
 <h3>3.3 Groq</h3>
@@ -327,12 +327,12 @@ omniroute<span class="w"> </span>setup<span class="w"> </span>--non-interactive
 - 25% скидка на токены
 - Нет минимального платежа</p>
 <p><strong>OmniRoute конфигурация:</strong></p>
-<div class="codehilite"><pre><span></span><code><span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;provider&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;groq&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;apiKey&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;gsk_...&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;models&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;groq/llama-3.3-70b-versatile&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;groq/qwen3-32b&quot;</span><span class="p">]</span>
-<span class="p">}</span>
-</code></pre></div>
+<pre class="codehilite"><code class="language-json">{
+  &quot;provider&quot;: &quot;groq&quot;,
+  &quot;apiKey&quot;: &quot;gsk_...&quot;,
+  &quot;models&quot;: [&quot;groq/llama-3.3-70b-versatile&quot;, &quot;groq/qwen3-32b&quot;]
+}
+</code></pre>
 
 <hr />
 <h3>3.4 DeepSeek</h3>
@@ -354,12 +354,12 @@ omniroute<span class="w"> </span>setup<span class="w"> </span>--non-interactive
 | DeepSeek V4 Pro | $0.435 | $0.87 | $0.0036 |</p>
 <p><strong>Контекст:</strong> 1M tokens, 384K max output</p>
 <p><strong>OmniRoute конфигурация:</strong></p>
-<div class="codehilite"><pre><span></span><code><span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;provider&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;deepseek&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;apiKey&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;sk-...&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;models&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;deepseek/deepseek-chat&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;deepseek/deepseek-reasoner&quot;</span><span class="p">]</span>
-<span class="p">}</span>
-</code></pre></div>
+<pre class="codehilite"><code class="language-json">{
+  &quot;provider&quot;: &quot;deepseek&quot;,
+  &quot;apiKey&quot;: &quot;sk-...&quot;,
+  &quot;models&quot;: [&quot;deepseek/deepseek-chat&quot;, &quot;deepseek/deepseek-reasoner&quot;]
+}
+</code></pre>
 
 <hr />
 <h3>3.5 OpenRouter</h3>
@@ -382,15 +382,15 @@ omniroute<span class="w"> </span>setup<span class="w"> </span>--non-interactive
 | <code>deepseek/deepseek-r1:free</code> | — | Reasoning |</p>
 <p><strong>⚠️ Важно:</strong> Free модели могут быть удалены без предупреждения. За 9 дней до 27 июля 2026 удалено 7 free моделей (Llama, Qwen, Hermes).</p>
 <p><strong>OmniRoute конфигурация:</strong></p>
-<div class="codehilite"><pre><span></span><code><span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;provider&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;openrouter&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;apiKey&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;sk-or-...&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;models&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<span class="w">    </span><span class="s2">&quot;openrouter/nvidia/nemotron-3-ultra-550b:free&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="s2">&quot;openrouter/poolside/laguna-xs-2.1:free&quot;</span>
-<span class="w">  </span><span class="p">]</span>
-<span class="p">}</span>
-</code></pre></div>
+<pre class="codehilite"><code class="language-json">{
+  &quot;provider&quot;: &quot;openrouter&quot;,
+  &quot;apiKey&quot;: &quot;sk-or-...&quot;,
+  &quot;models&quot;: [
+    &quot;openrouter/nvidia/nemotron-3-ultra-550b:free&quot;,
+    &quot;openrouter/poolside/laguna-xs-2.1:free&quot;
+  ]
+}
+</code></pre>
 
 <hr />
 <h3>3.6 Cohere</h3>
@@ -416,12 +416,12 @@ omniroute<span class="w"> </span>setup<span class="w"> </span>--non-interactive
 - ❌ Не для коммерческого использования
 - ✅ Без кредитной карты</p>
 <p><strong>OmniRoute конфигурация:</strong></p>
-<div class="codehilite"><pre><span></span><code><span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;provider&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;cohere&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;apiKey&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;...&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;models&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;cohere/command-a-plus-05-2026&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;cohere/command-r-plus&quot;</span><span class="p">]</span>
-<span class="p">}</span>
-</code></pre></div>
+<pre class="codehilite"><code class="language-json">{
+  &quot;provider&quot;: &quot;cohere&quot;,
+  &quot;apiKey&quot;: &quot;...&quot;,
+  &quot;models&quot;: [&quot;cohere/command-a-plus-05-2026&quot;, &quot;cohere/command-r-plus&quot;]
+}
+</code></pre>
 
 <hr />
 <h3>3.7 Mistral AI</h3>
@@ -451,12 +451,12 @@ omniroute<span class="w"> </span>setup<span class="w"> </span>--non-interactive
 | mistral-large-latest | 20,000 | 10 | 1,000,000,000 |
 | devstral-2512 | 1,000,000 | 50 | 10,000,000 |</p>
 <p><strong>OmniRoute конфигурация:</strong></p>
-<div class="codehilite"><pre><span></span><code><span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;provider&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;mistral&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;apiKey&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;...&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;models&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;mistral/mistral-large-latest&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;mistral/codestral-latest&quot;</span><span class="p">]</span>
-<span class="p">}</span>
-</code></pre></div>
+<pre class="codehilite"><code class="language-json">{
+  &quot;provider&quot;: &quot;mistral&quot;,
+  &quot;apiKey&quot;: &quot;...&quot;,
+  &quot;models&quot;: [&quot;mistral/mistral-large-latest&quot;, &quot;mistral/codestral-latest&quot;]
+}
+</code></pre>
 
 <hr />
 <h3>3.8 Together AI</h3>
@@ -494,12 +494,12 @@ omniroute<span class="w"> </span>setup<span class="w"> </span>--non-interactive
 - Mistral, Llama, Qwen (text)
 - Embedding модели</p>
 <p><strong>OmniRoute конфигурация:</strong></p>
-<div class="codehilite"><pre><span></span><code><span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;provider&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;huggingface&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;apiKey&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;hf_...&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;models&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;huggingface/mistral-7b-instruct&quot;</span><span class="p">]</span>
-<span class="p">}</span>
-</code></pre></div>
+<pre class="codehilite"><code class="language-json">{
+  &quot;provider&quot;: &quot;huggingface&quot;,
+  &quot;apiKey&quot;: &quot;hf_...&quot;,
+  &quot;models&quot;: [&quot;huggingface/mistral-7b-instruct&quot;]
+}
+</code></pre>
 
 <hr />
 <h3>3.10 Cloudflare Workers AI</h3>
@@ -530,13 +530,13 @@ omniroute<span class="w"> </span>setup<span class="w"> </span>--non-interactive
 - Account ID (из dashboard)
 - API Token (с правами Workers AI)</p>
 <p><strong>OmniRoute конфигурация:</strong></p>
-<div class="codehilite"><pre><span></span><code><span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;provider&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;cloudflare-ai&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;apiKey&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;...&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;accountId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;...&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;models&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;cf/@cf/meta/llama-3.1-8b-instruct&quot;</span><span class="p">]</span>
-<span class="p">}</span>
-</code></pre></div>
+<pre class="codehilite"><code class="language-json">{
+  &quot;provider&quot;: &quot;cloudflare-ai&quot;,
+  &quot;apiKey&quot;: &quot;...&quot;,
+  &quot;accountId&quot;: &quot;...&quot;,
+  &quot;models&quot;: [&quot;cf/@cf/meta/llama-3.1-8b-instruct&quot;]
+}
+</code></pre>
 
 <hr />
 <h2>4. Routing стратегии в OmniRoute</h2>
@@ -586,11 +586,11 @@ omniroute<span class="w"> </span>setup<span class="w"> </span>--non-interactive
 </table>
 <h3>4.2 Auto-Routing</h3>
 <p>Самый простой способ — использовать модель <code>auto</code>:</p>
-<div class="codehilite"><pre><span></span><code><span class="c1"># Автоматический выбор модели</span>
-curl<span class="w"> </span>http://localhost:20128/v1/chat/completions<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Authorization: Bearer YOUR_KEY&quot;</span><span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>-d<span class="w"> </span><span class="s1">&#39;{&quot;model&quot;: &quot;auto&quot;, &quot;messages&quot;: [...]}&#39;</span>
-</code></pre></div>
+<pre class="codehilite"><code class="language-bash"># Автоматический выбор модели
+curl http://localhost:20128/v1/chat/completions \
+  -H &quot;Authorization: Bearer YOUR_KEY&quot; \
+  -d '{&quot;model&quot;: &quot;auto&quot;, &quot;messages&quot;: [...]}'
+</code></pre>
 
 <p><strong>Варианты auto:</strong>
 - <code>auto</code> — умный выбор
@@ -601,7 +601,7 @@ curl<span class="w"> </span>http://localhost:20128/v1/chat/completions<span clas
 <h3>4.3 Combos (Fallback Chains)</h3>
 <p>Создание combo в Dashboard:</p>
 <p><strong>Пример: Maximize Subscription + Free Backup</strong></p>
-<div class="codehilite"><pre><span></span><code>Name: premium-with-free-fallback
+<pre class="codehilite"><code>Name: premium-with-free-fallback
 
 Models:
 1. cc/claude-opus-4-7 (Claude Pro subscription)
@@ -610,10 +610,10 @@ Models:
 4. gemini/gemini-2.5-flash (Google free tier)
 
 Strategy: Priority
-</code></pre></div>
+</code></pre>
 
 <p><strong>Пример: Zero-Cost Combo</strong></p>
-<div class="codehilite"><pre><span></span><code>Name: free-forever
+<pre class="codehilite"><code>Name: free-forever
 
 Models:
 1. gemini/gemini-2.5-flash (1,500 RPD free)
@@ -622,52 +622,52 @@ Models:
 4. nvidia/deepseek-v4-flash (40 RPM free)
 
 Strategy: Round-Robin
-</code></pre></div>
+</code></pre>
 
 <h3>4.4 CLI интеграция</h3>
 <p><strong>Claude Code:</strong></p>
-<div class="codehilite"><pre><span></span><code><span class="c1"># Автонастройка</span>
-omniroute<span class="w"> </span>setup-claude-code
+<pre class="codehilite"><code class="language-bash"># Автонастройка
+omniroute setup-claude-code
 
-<span class="c1"># Ручная настройка ~/.claude/config.json</span>
-<span class="o">{</span>
-<span class="w">  </span><span class="s2">&quot;anthropic_api_base&quot;</span>:<span class="w"> </span><span class="s2">&quot;http://localhost:20128/v1&quot;</span>,
-<span class="w">  </span><span class="s2">&quot;anthropic_api_key&quot;</span>:<span class="w"> </span><span class="s2">&quot;omniroute-api-key&quot;</span>
-<span class="o">}</span>
-</code></pre></div>
+# Ручная настройка ~/.claude/config.json
+{
+  &quot;anthropic_api_base&quot;: &quot;http://localhost:20128/v1&quot;,
+  &quot;anthropic_api_key&quot;: &quot;omniroute-api-key&quot;
+}
+</code></pre>
 
 <p><strong>Cursor:</strong></p>
-<div class="codehilite"><pre><span></span><code><span class="c1">// ~/.cursor/config.json</span>
-<span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;aiProvider&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nt">&quot;baseUrl&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;http://localhost:20128/v1&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;apiKey&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;omniroute-api-key&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;model&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;auto/coding&quot;</span>
-<span class="w">  </span><span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div>
+<pre class="codehilite"><code class="language-json">// ~/.cursor/config.json
+{
+  &quot;aiProvider&quot;: {
+    &quot;baseUrl&quot;: &quot;http://localhost:20128/v1&quot;,
+    &quot;apiKey&quot;: &quot;omniroute-api-key&quot;,
+    &quot;model&quot;: &quot;auto/coding&quot;
+  }
+}
+</code></pre>
 
 <p><strong>Codex CLI:</strong></p>
-<div class="codehilite"><pre><span></span><code><span class="nb">export</span><span class="w"> </span><span class="nv">OPENAI_API_BASE</span><span class="o">=</span><span class="s2">&quot;http://localhost:20128&quot;</span>
-<span class="nb">export</span><span class="w"> </span><span class="nv">OPENAI_API_KEY</span><span class="o">=</span><span class="s2">&quot;omniroute-api-key&quot;</span>
-</code></pre></div>
+<pre class="codehilite"><code class="language-bash">export OPENAI_API_BASE=&quot;http://localhost:20128&quot;
+export OPENAI_API_KEY=&quot;omniroute-api-key&quot;
+</code></pre>
 
 <hr />
 <h2>5. Рекомендации по настройке</h2>
 <h3>5.1 Для максимальной бесплатной работы</h3>
 <p><strong>Combo: Ultimate Free Stack</strong></p>
-<div class="codehilite"><pre><span></span><code><span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ultimate-free&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;models&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<span class="w">    </span><span class="p">{</span><span class="nt">&quot;model&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;gemini/gemini-2.5-flash&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;priority&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">},</span>
-<span class="w">    </span><span class="p">{</span><span class="nt">&quot;model&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;groq/llama-3.3-70b-versatile&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;priority&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">},</span>
-<span class="w">    </span><span class="p">{</span><span class="nt">&quot;model&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;nvidia/glm-5.2&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;priority&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">},</span>
-<span class="w">    </span><span class="p">{</span><span class="nt">&quot;model&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;mistral/codestral-latest&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;priority&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">},</span>
-<span class="w">    </span><span class="p">{</span><span class="nt">&quot;model&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;openrouter/poolside/laguna-xs-2.1:free&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;priority&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">}</span>
-<span class="w">  </span><span class="p">],</span>
-<span class="w">  </span><span class="nt">&quot;strategy&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;priority&quot;</span>
-<span class="p">}</span>
-</code></pre></div>
+<pre class="codehilite"><code class="language-json">{
+  &quot;name&quot;: &quot;ultimate-free&quot;,
+  &quot;models&quot;: [
+    {&quot;model&quot;: &quot;gemini/gemini-2.5-flash&quot;, &quot;priority&quot;: 1},
+    {&quot;model&quot;: &quot;groq/llama-3.3-70b-versatile&quot;, &quot;priority&quot;: 2},
+    {&quot;model&quot;: &quot;nvidia/glm-5.2&quot;, &quot;priority&quot;: 3},
+    {&quot;model&quot;: &quot;mistral/codestral-latest&quot;, &quot;priority&quot;: 4},
+    {&quot;model&quot;: &quot;openrouter/poolside/laguna-xs-2.1:free&quot;, &quot;priority&quot;: 5}
+  ],
+  &quot;strategy&quot;: &quot;priority&quot;
+}
+</code></pre>
 
 <p><strong>Ожидаемый ежедневный лимит:</strong>
 - Gemini: 1,500 запросов
@@ -678,53 +678,53 @@ omniroute<span class="w"> </span>setup-claude-code
 <p><strong>Итого: ~160,000+ запросов в день бесплатно</strong></p>
 <h3>5.2 Для кодинга</h3>
 <p><strong>Combo: Code Assistant</strong></p>
-<div class="codehilite"><pre><span></span><code><span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;code-assistant&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;models&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<span class="w">    </span><span class="p">{</span><span class="nt">&quot;model&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;nvidia/glm-5.2&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;priority&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">},</span>
-<span class="w">    </span><span class="p">{</span><span class="nt">&quot;model&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;groq/llama-3.3-70b-versatile&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;priority&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">},</span>
-<span class="w">    </span><span class="p">{</span><span class="nt">&quot;model&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;deepseek/deepseek-chat&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;priority&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">}</span>
-<span class="w">  </span><span class="p">],</span>
-<span class="w">  </span><span class="nt">&quot;strategy&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;auto/coding&quot;</span>
-<span class="p">}</span>
-</code></pre></div>
+<pre class="codehilite"><code class="language-json">{
+  &quot;name&quot;: &quot;code-assistant&quot;,
+  &quot;models&quot;: [
+    {&quot;model&quot;: &quot;nvidia/glm-5.2&quot;, &quot;priority&quot;: 1},
+    {&quot;model&quot;: &quot;groq/llama-3.3-70b-versatile&quot;, &quot;priority&quot;: 2},
+    {&quot;model&quot;: &quot;deepseek/deepseek-chat&quot;, &quot;priority&quot;: 3}
+  ],
+  &quot;strategy&quot;: &quot;auto/coding&quot;
+}
+</code></pre>
 
 <h3>5.3 Для быстрого прототипирования</h3>
 <p><strong>Combo: Speed Demon</strong></p>
-<div class="codehilite"><pre><span></span><code><span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;speed-demon&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;models&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<span class="w">    </span><span class="p">{</span><span class="nt">&quot;model&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;groq/llama-3.1-8b-instant&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;priority&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">},</span>
-<span class="w">    </span><span class="p">{</span><span class="nt">&quot;model&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;groq/llama-4-scout-17b&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;priority&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">},</span>
-<span class="w">    </span><span class="p">{</span><span class="nt">&quot;model&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;gemini/gemini-3-flash&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;priority&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">}</span>
-<span class="w">  </span><span class="p">],</span>
-<span class="w">  </span><span class="nt">&quot;strategy&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;auto/fast&quot;</span>
-<span class="p">}</span>
-</code></pre></div>
+<pre class="codehilite"><code class="language-json">{
+  &quot;name&quot;: &quot;speed-demon&quot;,
+  &quot;models&quot;: [
+    {&quot;model&quot;: &quot;groq/llama-3.1-8b-instant&quot;, &quot;priority&quot;: 1},
+    {&quot;model&quot;: &quot;groq/llama-4-scout-17b&quot;, &quot;priority&quot;: 2},
+    {&quot;model&quot;: &quot;gemini/gemini-3-flash&quot;, &quot;priority&quot;: 3}
+  ],
+  &quot;strategy&quot;: &quot;auto/fast&quot;
+}
+</code></pre>
 
 <hr />
 <h2>6. Проверка работы OmniRoute</h2>
 <h3>6.1 Health Check</h3>
-<div class="codehilite"><pre><span></span><code><span class="c1"># Проверка статуса</span>
-omniroute<span class="w"> </span>status
+<pre class="codehilite"><code class="language-bash"># Проверка статуса
+omniroute status
 
-<span class="c1"># Диагностика</span>
-omniroute<span class="w"> </span>doctor
+# Диагностика
+omniroute doctor
 
-<span class="c1"># Список провайдеров</span>
-omniroute<span class="w"> </span>provider<span class="w"> </span>list
-</code></pre></div>
+# Список провайдеров
+omniroute provider list
+</code></pre>
 
 <h3>6.2 API Test</h3>
-<div class="codehilite"><pre><span></span><code><span class="c1"># Тест модели через OmniRoute</span>
-curl<span class="w"> </span>http://localhost:20128/v1/chat/completions<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Authorization: Bearer YOUR_API_KEY&quot;</span><span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Content-Type: application/json&quot;</span><span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>-d<span class="w"> </span><span class="s1">&#39;{</span>
-<span class="s1">    &quot;model&quot;: &quot;auto&quot;,</span>
-<span class="s1">    &quot;messages&quot;: [{&quot;role&quot;: &quot;user&quot;, &quot;content&quot;: &quot;Hello, world!&quot;}]</span>
-<span class="s1">  }&#39;</span>
-</code></pre></div>
+<pre class="codehilite"><code class="language-bash"># Тест модели через OmniRoute
+curl http://localhost:20128/v1/chat/completions \
+  -H &quot;Authorization: Bearer YOUR_API_KEY&quot; \
+  -H &quot;Content-Type: application/json&quot; \
+  -d '{
+    &quot;model&quot;: &quot;auto&quot;,
+    &quot;messages&quot;: [{&quot;role&quot;: &quot;user&quot;, &quot;content&quot;: &quot;Hello, world!&quot;}]
+  }'
+</code></pre>
 
 <h3>6.3 Dashboard</h3>
 <p>Открыть http://localhost:20128 в браузере для:

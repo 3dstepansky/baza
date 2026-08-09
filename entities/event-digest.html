@@ -43,7 +43,7 @@ th { background:#161b22; color:#f0f6fc; }
 <p>AI-powered CLI tool для фильтрации Telegram сообщений через 7-шаговый pipeline и извлечения персонализированных анонсов мероприятий.</p>
 <h2>Архитектура</h2>
 <p><strong>Clean Architecture + DDD:</strong></p>
-<div class="codehilite"><pre><span></span><code>src/
+<pre class="codehilite"><code>src/
 ├── domain/          # Бизнес-логика
 │   ├── entities/    # DigestEvent, SourceMessage, InterestMatch
 │   ├── interfaces/  # IAIClient, ICache, IMessageSource
@@ -56,7 +56,7 @@ th { background:#161b22; color:#f0f6fc; }
 │   └── cache.ts
 ├── config/         # Конфигурация
 └── presentation/   # Вывод
-</code></pre></div>
+</code></pre>
 
 <h2>7-шаговый Pipeline</h2>
 <table>
@@ -125,18 +125,18 @@ th { background:#161b22; color:#f0f6fc; }
 - GPT через имеющийся AI клиент</p>
 <p>Вместо отдельного CLI — встроенный сценарий в Hermes.</p>
 <h2>Конфиг</h2>
-<div class="codehilite"><pre><span></span><code><span class="nt">groupsToParse</span><span class="p">:</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;@example_tech_chat&quot;</span>
-<span class="nt">channelsToParse</span><span class="p">:</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;@city_announcements&quot;</span>
-<span class="nt">userInterests</span><span class="p">:</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;React</span><span class="nv"> </span><span class="s">development&quot;</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;Jazz</span><span class="nv"> </span><span class="s">concerts&quot;</span>
-<span class="nt">weeklyTimeslots</span><span class="p">:</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;6</span><span class="nv"> </span><span class="s">14:00&quot;</span><span class="w">  </span><span class="c1"># суббота 14:00</span>
-<span class="nt">skipOnlineEvents</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
-<span class="nt">minInterestConfidence</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.75</span>
-</code></pre></div>
+<pre class="codehilite"><code class="language-yaml">groupsToParse:
+  - &quot;@example_tech_chat&quot;
+channelsToParse:
+  - &quot;@city_announcements&quot;
+userInterests:
+  - &quot;React development&quot;
+  - &quot;Jazz concerts&quot;
+weeklyTimeslots:
+  - &quot;6 14:00&quot;  # суббота 14:00
+skipOnlineEvents: false
+minInterestConfidence: 0.75
+</code></pre>
 
 <h2>Требования</h2>
 <ul>
