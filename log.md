@@ -90,3 +90,8 @@
 - construction-maps-mcp.md связан с Green Broker и рабочим контекстом Романа/садового проекта
 - green-broker.md получил обратную ссылку на Construction Maps MCP как потенциальный картографический слой
 - После правок запущен lint vault
+## [2026-08-10] ingest | Telemost 2026-08-10 — Student Appeals Agent
+- Сохранено ИИ-саммари встречи: raw/transcripts/telemost-2026-08-10-student-appeals-agent-summary.md
+- Создана wiki-страница: entities/student-appeals-agent.md
+- Зафиксировано: агент контроля обращений студентов должен подключаться к почтовым ящикам, контролировать сроки обработки и отправлять уведомления/отчеты через Telegram
+- Обновлён index.md

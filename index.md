@@ -4,14 +4,14 @@ title: Wiki Index — Baza
 tags: [index, hub]
 type: query
 created: 2026-08-03
-updated: 2026-08-09
+updated: 2026-08-10
 ---
 
 # Wiki Index — Baza 🧠
 
 > Content catalog. Every wiki page listed with a one-line summary.
 > Read this first for any query.
-> Last updated: 2026-08-09 | Total pages: 79
+> Last updated: 2026-08-10 | Total pages: 81
 
 ## Быстрый вход
 
@@ -40,6 +40,7 @@ updated: 2026-08-09
 - [[entities/python|Python 🐍]]
 - [[entities/sales-marketing|Продажи и Маркетинг]]
 - [[entities/scrum-center|Scrum центр]]
+- [[entities/student-appeals-agent|Student Appeals Agent — агент контроля обращений студентов]]
 - [[entities/telemost-recorder|Telemost Recorder — запись Яндекс.Телемост 🎙️]]
 - [[entities/vibecoder-sources|📖 LLM Wiki Baza — Вайбкодерские источники для мониторинга]]
 - [[entities/apply-pilot|Apply Pilot — проект поиска работы]]
@@ -102,6 +103,7 @@ updated: 2026-08-09
 - [[raw/papers/agentic-coding-evaluation-2026|Agentic coding evaluation — paper snapshot]]
 - [[raw/papers/agentic-software-benchmarks-2026|Agentic software benchmarks — paper snapshot]]
 - [[raw/transcripts/telegram-multi-agent-development-2026-08-02|Telegram: multi-agent / Claude Code / vibe-coding snippets]]
+- [[raw/transcripts/telemost-2026-08-10-student-appeals-agent-summary|Telemost 2026-08-10 — Student Appeals Agent meeting summary]]
 - [[raw/transcripts/apply-pilot-context-2026-08-02|Apply Pilot — контекст от Павла]]
 - [[raw/articles/green-broker-constitution-2026-08-02|Green Broker — constitution.md]]
 - [[raw/articles/green-broker-spec-2026-08-02|Green Broker — spec.md]]
