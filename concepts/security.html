@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Контроль поручений 📋 — Vault</title>
+<title>Security / безопасная рамка — Vault</title>
 <style>* { margin:0; padding:0; box-sizing:border-box; }
 body { background:#0d1117; color:#c9d1d9; font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif; line-height:1.7; font-size:16px; }
 .container { max-width:820px; margin:0 auto; padding:16px; }
@@ -37,63 +37,23 @@ th { background:#161b22; color:#f0f6fc; }
 <body>
 <nav class="nav"><span class="crumbs"><a href="/">🏠</a> / <span>concepts</span></span></nav>
 <div class="container">
-<h1>Контроль поручений 📋</h1>
-<div class="meta"><span class="tag">project</span> <span class="tag">kpn-agent</span> <span class="tag">porucheniya</span> last modified: 2026-07-31 07:19</div>
-<h1>Контроль поручений 📋</h1>
-<p>Модуль КПН-Агента: реестр и мониторинг исполнения поручений.</p>
-<h2>Как работает</h2>
-<ol>
-<li>Поручения извлекаются из стенограмм/протоколов совещаний</li>
-<li>Каждое получает номер (КПН-001), ответственного, срок</li>
-<li>Бот пинает ответственных в Telegram</li>
-<li>Дайджест закрепляется в топике КПН</li>
-</ol>
-<h2>Формат поручения</h2>
-<table>
-<thead>
-<tr>
-<th>Поле</th>
-<th>Пример</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Номер</td>
-<td>КПН-001</td>
-</tr>
-<tr>
-<td>Формулировка</td>
-<td>«Подготовить отчёт по...»</td>
-</tr>
-<tr>
-<td>Ответственный</td>
-<td>ФИО</td>
-</tr>
-<tr>
-<td>Срок</td>
-<td>дата</td>
-</tr>
-</tbody>
-</table>
-<h2>Интеграции</h2>
+<h1>Security / безопасная рамка</h1>
+<div class="meta"><span class="tag">concept</span> <span class="tag">security</span> last modified: 2026-08-10 20:30</div>
+<h1>Security / безопасная рамка 🛡️</h1>
+<p><strong>Суть:</strong> техническое исследование должно отделяться от действий, которые могут нарушать правила сервиса, закон, договоры, контроль доступа или платёжные системы.</p>
+<h2>Практическое правило</h2>
 <ul>
-<li><strong>Telegram</strong> — уведомления, дайджесты (лимит ~4096 символов → DOC для больших)</li>
-<li><strong>YouGile</strong> (перспектива) — выгрузка как задач</li>
-<li><strong>PostgreSQL/SQL</strong> — дедупликация при поступлении</li>
+<li>Изучать публичный код, архитектуру и форматы — допустимо.</li>
+<li>Диагностировать собственные устройства/носители без обхода защиты — допустимо в рамках правил владельца системы.</li>
+<li>Клонировать пропуска, обходить оплату, изменять баланс или вмешиваться в чужую инфраструктуру — нельзя без явного разрешения владельца системы.</li>
 </ul>
-<h2>Известные проблемы</h2>
+<h2>Связанные заметки</h2>
 <ul>
-<li>Рабочие группы не отображаются в дайджесте</li>
-<li>Порядок сообщений — нужна сортировка</li>
-<li>Несколько фамилий → уточнение у секретаря</li>
+<li><a href="../entities/troika-card.html">Карта Тройка — GitHub research</a></li>
+<li><a href="../concepts/nfc-rfid-transport-cards.html">NFC/RFID транспортные карты</a></li>
+<li><a href="../concepts/mcp.html">MCP — Model Context Protocol</a></li>
 </ul>
-<h2>Ссылки</h2>
-<ul>
-<li><a href="../entities/kpn-agent.html">КПН-Агент</a></li>
-<li><a href="../concepts/kpn-requirements.html">Функциональные требования</a></li>
-<li><a href="../entities/kpn-agent.html">Обзор проекта</a></li>
-</ul>
-<div class="backlinks"><h3>↩ Обратные ссылки</h3><ul><li><a href="../concepts/kpn-requirements.html">concepts/kpn-requirements.md</a></li><li><a href="../entities/student-appeals-agent.html">entities/student-appeals-agent.md</a></li><li><a href="../index.html">index.md</a></li></ul></div>
+<div class="backlinks"><h3>↩ Обратные ссылки</h3><ul><li><a href="../concepts/nfc-rfid-transport-cards.html">concepts/nfc-rfid-transport-cards.md</a></li><li><a href="../entities/troika-card.html">entities/troika-card.md</a></li><li><a href="../index.html">index.md</a></li></ul></div>
 </div>
 </body>
 </html>
