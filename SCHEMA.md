@@ -64,7 +64,7 @@ contested: true                   # опционально
 - **Продукты/Организации**: product, project, org, tool, bot, channel, job-search, marketplace, wb, ozon, vip-coder, sources, events, education
 - **Техники**: agent, protocol, rag, trading, automation, scraping, scraper, multi-agent, orchestration, methodology, benchmark, quality-gate, spec-driven, security, pipeline, clean-architecture, architecture, agents, api, proxy, gateway, markdown, knowledge, local, privacy, ocr, excel
 - **Стек**: python, go, node, docker, telegram, obsidian, github, claude-code, codex, typescript, cli, dev, language, system, hermes, infra, json-rpc, kpn-agent, porucheniya, algo, tools, freebies, vibecoding, lint
-- **Данные/Мета**: meeting, transcript, monitoring, wiki, halyava
+- **Данные/Мета**: meeting, transcript, monitoring, wiki, halyava, nfc, rfid, transportation, android
 
 ## Page Thresholds
 

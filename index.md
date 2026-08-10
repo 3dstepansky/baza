@@ -11,7 +11,7 @@ updated: 2026-08-10
 
 > Content catalog. Every wiki page listed with a one-line summary.
 > Read this first for any query.
-> Last updated: 2026-08-10 | Total pages: 81
+> Last updated: 2026-08-10 | Total pages: 86
 
 ## Быстрый вход
 
@@ -41,6 +41,7 @@ updated: 2026-08-10
 - [[entities/sales-marketing|Продажи и Маркетинг]]
 - [[entities/scrum-center|Scrum центр]]
 - [[entities/student-appeals-agent|Student Appeals Agent — агент контроля обращений студентов]]
+- [[entities/troika-card|Карта Тройка — GitHub research]]
 - [[entities/telemost-recorder|Telemost Recorder — запись Яндекс.Телемост 🎙️]]
 - [[entities/vibecoder-sources|📖 LLM Wiki Baza — Вайбкодерские источники для мониторинга]]
 - [[entities/apply-pilot|Apply Pilot — проект поиска работы]]
@@ -69,7 +70,9 @@ updated: 2026-08-10
 - [[concepts/wiki-links|Wiki-ссылки в Obsidian 🔗]]
 - [[concepts/agent-roles-for-automation|Роли агентов для automation-проектов]]
 - [[concepts/multi-agent-development-methodology|Методология многоагентной разработки automation-проектов]]
+- [[concepts/nfc-rfid-transport-cards|NFC/RFID транспортные карты]]
 - [[concepts/spec-driven-agent-development|Spec-driven агентная разработка]]
+- [[concepts/security|Security / безопасная рамка]]
 
 ## Comparisons
 
@@ -114,6 +117,7 @@ updated: 2026-08-10
 - [[raw/articles/telemost-recorder-repository-v04-2026-08-03|Telemost Recorder — repository snapshot v04]]
 
 - [[raw/articles/construction-maps-mcp-repository-2026-08-09|Construction Maps MCP Server — repository snapshot]]
+- [[raw/articles/troika-card-github-research-2026-08-10|GitHub research snapshot — карта Тройка]]
 
 ## Служебные
 

@@ -95,3 +95,9 @@
 - Создана wiki-страница: entities/student-appeals-agent.md
 - Зафиксировано: агент контроля обращений студентов должен подключаться к почтовым ящикам, контролировать сроки обработки и отправлять уведомления/отчеты через Telegram
 - Обновлён index.md
+
+## [2026-08-10] ingest | Карта Тройка — GitHub research
+- Сохранён raw snapshot: raw/articles/troika-card-github-research-2026-08-10.md
+- Созданы wiki-страницы: entities/troika-card.md, concepts/nfc-rfid-transport-cards.md, concepts/security.md
+- Зафиксированы репозитории: TroikaDumper, Metrodroid, Farebot, SuperTroika Wiki, Proxmark3, Metroflip и связанные проекты
+- Обновлены SCHEMA.md и index.md
