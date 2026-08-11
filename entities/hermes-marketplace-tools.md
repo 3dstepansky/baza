@@ -3,7 +3,7 @@ type: entity
 
 tags: [project, mcp, marketplace, wb, ozon]
 created: 2026-07-30
-updated: 2026-07-31
+updated: 2026-08-11
 ---
 
 
@@ -44,4 +44,5 @@ MCP-сервер для поиска и сравнения товаров на W
 
 - [[entities/python|Python]]
 - [[concepts/mcp|MCP]]
+- [[queries/russian-grocery-mcp-research-plan|Российские grocery-приложения и MCP-серверы]]
 - [[index|Проекты]]

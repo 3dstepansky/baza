@@ -3,7 +3,7 @@ type: concept
 
 tags: [ai, mcp, protocol]
 created: 2026-07-30
-updated: 2026-08-09
+updated: 2026-08-11
 ---
 
 
@@ -31,6 +31,7 @@ updated: 2026-08-09
 | **github** | Репозитории, issues, PR |
 | **hermes-admin** | Управление самим Hermes |
 | [[entities/construction-maps-mcp|construction-maps-mcp]] | Кадастр, полигоны, Росреестр/НСПД + Yandex Maps |
+| [[queries/russian-grocery-mcp-research-plan|russian-grocery-mcp-research-plan]] | План исследования MCP-адаптеров для Самоката, Пятёрочки, Перекрёстка, Ленты, Магнита, Красного и Белого, Евроспара |
 
 ## Технические детали
 
@@ -44,3 +45,4 @@ updated: 2026-08-09
 - [[concepts/mcp-protocol|MCP Protocol — детали]]
 - [[concepts/agentic-systems|Агентные системы]]
 - [[entities/hermes-marketplace-tools|Marketplace MCP Server]]
+- [[queries/russian-grocery-mcp-research-plan|Российские grocery-приложения и MCP-серверы]]

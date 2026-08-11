@@ -101,3 +101,8 @@
 - Созданы wiki-страницы: entities/troika-card.md, concepts/nfc-rfid-transport-cards.md, concepts/security.md
 - Зафиксированы репозитории: TroikaDumper, Metrodroid, Farebot, SuperTroika Wiki, Proxmark3, Metroflip и связанные проекты
 - Обновлены SCHEMA.md и index.md
+## [2026-08-11] create | Российские grocery-приложения и MCP-серверы — план исследования
+- Создана query-страница: queries/russian-grocery-mcp-research-plan.md
+- Зафиксированы целевые приложения: Самокат, Пятёрочка, Перекрёсток, Лента, Магнит, Красное и Белое, Евроспар
+- План: искать готовые MCP, не-MCP API-клиенты, web/mobile endpoints и оценивать возможность безопасного MCP-адаптера без автооплаты
+- Обновлены index.md, SCHEMA.md, concepts/mcp.md, entities/hermes-marketplace-tools.md
