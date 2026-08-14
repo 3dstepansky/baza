@@ -4,14 +4,14 @@ title: Wiki Index — Baza
 tags: [index, hub]
 type: query
 created: 2026-08-03
-updated: 2026-08-11
+updated: 2026-08-14
 ---
 
 # Wiki Index — Baza 🧠
 
 > Content catalog. Every wiki page listed with a one-line summary.
 > Read this first for any query.
-> Last updated: 2026-08-11 | Total pages: 87
+> Last updated: 2026-08-14 | Total pages: 94
 
 ## Быстрый вход
 
@@ -81,6 +81,8 @@ updated: 2026-08-11
 - [[comparisons/agent-orchestration-tools|Сравнение подходов к orchestration coding agents]]
 
 ## Queries
+
+- [[queries/razgovor-s-annoy-2026-08-13|Разговор с Анной — личный компас и три слова]] — обработанная заметка по ночному Telemost-разговору 2026-08-13: сожаление, достаточность, триада «органичность — влияние — наслаждение».
 - [[queries/README|Queries README]] — описание слоя сохранённых запросов
 - [[queries/multi-agent-automation-research-plan|Исследовательский проект: методология многоагентной разработки automation-проектов]]
 - [[queries/russian-grocery-mcp-research-plan|Российские grocery-приложения и MCP-серверы — план исследования]] — план поиска/создания MCP для Самоката, Пятёрочки, Перекрёстка, Ленты, Магнита, Красного и Белого, Евроспара
@@ -120,6 +122,13 @@ updated: 2026-08-11
 
 - [[raw/articles/construction-maps-mcp-repository-2026-08-09|Construction Maps MCP Server — repository snapshot]]
 - [[raw/articles/troika-card-github-research-2026-08-10|GitHub research snapshot — карта Тройка]]
+
+- [[raw/transcripts/telemost-2026-08-13-14-54-43-telemost-2026-08-13t14-53-25-728z-transcript|Telemost 2026-08-13T14-53-25Z — transcript]]
+- [[raw/transcripts/telemost-2026-08-13-14-54-43-telemost-2026-08-13t14-53-25-728z-summary|Telemost 2026-08-13T14-53-25Z — summary]]
+- [[raw/transcripts/telemost-2026-08-13-19-55-24-telemost-2026-08-13t19-49-46-883z-transcript|Telemost 2026-08-13T19-49-46Z — transcript]]
+- [[raw/transcripts/telemost-2026-08-13-19-55-24-telemost-2026-08-13t19-49-46-883z-summary|Telemost 2026-08-13T19-49-46Z — summary]]
+- [[raw/transcripts/telemost-2026-08-13-21-07-21-telemost-2026-08-13t19-57-49-099z-transcript|Telemost 2026-08-13T19-57-49Z — разговор с Анной transcript]]
+- [[raw/transcripts/telemost-2026-08-13-21-07-21-telemost-2026-08-13t19-57-49-099z-summary|Telemost 2026-08-13T19-57-49Z — разговор с Анной summary]]
 
 ## Служебные
 

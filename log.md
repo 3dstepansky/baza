@@ -106,3 +106,21 @@
 - Зафиксированы целевые приложения: Самокат, Пятёрочка, Перекрёсток, Лента, Магнит, Красное и Белое, Евроспар
 - План: искать готовые MCP, не-MCP API-клиенты, web/mobile endpoints и оценивать возможность безопасного MCP-адаптера без автооплаты
 - Обновлены index.md, SCHEMA.md, concepts/mcp.md, entities/hermes-marketplace-tools.md
+
+## [2026-08-13] ingest | Telemost raw transcript — Telemost 2026-08-13T14-53-25-728Z
+- Saved raw source: raw/transcripts/telemost-2026-08-13-14-54-43-telemost-2026-08-13t14-53-25-728z-transcript.md
+- Saved raw source: raw/transcripts/telemost-2026-08-13-14-54-43-telemost-2026-08-13t14-53-25-728z-summary.md
+
+## [2026-08-13] ingest | Telemost raw transcript — Telemost 2026-08-13T19-49-46-883Z
+- Saved raw source: raw/transcripts/telemost-2026-08-13-19-55-24-telemost-2026-08-13t19-49-46-883z-transcript.md
+- Saved raw source: raw/transcripts/telemost-2026-08-13-19-55-24-telemost-2026-08-13t19-49-46-883z-summary.md
+
+## [2026-08-13] ingest | Telemost raw transcript — Telemost 2026-08-13T19-57-49-099Z
+- Saved raw source: raw/transcripts/telemost-2026-08-13-21-07-21-telemost-2026-08-13t19-57-49-099z-transcript.md
+- Saved raw source: raw/transcripts/telemost-2026-08-13-21-07-21-telemost-2026-08-13t19-57-49-099z-summary.md
+
+## [2026-08-14] create | Разговор с Анной — личный компас и три слова
+- Создана обработанная wiki-страница: queries/razgovor-s-annoy-2026-08-13.md
+- Связана с raw-транскриптом Telemost 2026-08-13T19-57-49Z
+- Зафиксирована рабочая триада разговора: органичность — влияние — наслаждение
+- Обновлён index.md: Queries и Raw
