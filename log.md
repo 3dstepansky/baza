@@ -131,3 +131,9 @@
 - Связана с raw-транскриптом Telemost 2026-08-13T19-57-49Z
 - Зафиксирована рабочая триада разговора: органичность — влияние — наслаждение
 - Обновлён index.md: Queries и Raw
+
+## [2026-08-15] ingest | Личное совещание 13 августа
+- Сохранён raw transcript: raw/transcripts/2026-08-13-lichnoe-soveshchanie-original.md
+- Создана обработанная wiki-страница: queries/lichnoe-soveshchanie-2026-08-13.md
+- Обновлены связи: entities/academic-difference-assistant.md и entities/student-appeals-agent.md
+- Обновлён index.md

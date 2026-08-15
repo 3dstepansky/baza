@@ -4,14 +4,14 @@ title: Wiki Index — Baza
 tags: [index, hub]
 type: query
 created: 2026-08-03
-updated: 2026-08-14
+updated: 2026-08-15
 ---
 
 # Wiki Index — Baza 🧠
 
 > Content catalog. Every wiki page listed with a one-line summary.
 > Read this first for any query.
-> Last updated: 2026-08-14 | Total pages: 94
+> Last updated: 2026-08-15 | Total pages: 94
 
 ## Быстрый вход
 
@@ -82,6 +82,7 @@ updated: 2026-08-14
 
 ## Queries
 
+- [[queries/lichnoe-soveshchanie-2026-08-13|Личное совещание 13 августа — приоритеты AI-проектов и позиционирование]] — обработанная заметка по встрече: КПН передать проектному офису, фокус сместить на коммерческий контур, логировать MVP и отвечать по срокам через рамку доступов/руководителя.
 - [[queries/razgovor-s-annoy-2026-08-13|Разговор с Анной — личный компас и три слова]] — обработанная заметка по ночному Telemost-разговору 2026-08-13: сожаление, достаточность, триада «органичность — влияние — наслаждение».
 - [[queries/README|Queries README]] — описание слоя сохранённых запросов
 - [[queries/multi-agent-automation-research-plan|Исследовательский проект: методология многоагентной разработки automation-проектов]]
@@ -89,6 +90,7 @@ updated: 2026-08-14
 
 ## Raw (immutable)
 
+- [[raw/transcripts/2026-08-13-lichnoe-soveshchanie-original|Личное совещание 13 августа — оригинальная расшифровка]]
 - [[raw/articles/omniroute-technical-documentation|OmniRoute — technical documentation]]
 - [[raw/articles/omniroute-free-tier-providers-report|OmniRoute — free-tier providers report]]
 - [[raw/transcripts/2026-07-13-golos|Расшифровка встречи 2026-07-13 — голос]]

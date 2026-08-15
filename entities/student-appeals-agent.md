@@ -1,10 +1,10 @@
 ---
 title: Student Appeals Agent — агент контроля обращений студентов
 created: 2026-08-10
-updated: 2026-08-10
+updated: 2026-08-15
 type: entity
 tags: [project, education, automation, agent, telegram, monitoring]
-sources: [raw/transcripts/telemost-2026-08-10-student-appeals-agent-summary.md]
+sources: [raw/transcripts/telemost-2026-08-10-student-appeals-agent-summary.md, raw/transcripts/2026-08-13-lichnoe-soveshchanie-original.md]
 confidence: medium
 ---
 
@@ -46,6 +46,10 @@ Student Appeals Agent — проект агента для контроля об
 - Антон
 - Лада
 
+## Обновление 2026-08-13: коммерческий приоритет
+
+Личное совещание 13 августа усиливает приоритет проектов приемной комиссии и коммерческого контура: задачи вокруг обращений, лидов, отчётности, воронки и операционной аналитики рассматриваются как более денежные и влиятельные, чем тяжёлые внедрения с высоким пользовательским негативом. ^[raw/transcripts/2026-08-13-lichnoe-soveshchanie-original.md]
+
 ## Открытые вопросы
 
 - Какая почтовая система используется и какой способ доступа разрешен: IMAP, Microsoft Graph, Gmail API, Exchange/EWS или другой API.
@@ -60,3 +64,4 @@ Student Appeals Agent — проект агента для контроля об
 - [[entities/kpn-agent|Проект КПН — Контроль поручений]] — близкий паттерн контроля сроков и ответственных.
 - [[concepts/kpn-control|Контроль поручений]] — логика дедлайнов, напоминаний и эскалаций.
 - [[concepts/agentic-systems|Агентные системы]] — общий архитектурный контекст.
+- [[queries/lichnoe-soveshchanie-2026-08-13|Личное совещание 13 августа]] — приоритет коммерческого контура и правила позиционирования.

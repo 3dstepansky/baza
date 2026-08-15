@@ -1,10 +1,10 @@
 ---
 title: Academic Difference Assistant — ассистент расчёта академической разницы
 created: 2026-08-03
-updated: 2026-08-03
+updated: 2026-08-15
 type: entity
 tags: [entity, project, bot, automation, local-llm, telegram, education, privacy, ocr, excel]
-sources: [raw/transcripts/academic-difference-assistant-meeting-2026-08-03-transcript.md, raw/transcripts/academic-difference-assistant-meeting-2026-08-03-summary.md]
+sources: [raw/transcripts/academic-difference-assistant-meeting-2026-08-03-transcript.md, raw/transcripts/academic-difference-assistant-meeting-2026-08-03-summary.md, raw/transcripts/2026-08-13-lichnoe-soveshchanie-original.md]
 confidence: high
 ---
 
@@ -40,6 +40,10 @@ confidence: high
 3. **Конфиденциальность:** production-контур должен минимизировать передачу персональных данных во внешние сервисы.
 4. **Фейковые справки:** после MVP можно добавить attention-модуль для подозрительных паттернов: слишком высокий процент совпадения с учебным планом, странные часы, организация создана позже даты справки, отсутствие нормальной шапки/печати.
 
+## Обновление 2026-08-13: логирование MVP
+
+В личном совещании 13 августа зафиксирован практический сдвиг: на раннем этапе MVP важнее иметь плотное логирование действий и восстановимые сессии, чем преждевременно оптимизировать продукт под идеальную security-модель. Логи нужны для разбора претензий пользователей («неправильно посчитал»), подсчёта корректных/ошибочных запросов и подготовки отчётности по качеству. ^[raw/transcripts/2026-08-13-lichnoe-soveshchanie-original.md]
+
 ## Следующие шаги
 
 - Создать Telegram-бота для MVP.
@@ -56,3 +60,4 @@ confidence: high
 - [[entities/telemost-recorder|Telemost Recorder]]
 - [[entities/green-broker|Green Broker]]
 - [[concepts/spec-driven-agent-development|Spec-driven агентная разработка]]
+- [[queries/lichnoe-soveshchanie-2026-08-13|Личное совещание 13 августа]]
