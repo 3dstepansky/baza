@@ -76,6 +76,13 @@
 - Обновлена entities/vibecoder-sources.md: добавлен источник по AI startup diary, Claude/Fable/Sol workflows и agent skills
 - Проверены последние сообщения через MCP: /grill-me, Anki word clipper, Gemini 2.5 Flash, Fable/Sol comparisons
 
+## [2026-08-15] update | Telegram vibe-coding sources subscription
+- Подписка через Telegram MCP: @vibecoding_tg / «Вайб-кодинг», chat_id=-1001555418015, status=joined
+- Подписка через Telegram MCP: @vibe_coders / Vibe coders (n8n, ai, python), chat_id=-1002630631887, status=joined
+- Запрос на вступление через Telegram MCP: @vibecoding_ua / «Вайб-Кодинг», chat_id=-1002736221406, status=requested (`InviteRequestSent`)
+- Запрос на вступление через Telegram MCP: @bot_devs_novice / Vibecoding Haven Chat (BotfatherDEV), chat_id=-1001415356906, status=requested (`InviteRequestSent`)
+- Обновлена entities/vibecoder-sources.md: статусы подписки/запросов и описания источников
+
 ## [2026-08-04] update | Telegram source @aiforbusinesswolf
 - Подписка через Telegram MCP: @aiforbusinesswolf / «AI для бизнеса | Эндрю Вольф», chat_id=-1002942426023
 - Обновлена entities/vibecoder-sources.md: добавлен источник по AI transformation/business automation

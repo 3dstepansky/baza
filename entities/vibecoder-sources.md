@@ -12,7 +12,7 @@ tags:
   - omniroute
   - openrouter
 created: 2026-07-30
-updated: 2026-08-04
+updated: 2026-08-15
 ---
 
 
@@ -39,6 +39,10 @@ updated: 2026-08-04
 | **@aikirichenko** | Канал | AI Kirichenko / Юрий Кириченко — обучение ИИ, соцсети, клиенты, Claude Code/n8n/templates, GitHub-подборки; 5,925 подписчиков; найдено: system-design-primer, last30days-skill, coding-interview-university, awesome-python |
 | **ИИмерсивный** | Канал/закрытый invite | Дневник AI-стартапа без идеи и кода с Claude; 741 участник; найдено: /grill-me skill, agent workflow, Anki word clipper, Gemini 2.5 Flash, Fable/Sol comparisons |
 | **@aiforbusinesswolf** | Канал | AI для бизнеса / Эндрю Вольф — ИИ-трансформация бизнеса, инструменты, кейсы, результаты; 177 подписчиков; найдено: Plaud, Genspark, Perplexity, Julius для предпринимателей |
+| **@vibecoding_tg** | Канал | ✅ Подписана через Telegram MCP 2026-08-15. Крупный RU-источник «Вайб-кодинг», ~58.7K участников, свежие посты про AI/devtools/OpenSandbox/GLM/ChatGPT; есть linked chat `3061072345` |
+| **@vibe_coders** | Чат/канал | ✅ Подписана через Telegram MCP 2026-08-15. Vibe coders (n8n, ai, python), маленькое комьюнити ~14 участников; фокус: Python, n8n, AI, автоматизация, гайды/лайфхаки |
+| **@vibecoding_ua** | Чат | ⏳ Запрос на вступление отправлен через Telegram MCP 2026-08-15 (`InviteRequestSent`). Украинский чат вайб-кодеров, ~537 участников; живые обсуждения LLM/кода/Next.js/Gemini |
+| **@bot_devs_novice** | Чат | ⏳ Запрос на вступление отправлен через Telegram MCP 2026-08-15 (`InviteRequestSent`). Vibecoding Haven Chat (BotfatherDEV), ~493 участника; шумный чат про AI/кодинг/ботов, связанный канал `@botfatherdev` |
 
 ## AI/ML источники
 
