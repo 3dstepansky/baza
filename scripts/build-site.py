@@ -166,7 +166,7 @@ def build_site():
     for root, dirs, fnames in os.walk(VAULT):
         rel_root = os.path.relpath(root, VAULT)
         rel_parts = set(() if rel_root == '.' else rel_root.split(os.sep))
-        if rel_parts & {'.git', '_site', 'scripts', '.hermes', '_archive'}:
+        if rel_parts & {'.git', '_site', 'scripts', '.hermes', '_archive', '.pytest_cache'}:
             continue
         for f in fnames:
             if f.endswith('.md'):
