@@ -38,7 +38,7 @@ th { background:#161b22; color:#f0f6fc; }
 <nav class="nav"><span class="crumbs"><a href="/">🏠</a> / <span>entities</span></span></nav>
 <div class="container">
 <h1>Academic Difference Assistant — ассистент расчёта академической разницы</h1>
-<div class="meta"><span class="tag">entity</span> <span class="tag">project</span> <span class="tag">bot</span> <span class="tag">automation</span> <span class="tag">local-llm</span> <span class="tag">telegram</span> <span class="tag">education</span> <span class="tag">privacy</span> <span class="tag">ocr</span> <span class="tag">excel</span> last modified: 2026-08-03 12:13</div>
+<div class="meta"><span class="tag">entity</span> <span class="tag">project</span> <span class="tag">bot</span> <span class="tag">automation</span> <span class="tag">local-llm</span> <span class="tag">telegram</span> <span class="tag">education</span> <span class="tag">privacy</span> <span class="tag">ocr</span> <span class="tag">excel</span> last modified: 2026-08-15 21:36</div>
 <h1>Academic Difference Assistant — ассистент расчёта академической разницы</h1>
 <p><strong>Суть:</strong> проект ассистента для автоматизации расчёта академической разницы по академическим справкам, дипломам и учебным планам. MVP обсуждается как Telegram-бот с промежуточным human-in-the-loop подтверждением спорных сопоставлений дисциплин. ^[raw/transcripts/academic-difference-assistant-meeting-2026-08-03-transcript.md]</p>
 <h2>Контекст встречи</h2>
@@ -65,6 +65,8 @@ th { background:#161b22; color:#f0f6fc; }
 <li><strong>Конфиденциальность:</strong> production-контур должен минимизировать передачу персональных данных во внешние сервисы.</li>
 <li><strong>Фейковые справки:</strong> после MVP можно добавить attention-модуль для подозрительных паттернов: слишком высокий процент совпадения с учебным планом, странные часы, организация создана позже даты справки, отсутствие нормальной шапки/печати.</li>
 </ol>
+<h2>Обновление 2026-08-13: логирование MVP</h2>
+<p>В личном совещании 13 августа зафиксирован практический сдвиг: на раннем этапе MVP важнее иметь плотное логирование действий и восстановимые сессии, чем преждевременно оптимизировать продукт под идеальную security-модель. Логи нужны для разбора претензий пользователей («неправильно посчитал»), подсчёта корректных/ошибочных запросов и подготовки отчётности по качеству. ^[raw/transcripts/2026-08-13-lichnoe-soveshchanie-original.md]</p>
 <h2>Следующие шаги</h2>
 <ul>
 <li>Создать Telegram-бота для MVP.</li>
@@ -81,8 +83,9 @@ th { background:#161b22; color:#f0f6fc; }
 <li><a href="../entities/telemost-recorder.html">Telemost Recorder</a></li>
 <li><a href="../entities/green-broker.html">Green Broker</a></li>
 <li><a href="../concepts/spec-driven-agent-development.html">Spec-driven агентная разработка</a></li>
+<li><a href="../queries/lichnoe-soveshchanie-2026-08-13.html">Личное совещание 13 августа</a></li>
 </ul>
-<div class="backlinks"><h3>↩ Обратные ссылки</h3><ul><li><a href="../index.html">index.md</a></li></ul></div>
+<div class="backlinks"><h3>↩ Обратные ссылки</h3><ul><li><a href="../index.html">index.md</a></li><li><a href="../queries/lichnoe-soveshchanie-2026-08-13.html">queries/lichnoe-soveshchanie-2026-08-13.md</a></li></ul></div>
 </div>
 </body>
 </html>
