@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LusherTale / ПсихоСказка — Vault</title>
+<style>* { margin:0; padding:0; box-sizing:border-box; }
+body { background:#0d1117; color:#c9d1d9; font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif; line-height:1.7; font-size:16px; }
+.container { max-width:820px; margin:0 auto; padding:16px; }
+h1 { font-size:1.6em; color:#f0f6fc; margin:0.6em 0 0.4em; border-bottom:1px solid #30363d; padding-bottom:0.3em; }
+h2 { font-size:1.25em; color:#f0f6fc; margin:0.8em 0 0.3em; }
+h3 { font-size:1.1em; color:#f0f6fc; margin:0.6em 0 0.2em; }
+p { margin:0.5em 0; }
+a { color:#58a6ff; text-decoration:none; }
+a:hover { text-decoration:underline; }
+ul, ol { margin:0.5em 0; padding-left:1.5em; }
+li { margin:0.3em 0; }
+code { background:#161b22; padding:2px 6px; border-radius:3px; font-size:0.9em; color:#f0c674; }
+pre { background:#161b22; padding:12px; border-radius:6px; overflow-x:auto; margin:0.8em 0; }
+pre code { background:none; padding:0; }
+blockquote { border-left:3px solid #30363d; padding-left:1em; margin:0.8em 0; color:#8b949e; }
+hr { border:none; border-top:1px solid #30363d; margin:1.2em 0; }
+table { width:100%; border-collapse:collapse; margin:0.8em 0; }
+th, td { border:1px solid #30363d; padding:8px 12px; text-align:left; }
+th { background:#161b22; color:#f0f6fc; }
+.dataview { background:#161b22; border:1px solid #30363d; border-radius:6px; padding:12px; margin:0.8em 0; font-family:monospace; font-size:0.85em; color:#8b949e; }
+.nav { background:#161b22; border-bottom:1px solid #30363d; padding:8px 16px; font-size:14px; position:sticky; top:0; z-index:10; }
+.nav a { color:#58a6ff; }
+.meta { font-size:0.85em; color:#8b949e; margin:0.5em 0 1em; }
+.tag { display:inline-block; background:#1f6feb33; color:#58a6ff; padding:2px 8px; border-radius:10px; font-size:0.8em; margin:0 3px 3px 0; }
+.backlinks { margin-top:2em; padding-top:1em; border-top:1px solid #30363d; }
+.backlinks h3 { font-size:1em; color:#8b949e; }
+.button-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:10px; margin:1em 0; }
+.button { display:block; background:#238636; color:#fff !important; padding:12px 14px; border-radius:8px; text-align:center; font-weight:600; border:1px solid #2ea043; }
+.button:hover { background:#2ea043; text-decoration:none; }</style>
+</head>
+<body>
+<nav class="nav"><span class="crumbs"><a href="/">🏠</a> / <span>entities</span></span></nav>
+<div class="container">
+<h1>LusherTale / ПсихоСказка</h1>
+<div class="meta"><span class="tag">project</span> <span class="tag">bot</span> <span class="tag">telegram</span> <span class="tag">python</span> <span class="tag">docker</span> <span class="tag">ai</span> <span class="tag">llm</span> <span class="tag">api</span> <span class="tag">github</span> <span class="tag">yougile</span> <span class="tag">notebooklm</span> last modified: 2026-08-17 18:43</div>
+<h1>LusherTale / ПсихоСказка</h1>
+<p><strong>LusherTale / ПсихоСказка</strong> — Telegram-бот для генерации терапевтических сказок-метафор на основе цветового теста Люшера. Проект развёрнут как отдельный Docker-сервис и не является частью Hermes, но Hermes используется как рабочий агент для деплоя, настройки, интеграций и ведения базы знаний.</p>
+<h2>Быстрые факты</h2>
+<table>
+<thead>
+<tr>
+<th>Поле</th>
+<th>Значение</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Название</td>
+<td>LusherTale / ПсихоСказка</td>
+</tr>
+<tr>
+<td>Telegram bot</td>
+<td><code>@Lush123Bot</code></td>
+</tr>
+<tr>
+<td>Репозиторий</td>
+<td>https://github.com/aaulitina77-spec/LusherTale</td>
+</tr>
+<tr>
+<td>Серверная директория</td>
+<td><code>/home/ubuntu/LusherTale</code></td>
+</tr>
+<tr>
+<td>Docker compose project</td>
+<td><code>psyhoskazka</code></td>
+</tr>
+<tr>
+<td>Контейнер</td>
+<td><code>psyhoskazka-bot-1</code></td>
+</tr>
+<tr>
+<td>Статус на 2026-08-17</td>
+<td>контейнер был проверен как <code>Up 2 days</code></td>
+</tr>
+<tr>
+<td>Основной лидер проекта</td>
+<td><a href="../entities/nastya-wkrmst.html">Настя / @Wkrmst</a></td>
+</tr>
+<tr>
+<td>YouGile project</td>
+<td><code>психосказка фичи</code></td>
+</tr>
+</tbody>
+</table>
+<h2>Продуктовая суть</h2>
+<p>Пользователь проходит 2 круга выбора 8 цветов. Бот строит профиль по правилам Люшера, берёт интерпретации из базы и генерирует сказку как мягкую метафору психологического состояния.</p>
+<p>Целевая логика продукта:</p>
+<ol>
+<li>пользователь открывает Telegram-бота;</li>
+<li>проходит WebApp-тест Люшера;</li>
+<li>бот анализирует последовательности цветов;</li>
+<li>AI генерирует терапевтическую сказку;</li>
+<li>пользователь оценивает сказку через NPS;</li>
+<li>баланс пополняется через Telegram Stars.</li>
+</ol>
+<h2>Архитектура</h2>
+<table>
+<thead>
+<tr>
+<th>Слой</th>
+<th>Реализация</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Telegram bot</td>
+<td>Python 3.12, aiogram 3.16</td>
+</tr>
+<tr>
+<td>WebApp</td>
+<td>HTML/CSS/JS, тест Люшера</td>
+</tr>
+<tr>
+<td>DB</td>
+<td>SQLite, volume <code>bot_data</code></td>
+</tr>
+<tr>
+<td>AI</td>
+<td>OpenAI-compatible API через <code>bot/python/services/openrouter.py</code></td>
+</tr>
+<tr>
+<td>Deploy</td>
+<td>Docker Compose</td>
+</tr>
+<tr>
+<td>Payments</td>
+<td>Telegram Stars</td>
+</tr>
+<tr>
+<td>Admin</td>
+<td><code>/admin</code>, NPS, аналитика, feedback</td>
+</tr>
+</tbody>
+</table>
+<p>Ключевые файлы проекта:</p>
+<ul>
+<li><code>/home/ubuntu/LusherTale/README.md</code> — актуальный README;</li>
+<li><code>/home/ubuntu/LusherTale/ARCHITECTURE.md</code> — Mermaid-схемы архитектуры, сценария, ER и оплаты;</li>
+<li><code>/home/ubuntu/LusherTale/AGENTS.md</code> — команды и контекст для агентов;</li>
+<li><code>bot/python/services/luscher.py</code> — ядро анализа Люшера;</li>
+<li><code>bot/python/services/openrouter.py</code> — AI-генерация сказок;</li>
+<li><code>database/seed_luscher_rules_sqlite.sql</code> — 286 интерпретаций PsyLab.</li>
+</ul>
+<h2>AI / OmniRoute context</h2>
+<p>Павел отдельно просил подключать генерацию сказок к OpenAI-compatible API через существующий агентский/OmniRoute-контур, а не оставлять только заглушку. Это связывает проект с <a href="../entities/omniroute.html">OmniRoute</a> и общим слоем AI gateway.</p>
+<p>Практическая рамка:</p>
+<ul>
+<li>использовать OpenAI-compatible endpoint;</li>
+<li>не хранить секреты в wiki;</li>
+<li>модель и base URL фиксировать в <code>.env</code> проекта, не в тексте заметки;</li>
+<li>проверять реальную генерацию сказки после смены модели.</li>
+</ul>
+<h2>YouGile / управление фичами</h2>
+<p>YouGile подключён к Hermes через MCP-сервер <code>yougile</code> на пакете <code>@nebelov/yougile-mcp</code>.</p>
+<table>
+<thead>
+<tr>
+<th>Поле</th>
+<th>Значение</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Company</td>
+<td><code>AIBots</code></td>
+</tr>
+<tr>
+<td>Company ID</td>
+<td><code>e585f7f5-0144-4955-b859-754e78aa5c11</code></td>
+</tr>
+<tr>
+<td>Project</td>
+<td><code>психосказка фичи</code></td>
+</tr>
+<tr>
+<td>Project ID</td>
+<td><code>191f45b9-7a1b-4947-9d32-3701cfd0ecf4</code></td>
+</tr>
+<tr>
+<td>Boards</td>
+<td><code>Фичи</code>, <code>Сократить длину и стиль</code></td>
+</tr>
+</tbody>
+</table>
+<p>Секреты — <code>YOUGILE_API_KEY</code>, логин/пароль — в базе знаний не хранить. Если MCP tools отвечают <code>Not authorized</code>, но прямой API с сохранённым ключом работает, вероятная причина — stale env текущей сессии; нужен <code>/new</code> или рестарт gateway.</p>
+<h2>NotebookLM links</h2>
+<p>NotebookLM связан с этим проектом как слой презентации/артефактов:</p>
+<table>
+<thead>
+<tr>
+<th>Артефакт</th>
+<th>Ссылка / путь</th>
+<th>Статус</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>NotebookLM notebook</td>
+<td>https://notebook.google.com/notebook/37e16902-bd53-4852-ae9d-badd7116d4ca</td>
+<td>проектный блокнот LusherTale</td>
+</tr>
+<tr>
+<td>Инфографика</td>
+<td>«ПсихоСказка: от цвета к метафоре»</td>
+<td>создана в NotebookLM</td>
+</tr>
+<tr>
+<td>Verified PNG</td>
+<td><code>/home/ubuntu/notebooklm-lushertale-podcast/infographic/real/ПсихоСказка__от_цвета_к_метафоре.png</code></td>
+<td><code>PNG image data, 2752 x 1536</code>, 4.3 MB</td>
+</tr>
+</tbody>
+</table>
+<p>Правило качества: NotebookLM-артефакт считается готовым только после проверки MIME/magic bytes (<code>file</code>, <code>ffprobe</code> для аудио). UI-скриншот не равен экспортированной инфографике.</p>
+<h2>Роли и коммуникации</h2>
+<ul>
+<li><a href="../entities/nastya-wkrmst.html">Настя / @Wkrmst</a> — лидер проекта со сказками по Люшеру.</li>
+<li>Связь с Настей вести через <a href="../concepts/mcp.html">Telegram MCP</a> только когда Павел явно просит написать/отправить сообщение.</li>
+<li>Павел не хочет, чтобы сообщения Насте отправлялись без явной команды.</li>
+</ul>
+<h2>Связанные страницы</h2>
+<ul>
+<li><a href="../entities/nastya-wkrmst.html">Настя / @Wkrmst</a></li>
+<li><a href="../entities/omniroute.html">OmniRoute</a></li>
+<li><a href="../concepts/mcp.html">MCP — Model Context Protocol</a></li>
+<li><a href="../entities/hermes-agent.html">Hermes Agent</a></li>
+<li><a href="../raw/articles/lushertale-project-context-2026-08-17.html">Raw context: LusherTale</a></li>
+</ul>
+<div class="backlinks"><h3>↩ Обратные ссылки</h3><ul><li><a href="../concepts/mcp.html">concepts/mcp.md</a></li><li><a href="../entities/nastya-wkrmst.html">entities/nastya-wkrmst.md</a></li><li><a href="../entities/omniroute.html">entities/omniroute.md</a></li><li><a href="../index.html">index.md</a></li></ul></div>
+</div>
+</body>
+</html>
