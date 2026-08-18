@@ -1,10 +1,10 @@
 ---
 title: Личное совещание 13 августа — приоритеты AI-проектов и позиционирование
 created: 2026-08-15
-updated: 2026-08-15
+updated: 2026-08-18
 type: query
 tags: [query, meeting, transcript, automation, education, agent]
-sources: [raw/transcripts/2026-08-13-lichnoe-soveshchanie-original.md]
+sources: [raw/transcripts/2026-08-13-lichnoe-soveshchanie-original.md, raw/transcripts/2026-08-18-lichnyy-razgovor-s-lisnym.md]
 confidence: medium
 ---
 
@@ -51,6 +51,10 @@ confidence: medium
 - Для руководительских вопросов по срокам отвечать только в рамках понятных доступов/данных; если рамка не ясна — переводить ответственность на руководителя и обещать срок после получения доступа.
 - Выбирать AI-проекты не по “интересности”, а по связке: **доступ к процессу → быстрый MVP → измеримый эффект → низкая токсичность внедрения**.
 
+## Продолжение 18 августа
+
+[[queries/razgovor-s-lisnym-2026-08-18|Разговор с Лисным 18 августа]] уточняет политическую стратегию после этой встречи: вместо ставки на один крупный агент выбран курс на **массовое внедрение десятков маленьких агентов** в коммерческом контуре. Новая метрика Павла — «звёздочка» за количество внедрённых агентов; Лисный берёт красную/политическую роль, Павел — бирюзовую роль исследования, методологии и предзаготовок. ^[raw/transcripts/2026-08-18-lichnyy-razgovor-s-lisnym.md]
+
 ## Связанные заметки
 
 - [[entities/academic-difference-assistant|Academic Difference Assistant]]
@@ -59,3 +63,4 @@ confidence: medium
 - [[concepts/kpn-control|Контроль поручений]]
 - [[concepts/agentic-systems|Агентные системы]]
 - [[concepts/spec-driven-agent-development|Spec-driven агентная разработка]]
+- [[queries/razgovor-s-lisnym-2026-08-18|Разговор с Лисным 18 августа]]

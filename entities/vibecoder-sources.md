@@ -40,9 +40,33 @@ updated: 2026-08-15
 | **ИИмерсивный** | Канал/закрытый invite | Дневник AI-стартапа без идеи и кода с Claude; 741 участник; найдено: /grill-me skill, agent workflow, Anki word clipper, Gemini 2.5 Flash, Fable/Sol comparisons |
 | **@aiforbusinesswolf** | Канал | AI для бизнеса / Эндрю Вольф — ИИ-трансформация бизнеса, инструменты, кейсы, результаты; 177 подписчиков; найдено: Plaud, Genspark, Perplexity, Julius для предпринимателей |
 | **@vibecoding_tg** | Канал | ✅ Подписана через Telegram MCP 2026-08-15. Крупный RU-источник «Вайб-кодинг», ~58.7K участников, свежие посты про AI/devtools/OpenSandbox/GLM/ChatGPT; есть linked chat `3061072345` |
-| **@vibe_coders** | Чат/канал | ✅ Подписана через Telegram MCP 2026-08-15. Vibe coders (n8n, ai, python), маленькое комьюнити ~14 участников; фокус: Python, n8n, AI, автоматизация, гайды/лайфхаки |
-| **@vibecoding_ua** | Чат | ⏳ Запрос на вступление отправлен через Telegram MCP 2026-08-15 (`InviteRequestSent`). Украинский чат вайб-кодеров, ~537 участников; живые обсуждения LLM/кода/Next.js/Gemini |
-| **@bot_devs_novice** | Чат | ⏳ Запрос на вступление отправлен через Telegram MCP 2026-08-15 (`InviteRequestSent`). Vibecoding Haven Chat (BotfatherDEV), ~493 участника; шумный чат про AI/кодинг/ботов, связанный канал `@botfatherdev` |
+| **@vibe_coders** | Чат/канал | ✅ Подписана через Telegram MCP 2026-08-15. Vibe coders (n8n, ai, python), маленькое комьюнити ~15 участников; фокус: Python, n8n, AI, автоматизация, гайды/лайфхаки |
+| **@ScramblAI** | Канал + linked chat | ✅ Подписана через Telegram MCP 2026-08-15. «ИИшница — новости, гайды, вайбкодинг», ~837 участников; AI-новости, гайды, модели, утечки, практический вайбкодинг; linked chat `1152208572` |
+| **@sexyllm** | Канал + linked chat | ✅ Подписана через Telegram MCP 2026-08-15. «Коля про app-бизнес / вайбкодинг / LLM», ~1,025 участников; app-бизнес, LLM, вайбкодинг; linked chat `2859780853` |
+| **@vibecigingv** | Канал | ✅ Подписана через Telegram MCP 2026-08-15. «Автоматизация \| ИИ \| Вайбкодинг», ~143 участника; внедрение ИИ в бизнес, приложения, вайбкодинг с нуля |
+| **@vaibkoding** | Канал | ✅ Подписана через Telegram MCP 2026-08-15. «вайбкодинг», ~2,976 участников; RU-канал по AI/моделям/вайбкодингу, полезен как дополнительный источник |
+| **@vibe_codera** | Канал + linked chat | ✅ Подписана через Telegram MCP 2026-08-15. «Вайб Кодера», ~588 участников; AI, код, инженерная рефлексия; linked chat `3490103730` |
+| **@ai_komet** | Канал | ✅ Подписана через Telegram MCP 2026-08-15. «AI Комета», ~23 участника; новости ИИ, нейросети, вайбкодинг |
+
+## Верифицированные чаты для мониторинга
+
+| Username | Участники | Статус | Почему в списке |
+|----------|----------:|--------|-----------------|
+| **@asati_chat** | 3,403 | ✅ Подписана через Telegram MCP | Asati Chat, обсуждение AI/dev/tooling |
+| **@vibe_coding_community** | 2,398 | ✅ Подписана через Telegram MCP | Профессиональное сообщество вайбкодеров |
+| **@cursora** | 3,052 | ✅ Подписана через Telegram MCP | Cursor AI Chat Community; крупный AI-coding чат |
+| **@prompt_ingener** | 99 | ✅ Подписана через Telegram MCP | Вайбкодинг + OpenClaw / Claude Code / ChatGPT / Codex |
+| **@claude_community** | 44 | ✅ Подписана через Telegram MCP | Claude Code Chat & Community |
+| **@vibe_coding_chat** | 35 | ✅ Подписана через Telegram MCP | «вайб кодинг чат», прямой чат по теме |
+| **@vibecoding_chatik** | 34 | ✅ Подписана через Telegram MCP | AI скептик / Вайбкодинг чат |
+| **@VibeComments** | 7 | ✅ Подписана через Telegram MCP | Vibe++ coding Chat International |
+| **@zero2claude_chat** | 3 | ✅ Подписана через Telegram MCP | Чат курса Claude Code с 0; маленький, но релевантный |
+| **@vbaicom** | 2 | ✅ Подписана через Telegram MCP | Вайбкодинг и ИИ Chat |
+| **@saas_chat** | 1 | ✅ Подписана через Telegram MCP | SaaS / Vibe coding chat; AI/startup обсуждение |
+| **@vibecoding_ua** | 537 | ⏳ Заявка на вступление отправлена (`InviteRequestSent`) | Украинский чат вайб-кодеров, LLM/code/Next.js/Gemini |
+| **@bot_devs_novice** | 494 | ⏳ Заявка на вступление отправлена (`InviteRequestSent`) | Vibecoding Haven Chat, AI/кодинг/боты; шумный |
+
+**Итого подписанных чатов:** 11 чатов, 9,078 участников. **С учётом 2 ожидающих заявок:** 13 чатов, 10,109 участников.
 
 ## AI/ML источники
 

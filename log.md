@@ -137,3 +137,15 @@
 - Создана обработанная wiki-страница: queries/lichnoe-soveshchanie-2026-08-13.md
 - Обновлены связи: entities/academic-difference-assistant.md и entities/student-appeals-agent.md
 - Обновлён index.md
+
+## [2026-08-17] ingest | LusherTale / ПсихоСказка — проектный контекст
+- Создан raw source: raw/articles/lushertale-project-context-2026-08-17.md
+- Созданы wiki-страницы: entities/lushertale.md, entities/nastya-wkrmst.md
+- Зафиксированы: Настя `@Wkrmst` как лидер проекта, YouGile project id, NotebookLM notebook/artifact, Docker/GitHub контекст
+- Обновлены index.md, concepts/mcp.md, entities/omniroute.md, SCHEMA.md
+## [2026-08-18] ingest | Личный разговор с Лисным 18 августа
+- Сохранён raw transcript с frontmatter/sha256: raw/transcripts/2026-08-18-lichnyy-razgovor-s-lisnym.md
+- Создана обработанная wiki-страница: queries/razgovor-s-lisnym-2026-08-18.md
+- Объединено с предыдущей линией 13 августа: обновлена queries/lichnoe-soveshchanie-2026-08-13.md
+- Зафиксированы: стратегия «полсотни маленьких агентов», карьерная «звёздочка», роли Лисного/Олега и многоагентная разработка как инструмент Павла
+- Обновлён index.md

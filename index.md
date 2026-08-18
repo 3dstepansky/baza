@@ -4,17 +4,18 @@ title: Wiki Index — Baza
 tags: [index, hub]
 type: query
 created: 2026-08-03
-updated: 2026-08-15
+updated: 2026-08-18
 ---
 
 # Wiki Index — Baza 🧠
 
 > Content catalog. Every wiki page listed with a one-line summary.
 > Read this first for any query.
-> Last updated: 2026-08-15 | Total pages: 94
+> Last updated: 2026-08-18 | Total pages: 98
 
 ## Быстрый вход
 
+- [[queries/razgovor-s-lisnym-2026-08-18|Разговор с Лисным 18 августа — массовое внедрение агентов и «звёздочка»]]
 - [[entities/construction-maps-mcp|Construction Maps MCP Server — кадастр, полигоны, Росреестр/НСПД]]
 - [[entities/green-broker|Green Broker — проект по питомникам, садам и растениям]]
 - [[concepts/mcp|MCP — Model Context Protocol]]
@@ -28,6 +29,7 @@ updated: 2026-08-15
 - [[entities/event-digest|Event Digest CLI]]
 - [[entities/go|Go 🦫]]
 - [[entities/green-broker|Green Broker — Telegram-бот для продажи растений]]
+- [[entities/lushertale|LusherTale / ПсихоСказка — Telegram-бот сказок по тесту Люшера]]
 - [[entities/gr-departments|GR Департаменты]]
 - [[entities/hermes-agent|Hermes Agent — Платформа агентов 🧬]]
 - [[entities/hermes-marketplace-tools|Marketplace MCP Server 🛒]]
@@ -36,6 +38,7 @@ updated: 2026-08-15
 - [[entities/it|IT-департамент]]
 - [[entities/job-search|job_search 🎯]]
 - [[entities/kpn-agent|Проект КПН — Контроль поручений]]
+- [[entities/nastya-wkrmst|Настя / @Wkrmst — лидер проекта LusherTale / ПсихоСказка]]
 - [[entities/omniroute|OmniRoute]]
 - [[entities/python|Python 🐍]]
 - [[entities/sales-marketing|Продажи и Маркетинг]]
@@ -48,6 +51,7 @@ updated: 2026-08-15
 
 ## Automation / MCP
 
+- [[entities/lushertale|LusherTale / ПсихоСказка]] — проект сказок по Люшеру; связан с YouGile MCP, Telegram MCP, OmniRoute/OpenAI-compatible API и NotebookLM артефактами.
 - [[queries/russian-grocery-mcp-research-plan|Российские grocery-приложения и MCP-серверы — план исследования]] — Самокат, Пятёрочка, Перекрёсток, Лента, Магнит, Красное и Белое, Евроспар как кандидаты на MCP-адаптеры.
 - [[entities/construction-maps-mcp|Construction Maps MCP Server — кадастр, полигоны, Rosreestr/НСПД + Yandex Maps]] — потенциально полезен для земельных участков, садовых/питомниковых объектов, логистики и картографического слоя.
 - [[entities/green-broker|Green Broker]] — проект по питомникам, садам, посадочному материалу и Telegram-автоматизации продаж.
@@ -83,6 +87,7 @@ updated: 2026-08-15
 ## Queries
 
 - [[queries/lichnoe-soveshchanie-2026-08-13|Личное совещание 13 августа — приоритеты AI-проектов и позиционирование]] — обработанная заметка по встрече: КПН передать проектному офису, фокус сместить на коммерческий контур, логировать MVP и отвечать по срокам через рамку доступов/руководителя.
+- [[queries/razgovor-s-lisnym-2026-08-18|Разговор с Лисным 18 августа — массовое внедрение агентов и «звёздочка»]] — обработанная заметка по встрече: стратегия «полсотни маленьких внедрённых агентов», карьерная метрика «звёздочка», роль Лисного/Олега и многоагентная разработка как рычаг Павла.
 - [[queries/razgovor-s-annoy-2026-08-13|Разговор с Анной — личный компас и три слова]] — обработанная заметка по ночному Telemost-разговору 2026-08-13: сожаление, достаточность, триада «органичность — влияние — наслаждение».
 - [[queries/README|Queries README]] — описание слоя сохранённых запросов
 - [[queries/multi-agent-automation-research-plan|Исследовательский проект: методология многоагентной разработки automation-проектов]]
@@ -90,6 +95,7 @@ updated: 2026-08-15
 
 ## Raw (immutable)
 
+- [[raw/transcripts/2026-08-18-lichnyy-razgovor-s-lisnym|Личный разговор с Лисным 18.08 — оригинальная расшифровка]]
 - [[raw/transcripts/2026-08-13-lichnoe-soveshchanie-original|Личное совещание 13 августа — оригинальная расшифровка]]
 - [[raw/articles/omniroute-technical-documentation|OmniRoute — technical documentation]]
 - [[raw/articles/omniroute-free-tier-providers-report|OmniRoute — free-tier providers report]]
@@ -124,6 +130,7 @@ updated: 2026-08-15
 
 - [[raw/articles/construction-maps-mcp-repository-2026-08-09|Construction Maps MCP Server — repository snapshot]]
 - [[raw/articles/troika-card-github-research-2026-08-10|GitHub research snapshot — карта Тройка]]
+- [[raw/articles/lushertale-project-context-2026-08-17|LusherTale / ПсихоСказка — проектный контекст]]
 
 - [[raw/transcripts/telemost-2026-08-13-14-54-43-telemost-2026-08-13t14-53-25-728z-transcript|Telemost 2026-08-13T14-53-25Z — transcript]]
 - [[raw/transcripts/telemost-2026-08-13-14-54-43-telemost-2026-08-13t14-53-25-728z-summary|Telemost 2026-08-13T14-53-25Z — summary]]

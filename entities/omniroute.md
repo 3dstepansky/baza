@@ -6,7 +6,7 @@ source: github
 tags: [llm, proxy, gateway, ai, free-tier, omniroute]
 confidence: medium
 created: 2026-07-30
-updated: 2026-07-31
+updated: 2026-08-17
 ---
 
 
@@ -62,3 +62,5 @@ Cursor/Codex/Claude Code
 - [[concepts/free-ai-methods|Методы free-доступа]]
 - [[entities/vibecoder-sources|Вайбкодерские источники]]
 - [[entities/hermes|Hermes]]
+
+- [[entities/lushertale|LusherTale / ПсихоСказка]] — проект, где генерация сказок подключается через OpenAI-compatible API/OmniRoute-контур.
