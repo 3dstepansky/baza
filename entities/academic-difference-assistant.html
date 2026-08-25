@@ -38,7 +38,7 @@ th { background:#161b22; color:#f0f6fc; }
 <nav class="nav"><span class="crumbs"><a href="/">🏠</a> / <span>entities</span></span></nav>
 <div class="container">
 <h1>Academic Difference Assistant — ассистент расчёта академической разницы</h1>
-<div class="meta"><span class="tag">entity</span> <span class="tag">project</span> <span class="tag">bot</span> <span class="tag">automation</span> <span class="tag">local-llm</span> <span class="tag">telegram</span> <span class="tag">education</span> <span class="tag">privacy</span> <span class="tag">ocr</span> <span class="tag">excel</span> last modified: 2026-08-15 21:36</div>
+<div class="meta"><span class="tag">entity</span> <span class="tag">project</span> <span class="tag">bot</span> <span class="tag">automation</span> <span class="tag">local-llm</span> <span class="tag">telegram</span> <span class="tag">education</span> <span class="tag">privacy</span> <span class="tag">ocr</span> <span class="tag">excel</span> <span class="tag">api</span> <span class="tag">architecture</span> last modified: 2026-08-20 13:41</div>
 <h1>Academic Difference Assistant — ассистент расчёта академической разницы</h1>
 <p><strong>Суть:</strong> проект ассистента для автоматизации расчёта академической разницы по академическим справкам, дипломам и учебным планам. MVP обсуждается как Telegram-бот с промежуточным human-in-the-loop подтверждением спорных сопоставлений дисциплин. ^[raw/transcripts/academic-difference-assistant-meeting-2026-08-03-transcript.md]</p>
 <h2>Контекст встречи</h2>
@@ -58,6 +58,9 @@ th { background:#161b22; color:#f0f6fc; }
 <li><strong>Альтернатива:</strong> предварительная обезличивающая модель, которая удаляет ФИО и оставляет только данные, необходимые для расчёта.</li>
 <li><strong>MVP без 1С:</strong> на первом этапе можно работать без прямой интеграции с 1С; данные выгружаются/загружаются вручную, результат затем переносится в нужные поля.</li>
 </ul>
+<h2>Обновление 2026-08-20: подключение к CineGI / AI-чату</h2>
+<p>На встрече по CineGI / AI-чату проект выбран как первый практический кейс подключения автономного агента в единое корпоративное окно. Целевой формат — готовый внешний сервис/контейнер с endpoint и авторизацией; AI-чат отвечает за доступы и интерфейс. В качестве базового контракта предложен OpenAI-compatible API, но его ещё нужно сверить с командой AI-чата. ^[raw/transcripts/telemost-2026-08-20-12-56-40-telemost-2026-08-20t12-33-59-538z-transcript.md]</p>
+<p>Для расчёта академразницы потребуется богатая форма: загрузка документов, зависимые списки и множественный выбор, запуск расчёта и выгрузка Excel. Варианты интеграции — внешняя HTML-форма через iframe или нативный виджет/форма AI-чата. Подробнее: <a href="../queries/cinegi-ai-chat-agent-integration-2026-08-20.html">CineGI / AI-чат — подключение автономных агентов</a>.</p>
 <h2>Проблемные места</h2>
 <ol>
 <li><strong>OCR/качество справок:</strong> реальные фотографии справок могут быть пиксельными и плохо читаемыми; классическое OCR уже показало провалы.</li>
@@ -85,7 +88,7 @@ th { background:#161b22; color:#f0f6fc; }
 <li><a href="../concepts/spec-driven-agent-development.html">Spec-driven агентная разработка</a></li>
 <li><a href="../queries/lichnoe-soveshchanie-2026-08-13.html">Личное совещание 13 августа</a></li>
 </ul>
-<div class="backlinks"><h3>↩ Обратные ссылки</h3><ul><li><a href="../index.html">index.md</a></li><li><a href="../queries/lichnoe-soveshchanie-2026-08-13.html">queries/lichnoe-soveshchanie-2026-08-13.md</a></li><li><a href="../queries/razgovor-s-lisnym-2026-08-18.html">queries/razgovor-s-lisnym-2026-08-18.md</a></li></ul></div>
+<div class="backlinks"><h3>↩ Обратные ссылки</h3><ul><li><a href="../index.html">index.md</a></li><li><a href="../queries/cinegi-ai-chat-agent-integration-2026-08-20.html">queries/cinegi-ai-chat-agent-integration-2026-08-20.md</a></li><li><a href="../queries/lichnoe-soveshchanie-2026-08-13.html">queries/lichnoe-soveshchanie-2026-08-13.md</a></li><li><a href="../queries/razgovor-s-lisnym-2026-08-18.html">queries/razgovor-s-lisnym-2026-08-18.md</a></li></ul></div>
 </div>
 </body>
 </html>

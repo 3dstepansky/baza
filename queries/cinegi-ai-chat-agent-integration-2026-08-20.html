@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CineGI / AI-чат — единое подключение автономных агентов — Vault</title>
+<style>* { margin:0; padding:0; box-sizing:border-box; }
+body { background:#0d1117; color:#c9d1d9; font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif; line-height:1.7; font-size:16px; }
+.container { max-width:820px; margin:0 auto; padding:16px; }
+h1 { font-size:1.6em; color:#f0f6fc; margin:0.6em 0 0.4em; border-bottom:1px solid #30363d; padding-bottom:0.3em; }
+h2 { font-size:1.25em; color:#f0f6fc; margin:0.8em 0 0.3em; }
+h3 { font-size:1.1em; color:#f0f6fc; margin:0.6em 0 0.2em; }
+p { margin:0.5em 0; }
+a { color:#58a6ff; text-decoration:none; }
+a:hover { text-decoration:underline; }
+ul, ol { margin:0.5em 0; padding-left:1.5em; }
+li { margin:0.3em 0; }
+code { background:#161b22; padding:2px 6px; border-radius:3px; font-size:0.9em; color:#f0c674; }
+pre { background:#161b22; padding:12px; border-radius:6px; overflow-x:auto; margin:0.8em 0; }
+pre code { background:none; padding:0; }
+blockquote { border-left:3px solid #30363d; padding-left:1em; margin:0.8em 0; color:#8b949e; }
+hr { border:none; border-top:1px solid #30363d; margin:1.2em 0; }
+table { width:100%; border-collapse:collapse; margin:0.8em 0; }
+th, td { border:1px solid #30363d; padding:8px 12px; text-align:left; }
+th { background:#161b22; color:#f0f6fc; }
+.dataview { background:#161b22; border:1px solid #30363d; border-radius:6px; padding:12px; margin:0.8em 0; font-family:monospace; font-size:0.85em; color:#8b949e; }
+.nav { background:#161b22; border-bottom:1px solid #30363d; padding:8px 16px; font-size:14px; position:sticky; top:0; z-index:10; }
+.nav a { color:#58a6ff; }
+.meta { font-size:0.85em; color:#8b949e; margin:0.5em 0 1em; }
+.tag { display:inline-block; background:#1f6feb33; color:#58a6ff; padding:2px 8px; border-radius:10px; font-size:0.8em; margin:0 3px 3px 0; }
+.backlinks { margin-top:2em; padding-top:1em; border-top:1px solid #30363d; }
+.backlinks h3 { font-size:1em; color:#8b949e; }
+.button-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:10px; margin:1em 0; }
+.button { display:block; background:#238636; color:#fff !important; padding:12px 14px; border-radius:8px; text-align:center; font-weight:600; border:1px solid #2ea043; }
+.button:hover { background:#2ea043; text-decoration:none; }</style>
+</head>
+<body>
+<nav class="nav"><span class="crumbs"><a href="/">🏠</a> / <span>queries</span></span></nav>
+<div class="container">
+<h1>CineGI / AI-чат — единое подключение автономных агентов</h1>
+<div class="meta"><span class="tag">meeting</span> <span class="tag">transcript</span> <span class="tag">agent</span> <span class="tag">automation</span> <span class="tag">api</span> <span class="tag">architecture</span> <span class="tag">docker</span> <span class="tag">education</span> last modified: 2026-08-20 13:41</div>
+<h1>CineGI / AI-чат — единое подключение автономных агентов</h1>
+<p><strong>Суть:</strong> CineGI / AI-чат должен стать единой витриной и точкой доступа к автономным агентам корпорации. Каждый агент поставляется как готовый внешний сервис или контейнер с API; чат подключает его конфигурацией, выдаёт доступ нужным группам и показывает подходящий интерфейс. ^[raw/transcripts/telemost-2026-08-20-12-56-40-telemost-2026-08-20t12-33-59-538z-transcript.md]</p>
+<h2>Принятое направление</h2>
+<ul>
+<li>Не делать отдельную глубокую доработку ядра AI-чата под каждого агента.</li>
+<li>Со стороны команды агента отдавать готовую «коробку»: сервис/контейнер, endpoint, авторизацию, контракт входа и выхода.</li>
+<li>Со стороны AI-чата оставить каталог/навигацию, настройку endpoint, групповые права и отображение интерфейса.</li>
+<li>Базовый кандидат на единый контракт — <strong>OpenAI-compatible API</strong>. Встреча подтвердила, что существующие микросервисы уже подключаются через внешние API и прокси; конкретный контракт надо сверить с Димой Богдановым и текущим ассистентом руководителя.</li>
+</ul>
+<h2>Целевая архитектура</h2>
+<table>
+<thead>
+<tr>
+<th>Слой</th>
+<th>Ответственность</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Агент</td>
+<td>Готовый Docker-микросервис или внешний сервис; бизнес-логика, файлы и при необходимости история сессий</td>
+</tr>
+<tr>
+<td>Контракт</td>
+<td>OpenAI-compatible API либо согласованный расширяемый API; endpoint и токен</td>
+</tr>
+<tr>
+<td>CineGI / AI-чат</td>
+<td>Каталог агентов, маршрутизация запросов, группы доступа, общий UX</td>
+</tr>
+<tr>
+<td>Диалоги</td>
+<td>Предварительно — на стороне агента; окончательно зафиксировать в контракте</td>
+</tr>
+<tr>
+<td>Формы</td>
+<td>Виджет/нативная форма AI-чата либо внешняя HTML-форма через iframe</td>
+</tr>
+</tbody>
+</table>
+<h2>Академразница: почему одного чата недостаточно</h2>
+<p>Для <a href="../entities/academic-difference-assistant.html">ассистента академической разницы</a> нужны не только сообщения, но и загрузка документов, выпадающие и множественные выборы, зависимые поля, кнопка запуска и выдача Excel.</p>
+<p>Рассмотрены два пути:</p>
+<ol>
+<li><strong>Внешняя форма в iframe.</strong> В AI-чате — кнопка «Зайти в форму», открывающая HTML-форму на домене агента. Это преимущественно фронтенд-задача; техническую реализуемость должен подтвердить Денис-фронтендер.</li>
+<li><strong>Нативная форма/виджет AI-чата.</strong> Данные отправляются в backend агента, а интерфейс остаётся единым. Дороже, но лучше по целостности UX и доверию пользователя.</li>
+</ol>
+<p>Как возможный ориентир названы виджеты: агент передаёт декларацию интерфейса, а чат рисует кнопки, формы и действия. Это пока требование к платформе, не утверждённая реализация.</p>
+<h2>Продуктовое требование к редизайну</h2>
+<p>Нельзя смешивать десятки и сотни прикладных агентов с селектором LLM-моделей (GPT/Gemini и т. п.). Нужны отдельный раздел или каталог агентов, категории/поиск и права доступа по группам. Эту задачу нужно включить в текущий редизайн до показа макетов.</p>
+<h2>Ближайшие действия</h2>
+<ul>
+<li>[ ] Описать минимальный стандарт готового агента: endpoint, auth, схемы запросов/ответов, файлы, сессии, UI-capabilities и ошибки.</li>
+<li>[ ] Уточнить у Димы Богданова, как подключён ассистент руководителя и какой контракт реально используется.</li>
+<li>[ ] Сформировать требования к AI-чату: OpenAI-compatible подключение, каталог агентов, групповые доступы, формы/виджеты.</li>
+<li>[ ] Денису оценить iframe против нативной формы для академразницы.</li>
+<li>[ ] Внести каталог агентов и богатые формы в задачу дизайна.</li>
+</ul>
+<h2>Связанные заметки</h2>
+<ul>
+<li><a href="../entities/academic-difference-assistant.html">Academic Difference Assistant</a> — первый практический кейс с формой и Excel.</li>
+<li><a href="../queries/razgovor-s-lisnym-2026-08-18.html">Разговор с Лисным 18 августа</a> — стратегия масштабного внедрения множества агентов.</li>
+<li><a href="../concepts/agentic-systems.html">Агентные системы</a> — общий архитектурный контекст.</li>
+<li><a href="../concepts/mcp-protocol.html">MCP Protocol</a> — смежный слой стандартизированного подключения инструментов.</li>
+<li><a href="../entities/hermes-agent.html">Hermes Agent</a> — пример gateway-интеграций, упоминавшийся на встрече.</li>
+</ul>
+<div class="backlinks"><h3>↩ Обратные ссылки</h3><ul><li><a href="../entities/academic-difference-assistant.html">entities/academic-difference-assistant.md</a></li><li><a href="../index.html">index.md</a></li></ul></div>
+</div>
+</body>
+</html>
