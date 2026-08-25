@@ -188,3 +188,8 @@
 ## [2026-08-25] ingest | Telemost raw transcript — Telemost 2026-08-25T13-31-22-522Z
 - Saved raw source: raw/transcripts/telemost-2026-08-25-14-00-33-telemost-2026-08-25t13-31-22-522z-transcript.md
 - Saved raw source: raw/transcripts/telemost-2026-08-25-14-00-33-telemost-2026-08-25t13-31-22-522z-summary.md
+
+## [2026-08-25] create | Ассистент коммерческого подразделения
+- Из общей заметки о встрече с Лисным выделена профильная страница проекта: entities/commercial-department-assistant.md.
+- Зафиксированы двухнедельный MVP, минимальный контур, вопросы для сбора требований и критерии готовности.
+- Добавлены обратные ссылки из встречи, страницы «Продажи и Маркетинг» и index.md.

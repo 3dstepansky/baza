@@ -27,7 +27,7 @@ confidence: medium
 | **Позже** | Агент настройки Яндекс Директа | Большой и сложный проект примерно на два месяца; отложить после короткого коммерческого прототипа. |
 | **Исследование** | Автономный AI-отдел разработки | Развивать концепцию стандартизованной команды агентов, но не подменять ею текущий двухнедельный результат. |
 
-## Приоритет №1: ассистент коммерческого подразделения
+## Приоритет №1: [[entities/commercial-department-assistant|ассистент коммерческого подразделения]]
 
 Из разговора следует следующий минимальный контур:
 
@@ -113,6 +113,7 @@ confidence: medium
 - [[queries/razgovor-s-lisnym-2026-08-18|Лисный 18 августа — массовое внедрение агентов и «звёздочка»]]
 - [[queries/lichnoe-soveshchanie-2026-08-13|Приоритеты AI-проектов 13 августа]]
 - [[entities/academic-difference-assistant|Academic Difference Assistant]]
+- [[entities/commercial-department-assistant|Ассистент коммерческого подразделения]]
 - [[concepts/multi-agent-development-methodology|Методология многоагентной разработки]]
 - [[concepts/agent-roles-for-automation|Роли агентов для automation]]
 - [[concepts/multi-agent-code-review-synergy|Мультиагентный code review для «Синергии»]]

@@ -11,11 +11,12 @@ updated: 2026-08-25
 
 > Content catalog. Every wiki page listed with a one-line summary.
 > Read this first for any query.
-> Last updated: 2026-08-25 | Total pages: 104
+> Last updated: 2026-08-25 | Total pages: 105
 
 ## Быстрый вход
 
-- [[queries/lisny-prioritety-zadach-2026-08-25|Лисный — приоритеты задач и автономный AI-отдел]] — ближайший фокус: за две недели внедрить прототип ассистента коммерческого подразделения; вторичные проекты поставить на паузу.
+- [[entities/commercial-department-assistant|Ассистент коммерческого подразделения]] — приоритетный двухнедельный MVP: контроль статусов и обращений по данным из нескольких источников.
+- [[queries/lisny-prioritety-zadach-2026-08-25|Лисный — приоритеты задач и автономный AI-отдел]] — встреча-источник решений по коммерческому ассистенту и вторичным проектам.
 - [[queries/razgovor-s-lisnym-2026-08-18|Разговор с Лисным 18 августа — массовое внедрение агентов и «звёздочка»]]
 - [[queries/razgovor-s-lisnym-2026-08-19|Лисный 19 августа — легальный B2B-лидоген и воронка вебинара]] — AI-research/квалификация для дорогих B2B-программ, с явной границей против нелегального сбора данных и спама.
 - [[queries/cinegi-ai-chat-agent-integration-2026-08-20|CineGI / AI-чат — единое подключение автономных агентов]] — стандарт API, каталог агентов и богатые формы для академразницы.
@@ -25,6 +26,7 @@ updated: 2026-08-25
 
 ## Entities
 
+- [[entities/commercial-department-assistant|Ассистент коммерческого подразделения — контроль статусов и обращений]]
 - [[entities/academic-difference-assistant|Academic Difference Assistant — ассистент расчёта академической разницы]]
 - [[entities/asati-shill|ASATI Shill]]
 - [[entities/baza-wiki|Baza Wiki — проект базы знаний 🧠]]

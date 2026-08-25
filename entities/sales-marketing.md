@@ -3,7 +3,7 @@
 department: Sales
 type: org-structure
 created: 2026-07-30
-updated: 2026-07-31
+updated: 2026-08-25
 tags: [entity, org]
 ---
 
@@ -40,3 +40,4 @@ tags: [entity, org]
 
 - [[index|Синергия]]
 - [[raw/org-structure|Оргструктура]]
+- [[entities/commercial-department-assistant|Ассистент коммерческого подразделения]] — приоритетный двухнедельный MVP контроля статусов и обращений.
