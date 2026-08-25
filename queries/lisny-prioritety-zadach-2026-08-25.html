@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Лисный — приоритеты задач и автономный AI-отдел — Vault</title>
+<style>* { margin:0; padding:0; box-sizing:border-box; }
+body { background:#0d1117; color:#c9d1d9; font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif; line-height:1.7; font-size:16px; }
+.container { max-width:820px; margin:0 auto; padding:16px; }
+h1 { font-size:1.6em; color:#f0f6fc; margin:0.6em 0 0.4em; border-bottom:1px solid #30363d; padding-bottom:0.3em; }
+h2 { font-size:1.25em; color:#f0f6fc; margin:0.8em 0 0.3em; }
+h3 { font-size:1.1em; color:#f0f6fc; margin:0.6em 0 0.2em; }
+p { margin:0.5em 0; }
+a { color:#58a6ff; text-decoration:none; }
+a:hover { text-decoration:underline; }
+ul, ol { margin:0.5em 0; padding-left:1.5em; }
+li { margin:0.3em 0; }
+code { background:#161b22; padding:2px 6px; border-radius:3px; font-size:0.9em; color:#f0c674; }
+pre { background:#161b22; padding:12px; border-radius:6px; overflow-x:auto; margin:0.8em 0; }
+pre code { background:none; padding:0; }
+blockquote { border-left:3px solid #30363d; padding-left:1em; margin:0.8em 0; color:#8b949e; }
+hr { border:none; border-top:1px solid #30363d; margin:1.2em 0; }
+table { width:100%; border-collapse:collapse; margin:0.8em 0; }
+th, td { border:1px solid #30363d; padding:8px 12px; text-align:left; }
+th { background:#161b22; color:#f0f6fc; }
+.dataview { background:#161b22; border:1px solid #30363d; border-radius:6px; padding:12px; margin:0.8em 0; font-family:monospace; font-size:0.85em; color:#8b949e; }
+.nav { background:#161b22; border-bottom:1px solid #30363d; padding:8px 16px; font-size:14px; position:sticky; top:0; z-index:10; }
+.nav a { color:#58a6ff; }
+.meta { font-size:0.85em; color:#8b949e; margin:0.5em 0 1em; }
+.tag { display:inline-block; background:#1f6feb33; color:#58a6ff; padding:2px 8px; border-radius:10px; font-size:0.8em; margin:0 3px 3px 0; }
+.backlinks { margin-top:2em; padding-top:1em; border-top:1px solid #30363d; }
+.backlinks h3 { font-size:1em; color:#8b949e; }
+.button-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:10px; margin:1em 0; }
+.button { display:block; background:#238636; color:#fff !important; padding:12px 14px; border-radius:8px; text-align:center; font-weight:600; border:1px solid #2ea043; }
+.button:hover { background:#2ea043; text-decoration:none; }</style>
+</head>
+<body>
+<nav class="nav"><span class="crumbs"><a href="/">🏠</a> / <span>queries</span></span></nav>
+<div class="container">
+<h1>Лисный — приоритеты задач и автономный AI-отдел</h1>
+<div class="meta"><span class="tag">query</span> <span class="tag">meeting</span> <span class="tag">transcript</span> <span class="tag">automation</span> <span class="tag">agent</span> <span class="tag">multi-agent</span> <span class="tag">education</span> <span class="tag">org</span> last modified: 2026-08-25 14:03</div>
+<h1>Лисный — приоритеты задач и автономный AI-отдел</h1>
+<blockquote>
+<p>Дата встречи в исходнике не указана. Расшифровка содержит ошибки распознавания, поэтому спорные названия и формулировки сохранены как гипотезы, а не как подтверждённые факты.</p>
+</blockquote>
+<h2>Коротко</h2>
+<p>На встрече Лисный и Павел пересобрали порядок работы. Главный ближайший приоритет — за две недели получить и внедрить прототип ассистента для коммерческого направления: собрать требования, контролировать статусы по данным из нескольких источников и дать подразделению рабочий результат. Параллельные инициативы — форматирование документов, более сложный агент для Яндекс Директа и автономный отдел разработки — временно остаются вторичными или исследовательскими.</p>
+<h2>Решения по приоритетам</h2>
+<table>
+<thead>
+<tr>
+<th>Приоритет</th>
+<th>Направление</th>
+<th>Решение</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>1</strong></td>
+<td>Ассистент коммерческого подразделения</td>
+<td>Сфокусироваться сейчас; вытянуть ТЗ; за двухнедельный спринт сделать внедряемый прототип.</td>
+</tr>
+<tr>
+<td><strong>Поддержка</strong></td>
+<td>Academic Difference Assistant</td>
+<td>Если в течение дня нет новых падений, считать основную задачу выполненной и перевести в поддержку; отдельно готовить будущую интеграцию с корпоративным AI-чатом.</td>
+</tr>
+<tr>
+<td><strong>Текущий MVP</strong></td>
+<td>Приёмная комиссия</td>
+<td>Обработчик почты, Telegram-канал и топики уже сделаны; следующий шаг — выводы из входящих сообщений и демонстрация первой версии.</td>
+</tr>
+<tr>
+<td><strong>3</strong></td>
+<td>Стандартизация документов</td>
+<td>Ограничить MVP форматированием уже готового текста под корпоративный шаблон; не пытаться сразу превращать сырую идею в полноценный доклад.</td>
+</tr>
+<tr>
+<td><strong>Позже</strong></td>
+<td>Агент настройки Яндекс Директа</td>
+<td>Большой и сложный проект примерно на два месяца; отложить после короткого коммерческого прототипа.</td>
+</tr>
+<tr>
+<td><strong>Исследование</strong></td>
+<td>Автономный AI-отдел разработки</td>
+<td>Развивать концепцию стандартизованной команды агентов, но не подменять ею текущий двухнедельный результат.</td>
+</tr>
+</tbody>
+</table>
+<h2>Приоритет №1: ассистент коммерческого подразделения</h2>
+<p>Из разговора следует следующий минимальный контур:</p>
+<ul>
+<li>у подразделения есть несколько источников данных;</li>
+<li>нужно контролировать процессы по набору параметров;</li>
+<li>система должна замечать забытые статусы и помогать переводить обращения между состояниями;</li>
+<li>сначала нужен простой прототип и реальное внедрение;</li>
+<li>после MVP проект можно расширять базой знаний отдела продаж и ассистентом обработки возражений;</li>
+<li>ключевой заинтересованный руководитель в расшифровке, вероятно, назван Скоробогатовым, коммерческим директором;</li>
+<li>рабочий контакт на ближайшей встрече — Денис Фатеев; фамилия распознана неуверенно.</li>
+</ul>
+<h3>План на двухнедельный спринт</h3>
+<ol>
+<li>На встрече определить источники данных и владельцев доступа.</li>
+<li>Зафиксировать статусы, переходы, обязательные поля и признаки просрочки.</li>
+<li>Согласовать, какие показатели контролировать, а какие игнорировать.</li>
+<li>Описать минимальный сценарий пользователя и критерии приёмки.</li>
+<li>Собрать прототип, показать на реальных данных и внедрить в подразделение.</li>
+<li>После внедрения зафиксировать обратную связь и следующий слой функций.</li>
+</ol>
+<h3>Вопросы для первой встречи</h3>
+<ul>
+<li>Из каких систем и каналов поступают данные?</li>
+<li>Какие статусы существуют и кто отвечает за переходы?</li>
+<li>Что именно считается забытым, просроченным или ошибочно переведённым обращением?</li>
+<li>Какие уведомления нужны и кому они должны приходить?</li>
+<li>Какой результат через две недели будет считаться внедрением?</li>
+<li>Можно ли начать с Telegram, сохранив корпоративный AI-чат как целевой интерфейс?</li>
+<li>Есть ли регламенты или база знаний в Confluence для будущего ассистента по возражениям?</li>
+</ul>
+<h2>Статус текущих проектов</h2>
+<h3>Приёмная комиссия</h3>
+<p>Уже реализованы обработка входящей почты, Telegram-канал и топики. Следующий этап — извлекать выводы из сообщений. Для демонстрации предлагается показать первую версию на конкретном примере и передать пользователям на тестирование.</p>
+<h3>Academic Difference Assistant</h3>
+<p>По словам Павла, найден и исправлен дополнительный баг. Если новых падений не появится, разработку можно считать завершённой и перевести проект в поддержку. Интеграция с корпоративным AI-чатом остаётся целевой, но её не следует добавлять ценой потери скорости текущего MVP. Это уточняет статус страницы <a href="../entities/academic-difference-assistant.html">Academic Difference Assistant</a>.</p>
+<h3>Форматирование документов</h3>
+<p>Личный проект Павла — Telegram-бот, который приводит текст или документ к корпоративному шаблону. Лисный сужает задачу:</p>
+<ul>
+<li>плохой MVP: из сырой идеи автоматически получить качественный доклад;</li>
+<li>хороший MVP: взять уже подготовленный документ и стандартизировать заголовки, разделы и оформление;</li>
+<li>перед разработкой нужно получить актуальные правила форматирования, потому что старые примеры устарели.</li>
+</ul>
+<h2>Стратегическая амбиция: автономный AI-отдел</h2>
+<p>Павел формулирует идею отдела, состоящего из стандартизованных агентов: под человеком-руководителем работают десятки цифровых специалистов. Наиболее ценный вариант — автономный отдел разработки, который получает задачу на лендинг и возвращает готовый merge request, задействуя роли аналитика, системного аналитика, архитектора, дизайнера, разработчика и проверяющих агентов.</p>
+<p>Лисный оценивает направление как потенциально очень высокоэффектное: автоматизация человеческой разработки может дать корпорации экономию порядка нескольких миллионов рублей. При этом доверие агентам пока не доказано: эксперимент с многоцикловой автономной работой остановился на запросе продолжения и не завершил задачу без вмешательства человека.</p>
+<p>Эта линия напрямую связана с <a href="../concepts/multi-agent-development-methodology.html">методологией многоагентной разработки</a>, <a href="../concepts/agent-roles-for-automation.html">ролями агентов</a> и идеей <a href="../concepts/multi-agent-code-review-synergy.html">мультиагентного code review</a>.</p>
+<h2>Что поставить на паузу</h2>
+<ul>
+<li>глубокую автоматизацию создания документов из сырой идеи;</li>
+<li>сложного агента управления Яндекс Директом;</li>
+<li>инфраструктурные эксперименты, не влияющие на двухнедельный прототип;</li>
+<li>преждевременную интеграцию всех проектов в корпоративный AI-чат, если она снижает скорость.</li>
+</ul>
+<h2>Action items Павла</h2>
+<ul>
+<li>[ ] На ближайшей встрече познакомиться с Денисом Фатеевым и владельцами процесса.</li>
+<li>[ ] Получить от подразделения требования, источники, статусы и критерии контроля.</li>
+<li>[ ] Зафиксировать ТЗ и Definition of Done двухнедельного спринта.</li>
+<li>[ ] Поставить вторичные разработки на паузу до получения внедрённого результата.</li>
+<li>[ ] Довести Academic Difference Assistant до режима поддержки.</li>
+<li>[ ] Для документного бота запросить актуальные правила корпоративного форматирования.</li>
+<li>[ ] Продолжить исследование автономного AI-отдела через проверяемые циклы и фактические артефакты.</li>
+</ul>
+<h2>Неясности расшифровки</h2>
+<ul>
+<li>Точное название подразделения при обсуждении приоритета №1 распознано ненадёжно.</li>
+<li>Название корпоративного AI-чата и некоторые фамилии искажены STT.</li>
+<li>Не указана дата встречи.</li>
+<li>Оценка экономии «около 5 млн рублей» звучит приблизительно и требует отдельного расчёта.</li>
+</ul>
+<h2>Связанные заметки</h2>
+<ul>
+<li><a href="../queries/razgovor-s-lisnym-2026-08-18.html">Лисный 18 августа — массовое внедрение агентов и «звёздочка»</a></li>
+<li><a href="../queries/lichnoe-soveshchanie-2026-08-13.html">Приоритеты AI-проектов 13 августа</a></li>
+<li><a href="../entities/academic-difference-assistant.html">Academic Difference Assistant</a></li>
+<li><a href="../concepts/multi-agent-development-methodology.html">Методология многоагентной разработки</a></li>
+<li><a href="../concepts/agent-roles-for-automation.html">Роли агентов для automation</a></li>
+<li><a href="../concepts/multi-agent-code-review-synergy.html">Мультиагентный code review для «Синергии»</a></li>
+</ul>
+<div class="backlinks"><h3>↩ Обратные ссылки</h3><ul><li><a href="../concepts/multi-agent-development-methodology.html">concepts/multi-agent-development-methodology.md</a></li><li><a href="../entities/academic-difference-assistant.html">entities/academic-difference-assistant.md</a></li><li><a href="../index.html">index.md</a></li><li><a href="../queries/razgovor-s-lisnym-2026-08-18.html">queries/razgovor-s-lisnym-2026-08-18.md</a></li></ul></div>
+</div>
+</body>
+</html>
