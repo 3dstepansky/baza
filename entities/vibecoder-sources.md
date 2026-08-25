@@ -47,6 +47,19 @@ updated: 2026-08-15
 | **@vaibkoding** | Канал | ✅ Подписана через Telegram MCP 2026-08-15. «вайбкодинг», ~2,976 участников; RU-канал по AI/моделям/вайбкодингу, полезен как дополнительный источник |
 | **@vibe_codera** | Канал + linked chat | ✅ Подписана через Telegram MCP 2026-08-15. «Вайб Кодера», ~588 участников; AI, код, инженерная рефлексия; linked chat `3490103730` |
 | **@ai_komet** | Канал | ✅ Подписана через Telegram MCP 2026-08-15. «AI Комета», ~23 участника; новости ИИ, нейросети, вайбкодинг |
+| **@VibeCodingDojo** | Канал + linked chat | ✅ Подписана через Telegram MCP 2026-08-19. Tony's Vibe Coding Dojo, EN vibe coding; ~55 участников; linked chat `2594495716` тоже подключён |
+| **@AI_Automation1** | Канал | ✅ Подписана через Telegram MCP 2026-08-19. AI Developer / AI Automation / AI Agency; ~2,080 участников; потенциальный источник AI automation специалистов |
+| **@ai_automation_factory** | Канал | ✅ Подписана через Telegram MCP 2026-08-19. AI Automation Hub; ~599 участников; image/video automation, ChatGPT/Gemini/Grok |
+| **@dashgram_live** | Канал + linked chat | ✅ Подписана через Telegram MCP 2026-08-19. Dashgram, Telegram bot analytics; ~106 участников; linked chat `2822946183` тоже подключён |
+| **@coincoinai** | Канал | ✅ Подписана через Telegram MCP 2026-08-19. CoinCoin.ai / Codex / ChatGPT / Claude; крупный AI источник, нужен фильтр на шум |
+| **@cursorp** | Канал | ✅ Подписана через Telegram MCP 2026-08-19. Cursor Pro Russia; полезно для сигналов по Cursor/API, но вероятны продавцы доступов |
+| **@automation_of_business_processes** | Канал + linked chat | ✅ Подписана через Telegram MCP 2026-08-19. Автоматизация бизнесов n8n и Telegram-боты; ~51 участник; linked chat `4491432303` пока дал ошибку join |
+| **@generalov_ai_agents** | Канал + linked chat | ✅ Подписана через Telegram MCP 2026-08-19. Илья Генералов: AI-агенты, n8n, Vibe Coding, Telegram-боты; ~41,561 участник; linked chat `@generalov_ai_chat` / `2275091953`; найден через TGPages Atlas cluster `27/477` |
+| **@generalov_ai_chat** | Чат | ✅ Подписана через Telegram MCP 2026-08-19. Обсуждение канала Ильи Генералова; ~938 участников; высокий приоритет для рекрутинга AI automation/n8n/vibe coding |
+| **@ValidatedVibe** | Канал + linked chats | ✅ Подписана через Telegram MCP 2026-08-19. «Годный вайбкодинг», ~3,510 участников; linked chats: `@VibecodersChat` (~864), `@VibecodersForum` (~425); найден через TGPages Atlas cluster `27/477` |
+| **@VibecodersChat** | Чат | ✅ Подписана через Telegram MCP 2026-08-19. «Вайбкодерский чат», ~864 участника; прямое комьюнити вайбкодеров, чат без топиков; высокий приоритет |
+| **@autogenerator_reels** | Канал + linked chat | ✅ Подписана через Telegram MCP 2026-08-19. Денис про Контент-завод / Автоматизация / Вайбкодинг; ~7,347 участников; linked chat `2204800475` (~69); полезен для AI Make/automation/контент-заводов |
+| **@prog_ai** | Канал + linked chat | ✅ Подписана через Telegram MCP 2026-08-19. Vibe Coding: OpenCode, Claude Code, Codex, Cursor, Kilo; ~4,310 участников; linked chat `1997034059` / gencode_chat.py (~281); очень точный источник по AI coding tools |
 
 ## Верифицированные чаты для мониторинга
 
@@ -63,10 +76,23 @@ updated: 2026-08-15
 | **@zero2claude_chat** | 3 | ✅ Подписана через Telegram MCP | Чат курса Claude Code с 0; маленький, но релевантный |
 | **@vbaicom** | 2 | ✅ Подписана через Telegram MCP | Вайбкодинг и ИИ Chat |
 | **@saas_chat** | 1 | ✅ Подписана через Telegram MCP | SaaS / Vibe coding chat; AI/startup обсуждение |
-| **@vibecoding_ua** | 537 | ⏳ Заявка на вступление отправлена (`InviteRequestSent`) | Украинский чат вайб-кодеров, LLM/code/Next.js/Gemini |
-| **@bot_devs_novice** | 494 | ⏳ Заявка на вступление отправлена (`InviteRequestSent`) | Vibecoding Haven Chat, AI/кодинг/боты; шумный |
+| **@vibecoding_ua** | 537 | ✅ Подписана через Telegram MCP | Украинский чат вайб-кодеров, LLM/code/Next.js/Gemini |
+| **@bot_devs_novice** | 494 | ✅ Подписана через Telegram MCP | Vibecoding Haven Chat, AI/кодинг/боты; шумный |
+| **@VibeCodingDojo** | 55 | ✅ Подписана через Telegram MCP | EN vibe coding dojo; канал + linked chat `2594495716` |
+| **@AI_Automation1** | 2,080 | ✅ Подписана через Telegram MCP | AI Developer / AI Automation / AI Agency |
+| **@ai_automation_factory** | 599 | ✅ Подписана через Telegram MCP | AI Automation Hub; automation content |
+| **@dashgram_live** | 106 | ✅ Подписана через Telegram MCP | Telegram bot analytics; канал + linked chat `2822946183` |
+| **@coincoinai** | 1,883,113 | ✅ Подписана через Telegram MCP | Codex / ChatGPT / Claude; крупный источник, фильтровать шум |
+| **@cursorp** | 147 | ✅ Подписана через Telegram MCP | Cursor Pro Russia; Cursor/API signals, возможны продавцы |
+| **@automation_of_business_processes** | 51 | ✅ Подписана через Telegram MCP | n8n + Telegram-боты; linked chat join пока ошибка |
+| **@generalov_ai_chat** | 938 | ✅ Подписана через Telegram MCP | Обсуждение Ильи Генералова; AI agents/n8n/Vibe Coding; source cluster `27/477` |
+| **@VibecodersChat** | 864 | ✅ Подписана через Telegram MCP | Прямой вайбкодерский чат без топиков; source cluster `27/477` |
+| **@ValidatedVibe** | 3,510 | ✅ Подписана через Telegram MCP | Канал «Годный вайбкодинг»; linked chats `@VibecodersChat`, `@VibecodersForum`; source cluster `27/477` |
+| **@autogenerator_reels** | 7,347 | ✅ Подписана через Telegram MCP | Контент-завод / AI Make / автоматизация / вайбкодинг; source cluster `27/477` |
+| **@prog_ai** | 4,310 | ✅ Подписана через Telegram MCP | Vibe Coding: OpenCode, Claude Code, Codex, Cursor, Kilo; linked chat `1997034059`; source cluster `27/477` |
+| **@generalov_ai_agents** | 41,561 | ✅ Подписана через Telegram MCP | Крупный канал AI-агенты/n8n/Vibe Coding/Telegram-боты; linked chat `@generalov_ai_chat`; source cluster `27/477` |
 
-**Итого подписанных чатов:** 11 чатов, 9,078 участников. **С учётом 2 ожидающих заявок:** 13 чатов, 10,109 участников.
+**Итого подписанных/верифицированных источников:** минимум 29 источников; список расширен 2026-08-19. Требует дальнейшей чистки по качеству кандидатов.
 
 ## AI/ML источники
 

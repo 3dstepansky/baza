@@ -178,3 +178,13 @@
 - Создана концепция: concepts/multi-agent-code-review-synergy.md
 - Добавлены обратные связи из методологии многоагентной разработки и страницы ролей агентов.
 - Обновлён index.md.
+
+## [2026-08-25] ingest | Лисный — приоритеты задач и автономный AI-отдел
+- UTF-16BE документ преобразован в UTF-8 и сохранён как immutable raw: raw/transcripts/lisny-prioritety-zadach-original-2026-08-25.md
+- Создана структурированная заметка: queries/lisny-prioritety-zadach-2026-08-25.md
+- Зафиксированы: двухнедельный коммерческий MVP, статусы приёмной комиссии и академразницы, документный бот, отложенный агент Яндекс Директа и амбиция автономного AI-отдела.
+- Обновлены Academic Difference Assistant, методология многоагентной разработки, предыдущая встреча с Лисным и index.md.
+
+## [2026-08-25] ingest | Telemost raw transcript — Telemost 2026-08-25T13-31-22-522Z
+- Saved raw source: raw/transcripts/telemost-2026-08-25-14-00-33-telemost-2026-08-25t13-31-22-522z-transcript.md
+- Saved raw source: raw/transcripts/telemost-2026-08-25-14-00-33-telemost-2026-08-25t13-31-22-522z-summary.md

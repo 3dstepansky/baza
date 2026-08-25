@@ -77,3 +77,4 @@ confidence: medium
 - [[comparisons/agent-orchestration-tools|Сравнение orchestration tools]]
 - [[queries/multi-agent-automation-research-plan|План исследования]]
 - [[concepts/multi-agent-code-review-synergy|Мультиагентная система code review для «Синергии»]]
+- [[queries/lisny-prioritety-zadach-2026-08-25|Лисный — приоритеты задач и автономный AI-отдел]]

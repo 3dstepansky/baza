@@ -105,3 +105,4 @@ confidence: medium
 - [[entities/academic-difference-assistant|Academic Difference Assistant]] — пример «агента в вакууме» без привязки к человеку
 - [[entities/kpn-agent|Проект КПН]] — контрастный кейс: передан проектному офису, не упоминается у Лисного
 - [[concepts/spec-driven-agent-development|Spec-driven агентная разработка]] — предзаготовки = полуфабрикаты
+- [[queries/lisny-prioritety-zadach-2026-08-25|Лисный — приоритеты задач и автономный AI-отдел]] — следующий разговор: двухнедельный коммерческий MVP и автономная команда разработки

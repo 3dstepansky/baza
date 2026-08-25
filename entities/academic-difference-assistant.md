@@ -1,10 +1,10 @@
 ---
 title: Academic Difference Assistant — ассистент расчёта академической разницы
 created: 2026-08-03
-updated: 2026-08-15
+updated: 2026-08-25
 type: entity
-tags: [entity, project, bot, automation, local-llm, telegram, education, privacy, ocr, excel]
-sources: [raw/transcripts/academic-difference-assistant-meeting-2026-08-03-transcript.md, raw/transcripts/academic-difference-assistant-meeting-2026-08-03-summary.md, raw/transcripts/2026-08-13-lichnoe-soveshchanie-original.md]
+tags: [entity, project, bot, automation, local-llm, telegram, education, privacy, ocr, excel, api, architecture]
+sources: [raw/transcripts/academic-difference-assistant-meeting-2026-08-03-transcript.md, raw/transcripts/academic-difference-assistant-meeting-2026-08-03-summary.md, raw/transcripts/2026-08-13-lichnoe-soveshchanie-original.md, raw/transcripts/telemost-2026-08-20-12-56-40-telemost-2026-08-20t12-33-59-538z-transcript.md, raw/transcripts/lisny-prioritety-zadach-original-2026-08-25.md]
 confidence: high
 ---
 
@@ -33,6 +33,12 @@ confidence: high
 - **Альтернатива:** предварительная обезличивающая модель, которая удаляет ФИО и оставляет только данные, необходимые для расчёта.
 - **MVP без 1С:** на первом этапе можно работать без прямой интеграции с 1С; данные выгружаются/загружаются вручную, результат затем переносится в нужные поля.
 
+## Обновление 2026-08-20: подключение к CineGI / AI-чату
+
+На встрече по CineGI / AI-чату проект выбран как первый практический кейс подключения автономного агента в единое корпоративное окно. Целевой формат — готовый внешний сервис/контейнер с endpoint и авторизацией; AI-чат отвечает за доступы и интерфейс. В качестве базового контракта предложен OpenAI-compatible API, но его ещё нужно сверить с командой AI-чата. ^[raw/transcripts/telemost-2026-08-20-12-56-40-telemost-2026-08-20t12-33-59-538z-transcript.md]
+
+Для расчёта академразницы потребуется богатая форма: загрузка документов, зависимые списки и множественный выбор, запуск расчёта и выгрузка Excel. Варианты интеграции — внешняя HTML-форма через iframe или нативный виджет/форма AI-чата. Подробнее: [[queries/cinegi-ai-chat-agent-integration-2026-08-20|CineGI / AI-чат — подключение автономных агентов]].
+
 ## Проблемные места
 
 1. **OCR/качество справок:** реальные фотографии справок могут быть пиксельными и плохо читаемыми; классическое OCR уже показало провалы.
@@ -43,6 +49,10 @@ confidence: high
 ## Обновление 2026-08-13: логирование MVP
 
 В личном совещании 13 августа зафиксирован практический сдвиг: на раннем этапе MVP важнее иметь плотное логирование действий и восстановимые сессии, чем преждевременно оптимизировать продукт под идеальную security-модель. Логи нужны для разбора претензий пользователей («неправильно посчитал»), подсчёта корректных/ошибочных запросов и подготовки отчётности по качеству. ^[raw/transcripts/2026-08-13-lichnoe-soveshchanie-original.md]
+
+## Обновление 2026-08-25: перевод в поддержку
+
+В разговоре о приоритетах Павел сообщил, что нашёл и исправил дополнительный баг. Если новых падений не появится, основную разработку можно считать завершённой и перевести проект в поддержку. Будущая интеграция с корпоративным AI-чатом остаётся целевой, но не должна тормозить ближайший коммерческий MVP. Подробнее: [[queries/lisny-prioritety-zadach-2026-08-25|Лисный — приоритеты задач и автономный AI-отдел]].
 
 ## Следующие шаги
 
