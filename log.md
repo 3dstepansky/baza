@@ -149,3 +149,32 @@
 - Объединено с предыдущей линией 13 августа: обновлена queries/lichnoe-soveshchanie-2026-08-13.md
 - Зафиксированы: стратегия «полсотни маленьких агентов», карьерная «звёздочка», роли Лисного/Олега и многоагентная разработка как инструмент Павла
 - Обновлён index.md
+
+## [2026-08-20] ingest | Лисный 19 августа — B2B-лидоген и воронка вебинара
+- Сохранён raw transcript с frontmatter/sha256: raw/transcripts/2026-08-19-lisny-original.md
+- Создана обработанная wiki-страница: queries/razgovor-s-lisnym-2026-08-19.md
+- Зафиксирована гипотеза AI-research/квалификации для дорогих B2B-программ и безопасная opt-in альтернатива рискованным идеям о сборе данных/добавлении в чаты.
+- Обновлён index.md.
+
+## [2026-08-20] ingest | Telemost raw transcript — Telemost 2026-08-20T12-33-38-886Z
+- Saved raw source: raw/transcripts/telemost-2026-08-20-12-34-23-telemost-2026-08-20t12-33-38-886z-transcript.md
+- Saved raw source: raw/transcripts/telemost-2026-08-20-12-34-23-telemost-2026-08-20t12-33-38-886z-summary.md
+
+## [2026-08-20] ingest | Telemost raw transcript — Telemost 2026-08-20T12-33-59-538Z
+- Saved raw source: raw/transcripts/telemost-2026-08-20-12-56-40-telemost-2026-08-20t12-33-59-538z-transcript.md
+- Saved raw source: raw/transcripts/telemost-2026-08-20-12-56-40-telemost-2026-08-20t12-33-59-538z-summary.md
+
+## [2026-08-20] ingest | CineGI / AI-чат — интеграция автономных агентов
+- Из Telemost-транскрипта создана обработанная страница: queries/cinegi-ai-chat-agent-integration-2026-08-20.md
+- Обновлена entities/academic-difference-assistant.md: API-агент, богатая форма и варианты iframe/нативного виджета.
+- Обновлён index.md: новая страница видна в «Быстром входе» и Queries.
+
+## [2026-08-23] ingest | Telemost raw transcript — Telemost 2026-08-23T16-59-51-430Z
+- Saved raw source: raw/transcripts/telemost-2026-08-23-20-05-59-telemost-2026-08-23t16-59-51-430z-transcript.md
+- Saved raw source: raw/transcripts/telemost-2026-08-23-20-05-59-telemost-2026-08-23t16-59-51-430z-summary.md
+
+## [2026-08-25] ingest | Идея мультиагентной системы code review для «Синергии»
+- Сохранено исходное Telegram-сообщение: raw/transcripts/telegram-multi-agent-code-review-idea-2026-08-25.md
+- Создана концепция: concepts/multi-agent-code-review-synergy.md
+- Добавлены обратные связи из методологии многоагентной разработки и страницы ролей агентов.
+- Обновлён index.md.

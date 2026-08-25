@@ -4,19 +4,21 @@ title: Wiki Index — Baza
 tags: [index, hub]
 type: query
 created: 2026-08-03
-updated: 2026-08-18
+updated: 2026-08-25
 ---
 
 # Wiki Index — Baza 🧠
 
 > Content catalog. Every wiki page listed with a one-line summary.
 > Read this first for any query.
-> Last updated: 2026-08-18 | Total pages: 98
+> Last updated: 2026-08-25 | Total pages: 102
 
 ## Быстрый вход
 
 - [[queries/razgovor-s-lisnym-2026-08-18|Разговор с Лисным 18 августа — массовое внедрение агентов и «звёздочка»]]
-- [[entities/construction-maps-mcp|Construction Maps MCP Server — кадастр, полигоны, Росреестр/НСПД]]
+- [[queries/razgovor-s-lisnym-2026-08-19|Лисный 19 августа — легальный B2B-лидоген и воронка вебинара]] — AI-research/квалификация для дорогих B2B-программ, с явной границей против нелегального сбора данных и спама.
+- [[queries/cinegi-ai-chat-agent-integration-2026-08-20|CineGI / AI-чат — единое подключение автономных агентов]] — стандарт API, каталог агентов и богатые формы для академразницы.
+- [[queries/razgovor-s-annoy-2026-08-13|Разговор с Анной — личный компас и три слова]]
 - [[entities/green-broker|Green Broker — проект по питомникам, садам и растениям]]
 - [[concepts/mcp|MCP — Model Context Protocol]]
 
@@ -47,6 +49,8 @@ updated: 2026-08-18
 - [[entities/troika-card|Карта Тройка — GitHub research]]
 - [[entities/telemost-recorder|Telemost Recorder — запись Яндекс.Телемост 🎙️]]
 - [[entities/vibecoder-sources|📖 LLM Wiki Baza — Вайбкодерские источники для мониторинга]]
+- [[entities/vibecoder-recruiting-pipeline|Вайбкодерский рекрутинг — pipeline]]
+- [[entities/psyhoskazka-yougile-ticket-draft|ПсихоСказка — черновик задачи YouGile]]
 - [[entities/apply-pilot|Apply Pilot — проект поиска работы]]
 
 ## Automation / MCP
@@ -75,6 +79,7 @@ updated: 2026-08-18
 - [[concepts/wiki-links|Wiki-ссылки в Obsidian 🔗]]
 - [[concepts/agent-roles-for-automation|Роли агентов для automation-проектов]]
 - [[concepts/multi-agent-development-methodology|Методология многоагентной разработки automation-проектов]]
+- [[concepts/multi-agent-code-review-synergy|Мультиагентная система code review для «Синергии»]] — идея специализированных reviewer-агентов с единым оркестратором и quality gate.
 - [[concepts/nfc-rfid-transport-cards|NFC/RFID транспортные карты]]
 - [[concepts/spec-driven-agent-development|Spec-driven агентная разработка]]
 - [[concepts/security|Security / безопасная рамка]]
@@ -88,6 +93,8 @@ updated: 2026-08-18
 
 - [[queries/lichnoe-soveshchanie-2026-08-13|Личное совещание 13 августа — приоритеты AI-проектов и позиционирование]] — обработанная заметка по встрече: КПН передать проектному офису, фокус сместить на коммерческий контур, логировать MVP и отвечать по срокам через рамку доступов/руководителя.
 - [[queries/razgovor-s-lisnym-2026-08-18|Разговор с Лисным 18 августа — массовое внедрение агентов и «звёздочка»]] — обработанная заметка по встрече: стратегия «полсотни маленьких внедрённых агентов», карьерная метрика «звёздочка», роль Лисного/Олега и многоагентная разработка как рычаг Павла.
+- [[queries/razgovor-s-lisnym-2026-08-19|Лисный 19 августа — легальный B2B-лидоген и воронка вебинара]] — AI-research и квалификация для дорогих B2B-программ; безопасная opt-in воронка вместо сбора чужих баз и спама.
+- [[queries/cinegi-ai-chat-agent-integration-2026-08-20|CineGI / AI-чат — единое подключение автономных агентов]] — готовые API-агенты, каталог, права доступа и формы/виджеты.
 - [[queries/razgovor-s-annoy-2026-08-13|Разговор с Анной — личный компас и три слова]] — обработанная заметка по ночному Telemost-разговору 2026-08-13: сожаление, достаточность, триада «органичность — влияние — наслаждение».
 - [[queries/README|Queries README]] — описание слоя сохранённых запросов
 - [[queries/multi-agent-automation-research-plan|Исследовательский проект: методология многоагентной разработки automation-проектов]]
@@ -95,6 +102,7 @@ updated: 2026-08-18
 
 ## Raw (immutable)
 
+- [[raw/transcripts/2026-08-19-lisny-original|Лисный 19.08 — оригинальная расшифровка]]
 - [[raw/transcripts/2026-08-18-lichnyy-razgovor-s-lisnym|Личный разговор с Лисным 18.08 — оригинальная расшифровка]]
 - [[raw/transcripts/2026-08-13-lichnoe-soveshchanie-original|Личное совещание 13 августа — оригинальная расшифровка]]
 - [[raw/articles/omniroute-technical-documentation|OmniRoute — technical documentation]]
@@ -118,6 +126,7 @@ updated: 2026-08-18
 - [[raw/papers/agentic-coding-evaluation-2026|Agentic coding evaluation — paper snapshot]]
 - [[raw/papers/agentic-software-benchmarks-2026|Agentic software benchmarks — paper snapshot]]
 - [[raw/transcripts/telegram-multi-agent-development-2026-08-02|Telegram: multi-agent / Claude Code / vibe-coding snippets]]
+- [[raw/transcripts/telegram-multi-agent-code-review-idea-2026-08-25|Telegram: идея мультиагентной системы code review для «Синергии»]]
 - [[raw/transcripts/telemost-2026-08-10-student-appeals-agent-summary|Telemost 2026-08-10 — Student Appeals Agent meeting summary]]
 - [[raw/transcripts/apply-pilot-context-2026-08-02|Apply Pilot — контекст от Павла]]
 - [[raw/articles/green-broker-constitution-2026-08-02|Green Broker — constitution.md]]

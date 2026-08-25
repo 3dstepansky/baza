@@ -1,7 +1,7 @@
 ---
 title: Методология многоагентной разработки automation-проектов
 created: 2026-08-02
-updated: 2026-08-02
+updated: 2026-08-25
 type: concept
 tags: [concept, multi-agent, automation, methodology, quality-gate, security]
 sources: [raw/articles/anthropic-agent-teams-2026.md, raw/articles/github-spec-kit-2026.md, raw/articles/spec-kitty-2026.md, raw/articles/swe-agent-2026.md, raw/articles/paul-agent-workflows-2026.md, raw/papers/multi-agent-software-engineering-2026.md, raw/papers/agentic-coding-evaluation-2026.md, raw/papers/agentic-software-benchmarks-2026.md, raw/articles/swebench-2026.md, raw/articles/vscode-multi-agent-development-2026.md, raw/transcripts/telegram-multi-agent-development-2026-08-02.md]
@@ -76,3 +76,4 @@ confidence: medium
 - [[concepts/spec-driven-agent-development|Spec-driven агентная разработка]]
 - [[comparisons/agent-orchestration-tools|Сравнение orchestration tools]]
 - [[queries/multi-agent-automation-research-plan|План исследования]]
+- [[concepts/multi-agent-code-review-synergy|Мультиагентная система code review для «Синергии»]]
