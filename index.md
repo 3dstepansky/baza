@@ -70,7 +70,8 @@ updated: 2026-09-07
 
 ## Concepts
 
-- [[concepts/slot-unit-economics-and-workforce-efficiency|Юнит-экономика слотовой автоматизации: время сотрудников, стоимость труда и расчет ROI 📊]]
+- [[concepts/helios-management-dashboard-and-agent-marketplace|Гелиос как Executive Dashboard и витрина внедрения агентов 📊]]
+- [[concepts/slot-unit-economics-and-workforce-efficiency|Юнит-экономика слотовой автоматизации: время сотрудников, стоимость труда и расчет ROI 💰]]
 - [[concepts/human-agent-socio-ethics-and-slot-displacement|Социо-этика людей и агентов: фаза дообучения и масштаб зоны интересов 🧠]]
 - [[concepts/helios-slot-in-architecture-and-naivety-scale|Слотовая архитектура замещения операций и шкала наивности «Гелиос» 🧬]]
 - [[concepts/c4-model-for-business-and-agents|C4 Model и Architecture as Code для описания бизнеса и агентов 🗺️]]
@@ -138,6 +139,7 @@ updated: 2026-09-07
 - [[raw/papers/multi-agent-software-engineering-2026|Multi-agent software engineering — paper snapshot]]
 - [[raw/papers/agentic-coding-evaluation-2026|Agentic coding evaluation — paper snapshot]]
 - [[raw/papers/agentic-software-benchmarks-2026|Agentic software benchmarks — paper snapshot]]
+- [[raw/transcripts/telegram-helios-executive-dashboard-and-agent-showcase-2026-09-07|Telegram: мыслеформа Павла — Гелиос как дашборд для топ-менеджмента и витрина агентов]]
 - [[raw/transcripts/telegram-slot-unit-economics-and-labor-cost-2026-09-07|Telegram: мыслеформа Павла — юнит-экономика слотов, учет времени и стоимость труда]]
 - [[raw/transcripts/telegram-human-agent-ethics-slot-displacement-2026-09-07|Telegram: мыслеформа Павла — этика людей и агентов, фаза дообучения и масштаб зоны интересов]]
 - [[raw/transcripts/telegram-helios-c4-enterprise-model-thoughtform-2026-09-07|Telegram: мыслеформа Павла — C4-моделирование бизнеса, HH-парсинг и слотовое замещение операций]]

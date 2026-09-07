@@ -202,6 +202,13 @@
 - Saved raw source: raw/transcripts/telemost-2026-09-03-11-29-35-telemost-2026-09-03t10-55-15-076z-transcript.md
 - Saved raw source: raw/transcripts/telemost-2026-09-03-11-29-35-telemost-2026-09-03t10-55-15-076z-summary.md
 
+## [2026-09-07] ingest | Гелиос как Executive Dashboard и витрина внедрения агентов
+- Сохранён транскрипт мыслеформы: raw/transcripts/telegram-helios-executive-dashboard-and-agent-showcase-2026-09-07.md
+- Создан концепт: concepts/helios-management-dashboard-and-agent-marketplace.md
+- Обновлена сущность: entities/helios-agent-environment.md
+- Перелинковано с concepts/slot-unit-economics-and-workforce-efficiency.md и concepts/helios-slot-in-architecture-and-naivety-scale.md
+- Обновлены index.md, log.md, граф и статический сайт
+
 ## [2026-09-07] ingest | Юнит-экономика слотов, время сотрудников и расчет ROI
 - Сохранён транскрипт мыслеформы: raw/transcripts/telegram-slot-unit-economics-and-labor-cost-2026-09-07.md
 - Создан концепт: concepts/slot-unit-economics-and-workforce-efficiency.md

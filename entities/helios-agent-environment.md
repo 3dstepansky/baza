@@ -65,8 +65,28 @@ capabilities:
 
 ---
 
+## 📊 Executive Dashboard и Витрина внедрения (Agent Showcase)
+
+«Гелиос» («Солнышко») выступает центральным управленческим интерфейсом компании (см. [[concepts/helios-management-dashboard-and-agent-marketplace|Гелиос как Executive Dashboard и витрина внедрения]]):
+
+1. **Дашборд для C-Level & Топ-менеджмента (Президент):**
+   * Макро-обзор состояния всей компании (уровни C1–C2).
+   * Критериальная оценка эффективности: реальная экономия ФОТ, ускорение бизнес-цикла (Time-to-Market), объем обработанных операций и предотвращенные ошибки.
+   * Прозрачная юнит-экономика слотов (см. [[concepts/slot-unit-economics-and-workforce-efficiency|Юнит-экономика слотов]]).
+
+2. **Витрина агентов для руководителей (Desire-Generating Showcase):**
+   * Понятное представление «суперсилы» и решаемых болей каждого агента.
+   * Создание естественного желания: *«Хочу подключить себе такого же помощника!»*.
+   * Механика внедрения в один клик (One-Click Adoption).
+
+---
+
 ## 🔗 Связанные материалы
-* [[concepts/c4-model-for-business-and-agents|C4 Model и Architecture as Code для описания бизнеса и агентов]]
+* [[concepts/helios-management-dashboard-and-agent-marketplace|Гелиос как Executive Dashboard и витрина внедрения агентов 📊]]
+* [[concepts/slot-unit-economics-and-workforce-efficiency|Юнит-экономика слотовой автоматизации 💰]]
+* [[concepts/helios-slot-in-architecture-and-naivety-scale|Слотовая архитектура замещения операций и шкала наивности «Гелиос» 🧬]]
+* [[concepts/c4-model-for-business-and-agents|C4 Model и Architecture as Code для описания бизнеса и агентов 🗺️]]
+* [[concepts/human-agent-socio-ethics-and-slot-displacement|Социо-этика людей и агентов: фаза дообучения и масштаб зоны интересов 🧠]]
 * [[raw/transcripts/archdays-2022-arch-repo-c4-vetchinkin|Конспект доклада Ветчинкина на ArchDays 2022]]
 * [[concepts/agentic-systems|Агентские системы]]
 * [[concepts/multi-agent-development-methodology|Методология многоагентной разработки]]
