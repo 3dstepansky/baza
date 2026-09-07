@@ -70,6 +70,7 @@ updated: 2026-09-07
 
 ## Concepts
 
+- [[concepts/human-agent-socio-ethics-and-slot-displacement|Социо-этика людей и агентов: фаза дообучения и масштаб зоны интересов 🧠]]
 - [[concepts/helios-slot-in-architecture-and-naivety-scale|Слотовая архитектура замещения операций и шкала наивности «Гелиос» 🧬]]
 - [[concepts/c4-model-for-business-and-agents|C4 Model и Architecture as Code для описания бизнеса и агентов 🗺️]]
 - [[concepts/agentic-systems|Агентные системы — архитектура 🤖]]
@@ -136,6 +137,7 @@ updated: 2026-09-07
 - [[raw/papers/multi-agent-software-engineering-2026|Multi-agent software engineering — paper snapshot]]
 - [[raw/papers/agentic-coding-evaluation-2026|Agentic coding evaluation — paper snapshot]]
 - [[raw/papers/agentic-software-benchmarks-2026|Agentic software benchmarks — paper snapshot]]
+- [[raw/transcripts/telegram-human-agent-ethics-slot-displacement-2026-09-07|Telegram: мыслеформа Павла — этика людей и агентов, фаза дообучения и масштаб зоны интересов]]
 - [[raw/transcripts/telegram-helios-c4-enterprise-model-thoughtform-2026-09-07|Telegram: мыслеформа Павла — C4-моделирование бизнеса, HH-парсинг и слотовое замещение операций]]
 - [[raw/transcripts/archdays-2022-arch-repo-c4-vetchinkin|ArchDays 2022 — Архитектурный репозиторий на базе GitLab и C4 Model (Кирилл Ветчинкин)]]
 - [[raw/transcripts/telegram-multi-agent-development-2026-08-02|Telegram: multi-agent / Claude Code / vibe-coding snippets]]

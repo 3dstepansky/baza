@@ -202,6 +202,12 @@
 - Saved raw source: raw/transcripts/telemost-2026-09-03-11-29-35-telemost-2026-09-03t10-55-15-076z-transcript.md
 - Saved raw source: raw/transcripts/telemost-2026-09-03-11-29-35-telemost-2026-09-03t10-55-15-076z-summary.md
 
+## [2026-09-07] ingest | Этика взаимодействия человек-агент, фаза дообучения и масштаб зоны интересов
+- Сохранён транскрипт мыслеформы: raw/transcripts/telegram-human-agent-ethics-slot-displacement-2026-09-07.md
+- Создан концепт: concepts/human-agent-socio-ethics-and-slot-displacement.md
+- Перелинковано с concepts/helios-slot-in-architecture-and-naivety-scale.md и entities/helios-agent-environment.md
+- Обновлены index.md, log.md, граф и статический сайт
+
 ## [2026-09-07] ingest | Архитектурный репозиторий C4 (Ветчинкин) и агентская среда «Гелиос»
 - Сохранён конспект доклада ArchDays 2022 (Кирилл Ветчинкин): raw/transcripts/archdays-2022-arch-repo-c4-vetchinkin.md
 - Создана концепция: concepts/c4-model-for-business-and-agents.md (адаптация C4, DocHub и семантического зума Google Maps для бизнес-архитектуры и мультиагентных сред)

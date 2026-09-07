@@ -101,6 +101,7 @@ metrics:
 
 ## 🔗 Связанные материалы
 * [[entities/helios-agent-environment|Агентская среда «Гелиос»]]
+* [[concepts/human-agent-socio-ethics-and-slot-displacement|Социо-этика взаимодействия людей и агентов: фаза дообучения и масштаб зоны интересов 🧠]]
 * [[concepts/c4-model-for-business-and-agents|C4 Model и Architecture as Code для описания бизнеса и агентов]]
 * [[raw/transcripts/telegram-helios-c4-enterprise-model-thoughtform-2026-09-07|Мыслеформа Павла: Enterprise Modeler и слотовое замещение]]
 * [[concepts/agentic-systems|Агентские системы — архитектура]]
