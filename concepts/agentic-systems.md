@@ -30,6 +30,7 @@ updated: 2026-07-31
 
 ## Реализации
 
+- [[entities/helios-agent-environment|Агентская среда «Гелиос»]] — генерация и контекстная оркестрация агентов на базе [[concepts/c4-model-for-business-and-agents|C4-онтологии]]
 - [[entities/hermes|Hermes Agent]] — платформа с delegate_task, cron, kanban
 - [[index|КПН-Агент]] — ~15 специализированных агентов
 - [[concepts/llm-wiki|LLM Wiki]] — агент ведёт базу знаний

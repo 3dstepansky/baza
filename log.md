@@ -193,3 +193,18 @@
 - Из общей заметки о встрече с Лисным выделена профильная страница проекта: entities/commercial-department-assistant.md.
 - Зафиксированы двухнедельный MVP, минимальный контур, вопросы для сбора требований и критерии готовности.
 - Добавлены обратные ссылки из встречи, страницы «Продажи и Маркетинг» и index.md.
+
+## [2026-09-03] ingest | Telemost raw transcript — Telemost 2026-09-03T10-54-09-475Z
+- Saved raw source: raw/transcripts/telemost-2026-09-03-10-55-29-telemost-2026-09-03t10-54-09-475z-transcript.md
+- Saved raw source: raw/transcripts/telemost-2026-09-03-10-55-29-telemost-2026-09-03t10-54-09-475z-summary.md
+
+## [2026-09-03] ingest | Telemost raw transcript — Telemost 2026-09-03T10-55-15-076Z
+- Saved raw source: raw/transcripts/telemost-2026-09-03-11-29-35-telemost-2026-09-03t10-55-15-076z-transcript.md
+- Saved raw source: raw/transcripts/telemost-2026-09-03-11-29-35-telemost-2026-09-03t10-55-15-076z-summary.md
+
+## [2026-09-07] ingest | Архитектурный репозиторий C4 (Ветчинкин) и агентская среда «Гелиос»
+- Сохранён конспект доклада ArchDays 2022 (Кирилл Ветчинкин): raw/transcripts/archdays-2022-arch-repo-c4-vetchinkin.md
+- Создана концепция: concepts/c4-model-for-business-and-agents.md (адаптация C4, DocHub и семантического зума Google Maps для бизнес-архитектуры и мультиагентных сред)
+- Создана сущность: entities/helios-agent-environment.md (агентская среда «Гелиос», онтология из штатного расписания, контекстная оркестрация)
+- Обновлена страница: concepts/agentic-systems.md (добавлена ссылка на «Гелиос»)
+- Обновлён index.md (каталог Baza)

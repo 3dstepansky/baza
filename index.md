@@ -4,17 +4,19 @@ title: Wiki Index — Baza
 tags: [index, hub]
 type: query
 created: 2026-08-03
-updated: 2026-08-25
+updated: 2026-09-07
 ---
 
 # Wiki Index — Baza 🧠
 
 > Content catalog. Every wiki page listed with a one-line summary.
 > Read this first for any query.
-> Last updated: 2026-08-25 | Total pages: 105
+> Last updated: 2026-09-07 | Total pages: 108
 
 ## Быстрый вход
 
+- [[entities/helios-agent-environment|Агентская среда «Гелиос»]] — среда создания и контекстной оркестрации агентов на базе C4-онтологии бизнеса.
+- [[concepts/c4-model-for-business-and-agents|C4 Model для описания бизнеса и агентов]] — методология переноса C4/DocHub на бизнес-структуру (Google Maps zoom).
 - [[entities/commercial-department-assistant|Ассистент коммерческого подразделения]] — приоритетный двухнедельный MVP: контроль статусов и обращений по данным из нескольких источников.
 - [[queries/lisny-prioritety-zadach-2026-08-25|Лисный — приоритеты задач и автономный AI-отдел]] — встреча-источник решений по коммерческому ассистенту и вторичным проектам.
 - [[queries/razgovor-s-lisnym-2026-08-18|Разговор с Лисным 18 августа — массовое внедрение агентов и «звёздочка»]]
@@ -26,6 +28,7 @@ updated: 2026-08-25
 
 ## Entities
 
+- [[entities/helios-agent-environment|Агентская среда «Гелиос» — среда создания и оркестрации агентов на базе C4-онтологии]]
 - [[entities/commercial-department-assistant|Ассистент коммерческого подразделения — контроль статусов и обращений]]
 - [[entities/academic-difference-assistant|Academic Difference Assistant — ассистент расчёта академической разницы]]
 - [[entities/asati-shill|ASATI Shill]]
@@ -66,6 +69,7 @@ updated: 2026-08-25
 
 ## Concepts
 
+- [[concepts/c4-model-for-business-and-agents|C4 Model и Architecture as Code для описания бизнеса и агентов 🗺️]]
 - [[concepts/agentic-systems|Агентные системы — архитектура 🤖]]
 - [[concepts/ai-freebies|AI Freebies 🧻]]
 - [[concepts/algo-trading|Алгоритмическая торговля 📈]]
@@ -130,6 +134,7 @@ updated: 2026-08-25
 - [[raw/papers/multi-agent-software-engineering-2026|Multi-agent software engineering — paper snapshot]]
 - [[raw/papers/agentic-coding-evaluation-2026|Agentic coding evaluation — paper snapshot]]
 - [[raw/papers/agentic-software-benchmarks-2026|Agentic software benchmarks — paper snapshot]]
+- [[raw/transcripts/archdays-2022-arch-repo-c4-vetchinkin|ArchDays 2022 — Архитектурный репозиторий на базе GitLab и C4 Model (Кирилл Ветчинкин)]]
 - [[raw/transcripts/telegram-multi-agent-development-2026-08-02|Telegram: multi-agent / Claude Code / vibe-coding snippets]]
 - [[raw/transcripts/telegram-multi-agent-code-review-idea-2026-08-25|Telegram: идея мультиагентной системы code review для «Синергии»]]
 - [[raw/transcripts/telemost-2026-08-10-student-appeals-agent-summary|Telemost 2026-08-10 — Student Appeals Agent meeting summary]]
