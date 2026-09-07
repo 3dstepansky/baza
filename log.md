@@ -202,6 +202,12 @@
 - Saved raw source: raw/transcripts/telemost-2026-09-03-11-29-35-telemost-2026-09-03t10-55-15-076z-transcript.md
 - Saved raw source: raw/transcripts/telemost-2026-09-03-11-29-35-telemost-2026-09-03t10-55-15-076z-summary.md
 
+## [2026-09-07] ingest | Юнит-экономика слотов, время сотрудников и расчет ROI
+- Сохранён транскрипт мыслеформы: raw/transcripts/telegram-slot-unit-economics-and-labor-cost-2026-09-07.md
+- Создан концепт: concepts/slot-unit-economics-and-workforce-efficiency.md
+- Перелинковано с concepts/helios-slot-in-architecture-and-naivety-scale.md и concepts/human-agent-socio-ethics-and-slot-displacement.md
+- Обновлены index.md, log.md, граф и статический сайт
+
 ## [2026-09-07] ingest | Этика взаимодействия человек-агент, фаза дообучения и масштаб зоны интересов
 - Сохранён транскрипт мыслеформы: raw/transcripts/telegram-human-agent-ethics-slot-displacement-2026-09-07.md
 - Создан концепт: concepts/human-agent-socio-ethics-and-slot-displacement.md
