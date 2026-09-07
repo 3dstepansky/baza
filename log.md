@@ -202,6 +202,13 @@
 - Saved raw source: raw/transcripts/telemost-2026-09-03-11-29-35-telemost-2026-09-03t10-55-15-076z-transcript.md
 - Saved raw source: raw/transcripts/telemost-2026-09-03-11-29-35-telemost-2026-09-03t10-55-15-076z-summary.md
 
+## [2026-09-07] ingest | Жизненный цикл агентов, Intake-брифинг и Гермес-пусконаладчик
+- Сохранён транскрипт мыслеформы: raw/transcripts/telegram-helios-briefing-agent-forge-and-ephemeral-hermes-2026-09-07.md
+- Создан концепт: concepts/helios-intake-agent-forge-and-commissioning-lifecycle.md
+- Обновлена сущность: entities/hermes-agent.md и entities/helios-agent-environment.md
+- Перелинковано с concepts/helios-management-dashboard-and-agent-marketplace.md и concepts/helios-slot-in-architecture-and-naivety-scale.md
+- Обновлены index.md, log.md, граф и статический сайт
+
 ## [2026-09-07] ingest | Гелиос как Executive Dashboard и витрина внедрения агентов
 - Сохранён транскрипт мыслеформы: raw/transcripts/telegram-helios-executive-dashboard-and-agent-showcase-2026-09-07.md
 - Создан концепт: concepts/helios-management-dashboard-and-agent-marketplace.md

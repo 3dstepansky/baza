@@ -82,6 +82,7 @@ capabilities:
 ---
 
 ## 🔗 Связанные материалы
+* [[concepts/helios-intake-agent-forge-and-commissioning-lifecycle|Жизненный цикл агентов: Intake-брифинг, кузница и Гермес-пусконаладчик 🛠️]]
 * [[concepts/helios-management-dashboard-and-agent-marketplace|Гелиос как Executive Dashboard и витрина внедрения агентов 📊]]
 * [[concepts/slot-unit-economics-and-workforce-efficiency|Юнит-экономика слотовой автоматизации 💰]]
 * [[concepts/helios-slot-in-architecture-and-naivety-scale|Слотовая архитектура замещения операций и шкала наивности «Гелиос» 🧬]]

@@ -35,12 +35,15 @@ Telegram/Web
 ## Для чего используется здесь
 
 - [[entities/baza-wiki|Ведение базы знаний]] (этот vault)
+- [[concepts/helios-intake-agent-forge-and-commissioning-lifecycle|Временный агент-пусконаладчик (Ephemeral Commissioning Agent) в среде «Гелиос»]] — десантирование в Docker на ПК сотрудника, устранение технической неопределенности, настройка окружения и последующее самоудаление после сдачи процесса «под ключ».
 - [[entities/hermes-marketplace-tools|Мониторинг маркетплейсов]]
 - [[index|КПН-Агент]] — контроль поручений
 - Мониторинг [[entities/vibecoder-sources|вайбкодерских каналов]]
 
 ## Связанное
 
+- [[entities/helios-agent-environment|Агентская среда «Гелиос»]]
+- [[concepts/helios-intake-agent-forge-and-commissioning-lifecycle|Жизненный цикл агентов и Гермес-пусконаладчик]]
 - [[entities/hermes|Hermes — инфраструктура]]
 - [[concepts/agentic-systems|Агентные системы]]
 - [[concepts/mcp|MCP]]
