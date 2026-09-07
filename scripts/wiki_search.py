@@ -15,7 +15,7 @@ from pathlib import Path
 from datetime import datetime
 
 VAULT_DIR = Path(os.environ.get("WIKI_PATH", "/home/ubuntu/baza")).resolve()
-BASE_URL = os.environ.get("WIKI_BASE_URL", "http://140.238.153.123:8383").rstrip("/")
+BASE_URL = os.environ.get("BAZA_BASE_URL", "https://baza.stepan8nsky.casacam.net")
 
 EXCLUDE_DIRS = {".git", ".obsidian", "_site", "_archive", "scripts", "__pycache__"}
 SERVED_DIRS = ["entities", "concepts", "comparisons", "queries", "raw/transcripts", "raw/articles"]

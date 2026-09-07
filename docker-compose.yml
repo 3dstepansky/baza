@@ -1,0 +1,27 @@
+services:
+  baza-wiki:
+    image: ghcr.io/astral-sh/uv:python3.13-bookworm-slim
+    container_name: baza-wiki
+    restart: unless-stopped
+    volumes:
+      - /home/ubuntu/baza:/vault:ro
+    working_dir: /vault
+    command: ["python3", "/vault/scripts/wiki_web.py", "--bind", "0.0.0.0", "--port", "8383"]
+    environment:
+      - WIKI_PATH=/vault
+      - PYTHONUNBUFFERED=1
+    networks:
+      - n8n_default
+    labels:
+      - "traefik.enable=true"
+      - "traefik.docker.network=n8n_default"
+      - "traefik.http.routers.baza.entrypoints=web,websecure"
+      - "traefik.http.routers.baza.rule=Host(`baza.stepan8nsky.casacam.net`) || Host(`wiki.stepan8nsky.casacam.net`)"
+      - "traefik.http.routers.baza.tls=true"
+      - "traefik.http.routers.baza.tls.certresolver=mytlschallenge"
+      - "traefik.http.routers.baza.service=baza-wiki"
+      - "traefik.http.services.baza-wiki.loadbalancer.server.port=8383"
+
+networks:
+  n8n_default:
+    external: true
