@@ -208,3 +208,8 @@
 - Создана сущность: entities/helios-agent-environment.md (агентская среда «Гелиос», онтология из штатного расписания, контекстная оркестрация)
 - Обновлена страница: concepts/agentic-systems.md (добавлена ссылка на «Гелиос»)
 - Обновлён index.md (каталог Baza)
+
+## [2026-09-07] ingest | Слотовая архитектура замещения операций и шкала наивности «Гелиос»
+- Сохранён первоисточник мыслеформы Павла: raw/transcripts/telegram-helios-c4-enterprise-model-thoughtform-2026-09-07.md
+- Создана концепция: concepts/helios-slot-in-architecture-and-naivety-scale.md (Enterprise Modeler агент, шкала наивности L1-L5, Human Slot ➔ Neuro Slot, обогащение из HH/DWH)
+- Обновлены entities/helios-agent-environment.md, concepts/c4-model-for-business-and-agents.md и index.md

@@ -60,7 +60,9 @@ updated: 2026-09-07
 
 ## 🔗 Связанные материалы
 * [[entities/helios-agent-environment|Агентская среда «Гелиос»]]
+* [[concepts/helios-slot-in-architecture-and-naivety-scale|Слотовая архитектура замещения операций и шкала наивности]]
 * [[raw/transcripts/archdays-2022-arch-repo-c4-vetchinkin|Конспект доклада: Архитектурный репозиторий на базе GitLab и C4 Model (Кирилл Ветчинкин)]]
+* [[raw/transcripts/telegram-helios-c4-enterprise-model-thoughtform-2026-09-07|Мыслеформа Павла о среде «Гелиос» и замещении слотов]]
 * [[concepts/agentic-systems|Агентские системы]]
 * [[concepts/multi-agent-development-methodology|Методология многоагентной разработки]]
 * [[concepts/mcp-protocol|Model Context Protocol (MCP)]]
