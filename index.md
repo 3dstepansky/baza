@@ -4,7 +4,7 @@ title: Wiki Index — Baza
 tags: [index, hub]
 type: query
 created: 2026-08-03
-updated: 2026-09-07
+updated: 2026-09-08
 ---
 
 # Wiki Index — Baza 🧠
@@ -37,7 +37,7 @@ updated: 2026-09-07
 - [[entities/construction-maps-mcp|Construction Maps MCP Server — кадастр и полигоны]]
 - [[entities/event-digest|Event Digest CLI]]
 - [[entities/go|Go 🦫]]
-- [[entities/green-broker|Green Broker — Telegram-бот для продажи растений]]
+- [[entities/green-broker|Green Broker — экосистема и боты для питомников растений (Питомник + Client)]]
 - [[entities/lushertale|LusherTale / ПсихоСказка — Telegram-бот сказок по тесту Люшера]]
 - [[entities/gr-departments|GR Департаменты]]
 - [[entities/hermes-agent|Hermes Agent — Платформа агентов 🧬]]
@@ -140,7 +140,8 @@ updated: 2026-09-07
 - [[raw/papers/multi-agent-software-engineering-2026|Multi-agent software engineering — paper snapshot]]
 - [[raw/papers/agentic-coding-evaluation-2026|Agentic coding evaluation — paper snapshot]]
 - [[raw/papers/agentic-software-benchmarks-2026|Agentic software benchmarks — paper snapshot]]
-- [[raw/transcripts/telegram-helios-briefing-agent-forge-and-ephemeral-hermes-2026-09-07|Telegram: мыслеформа Павла — Intake-брифинг, кузница агентов и Гермес-пусконаладчик]]
+- [[raw/transcripts/telegram-green-broker-two-bot-architecture-and-brokerage-2026-09-08|Telegram: Green Broker — видение Павла и Романа: двухботовая модель и брокерские продажи]]
+- [[raw/transcripts/telegram-helios-briefing-agent-forge-and-ephemeral-hermes-2026-09-07|Telegram: мыслеформа Павла — Intake-брифинг, кузница агентов и пусконаладка]]
 - [[raw/transcripts/telegram-helios-executive-dashboard-and-agent-showcase-2026-09-07|Telegram: мыслеформа Павла — Гелиос как дашборд для топ-менеджмента и витрина агентов]]
 - [[raw/transcripts/telegram-slot-unit-economics-and-labor-cost-2026-09-07|Telegram: мыслеформа Павла — юнит-экономика слотов, учет времени и стоимость труда]]
 - [[raw/transcripts/telegram-human-agent-ethics-slot-displacement-2026-09-07|Telegram: мыслеформа Павла — этика людей и агентов, фаза дообучения и масштаб зоны интересов]]

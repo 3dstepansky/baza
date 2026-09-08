@@ -239,3 +239,11 @@
 - Сохранён первоисточник мыслеформы Павла: raw/transcripts/telegram-helios-c4-enterprise-model-thoughtform-2026-09-07.md
 - Создана концепция: concepts/helios-slot-in-architecture-and-naivety-scale.md (Enterprise Modeler агент, шкала наивности L1-L5, Human Slot ➔ Neuro Slot, обогащение из HH/DWH)
 - Обновлены entities/helios-agent-environment.md, concepts/c4-model-for-business-and-agents.md и index.md
+
+## [2026-09-08] update | Green Broker: двухботовая модель (Питомник + Client) и брокерские продажи
+- Сохранён транскрипт ввода Павла: raw/transcripts/telegram-green-broker-two-bot-architecture-and-brokerage-2026-09-08.md
+- Обновлена сущность entities/green-broker.md: зафиксировано видение Павла и Романа
+- Детализированы два контура: бот «Green Broker Питомник» (склад/номенклатура/deep link) и «Green Broker Client» (переговорный AI, расчет КП, проактивный retention/дожим)
+- Добавлена стратегия SaaS-enabled Marketplace (собственные оптовые продажи Green Broker по остаткам питомников)
+- Обновлены index.md и связи с базой знаний
+
