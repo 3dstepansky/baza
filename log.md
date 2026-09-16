@@ -5,6 +5,34 @@
 > Действия: ingest, update, query, lint, create, archive, delete
 > Ротация: >500 записей → log-YYYY.md
 
+## [2026-09-16] create | Интерактивный голосовой ассистент и триггеры автовыхода для Meeting Recorder
+- Создана концепция `concepts/meeting-interactive-voice-agent-and-leave-triggers.md`.
+- Зафиксирована архитектура Full-Duplex аудиопотока в звонке (WebRTC capture → Streaming STT → Brain/LLM RAG → Low-Latency Uniproxy TTS → Virtual Mic playback).
+- Спроектирован протокол Graceful Teardown по голосовой кодовой фразе («Светочка, покинь встречу» с голосовым подтверждением и автоматической финализацией артефактов).
+- Обновлены сущность `entities/telemost-recorder.md` и корневой каталог `index.md`.
+
+## [2026-09-12] ingest | Расширенная диаграмма выгорания, недельный «Статус» и SDD-конвейер «Гелиоса»
+- Сохранён immutable raw-источник `raw/transcripts/telegram-helios-extended-burndown-and-weekly-status-2026-09-12.md`.
+- Создана концепция `concepts/helios-extended-burndown-weekly-status-and-sdd-delivery.md`.
+- Зафиксированы недельный спринт, публичный внутренний документ «Статус», отчётный субагент, разделение исходного и добавленного scope, SDD-конвейер и два режима пользовательского тестирования.
+- Добавлена аналитическая рамка burndown + burnup + cumulative flow и прогноз P50/P85 с отдельным учётом человеческих блокировок.
+- Обновлён корневой каталог.
+
+## [2026-09-10] ingest | «Партия одного вечера» и методология кифу трансформации
+- Сохранён raw-источник `raw/articles/partiya-odnogo-vechera-2026-09-10.md`.
+- Создана концепция `concepts/company-game-kifu-and-exploration-map.md`.
+- Зафиксированы: атом-задача и CI-тест атомарности, карта разведанности L1–L5, тест воспроизводимости нарезки, четыре судьбы атома, агент как ход, эффект по потоку и кифу компании.
+- Добавлены практические направления: APQC-нумерация, междоменные SLA, governance порта Actions, калибровка эталонов, L4 falsification test на CRM event log.
+- Уникальность связки «штатка → разведка → слоты → эффект» сохранена как проверяемая гипотеза, а не установленный рыночный факт.
+- Обновлены обратные ссылки и каталог.
+
+## [2026-09-10] ingest | Everything as Code и Business as Code для «Гелиоса»
+- Добавлен immutable raw-источник `raw/articles/everything-as-code-lecture-2026-09-10.md` по лекции Павла.
+- Создана концептуальная страница `concepts/everything-as-code-for-helios.md`.
+- Зафиксированы пять свойств `as Code`: декларативность, версионность, ревью, автопроверка и сверка.
+- Добавлены двусторонний организационный drift, связь со шкалой наивности, границы метафоры и операционная формула «Гелиоса».
+- Обновлены обратные ссылки в страницах «Гелиоса», C4 и слотовой архитектуры; обновлён каталог.
+
 ## [2026-07-31] create | Wiki пересобрана с нуля по стандарту llm-wiki v2.1.0
 - Структура: entities/ concepts/ comparisons/ queries/ raw/{articles,papers,transcripts,assets} _archive/
 - 46 страниц реклассифицированы по типам (entity/concept), хабы архивированы
@@ -247,3 +275,7 @@
 - Добавлена стратегия SaaS-enabled Marketplace (собственные оптовые продажи Green Broker по остаткам питомников)
 - Обновлены index.md и связи с базой знаний
 
+
+## [2026-09-14] ingest | Telemost raw transcript — Telemost 2026-09-14T08-02-09-195Z
+- Saved raw source: raw/transcripts/telemost-2026-09-14-08-39-51-telemost-2026-09-14t08-02-09-195z-transcript.md
+- Saved raw source: raw/transcripts/telemost-2026-09-14-08-39-51-telemost-2026-09-14t08-02-09-195z-summary.md

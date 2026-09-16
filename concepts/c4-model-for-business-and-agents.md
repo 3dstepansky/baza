@@ -3,12 +3,14 @@ title: C4 Model и Architecture as Code для описания бизнеса �
 tags: [architecture, c4-model, agents, business-architecture, dochub, gitops]
 type: concept
 created: 2026-09-07
-updated: 2026-09-07
+updated: 2026-09-10
 ---
 
 # C4 Model и Architecture as Code для описания бизнеса и агентских сред
 
 > Концепция адаптации инженерного подхода **C4 Model** (Simon Brown) и методологии **Architecture as Code / DocHub** (Кирилл Ветчинкин) для формализации структуры корпорации, бизнес-процессов и мультиагентной среды [[entities/helios-agent-environment|«Гелиос»]].
+
+Расширение подхода до организационного жизненного цикла описано в [[concepts/everything-as-code-for-helios|Everything as Code и Business as Code для «Гелиоса»]]. C4 задаёт семантический зум и структуру карты, а `as Code` — версионность, ревью, проверки и петлю сверки карты с территорией.
 
 ---
 

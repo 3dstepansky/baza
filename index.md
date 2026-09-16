@@ -4,19 +4,21 @@ title: Wiki Index — Baza
 tags: [index, hub]
 type: query
 created: 2026-08-03
-updated: 2026-09-08
+updated: 2026-09-12
 ---
 
 # Wiki Index — Baza 🧠
 
 > Content catalog. Every wiki page listed with a one-line summary.
 > Read this first for any query.
-> Last updated: 2026-09-07 | Total pages: 108
+> Last updated: 2026-09-12 | Total pages: 114
 
 ## Быстрый вход
 
 - [[entities/helios-agent-environment|Агентская среда «Гелиос»]] — среда создания и контекстной оркестрации агентов на базе C4-онтологии бизнеса.
 - [[concepts/c4-model-for-business-and-agents|C4 Model для описания бизнеса и агентов]] — методология переноса C4/DocHub на бизнес-структуру (Google Maps zoom).
+- [[concepts/everything-as-code-for-helios|Everything as Code и Business as Code для «Гелиоса»]] — пять свойств `as Code`, двусторонний drift и роль паттерна как операционной формы онтологии.
+- [[concepts/company-game-kifu-and-exploration-map|Методология «Партия компании»]] — атомы задач, карта разведанности L1–L5, агент как ход, счёт территории и кифу трансформации.
 - [[concepts/helios-slot-in-architecture-and-naivety-scale|Слотовая архитектура замещения операций и шкала наивности]] — переход Human Slot ➔ Neuro Slot, обогащение из HH/DWH.
 - [[entities/commercial-department-assistant|Ассистент коммерческого подразделения]] — приоритетный двухнедельный MVP: контроль статусов и обращений по данным из нескольких источников.
 - [[queries/lisny-prioritety-zadach-2026-08-25|Лисный — приоритеты задач и автономный AI-отдел]] — встреча-источник решений по коммерческому ассистенту и вторичным проектам.
@@ -70,6 +72,8 @@ updated: 2026-09-08
 
 ## Concepts
 
+- [[concepts/meeting-interactive-voice-agent-and-leave-triggers|Интерактивный голосовой ассистент и триггеры автовыхода для Meeting Recorder]] — двусторонний Full-Duplex аудиопоток (STT/TTS в звонок), голосовой Q&A по Baza и Graceful Exit («Светочка, покинь встречу»).
+- [[concepts/helios-extended-burndown-weekly-status-and-sdd-delivery|Расширенная диаграмма выгорания, недельный «Статус» и SDD-конвейер производства агентов]] — экран стадий и недельных спринтов, исходного/добавленного scope и статистического прогноза завершения.
 - [[concepts/helios-intake-agent-forge-and-commissioning-lifecycle|Жизненный цикл агентов: Intake-брифинг, кузница и Гермес-пусконаладчик 🛠️]]
 - [[concepts/helios-management-dashboard-and-agent-marketplace|Гелиос как Executive Dashboard и витрина внедрения агентов 📊]]
 - [[concepts/slot-unit-economics-and-workforce-efficiency|Юнит-экономика слотовой автоматизации: время сотрудников, стоимость труда и расчет ROI 💰]]
@@ -115,6 +119,8 @@ updated: 2026-09-08
 - [[queries/russian-grocery-mcp-research-plan|Российские grocery-приложения и MCP-серверы — план исследования]] — план поиска/создания MCP для Самоката, Пятёрочки, Перекрёстка, Ленты, Магнита, Красного и Белого, Евроспара
 
 ## Raw (immutable)
+
+- [[raw/transcripts/telegram-helios-extended-burndown-and-weekly-status-2026-09-12|Telegram: расширенная диаграмма выгорания, недельный «Статус» и SDD-конвейер «Гелиоса»]] — исходная мыслеформа Павла о прозрачном производстве и прогнозировании сроков агентов.
 
 - [[raw/transcripts/lisny-prioritety-zadach-original-2026-08-25|Лисный — приоритеты задач, оригинальная расшифровка]]
 - [[raw/transcripts/2026-08-19-lisny-original|Лисный 19.08 — оригинальная расшифровка]]

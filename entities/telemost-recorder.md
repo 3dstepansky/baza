@@ -141,19 +141,22 @@ npm test
 - **Puppeteer fragility:** вход в Телемост зависит от DOM/селекторов Яндекса.
 - **RAG privacy:** будущий архивный поиск должен быть жёстко изолирован по `chat_id`, как прописано в конституции.
 
-## Roadmap
+## Roadmap и стратегическое развитие
 
-1. Починить `speakerName`: сопоставление WebRTC trackId с DOM-именем участника.
-2. Зафиксировать мастер-формат диаризации: `mix + per-track` или полноценный `diarization_map.json`.
-3. Проверить WebDAV/S3 upload и MOVE-переименование на реальном Яндекс.Диске.
-4. Довести ручные кнопки «Транскрибировать»/«Сделать саммари» в Telegram UI.
-5. Закрыть `npm audit` / обновить уязвимые зависимости.
-6. Реализовать архивный RAG-Q&A по встречам с изоляцией по `chat_id`.
-7. Исследовать real-time STT/TTS агента в комнате с latency <1.5 сек.
+1. **Мультиплатформенность:** расширение на Google Meet и Zoom на базе модульных адаптеров (вдохновлено `Vexa-ai/vexa` и Zoom Linux SDK).
+2. **Интерактивный голосовой ассистент и выход по фразе:** концепция [[concepts/meeting-interactive-voice-agent-and-leave-triggers|голосового Q&A в реальном времени и Graceful Exit Triggers]] («Светочка, покинь встречу»).
+3. Починить `speakerName`: сопоставление WebRTC trackId с DOM-именем участника.
+4. Зафиксировать мастер-формат диаризации: `mix + per-track` или полноценный `diarization_map.json`.
+5. Проверить WebDAV/S3 upload и MOVE-переименование на реальном Яндекс.Диске.
+6. Довести ручные кнопки «Транскрибировать»/«Сделать саммари» в Telegram UI.
+7. Закрыть `npm audit` / обновить уязвимые зависимости.
+8. Реализовать архивный RAG-Q&A по встречам с изоляцией по `chat_id`.
 
 ## Связанные заметки
 
+- [[concepts/meeting-interactive-voice-agent-and-leave-triggers|Интерактивный голосовой ассистент и триггеры автовыхода]]
 - [[concepts/agentic-systems|Агентные системы]]
+- [[entities/baza-wiki|Baza / LLM Wiki]]
 - [[concepts/spec-driven-agent-development|Spec-driven агентная разработка]]
 - [[concepts/multi-agent-development-methodology|Методология многоагентной разработки automation-проектов]]
 - [[concepts/free-ai-methods|Бесплатное использование нейросетей]]
