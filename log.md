@@ -5,6 +5,22 @@
 > Действия: ingest, update, query, lint, create, archive, delete
 > Ротация: >500 записей → log-YYYY.md
 
+## [2026-09-19] ingest | Полный архив стихов Telegram-канала Stepansky music
+- Выгружены все 30 доступных сообщений канала `@Stepansky_music`; обнаружено 14 непустых текстовых публикаций.
+- Сохранён immutable snapshot `raw/articles/stepansky-music-telegram-lyrics-2026-09-19.md` с датами, ID и ссылками на оригиналы.
+- Созданы 14 отдельных страниц произведений в `queries/stepansky-music/`.
+- Созданы каталог `queries/stepansky-music-lyrics.md` и сущность `entities/stepansky-music.md`.
+- Обновлены корневой каталог и таксономия тегов (`poetry`, `lyrics`).
+
+## [2026-09-18] ingest | Fish Audio для прямого общения агента в Яндекс.Телемосте
+- Сохранён immutable research snapshot `raw/articles/fish-audio-github-research-for-telemost-2026-09-18.md` с официальными GitHub-репозиториями, API, лицензиями и ограничениями.
+- Создана концепция `concepts/fish-audio-for-telemost-realtime-agent.md`.
+- Рекомендован buildable MVP: Chromium + virtual audio devices + streaming STT/Hermes/Fish WebSocket TTS; Fish Agents (`fish-agent-sdk-web`, LiveKit WebRTC, custom LLM) — параллельный gated spike.
+- Зафиксированы блокеры: private beta Fish Agents, отсутствие готового моста в Телемост, 24 GB VRAM и отдельная коммерческая лицензия для self-hosted Fish Speech.
+- Обновлён корневой каталог.
+- После параллельной проверки уточнён приоритет: buildable MVP — Chromium + virtual audio devices + streaming STT/Hermes/Fish WebSocket TTS; Fish Agents оставлен gated spike до получения private-beta доступа.
+- Добавлены Node/TypeScript SDK, Pipecat integration, ограничение browser WebSocket headers, Telemost control-plane API и reference meeting-bot проекты.
+
 ## [2026-09-16] create | Интерактивный голосовой ассистент и триггеры автовыхода для Meeting Recorder
 - Создана концепция `concepts/meeting-interactive-voice-agent-and-leave-triggers.md`.
 - Зафиксирована архитектура Full-Duplex аудиопотока в звонке (WebRTC capture → Streaming STT → Brain/LLM RAG → Low-Latency Uniproxy TTS → Virtual Mic playback).
@@ -279,3 +295,23 @@
 ## [2026-09-14] ingest | Telemost raw transcript — Telemost 2026-09-14T08-02-09-195Z
 - Saved raw source: raw/transcripts/telemost-2026-09-14-08-39-51-telemost-2026-09-14t08-02-09-195z-transcript.md
 - Saved raw source: raw/transcripts/telemost-2026-09-14-08-39-51-telemost-2026-09-14t08-02-09-195z-summary.md
+
+## [2026-09-16] ingest | Telemost raw transcript — Telemost 2026-09-16T07-30-17-116Z
+- Saved raw source: raw/transcripts/telemost-2026-09-16-08-17-13-telemost-2026-09-16t07-30-17-116z-transcript.md
+- Saved raw source: raw/transcripts/telemost-2026-09-16-08-17-13-telemost-2026-09-16t07-30-17-116z-summary.md
+
+## [2026-09-16] ingest | Telemost raw transcript — Лада_2
+- Saved raw source: raw/transcripts/telemost-2026-09-16-12-51-09-лада-2-transcript.md
+- Saved raw source: raw/transcripts/telemost-2026-09-16-12-51-09-лада-2-summary.md
+
+## [2026-09-16] ingest | Telemost raw transcript — Лада
+- Saved raw source: raw/transcripts/telemost-2026-09-16-12-51-12-лада-transcript.md
+- Saved raw source: raw/transcripts/telemost-2026-09-16-12-51-12-лада-summary.md
+
+## [2026-09-18] ingest | Telemost raw transcript — Эндрю_голосовой_асист
+- Saved raw source: raw/transcripts/telemost-2026-09-18-12-57-03-эндрю-голосовои-асист-transcript.md
+- Saved raw source: raw/transcripts/telemost-2026-09-18-12-57-03-эндрю-голосовои-асист-summary.md
+
+## [2026-09-18] ingest | Telemost raw transcript — Telemost 2026-09-18T13-01-41-539Z
+- Saved raw source: raw/transcripts/telemost-2026-09-18-13-54-27-telemost-2026-09-18t13-01-41-539z-transcript.md
+- Saved raw source: raw/transcripts/telemost-2026-09-18-13-54-27-telemost-2026-09-18t13-01-41-539z-summary.md

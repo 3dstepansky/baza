@@ -4,14 +4,14 @@ title: Wiki Index — Baza
 tags: [index, hub]
 type: query
 created: 2026-08-03
-updated: 2026-09-12
+updated: 2026-09-19
 ---
 
 # Wiki Index — Baza 🧠
 
 > Content catalog. Every wiki page listed with a one-line summary.
 > Read this first for any query.
-> Last updated: 2026-09-12 | Total pages: 114
+> Last updated: 2026-09-19 | Total pages: 132
 
 ## Быстрый вход
 
@@ -28,6 +28,11 @@ updated: 2026-09-12
 - [[queries/razgovor-s-annoy-2026-08-13|Разговор с Анной — личный компас и три слова]]
 - [[entities/green-broker|Green Broker — проект по питомникам, садам и растениям]]
 - [[concepts/mcp|MCP — Model Context Protocol]]
+
+## Творчество и тексты
+
+- [[queries/stepansky-music-lyrics|Все стихи Stepansky music]] — полный архив 14 текстовых произведений из Telegram-канала на 19 сентября 2026 года.
+- [[entities/stepansky-music|Stepansky music]] — авторский Telegram-канал Павла Степанского.
 
 ## Entities
 
@@ -71,6 +76,8 @@ updated: 2026-09-12
 - [[concepts/mcp|MCP — Model Context Protocol]] — общий слой подключения инструментов к агенту.
 
 ## Concepts
+
+- [[concepts/fish-audio-for-telemost-realtime-agent|Fish Audio для прямого общения агента в Яндекс.Телемосте]] — GitHub-исследование Fish Agents/Fish Speech, двунаправленный WebRTC audio bridge и рекомендуемый MVP.
 
 - [[concepts/meeting-interactive-voice-agent-and-leave-triggers|Интерактивный голосовой ассистент и триггеры автовыхода для Meeting Recorder]] — двусторонний Full-Duplex аудиопоток (STT/TTS в звонок), голосовой Q&A по Baza и Graceful Exit («Светочка, покинь встречу»).
 - [[concepts/helios-extended-burndown-weekly-status-and-sdd-delivery|Расширенная диаграмма выгорания, недельный «Статус» и SDD-конвейер производства агентов]] — экран стадий и недельных спринтов, исходного/добавленного scope и статистического прогноза завершения.
