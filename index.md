@@ -77,7 +77,7 @@ updated: 2026-09-19
 
 ## Concepts
 
-- [[concepts/fish-audio-for-telemost-realtime-agent|Fish Audio для прямого общения агента в Яндекс.Телемосте]] — GitHub-исследование Fish Agents/Fish Speech, двунаправленный WebRTC audio bridge и рекомендуемый MVP.
+
 
 - [[concepts/meeting-interactive-voice-agent-and-leave-triggers|Интерактивный голосовой ассистент и триггеры автовыхода для Meeting Recorder]] — двусторонний Full-Duplex аудиопоток (STT/TTS в звонок), голосовой Q&A по Baza и Graceful Exit («Светочка, покинь встречу»).
 - [[concepts/helios-extended-burndown-weekly-status-and-sdd-delivery|Расширенная диаграмма выгорания, недельный «Статус» и SDD-конвейер производства агентов]] — экран стадий и недельных спринтов, исходного/добавленного scope и статистического прогноза завершения.
