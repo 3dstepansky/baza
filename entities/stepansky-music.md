@@ -13,5 +13,8 @@ confidence: high
 Авторский Telegram-канал с песнями и стихами Павла Степанского.
 
 - Канал: [@Stepansky_music](https://t.me/Stepansky_music)
-- Архив в базе: [[queries/stepansky-music-lyrics|Все стихи Stepansky music]]
+## Связи
+
+- [[queries/stepansky-music-lyrics|Все стихи Stepansky music]]
+- [[entities/sanya-handyman-slc|Саня — Handyman в Солт-Лейк-Сити]]
 - Исходный снимок: [[raw/articles/stepansky-music-telegram-lyrics-2026-09-19|Telegram-экспорт текстов]]

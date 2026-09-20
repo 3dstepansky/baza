@@ -19,6 +19,11 @@ date: 2026-09-11
 - **Ключевой B2B канал:** Риелторы, закрывающие сделки купли-продажи (потребность в устранении замечаний инспекции — Inspection Punch Lists, подготовка к продаже — Pre-listing repairs, пакеты въезда для покупателей).
 - **Русскоязычные риелторы:** Сильное комьюнити (Slavic Community / Utah Russian Network), приоритетный теплый канал контакта.
 
+## Связанные страницы
+
+- [[entities/stepansky-music|Stepansky music]]
+- [[queries/stepansky-music-lyrics|Все стихи Stepansky music]]
+
 ## Автоматизированный стек лидогенерации
 Развернут в Docker на сервере в `/home/ubuntu/slc-handyman-leads/`:
 - **Источник данных:** MLS / HomeHarvest + Salt Lake County ArcGIS Open Data.
